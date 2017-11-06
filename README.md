@@ -11,5 +11,5 @@
 
 ### TO DO:
 
-[ ] Agregar .gitignore para las clases compiladas
-[ ] Set up de Travis para integración continua
+- [ ] Agregar .gitignore para las clases compiladas
+- [ ] Set up de Travis para integración continua
