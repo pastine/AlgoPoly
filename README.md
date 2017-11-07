@@ -16,7 +16,7 @@
 
 ### TO DO:
 1ra Entrega (16 de Noviembre)
-- [ ] Agregar .gitignore para las clases compiladas
+- [X] Agregar .gitignore para las clases compiladas
 - [ ] Set up de Travis para integración continua
 - [ ] Un jugador cae en Quini 6 por primera vez. Verificar que su capital se incrementa en $50000. 
 - [ ] Un jugador cae en Quini 6 por segunda vez. Verificar que su capital se incrementa en $30000.
