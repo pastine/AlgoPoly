@@ -1,0 +1,48 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="TP2 - Java" basedir="." default="compilar">
+
+	<property name="modelo.src.dir" value="modelo/src" />
+	<property name="modelo.test.dir" value="modelo/test" />
+	<property name="build.modelo.clases.dir" value="build/modelo/clases"/>
+	<property name="build.modelo.test.dir" value="build/modelo/test" />
+
+
+	<!-- agrupa todos los archivos en subdir de modelo/src que 
+		tengan extencion .class -->
+	<path id="modelo.clases">
+		<filetype dir="${modelo.scr.dir}">
+			<include name="**/*.class" /> 
+		</filetype>
+	</path>
+
+
+	<!-- agrupa todos los archivos en subdirectorios de modelo/test que 
+		contengan la palabra Test al final del nombre -->
+	<path id="modelo.test">
+		<filetype dir="${modelo.test.dir}">
+			<include name="**/*Test*" />
+		</filetype>
+	</path>
+
+
+	<target name="compilar.clases.modelo" description="Compila las clases del modelo">
+		<mkdir dir="${build.modelo.clases.dir}" />
+		<javac srcdir="${modelo.src.dir}" dstdir="${build.modelo.clases.dir}">
+			<classpath refid="modelo.clases" />
+		</javac>
+	</target>
+
+	<target name="compilar.test.modelo" description="Compila los tests del modelo">
+		<mkdir dir="${build.modelo.test.dir}" />
+		<javac srcdir="${modelo.test.dir}" dstdir="${build.modelo.test.dir}">
+			<classpath refid="modelo.test" />
+		</javac>
+	</target>
+
+	<target name="clear">
+		<delete dir="${build.modelo.clases.dir}" />
+		<delete dir="${build.modelo.test.dir}" />
+	</target>
+
+
+
+</project>
