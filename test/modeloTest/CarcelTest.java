@@ -21,5 +21,22 @@ public class CarcelTest {
 		carcel.apresarJugador(jugador);
 		Assert.assertNotNull(carcel);
 	}
+	
+	@Test
+	public void testApresarJugadorQuedaPreso() {
+		Carcel carcel = new Carcel();
+		Jugador jugador = new Jugador();
+		carcel.apresarJugador(jugador);
+		
+		Assert.assertTrue(carcel.estaEnLaCarcel(jugador));
+	}
+	
+	@Test
+	public void testJugadorNoPresoNoEstaEnLaCarcel() {
+		Carcel carcel = new Carcel();
+		Jugador jugador = new Jugador();
+		
+		Assert.assertFalse(carcel.estaEnLaCarcel(jugador));
+	}
 
 }
