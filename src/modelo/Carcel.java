@@ -10,4 +10,8 @@ public class Carcel {
 	public Carcel() {
 		prisioneros = new HashMap<Jugador, Integer>();
 	}
+	
+	public void apresarJugador(Jugador unJugador) {
+		prisioneros.put(unJugador, 1);
+	}
 }
