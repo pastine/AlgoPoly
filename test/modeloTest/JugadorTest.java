@@ -1,14 +1,14 @@
 package modeloTest;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import modelo.Jugador;
 
-class JugadorTest {
+public class JugadorTest {
 
 	@Test
-	void sumarPlataAUnJugadorLeSumaCorrectamenteTest() {
+	public void sumarPlataAUnJugadorLeSumaCorrectamenteTest() {
 		Jugador jugador = new Jugador();
 		jugador.recibirDinero(500);
 		
@@ -16,14 +16,14 @@ class JugadorTest {
 	}
 	
 	@Test
-	void elJugadorSeinicializaConSaldo100000Test() {
+	public void elJugadorSeinicializaConSaldo100000Test() {
 		Jugador jugador = new Jugador();
 		
 		Assert.assertEquals(jugador.verSaldo(), 100000);
 	}
 	
 	@Test
-	void elSaldoDelJugadorSeReduceCorrectamenteTest() {
+	public void elSaldoDelJugadorSeReduceCorrectamenteTest() {
 		Jugador jugador = new Jugador();
 		
 		jugador.quitarDinero(50000);
