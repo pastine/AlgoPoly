@@ -1,6 +1,7 @@
 # AlgoPoly
 
-## TP2 - Java
+## TP2 - Java 
+## Grupo 7 - Corrector: Tomás Bustamante
 
 ### Links a documentos
 + Consigna: https://goo.gl/WxunNH
