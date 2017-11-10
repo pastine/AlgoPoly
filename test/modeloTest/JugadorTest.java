@@ -8,7 +8,7 @@ import modelo.Jugador;
 public class JugadorTest {
 
 	@Test
-	public void sumarPlataAUnJugadorLeSumaCorrectamenteTest() {
+	public void testSumarPlataAUnJugadorLeSumaCorrectamente() {
 		Jugador jugador = new Jugador();
 		jugador.recibirDinero(500);
 		
@@ -16,14 +16,14 @@ public class JugadorTest {
 	}
 	
 	@Test
-	public void elJugadorSeinicializaConSaldo100000Test() {
+	public void testElJugadorSeinicializaConSaldo100000() {
 		Jugador jugador = new Jugador();
 		
 		Assert.assertEquals(jugador.verSaldo(), 100000);
 	}
 	
 	@Test
-	public void elSaldoDelJugadorSeReduceCorrectamenteTest() {
+	public void testElSaldoDelJugadorSeReduceCorrectamente() {
 		Jugador jugador = new Jugador();
 		
 		jugador.quitarDinero(50000);
