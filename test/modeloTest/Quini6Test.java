@@ -1,4 +1,4 @@
-package test.modelo;
+package modeloTest;
 import modelo.Quini6;
 import org.junit.Assert;
 import org.junit.Test;

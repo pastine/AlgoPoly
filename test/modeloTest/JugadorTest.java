@@ -1,7 +1,9 @@
-package modelo;
+package modeloTest;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+
+import modelo.Jugador;
 
 class JugadorTest {
 
