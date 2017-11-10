@@ -1,9 +1,9 @@
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="TP2 - Java" basedir="." default="compilar">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="TP2 - Java" basedir="." default="correr.test.modelo">
 
-	<property name="modelo.src.dir" value="modelo/src" />
-	<property name="modelo.test.dir" value="modelo/test" />
-	<property name="build.modelo.clases.dir" value="build/modelo/clases"/>
-	<property name="build.modelo.test.dir" value="build/modelo/test" />
+	<property name="modelo.src.dir" value="src/modelo" />
+	<property name="modelo.test.dir" value="test/modelo" />
+	<property name="build.modelo.clases.dir" value="build/clases/modelo"/>
+	<property name="build.modelo.test.dir" value="build/test/modelo" />
 
 
 	<!-- agrupa todos los archivos en subdir de modelo/src que 
@@ -23,7 +23,7 @@
 		</filetype>
 	</path>
 
-
+	<!-- compila todas las clases del modelo -->
 	<target name="compilar.clases.modelo" description="Compila las clases del modelo">
 		<mkdir dir="${build.modelo.clases.dir}" />
 		<javac srcdir="${modelo.src.dir}" dstdir="${build.modelo.clases.dir}">
@@ -31,13 +31,31 @@
 		</javac>
 	</target>
 
+	<!-- compila todos los tests del modelo -->
 	<target name="compilar.test.modelo" description="Compila los tests del modelo">
 		<mkdir dir="${build.modelo.test.dir}" />
 		<javac srcdir="${modelo.test.dir}" dstdir="${build.modelo.test.dir}">
 			<classpath refid="modelo.test" />
 		</javac>
 	</target>
+	
+	<!-- llama a los targets que compilan los tests y las clases del modelo -->
+	<target name="compilar.modelo" depends="compilar.clases.modelo,compilar.test.modelo" />
 
+	<!-- corre los tests del modelo con junit -->
+	<target name="correr.test.modelo" depends="compilar.modelo">
+		<junit failurePropertyy="test.fail" showOutput="yes">
+			<formater type="failure" />
+			<batchtest>
+				<fileset dir="${build.modelo.test.dir}" inlcudes="**/*Test.class" />
+				<fileset dir="${build.modelo.test.dir}" inlcudes="**/*Prueba.class" />
+			</batchtest>	
+
+
+		</junit>
+	</target>
+
+	<!-- limpia el directorio -->
 	<target name="clear">
 		<delete dir="${build.modelo.clases.dir}" />
 		<delete dir="${build.modelo.test.dir}" />
