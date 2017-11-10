@@ -1,4 +1,4 @@
-package Modelo;
+package test.modelo;
 
 public class JugadorTest {
 
