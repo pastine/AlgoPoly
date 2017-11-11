@@ -19,8 +19,8 @@ public class Jugador {
 		saldo += dinero;
 	}
 	
-	public void quitarDinero(int cantidad) {
-		saldo -= cantidad;
+	public void quitarDinero(int dinero) {
+		saldo -= dinero;
 	}
 	
 	public void comprarTerreno(Terreno terreno) {
@@ -29,7 +29,7 @@ public class Jugador {
 		this.quitarDinero(costo);
 	}
 	
-	public boolean perteneceTerreno(Terreno terreno) {
+	public boolean esDueñoDeTerreno(Terreno terreno) {
 		return propiedades.contains(terreno);
 	}
 }

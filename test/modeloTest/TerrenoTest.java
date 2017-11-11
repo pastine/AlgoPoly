@@ -14,7 +14,7 @@ public class TerrenoTest {
 		Terreno bsAs = new Terreno();
 		Jugador jugador = new Jugador();
 		jugador.comprarTerreno(bsAs);
-		boolean pertenece = jugador.perteneceTerreno(bsAs);
+		boolean pertenece = jugador.esDueñoDeTerreno(bsAs);
 		Assert.assertTrue(pertenece);
 	}
 	
@@ -22,7 +22,7 @@ public class TerrenoTest {
 	public void testComprarTerrenoNoLePertenece() {
 		Terreno bsAs = new Terreno();
 		Jugador jugador = new Jugador();
-		boolean pertenece = jugador.perteneceTerreno(bsAs);
+		boolean pertenece = jugador.esDueñoDeTerreno(bsAs);
 		Assert.assertFalse(pertenece);
 	}
 }
