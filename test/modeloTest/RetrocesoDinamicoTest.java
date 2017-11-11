@@ -22,6 +22,12 @@ public class RetrocesoDinamicoTest {
 	}
 	
 	@Test
+	public void testDeberiaRetrocederTresCasillerosTirandoDadosConNumeroTres() {
+		RetrocesoDinamico retroceso = new RetrocesoDinamico();
+		Assert.assertEquals(retroceso.retroceder(3),3);
+	}
+	
+	@Test
 	public void testDeberiaRetrocederCuatroCasillerosTirandoDadosConNumeroCuatro() {
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
 		Assert.assertEquals(retroceso.retroceder(4),4);

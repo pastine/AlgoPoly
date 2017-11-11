@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import modelo.Casillero;
+import modelo.Jugador;
 
 public class CasilleroTest {
 
@@ -28,5 +29,23 @@ public class CasilleroTest {
 		Casillero actual = casillero1.avanzar(1);
 		Assert.assertEquals(casillero2, actual);
 	}
-
+	
+	@Test
+	public void testAgregarJugadorDeUnCasillero() {
+		Casillero casillero = new Casillero();
+		Jugador jugador = new Jugador();
+		casillero.agregarJugador(jugador);
+		Assert.assertTrue(casillero.jugador_esta_en_casillero(jugador));
+	}
+	
+	@Test 
+	public void testQuitarJugadorDeUnCasillero() {
+		Casillero casillero = new Casillero();
+		Jugador jugador = new Jugador();
+		casillero.agregarJugador(jugador);
+		casillero.quitarJugador(jugador);
+		Assert.assertFalse(casillero.jugador_esta_en_casillero(jugador));
+	}
+	
+	
 }

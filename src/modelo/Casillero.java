@@ -1,8 +1,13 @@
 package modelo;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
 public class Casillero {
 	//private Casillero anterior;
 	private Casillero siguiente;
+	private List<Jugador> jugadores = new ArrayList<Jugador>();
 	
 	public Casillero() {
 		//anterior = null;
@@ -20,4 +25,18 @@ public class Casillero {
 		}
 		return actual;
 	}
+	
+	public void agregarJugador(Jugador unJugador) {
+		jugadores.add(unJugador);
+		
+	}
+	
+	public void quitarJugador(Jugador unJugador) {
+		jugadores.remove(unJugador);
+	}
+	
+	public boolean jugador_esta_en_casillero(Jugador unJugador) {
+		return jugadores.contains(unJugador);
+	}
+	
 }
