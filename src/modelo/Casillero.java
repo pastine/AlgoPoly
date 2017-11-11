@@ -18,10 +18,14 @@ public class Casillero {
 		this.siguiente = casillero;
 	}
 	
+	public Casillero obtenerSiguiente() {
+		return siguiente;
+	}
+	
 	public Casillero avanzar(int pasosTotal) {
 		Casillero actual = this;
 		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados ++) {
-			actual = actual.siguiente;
+			actual = actual.obtenerSiguiente();
 		}
 		return actual;
 	}
