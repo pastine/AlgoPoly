@@ -39,7 +39,7 @@ public class Casillero {
 		jugadores.remove(unJugador);
 	}
 	
-	public boolean jugador_esta_en_casillero(Jugador unJugador) {
+	public boolean jugadorEstaEnCasillero(Jugador unJugador) {
 		return jugadores.contains(unJugador);
 	}
 	

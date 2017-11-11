@@ -61,7 +61,7 @@ public class CasilleroTest {
 		Casillero casillero = new Casillero();
 		Jugador jugador = new Jugador();
 		casillero.agregarJugador(jugador);
-		Assert.assertTrue(casillero.jugador_esta_en_casillero(jugador));
+		Assert.assertTrue(casillero.jugadorEstaEnCasillero(jugador));
 	}
 	
 	@Test 
@@ -70,7 +70,7 @@ public class CasilleroTest {
 		Jugador jugador = new Jugador();
 		casillero.agregarJugador(jugador);
 		casillero.quitarJugador(jugador);
-		Assert.assertFalse(casillero.jugador_esta_en_casillero(jugador));
+		Assert.assertFalse(casillero.jugadorEstaEnCasillero(jugador));
 	}
 	
 	

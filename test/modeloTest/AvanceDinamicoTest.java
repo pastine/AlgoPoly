@@ -12,11 +12,6 @@ import modelo.Jugador;
 
 public class AvanceDinamicoTest {
 
-	@Test
-	public void testCrearAvanceDinamicoNoDevuelveNULL() {
-		AvanceDinamico avance = new AvanceDinamico();
-		Assert.assertNotNull(avance);
-	}
 	
 	@Test
 	public void testDeberiaAvanzarDosCasillerosTirandoDadosConNumeroDos(){
@@ -33,10 +28,10 @@ public class AvanceDinamicoTest {
 		casillero3.agregarSiguiente(casillero4);
 		avance.avanzar(jugador,casillero1,2);
 		
-		Assert.assertFalse(casillero1.jugador_esta_en_casillero(jugador));
-		Assert.assertFalse(casillero2.jugador_esta_en_casillero(jugador));
-		Assert.assertTrue(casillero3.jugador_esta_en_casillero(jugador));
-		Assert.assertFalse(casillero4.jugador_esta_en_casillero(jugador));
+		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
+		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
+		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
+		Assert.assertFalse(casillero4.jugadorEstaEnCasillero(jugador));
 		
 	}
 	

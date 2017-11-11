@@ -8,12 +8,7 @@ import modelo.Jugador;
 
 public class CarcelTest {
 
-	@Test
-	public void testCrearCarcelNoDevuelveNULL() {
-		Carcel carcel = new Carcel();
-		Assert.assertNotNull(carcel);
-	}
-	
+
 	@Test
 	public void testJugadorApresadoIntentaAvanzarYNoPuede() {
 		Carcel carcel = new Carcel();

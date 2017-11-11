@@ -8,12 +8,7 @@ import modelo.Terreno;
 
 public class TerrenoTest {
 
-	@Test
-	public void testCrearTerrenoNoDevuelveNULL() {
-		Terreno bsAs = new Terreno();
-		Assert.assertNotNull(bsAs);
-	}
-	
+
 	@Test
 	public void testComprarTerrenoLePertenece() {
 		Terreno bsAs = new Terreno();
