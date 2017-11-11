@@ -11,7 +11,7 @@ public class Jugador {
 		propiedades = new ArrayList<Terreno>();
 	}
 	
-	public int verSaldo() {
+	public int obtenerSaldo() {
 		return saldo;
 	}
 	
@@ -25,11 +25,11 @@ public class Jugador {
 	
 	public void comprarTerreno(Terreno terreno) {
 		propiedades.add(terreno);
-		int costo = terreno.obtenerCosto();
+		int costo = terreno.obtenerPrecio();
 		this.quitarDinero(costo);
 	}
 	
-	public boolean esDueñoDeTerreno(Terreno terreno) {
+	public boolean esDuenioDeTerreno(Terreno terreno) {
 		return propiedades.contains(terreno);
 	}
 }

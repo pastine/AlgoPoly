@@ -3,11 +3,11 @@ package modelo;
 public class Terreno {
 	private int precio;
 	
-	public Terreno() {
-		precio = 20000;
+	public Terreno(int unPrecio) {
+		this.precio = unPrecio;
 	}
 	
-	public int obtenerCosto() {
+	public int obtenerPrecio() {
 		return precio;
 	}
 }

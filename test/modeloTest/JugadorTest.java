@@ -12,14 +12,14 @@ public class JugadorTest {
 		Jugador jugador = new Jugador();
 		jugador.recibirDinero(500);
 		
-		Assert.assertEquals(jugador.verSaldo(),100500);
+		Assert.assertEquals(jugador.obtenerSaldo(),100500);
 	}
 	
 	@Test
 	public void testElJugadorSeinicializaConSaldo100000() {
 		Jugador jugador = new Jugador();
 		
-		Assert.assertEquals(jugador.verSaldo(), 100000);
+		Assert.assertEquals(jugador.obtenerSaldo(), 100000);
 	}
 	
 	@Test
@@ -28,7 +28,7 @@ public class JugadorTest {
 		
 		jugador.quitarDinero(50000);
 		
-		Assert.assertEquals(jugador.verSaldo(),50000);
+		Assert.assertEquals(jugador.obtenerSaldo(),50000);
 	}
 
 }
