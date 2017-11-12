@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import modelo.Jugador;
+import modelo.Terreno;
 
 public class JugadorTest {
 
@@ -30,5 +31,18 @@ public class JugadorTest {
 		
 		Assert.assertEquals(jugador.obtenerSaldo(),50000);
 	}
-
+	
+	@Test
+	public void testLaCantidadDePropiedadesEnJugadorSinPropiedadesEsCero() {
+		Jugador jugador = new Jugador();
+		Assert.assertEquals(jugador.obtenerCantidadDePropiedades(),0);
+	}
+	
+	@Test
+	public void testLaCantidadDePropiedadesEnJugadorTrasComprarEsUno() {
+		Jugador jugador = new Jugador();
+		Terreno bsAs = new Terreno(1000);
+		jugador.comprarTerreno(bsAs);
+		Assert.assertEquals(jugador.obtenerCantidadDePropiedades(),1);
+	}
 }

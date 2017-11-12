@@ -15,6 +15,10 @@ public class Jugador {
 		return saldo;
 	}
 	
+	public int obtenerCantidadDePropiedades() {
+		return propiedades.size();
+	}
+	
 	public void recibirDinero(int dinero) {
 		saldo += dinero;
 	}
