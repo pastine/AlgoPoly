@@ -12,11 +12,15 @@ public class Carcel {
 	}
 	
 	public void apresarJugador(Jugador unJugador) {
-		prisioneros.put(unJugador, 1);
+		prisioneros.put(unJugador, 3);
 	}
 	
 	public boolean estaEnLaCarcel(Jugador jugador) {
-		int esta = this.prisioneros.getOrDefault(jugador,0);
-		return (esta > 0);
+		int turnosRestantes = turnosQueLeFaltan(jugador);
+		return (turnosRestantes > 0);
+	}
+	
+	public int turnosQueLeFaltan(Jugador jugador){
+		return this.prisioneros.getOrDefault(jugador, 0);
 	}
 }
