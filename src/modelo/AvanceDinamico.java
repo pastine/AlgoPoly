@@ -2,14 +2,14 @@ package modelo;
 
 public class AvanceDinamico {
 	
-	public void avanzar(Jugador unJugador, Casillero casillero, int numero_obtenido) {
+	public void avanzar(Jugador unJugador, Casillero casillero, int numeroObtenido) {
 		casillero.quitarJugador(unJugador);
-		if (numero_obtenido>=1 && numero_obtenido<=6) {
-			casillero.avanzar(numero_obtenido-2).agregarJugador(unJugador);
+		if (numeroObtenido>=1 && numeroObtenido<=6) {
+			casillero.avanzar(numeroObtenido-2).agregarJugador(unJugador);
 		}
-		if (numero_obtenido>=7 && numero_obtenido<=10) {
+		if (numeroObtenido>=7 && numeroObtenido<=10) {
 			int saldo = unJugador.obtenerSaldo();
-			casillero.avanzar(saldo%numero_obtenido).agregarJugador(unJugador);
+			casillero.avanzar(saldo%numeroObtenido).agregarJugador(unJugador);
 		}
 		
 	}
