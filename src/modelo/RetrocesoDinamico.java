@@ -4,7 +4,14 @@ public class RetrocesoDinamico {
 
 	public void retroceder(Jugador unJugador, Casillero casillero, int numeroObtenido) {
 		casillero.quitarJugador(unJugador);
-		casillero.retroceder(numeroObtenido-2).agregarJugador(unJugador);
+		if (numeroObtenido>=7 && numeroObtenido<=10) {
+			int saldo = unJugador.obtenerSaldo();
+			casillero.retroceder(saldo%numeroObtenido).agregarJugador(unJugador);
+		}
+		if (numeroObtenido>=11 && numeroObtenido<=12) {
+			casillero.retroceder(numeroObtenido-2).agregarJugador(unJugador);
+		}
+		
 	}
 	
 }
