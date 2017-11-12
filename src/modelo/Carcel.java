@@ -26,10 +26,19 @@ public class Carcel {
 	
 	public boolean cobrarFianza(Jugador jugador) {
 		int turnosRestantes = turnosQueLeFaltan(jugador);
-		if (turnosRestantes > 2)
+		if (turnosRestantes > 2 || turnosRestantes == 0)
 			return false;
 		jugador.quitarDinero(45000);
 		prisioneros.remove(jugador);
 		return true;
+	}
+
+	public void restarDiaDeCondena(){
+		for (HashMap.Entry<Jugador, Integer> prisionero : prisioneros.entrySet()) {
+			prisioneros.put(prisionero.getKey(), prisionero.getValue() - 1);
+			if (prisionero.getValue() < 1){
+				prisioneros.remove(prisionero.getKey());
+			}
+		}
 	}
 }

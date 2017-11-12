@@ -40,4 +40,11 @@ public class CarcelTest {
 		carcel.apresarJugador(jugador);
 		Assert.assertFalse(jugador.pagarFianza(carcel));
 	}
+
+	@Test
+	public void testJugadorNoPuedePagarFianzaSiNoEstaPreso() {
+		Carcel carcel = new Carcel();
+		Jugador jugador = new Jugador();
+		Assert.assertFalse(jugador.pagarFianza(carcel));
+	}
 }
