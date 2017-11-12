@@ -19,10 +19,10 @@
 1ra Entrega (16 de Noviembre)
 - [X] Agregar .gitignore para las clases compiladas
 - [X] Set up de Travis para integración continua
-- [ ] Un jugador cae en Quini 6 por primera vez. Verificar que su capital se incrementa en $50000. 
-- [ ] Un jugador cae en Quini 6 por segunda vez. Verificar que su capital se incrementa en $30000.
-- [ ] Un jugador cae en Quini 6 más de dos veces. Verificar que su capital no se incrementa.
-- [ ] Un jugador cae en un Barrio, se adueña de este. Verificamos que este jugador es el propietario.
+- [X] Un jugador cae en Quini 6 por primera vez. Verificar que su capital se incrementa en $50000. 
+- [X] Un jugador cae en Quini 6 por segunda vez. Verificar que su capital se incrementa en $30000.
+- [X] Un jugador cae en Quini 6 más de dos veces. Verificar que su capital no se incrementa.
+- [X] Un jugador cae en un Barrio, se adueña de este. Verificamos que este jugador es el propietario.
 - [ ] Un jugador cae en la Cárcel, no puede ejecutar una acción. Verificar que no puede desplazarse.
 - [ ] Un jugador cae en la Cárcel, puede pagar la fianza si el turno es 2 o 3. Verificar que luego de esto puede moverse.
 - [ ] Un jugador cae en la Cárcel, no puede pagar la fianza por falta de fondos siendo el turno es 2 o 3. Verificar que luego de esto no se puede moverse.
