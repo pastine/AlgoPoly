@@ -8,7 +8,6 @@ import modelo.Jugador;
 
 public class CarcelTest {
 
-
 	@Test
 	public void testJugadorApresadoIntentaAvanzarYNoPuede() {
 		Carcel carcel = new Carcel();
@@ -33,5 +32,12 @@ public class CarcelTest {
 		
 		Assert.assertFalse(carcel.estaEnLaCarcel(jugador));
 	}
-
+	
+	@Test
+	public void testJugadorNoPuedePagarFianzaEnElPrimerTurnoPreso() {
+		Carcel carcel = new Carcel();
+		Jugador jugador = new Jugador();
+		carcel.apresarJugador(jugador);
+		Assert.assertFalse(jugador.pagarFianza(carcel));
+	}
 }

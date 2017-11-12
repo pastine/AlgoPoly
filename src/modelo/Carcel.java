@@ -23,4 +23,13 @@ public class Carcel {
 	public int turnosQueLeFaltan(Jugador jugador){
 		return this.prisioneros.getOrDefault(jugador, 0);
 	}
+	
+	public boolean cobrarFianza(Jugador jugador) {
+		int turnosRestantes = turnosQueLeFaltan(jugador);
+		if (turnosRestantes > 2)
+			return false;
+		jugador.quitarDinero(45000);
+		prisioneros.remove(jugador);
+		return true;
+	}
 }

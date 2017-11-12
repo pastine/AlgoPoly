@@ -32,5 +32,9 @@ public class Jugador {
 	public boolean esDuenioDeTerreno(Terreno terreno) {
 		return propiedades.contains(terreno);
 	}
+	
+	public boolean pagarFianza(Carcel carcel) {
+		return carcel.cobrarFianza(this);
+	}
 
 }
