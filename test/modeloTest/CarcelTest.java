@@ -47,4 +47,34 @@ public class CarcelTest {
 		Jugador jugador = new Jugador();
 		Assert.assertFalse(jugador.pagarFianza(carcel));
 	}
+	
+	@Test
+	public void testJugadorPuedePagarFianzaEnElSegundoTurnoPreso() {
+		Carcel carcel = new Carcel();
+		Jugador jugador = new Jugador();
+		carcel.apresarJugador(jugador);
+		carcel.restarDiaDeCondena();
+		Assert.assertTrue(jugador.pagarFianza(carcel));
+	}
+	
+	@Test
+	public void testJugadorPuedePagarFianzaEnElTercerTurnoPreso() {
+		Carcel carcel = new Carcel();
+		Jugador jugador = new Jugador();
+		carcel.apresarJugador(jugador);
+		carcel.restarDiaDeCondena();
+		carcel.restarDiaDeCondena();
+		Assert.assertTrue(jugador.pagarFianza(carcel));
+	}
+	
+	@Test
+	public void testJugadorNoEstaPresoAlCuartoTurnoPreso() {
+		Carcel carcel = new Carcel();
+		Jugador jugador = new Jugador();
+		carcel.apresarJugador(jugador);
+		carcel.restarDiaDeCondena();
+		carcel.restarDiaDeCondena();
+		carcel.restarDiaDeCondena();
+		Assert.assertFalse(carcel.estaEnLaCarcel(jugador));
+	}
 }
