@@ -32,4 +32,5 @@ public class Jugador {
 	public boolean esDuenioDeTerreno(Terreno terreno) {
 		return propiedades.contains(terreno);
 	}
+
 }

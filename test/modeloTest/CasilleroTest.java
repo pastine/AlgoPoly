@@ -16,6 +16,14 @@ public class CasilleroTest {
 	}
 	
 	@Test
+	public void testRetroceder1CasilleroNoEsElMismoCasillero() {
+		Casillero casillero = new Casillero();
+		Casillero actual = casillero.retroceder(1);
+		Assert.assertNotEquals(casillero, actual);
+	}
+	
+	
+	@Test
 	public void testAgregarSiguienteEnCasilleroAgregaUnSiguiente() {
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -25,12 +33,32 @@ public class CasilleroTest {
 	}
 	
 	@Test
+	public void testAgregarAnteriorEnCasilleroAgregaUnAnterior() {
+		Casillero casillero1 = new Casillero();
+		Casillero casillero2 = new Casillero();
+		casillero2.agregarAnterior(casillero1);
+		Casillero anterior = casillero2.obtenerAnterior();
+		Assert.assertEquals(casillero1, anterior);
+	}
+	
+	
+	
+	@Test
 	public void testAvanzar1CasilleroEsElSiguienteCasillero() {
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		casillero1.agregarSiguiente(casillero2);
 		Casillero actual = casillero1.avanzar(1);
 		Assert.assertEquals(casillero2, actual);
+	}
+	
+	@Test
+	public void testRetroceder1CasilleroEsElAnteriorCasillero() {
+		Casillero casillero1 = new Casillero();
+		Casillero casillero2 = new Casillero();
+		casillero2.agregarAnterior(casillero1);
+		Casillero actual = casillero2.retroceder(1);
+		Assert.assertEquals(casillero1, actual);
 	}
 	
 	@Test
