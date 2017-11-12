@@ -16,9 +16,10 @@ public class Casillero {
 	
 	public void agregarSiguiente(Casillero casillero) {
 		this.siguiente = casillero;
+		casillero.agregarAnterior(this);
 	}
 	
-	public void agregarAnterior(Casillero casillero) {
+	private void agregarAnterior(Casillero casillero) {
 		this.anterior = casillero;
 	}
 	

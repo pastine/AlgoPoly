@@ -2,9 +2,8 @@ package modelo;
 
 public class RetrocesoDinamico {
 
-	public int retroceder(int i) {
-
-		return i;
+	public void retroceder(Jugador unJugador, Casillero casillero, int numero_obtenido) {
+			
 	}
 	
 }
