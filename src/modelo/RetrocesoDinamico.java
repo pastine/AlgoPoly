@@ -11,7 +11,10 @@ public class RetrocesoDinamico {
 		if (numeroObtenido>=11 && numeroObtenido<=12) {
 			casillero.retroceder(numeroObtenido-2).agregarJugador(unJugador);
 		}
-		
+		if (numeroObtenido>=2 && numeroObtenido<=6) {
+			int numeroCasilleros = numeroObtenido - unJugador.obtenerCantidadDePropiedades();
+			casillero.retroceder(numeroCasilleros).agregarJugador(unJugador);
+		}
 	}
 	
 }
