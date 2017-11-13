@@ -4,29 +4,44 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import modelo.Casillero;
+import modelo.Jugador;
 
 public class CasilleroTest {
-
-	@Test
-	public void testCrearCasilleroNoDevuelevNULL() {
-		Casillero casillero = new Casillero();
-		Assert.assertNotNull(casillero);
-	}
 	
 	@Test
-	public void testAvanzar1CasilleroNoEsElMismoCasillero() {
-		Casillero casillero = new Casillero();
-		Casillero actual = casillero.avanzar(1);
-		Assert.assertNotEquals(casillero, actual);
-	}
-	
-	@Test
-	public void testAvanzar1CasilleroEsElSiguienteCasillero() {
+	public void testAgregarSiguienteEnCasilleroAgregaUnSiguiente() {
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		casillero1.agregarSiguiente(casillero2);
-		Casillero actual = casillero1.avanzar(1);
-		Assert.assertEquals(casillero2, actual);
+		Casillero siguiente = casillero1.obtenerSiguiente();
+		Assert.assertEquals(casillero2, siguiente);
 	}
-
+	
+	@Test
+	public void testAgregarAnteriorEnCasilleroAgregaUnAnterior() {
+		Casillero casillero1 = new Casillero();
+		Casillero casillero2 = new Casillero();
+		casillero1.agregarSiguiente(casillero2);
+		Casillero anterior = casillero2.obtenerAnterior();
+		Assert.assertEquals(casillero1, anterior);
+	}
+	
+	@Test
+	public void testAgregarJugadorDeUnCasillero() {
+		Casillero casillero = new Casillero();
+		Jugador jugador = new Jugador();
+		casillero.agregarJugador(jugador);
+		Assert.assertTrue(casillero.jugadorEstaEnCasillero(jugador));
+	}
+	
+	@Test 
+	public void testQuitarJugadorDeUnCasillero() {
+		Casillero casillero = new Casillero();
+		Jugador jugador = new Jugador();
+		casillero.agregarJugador(jugador);
+		casillero.quitarJugador(jugador);
+		Assert.assertFalse(casillero.jugadorEstaEnCasillero(jugador));
+	}
+	
+	
 }
