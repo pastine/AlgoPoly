@@ -7,14 +7,6 @@ import modelo.Carcel;
 import modelo.Jugador;
 
 public class CarcelTest {
-
-	@Test
-	public void testJugadorApresadoIntentaAvanzarYNoPuede() {
-		Carcel carcel = new Carcel();
-		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
-		Assert.assertNotNull(carcel);
-	}
 	
 	@Test
 	public void testApresarJugadorQuedaPreso() {
