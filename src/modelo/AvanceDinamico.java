@@ -12,8 +12,11 @@ public class AvanceDinamico {
 			casillero.avanzar(saldo%numeroObtenido).agregarJugador(unJugador);
 		}
 		if (numeroObtenido>=11 && numeroObtenido<=12) {
-			int cantidadPropiedades = unJugador.obtenerCantidadDePropiedades();
-			casillero.avanzar(numeroObtenido - cantidadPropiedades).agregarJugador(unJugador);
+			int numeroCasilleros = numeroObtenido - unJugador.obtenerCantidadDePropiedades();
+			if (numeroCasilleros<0) {
+			    numeroCasilleros = 0;
+            }
+			casillero.avanzar(numeroCasilleros).agregarJugador(unJugador);
 		}
 	}
 	

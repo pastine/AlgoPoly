@@ -328,4 +328,27 @@ public class AvanceDinamicoTest {
         Assert.assertTrue(casillero8.jugadorEstaEnCasillero(jugador));
 
     }
+
+    @Test
+    public void testJugadorAvanzaCeroCasillerosObteniendoConNumeroDoceYConJugadorConTrecePropiedades() {
+        Jugador jugador = new Jugador();
+        int numeroPropiedades = 13;
+        for (int i = 0; i < numeroPropiedades; i++) {
+            jugador.comprarTerreno(new Terreno(1));
+        }
+
+        AvanceDinamico avance = new AvanceDinamico();
+
+        Casillero casillero1 = new Casillero();
+        Casillero casillero2 = new Casillero();
+
+        casillero1.agregarSiguiente(casillero2);
+
+        casillero1.agregarJugador(jugador);
+
+        avance.avanzar(jugador,casillero1,12);
+        Assert.assertTrue(casillero1.jugadorEstaEnCasillero(jugador));
+        Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
+
+    }
 }
