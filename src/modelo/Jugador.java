@@ -13,6 +13,7 @@ public class Jugador {
 	}
 	public void ponerEnCasillero(Casillero casillero) {
 		this.casilleroActual = casillero;
+		this.casilleroActual.agregarJugador(this);
 	}
 	
 	public void avanzar(int pasosTotal) {
