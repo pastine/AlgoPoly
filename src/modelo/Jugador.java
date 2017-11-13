@@ -5,10 +5,28 @@ import java.util.ArrayList;
 public class Jugador {
 	private int saldo;
 	private ArrayList<Terreno> propiedades;
+	private Casillero casilleroActual;
 	
 	public Jugador() {
 		saldo = 100000;
 		propiedades = new ArrayList<Terreno>();
+	}
+	public void ponerEnCasillero(Casillero casillero) {
+		this.casilleroActual = casillero;
+	}
+	
+	public void avanzar(int pasosTotal) {
+		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados++) {
+			casilleroActual = casilleroActual.obtenerSiguiente();
+		}
+		casilleroActual.agregarJugador(this);
+	}
+	
+	public void retroceder(int pasosTotal) {
+		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados++) {
+			casilleroActual = casilleroActual.obtenerAnterior();
+		}
+		casilleroActual.agregarJugador(this);
 	}
 	
 	public int obtenerSaldo() {

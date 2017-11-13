@@ -31,22 +31,6 @@ public class Casillero {
 		return anterior;
 	}
 	
-	public Casillero avanzar(int pasosTotal) {
-		Casillero actual = this;
-		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados ++) {
-			actual = actual.obtenerSiguiente();
-		}
-		return actual;
-	}
-	
-	public Casillero retroceder(int pasosTotal) {
-		Casillero actual = this;
-		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados ++) {
-			actual = actual.obtenerAnterior();
-		}
-		return actual;
-	}
-	
 	public void agregarJugador(Jugador unJugador) {
 		jugadores.add(unJugador);
 		

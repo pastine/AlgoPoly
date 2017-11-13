@@ -23,6 +23,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
 		
+		jugador.ponerEnCasillero(casillero1);
+		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		
@@ -46,6 +48,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
 		Casillero casillero4 = new Casillero();
+		
+		jugador.ponerEnCasillero(casillero1);
 		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
@@ -71,6 +75,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero3 = new Casillero();
 		Casillero casillero4 = new Casillero();
 		Casillero casillero5 = new Casillero();
+		
+		jugador.ponerEnCasillero(casillero1);
 		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
@@ -99,6 +105,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero4 = new Casillero();
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
+		
+		jugador.ponerEnCasillero(casillero1);
 		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
@@ -131,6 +139,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
+		
+		jugador.ponerEnCasillero(casillero1);
 		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
@@ -167,6 +177,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero7 = new Casillero();
 		Casillero casillero8 = new Casillero();
 		
+		jugador.ponerEnCasillero(casillero1);
+		
 		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
@@ -198,6 +210,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
+		
+		jugador.ponerEnCasillero(casillero1);
 				
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
@@ -221,6 +235,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero3 = new Casillero();
 		Casillero casillero4 = new Casillero();
 		
+		jugador.ponerEnCasillero(casillero1);
+		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
@@ -243,6 +259,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
+		
+		jugador.ponerEnCasillero(casillero1);
 				
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
@@ -270,6 +288,8 @@ public class AvanceDinamicoTest {
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
 		Casillero casillero4 = new Casillero();
+		
+		jugador.ponerEnCasillero(casillero1);
 
 
 		casillero1.agregarSiguiente(casillero2);
@@ -305,6 +325,8 @@ public class AvanceDinamicoTest {
         Casillero casillero6 = new Casillero();
         Casillero casillero7 = new Casillero();
         Casillero casillero8 = new Casillero();
+        
+        jugador.ponerEnCasillero(casillero1);
 
         casillero1.agregarSiguiente(casillero2);
         casillero2.agregarSiguiente(casillero3);
@@ -341,6 +363,8 @@ public class AvanceDinamicoTest {
 
         Casillero casillero1 = new Casillero();
         Casillero casillero2 = new Casillero();
+        
+        jugador.ponerEnCasillero(casillero1);
 
         casillero1.agregarSiguiente(casillero2);
 

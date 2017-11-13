@@ -6,17 +6,17 @@ public class RetrocesoDinamico {
 		casillero.quitarJugador(unJugador);
 		if (numeroObtenido>=7 && numeroObtenido<=10) {
 			int saldo = unJugador.obtenerSaldo();
-			casillero.retroceder(saldo%numeroObtenido).agregarJugador(unJugador);
+			unJugador.retroceder(saldo%numeroObtenido);
 		}
 		if (numeroObtenido>=11 && numeroObtenido<=12) {
-			casillero.retroceder(numeroObtenido-2).agregarJugador(unJugador);
+			unJugador.retroceder(numeroObtenido-2);
 		}
 		if (numeroObtenido>=2 && numeroObtenido<=6) {
 			int numeroCasilleros = numeroObtenido - unJugador.obtenerCantidadDePropiedades();
 			if (numeroCasilleros<0) {
 				numeroCasilleros = 0;
 			}
-			casillero.retroceder(numeroCasilleros).agregarJugador(unJugador);
+			unJugador.retroceder(numeroCasilleros);
 		}
 	}
 	

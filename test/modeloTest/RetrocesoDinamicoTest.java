@@ -27,7 +27,7 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
 		Casillero casillero8 = new Casillero();
-
+		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
@@ -38,6 +38,8 @@ public class RetrocesoDinamicoTest {
 
 
 		casillero8.agregarJugador(jugador);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 		retroceso.retroceder(jugador,casillero8,2);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -66,7 +68,7 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
 		Casillero casillero8 = new Casillero();
-
+		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
@@ -75,6 +77,7 @@ public class RetrocesoDinamicoTest {
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
 
+		jugador.ponerEnCasillero(casillero8);
 
 		casillero8.agregarJugador(jugador);
 
@@ -107,7 +110,7 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
 		Casillero casillero8 = new Casillero();
-
+		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
@@ -115,6 +118,8 @@ public class RetrocesoDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 
 		casillero8.agregarJugador(jugador);
@@ -152,6 +157,8 @@ public class RetrocesoDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 
 		casillero8.agregarJugador(jugador);
@@ -194,6 +201,8 @@ public class RetrocesoDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 
 		casillero8.agregarJugador(jugador);
@@ -239,6 +248,8 @@ public class RetrocesoDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 
 		casillero8.agregarJugador(jugador);
@@ -277,6 +288,8 @@ public class RetrocesoDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 		
 		casillero8.agregarJugador(jugador);
@@ -314,6 +327,8 @@ public class RetrocesoDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 		
 		casillero8.agregarJugador(jugador);
@@ -351,6 +366,8 @@ public class RetrocesoDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 		
 		casillero8.agregarJugador(jugador);
@@ -388,6 +405,8 @@ public class RetrocesoDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
+		
+		jugador.ponerEnCasillero(casillero8);
 
 		
 		casillero8.agregarJugador(jugador);
@@ -435,6 +454,8 @@ public class RetrocesoDinamicoTest {
 		casillero9.agregarSiguiente(casillero10);
 		casillero10.agregarSiguiente(casillero11);
 		
+		jugador.ponerEnCasillero(casillero11);
+		
 		casillero11.agregarJugador(jugador);
 		
 		retroceso.retroceder(jugador,casillero11,11);
@@ -479,6 +500,8 @@ public class RetrocesoDinamicoTest {
 		casillero8.agregarSiguiente(casillero9);
 		casillero9.agregarSiguiente(casillero10);
 		casillero10.agregarSiguiente(casillero11);
+		
+		jugador.ponerEnCasillero(casillero11);
 		
 		casillero11.agregarJugador(jugador);
 		
