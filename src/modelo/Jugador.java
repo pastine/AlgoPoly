@@ -12,8 +12,8 @@ public class Jugador {
 		propiedades = new ArrayList<Terreno>();
 	}
 	public void ponerEnCasillero(Casillero casillero) {
-		casilleroActual = casillero;
-		casilleroActual.agregarJugador(this);
+		this.casilleroActual = casillero;
+		this.casilleroActual.agregarJugador(this);
 	}
 	
 	public void avanzar(int pasosTotal) {

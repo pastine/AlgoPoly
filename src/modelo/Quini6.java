@@ -16,9 +16,9 @@ public class Quini6 {
     }
 
     public void darPremio(Jugador unJugador) {
-        int numero_visitas = visitas.getOrDefault(unJugador, 0) + 1;
-        visitas.put(unJugador, numero_visitas);
-        unJugador.recibirDinero(premio.getOrDefault(numero_visitas,0));
+        int numeroVisitas = visitas.getOrDefault(unJugador, 0) + 1;
+        visitas.put(unJugador, numeroVisitas);
+        unJugador.recibirDinero(premio.getOrDefault(numeroVisitas,0));
     }
 
 
