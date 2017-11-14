@@ -6,10 +6,12 @@ public class Jugador {
 	private int saldo;
 	private ArrayList<Terreno> propiedades;
 	private Casillero casilleroActual;
+	private EstadoDeMovimientoDelJugador estadoMovimiento;
 	
 	public Jugador() {
 		saldo = 100000;
 		propiedades = new ArrayList<Terreno>();
+		estadoMovimiento = new EstadoLibre();
 	}
 	public void ponerEnCasillero(Casillero casillero) {
 		this.casilleroActual = casillero;
@@ -17,19 +19,11 @@ public class Jugador {
 	}
 	
 	public void avanzar(int pasosTotal) {
-		casilleroActual.quitarJugador(this);
-		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados++) {
-			casilleroActual = casilleroActual.obtenerSiguiente();
-		}
-		casilleroActual.agregarJugador(this);
+		estadoMovimiento.avanzar(this,	casilleroActual, pasosTotal);
 	}
 	
 	public void retroceder(int pasosTotal) {
-		casilleroActual.quitarJugador(this);
-		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados++) {
-			casilleroActual = casilleroActual.obtenerAnterior();
-		}
-		casilleroActual.agregarJugador(this);
+		estadoMovimiento.retroceder(this,	casilleroActual, pasosTotal);
 	}
 	
 	public int obtenerSaldo() {
@@ -62,4 +56,11 @@ public class Jugador {
 		return carcel.cobrarFianza(this);
 	}
 
+	public void cambiarEstadoAPreso(){
+		this.estadoMovimiento = new EstadoPreso();
+	}
+
+	public void cambiarEstadoALibre(){
+		this.estadoMovimiento = new EstadoLibre();
+	}
 }

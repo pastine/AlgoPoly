@@ -13,6 +13,7 @@ public class Carcel {
 	
 	public void apresarJugador(Jugador unJugador) {
 		prisioneros.put(unJugador, 3);
+		unJugador.cambiarEstadoAPreso();
 	}
 	
 	public boolean estaEnLaCarcel(Jugador jugador) {
@@ -37,6 +38,7 @@ public class Carcel {
 		for (HashMap.Entry<Jugador, Integer> prisionero : prisioneros.entrySet()) {
 			prisioneros.put(prisionero.getKey(), prisionero.getValue() - 1);
 			if (prisionero.getValue() < 1){
+				prisionero.getKey().cambiarEstadoALibre();
 				prisioneros.remove(prisionero.getKey());
 			}
 		}
