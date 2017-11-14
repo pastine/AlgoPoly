@@ -48,20 +48,20 @@ public class JugadorTest {
 	}
 	
 	@Test
-	public void testAvanzar1PasoElJugadorEstaEnElSiguienteCasillero() {
+	public void testAvanzar2PasoElJugadorEstaEnElSiguienteCasillero() {
 		Jugador jugador = new Jugador();
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
 		
 		jugador.ponerEnCasillero(casillero1);
-		casillero1.agregarJugador(jugador);
 		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		
 		jugador.avanzar(2);
-		
+		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
+		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
 	}
 	
@@ -71,7 +71,6 @@ public class JugadorTest {
 		Casillero casillero = new Casillero();
 		
 		jugador.ponerEnCasillero(casillero);
-		casillero.agregarJugador(jugador);
 		
 		jugador.avanzar(0);
 		
@@ -86,7 +85,6 @@ public class JugadorTest {
 		Casillero casillero3 = new Casillero();
 		
 		jugador.ponerEnCasillero(casillero3);
-		casillero3.agregarJugador(jugador);
 		
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
@@ -94,6 +92,8 @@ public class JugadorTest {
 		jugador.retroceder(2);
 		
 		Assert.assertTrue(casillero1.jugadorEstaEnCasillero(jugador));
+		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
+		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
 	}
 	
 	@Test

@@ -12,11 +12,12 @@ public class Jugador {
 		propiedades = new ArrayList<Terreno>();
 	}
 	public void ponerEnCasillero(Casillero casillero) {
-		this.casilleroActual = casillero;
-		this.casilleroActual.agregarJugador(this);
+		casilleroActual = casillero;
+		casilleroActual.agregarJugador(this);
 	}
 	
 	public void avanzar(int pasosTotal) {
+		casilleroActual.quitarJugador(this);
 		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados++) {
 			casilleroActual = casilleroActual.obtenerSiguiente();
 		}
@@ -24,6 +25,7 @@ public class Jugador {
 	}
 	
 	public void retroceder(int pasosTotal) {
+		casilleroActual.quitarJugador(this);
 		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados++) {
 			casilleroActual = casilleroActual.obtenerAnterior();
 		}
