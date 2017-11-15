@@ -29,9 +29,14 @@ public class Carcel {
 		int turnosRestantes = turnosQueLeFaltan(jugador);
 		if (turnosRestantes > 2 || turnosRestantes == 0)
 			return false;
-		jugador.quitarDinero(45000);
-		prisioneros.remove(jugador);
-		return true;
+		try {
+			jugador.quitarDinero(45000);
+			prisioneros.remove(jugador);
+			jugador.cambiarEstadoALibre();
+			return true;
+		} catch (SaldoInsuficienteException e) {
+			return false;
+		}
 	}
 
 	public void restarDiaDeCondena(){
