@@ -3,7 +3,6 @@ package modelo;
 public class AvanceDinamico {
 	
 	public void avanzar(Jugador unJugador, Casillero casillero, int numeroObtenido) {
-		casillero.quitarJugador(unJugador);
 		if (numeroObtenido>=1 && numeroObtenido<=6) {
 			unJugador.avanzar(numeroObtenido-2);
 		}

@@ -3,7 +3,6 @@ package modelo;
 public class RetrocesoDinamico {
 
 	public void retroceder(Jugador unJugador, Casillero casillero, int numeroObtenido) {
-		casillero.quitarJugador(unJugador);
 		if (numeroObtenido>=7 && numeroObtenido<=10) {
 			int saldo = unJugador.obtenerSaldo();
 			unJugador.retroceder(saldo%numeroObtenido);
