@@ -1,13 +1,16 @@
 package modeloTest;
 
+import modelo.*;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
 
-import modelo.Casillero;
-import modelo.Jugador;
-import modelo.Terreno;
+import org.junit.rules.ExpectedException;
 
 public class JugadorTest {
+
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
 
 	@Test
 	public void testSumarPlataAUnJugadorLeSumaCorrectamente() {
@@ -31,6 +34,14 @@ public class JugadorTest {
 		jugador.quitarDinero(50000);
 		
 		Assert.assertEquals(jugador.obtenerSaldo(),50000);
+	}
+
+	@Test
+	public void testReducirLaCantidadDeDineroDelJugadorEnMasDeSuSaldoLanzaSaldoInsuficienteException() {
+		Jugador jugador = new Jugador();
+
+		thrown.expect(SaldoInsuficienteException.class);
+		jugador.quitarDinero(500000);
 	}
 	
 	@Test

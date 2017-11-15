@@ -39,6 +39,9 @@ public class Jugador {
 	}
 	
 	public void quitarDinero(int dinero) {
+		if(dinero > this.obtenerSaldo()){
+			throw new SaldoInsuficienteException();
+		}
 		saldo -= dinero;
 	}
 	
