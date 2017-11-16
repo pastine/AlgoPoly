@@ -12,7 +12,7 @@
 	<property name="coverage.xml.dir" location="${reports.dir}/cobertura-xml" />
 	<property name="coverage.summaryxml.dir" location="${reports.dir}/cobertura-summary-xml" />
 	<property name="coverage.html.dir" location="${reports.dir}/cobertura-html" />
-	<property name="testcase" location="${build}/tests" /> <!-- agrego para que ande mi ant - Casimiro -->
+
 
 	<!-- Ivy customization -->
 	<property name="ivy.install.version" value="2.2.0" />
