@@ -9,7 +9,7 @@ public class Policia {
         this.carcel = carcel;
     }
 
-    public void jugadorLlega(Jugador jugador){
+    public void apresarJugador(Jugador jugador){
         this.carcel.apresarJugador(jugador);
     }
 }
