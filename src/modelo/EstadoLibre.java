@@ -11,7 +11,7 @@ public class EstadoLibre implements EstadoDeMovimientoDelJugador {
         casilleroActual.agregarJugador(unJugador);
     }
 
-    @Override
+   @Override
     public void retroceder(Jugador unJugador, Casillero casilleroActual, int pasosTotal) {
         casilleroActual.quitarJugador(unJugador);
         for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados++) {
