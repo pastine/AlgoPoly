@@ -5,7 +5,7 @@ import modelo.Casillero;
 public class EstadoLibre implements EstadoDeMovimientoDelJugador {
 	
 	@Override
-	public EstadoDeMovimientoDelJugador mover(Jugador unJugador, Casillero casilleroActual, int pasosTotal, boolean direccion){
+	public void mover(Jugador unJugador, Casillero casilleroActual, int pasosTotal, boolean direccion){
 		casilleroActual.quitarJugador(unJugador);
 		for (int pasosDados = 0; pasosDados < pasosTotal; pasosDados++) {
 			if (direccion)
@@ -14,6 +14,5 @@ public class EstadoLibre implements EstadoDeMovimientoDelJugador {
 				casilleroActual = casilleroActual.obtenerAnterior();
 	    }
 		casilleroActual.agregarJugador(unJugador);
-	    return this;
 	}
 }

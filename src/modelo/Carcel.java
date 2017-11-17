@@ -41,15 +41,4 @@ public class Carcel {
 			return false;
 		}
 	}
-/*
-	public void restarDiaDeCondena(){
-		for (HashMap.Entry<Jugador, Integer> prisionero : prisioneros.entrySet()) {
-			prisioneros.put(prisionero.getKey(), prisionero.getValue() - 1);
-			if (prisionero.getValue() < 1){
-				prisionero.getKey().cambiarEstadoALibre();
-				prisioneros.remove(prisionero.getKey());
-			}
-		}
-	}
-	*/
 }
