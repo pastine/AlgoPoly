@@ -7,11 +7,13 @@ public class Jugador {
 	private ArrayList<Terreno> propiedades;
 	private Casillero casilleroActual;
 	private EstadoDeMovimientoDelJugador estadoMovimiento;
+	private EstadoQuiniJugador estadoQuini;
 	
 	public Jugador() {
 		saldo = 100000;
 		propiedades = new ArrayList<Terreno>();
 		estadoMovimiento = new EstadoLibre();
+		estadoQuini = new EstadoJugadorGanoQuiniCeroVeces();
 	}
 	public void ponerEnCasillero(Casillero casillero) {
 		this.casilleroActual = casillero;
@@ -65,5 +67,13 @@ public class Jugador {
 
 	public void cambiarEstadoALibre(){
 		this.estadoMovimiento = new EstadoLibre();
+	}
+	
+	public void cambiarEstado(EstadoQuiniJugador estadoNuevo){
+		this.estadoQuini = estadoNuevo;
+	}
+	
+	public void recibirPremioQuini(){
+		this.estadoQuini.darPremioAJugador(this);
 	}
 }
