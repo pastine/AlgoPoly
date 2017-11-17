@@ -8,7 +8,7 @@ public class DadoTest {
 
 	@Test
 	public void test() {
-		Dado dado = new Dado();
+		Dado dado = Dado.darDado();
 		
 		for (int i=0;i<100;i++){
 			int resultado = dado.tirarDado();

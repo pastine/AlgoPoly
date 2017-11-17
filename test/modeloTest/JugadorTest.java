@@ -90,4 +90,14 @@ public class JugadorTest {
 		
 		Assert.assertTrue(casillero.jugadorEstaEnCasillero(jugador));
 	}
+	
+	@Test
+	public void testJuagdorTiraElDado100VecesYSiempreResultaEntre1Y12(){
+		Jugador jugador = new Jugador();
+		int resultado;
+		for (int i=0;i<100;i++){
+			resultado = jugador.lanzarDados();
+			Assert.assertTrue(resultado<=12 && resultado>=1);
+		}
+	}
 }

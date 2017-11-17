@@ -1,7 +1,7 @@
 package modelo.jugador;
 
 import java.util.ArrayList;
-
+import modelo.Dado;
 import modelo.Carcel;
 import modelo.Casillero;
 import modelo.Terreno;
@@ -80,5 +80,12 @@ public class Jugador {
 	
 	public void recibirPremioQuini(){
 		this.estadoQuini.darPremioAJugador(this);
+	}
+	
+	public int lanzarDados(){
+		Dado dado = Dado.darDado();
+		int resultado = dado.tirarDado();
+		resultado += dado.tirarDado();
+		return resultado;
 	}
 }
