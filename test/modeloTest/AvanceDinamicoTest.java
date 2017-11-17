@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import modelo.AvanceDinamico;
 import modelo.Casillero;
-import modelo.Jugador;
+import modelo.jugador.Jugador;
 
 
 

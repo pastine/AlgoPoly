@@ -1,4 +1,4 @@
-package modelo;
+package modelo.jugador;
 
 public class JugadorEstaPresoException extends RuntimeException{
 

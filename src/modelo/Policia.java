@@ -1,6 +1,7 @@
 package modelo;
 
 import modelo.Carcel;
+import modelo.jugador.Jugador;
 
 public class Policia {
     private Carcel carcel;

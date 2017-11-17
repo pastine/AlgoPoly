@@ -1,6 +1,7 @@
 package modeloTest;
-import modelo.Jugador;
 import modelo.Quini6;
+import modelo.jugador.Jugador;
+
 import org.junit.Assert;
 import org.junit.Test;
 

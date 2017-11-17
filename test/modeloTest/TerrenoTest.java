@@ -3,8 +3,8 @@ package modeloTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import modelo.Jugador;
 import modelo.Terreno;
+import modelo.jugador.Jugador;
 
 public class TerrenoTest {
 

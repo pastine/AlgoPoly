@@ -1,6 +1,10 @@
-package modelo;
+package modelo.jugador;
 
 import java.util.ArrayList;
+
+import modelo.Carcel;
+import modelo.Casillero;
+import modelo.Terreno;
 
 public class Jugador {
 	private int saldo;
@@ -61,12 +65,8 @@ public class Jugador {
 		return carcel.cobrarFianza(this);
 	}
 
-	public void cambiarEstadoAPreso(){
-		this.estadoMovimiento = new EstadoPreso();
-	}
-
-	public void cambiarEstadoALibre(){
-		this.estadoMovimiento = new EstadoLibre();
+	public void cambiarEstado(EstadoDeMovimientoDelJugador estadoNuevo){
+		this.estadoMovimiento = estadoNuevo;
 	}
 	
 	public void cambiarEstado(EstadoQuiniJugador estadoNuevo){

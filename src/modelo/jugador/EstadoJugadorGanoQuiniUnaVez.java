@@ -1,7 +1,5 @@
-package modelo;
+package modelo.jugador;
 
-import modelo.Jugador;
-import modelo.EstadoJugadorGanoQuiniDosVeces;
 
 public class EstadoJugadorGanoQuiniUnaVez implements EstadoQuiniJugador {
 

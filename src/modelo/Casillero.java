@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+import modelo.jugador.Jugador;
+
 public class Casillero {
 	private Casillero anterior;
 	private Casillero siguiente;

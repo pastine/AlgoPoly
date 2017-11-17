@@ -1,4 +1,5 @@
-package modelo;
+package modelo.jugador;
+
 
 public class EstadoJugadorGanoQuiniDosVeces implements EstadoQuiniJugador {
 

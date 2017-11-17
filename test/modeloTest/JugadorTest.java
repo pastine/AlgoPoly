@@ -1,6 +1,9 @@
 package modeloTest;
 
 import modelo.*;
+import modelo.jugador.Jugador;
+import modelo.jugador.SaldoInsuficienteException;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

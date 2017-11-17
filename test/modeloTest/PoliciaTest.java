@@ -1,12 +1,13 @@
 package modeloTest;
 
-import modelo.JugadorEstaPresoException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.Assert;
 import modelo.Carcel;
-import modelo.Jugador;
 import modelo.Policia;
+import modelo.jugador.Jugador;
+import modelo.jugador.JugadorEstaPresoException;
+
 import org.junit.rules.ExpectedException;
 
 public class PoliciaTest {

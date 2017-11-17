@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.jugador.Jugador;
+
 public class RetrocesoDinamico {
 
 	public void retroceder(Jugador unJugador, Casillero casillero, int numeroObtenido) {

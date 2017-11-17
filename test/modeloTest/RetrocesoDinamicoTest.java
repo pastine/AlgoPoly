@@ -7,8 +7,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import modelo.Casillero;
-import modelo.Jugador;
 import modelo.RetrocesoDinamico;
+import modelo.jugador.Jugador;
 
 public class RetrocesoDinamicoTest {
 

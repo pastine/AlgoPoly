@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.jugador.Jugador;
+
 public class AvanceDinamico {
 	
 	public void avanzar(Jugador unJugador, Casillero casillero, int numeroObtenido) {

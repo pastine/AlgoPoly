@@ -1,7 +1,5 @@
-package modelo;
+package modelo.jugador;
 
-import modelo.EstadoQuiniJugador;
-import modelo.Jugador;
 
 public class EstadoJugadorGanoQuiniCeroVeces implements EstadoQuiniJugador{
 
