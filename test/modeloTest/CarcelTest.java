@@ -55,15 +55,15 @@ public class CarcelTest {
 		carcel.apresarJugador(jugador);
 		//carcel.restarDiaDeCondena();
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		jugador.quitarDinero(jugador.obtenerSaldo());
 
 		Assert.assertFalse(jugador.pagarFianza(carcel));
 		Assert.assertTrue(carcel.estaEnLaCarcel(jugador));
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
-		thrown.expect(JugadorEstaPresoException.class);
-		jugador.retroceder(1);
+		jugador.mover(1);
+		//thrown.expect(JugadorEstaPresoException.class);
+		//jugador.retroceder(1);
 	}
 
 	@Test
@@ -72,17 +72,17 @@ public class CarcelTest {
 		Jugador jugador = new Jugador();
 		carcel.apresarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		jugador.quitarDinero(jugador.obtenerSaldo());
 
 		Assert.assertFalse(jugador.pagarFianza(carcel));
 		Assert.assertTrue(carcel.estaEnLaCarcel(jugador));
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
-		thrown.expect(JugadorEstaPresoException.class);
-		jugador.retroceder(1);
+		jugador.mover(1);
+		//thrown.expect(JugadorEstaPresoException.class);
+		//jugador.retroceder(1);
 	}
 
 	@Test
@@ -91,7 +91,7 @@ public class CarcelTest {
 		Jugador jugador = new Jugador();
 		carcel.apresarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		Assert.assertTrue(jugador.pagarFianza(carcel));
 	}
 
@@ -111,9 +111,9 @@ public class CarcelTest {
 
 		carcel.apresarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		jugador.pagarFianza(carcel);
-		jugador.avanzar(2);
+		jugador.mover(2);
 		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
 	}
 
@@ -124,9 +124,9 @@ public class CarcelTest {
 		Jugador jugador = new Jugador();
 		carcel.apresarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		Assert.assertTrue(jugador.pagarFianza(carcel));
 	}
 
@@ -146,11 +146,11 @@ public class CarcelTest {
 
 		carcel.apresarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		jugador.pagarFianza(carcel);
-		jugador.avanzar(2);
+		jugador.mover(2);
 		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
 	}
 
@@ -160,11 +160,11 @@ public class CarcelTest {
 		Jugador jugador = new Jugador();
 		carcel.apresarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 		Assert.assertFalse(carcel.estaEnLaCarcel(jugador));
 	}
 
@@ -176,18 +176,7 @@ public class CarcelTest {
 		carcel.apresarJugador(jugador);
 
 		thrown.expect(JugadorEstaPresoException.class);
-		jugador.avanzar(1);
+		jugador.mover(1);
 	}
-
-	@Test
-	public void testJugadorAlEstarPresoNoPuedeRetroceder() {
-		Carcel carcel = new Carcel();
-		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
-
-		thrown.expect(JugadorEstaPresoException.class);
-		jugador.retroceder(1);
-	}
-
 
 }

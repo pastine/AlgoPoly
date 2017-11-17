@@ -35,18 +35,6 @@ public class PoliciaTest {
         policia.apresarJugador(jugador);
 
         thrown.expect(JugadorEstaPresoException.class);
-        jugador.avanzar(1);
-    }
-
-    @Test
-    public void jugadorCaeEnPoliciaYNoPuedeRetroceder(){
-        Carcel carcel = new Carcel();
-        Policia policia = new Policia(carcel);
-        Jugador jugador = new Jugador();
-
-        policia.apresarJugador(jugador);
-
-        thrown.expect(JugadorEstaPresoException.class);
-        jugador.retroceder(1);
+        jugador.mover(1);
     }
 }

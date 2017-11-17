@@ -11,19 +11,10 @@ public class EstadoPreso implements EstadoDeMovimientoDelJugador{
 		diasQueFaltan = 3;
 	}
 	
-    @Override
-    public EstadoDeMovimientoDelJugador avanzar(Jugador unJugador, Casillero casilleroActual, int pasosTotal) {
-        diasQueFaltan-=1;
-        if (diasQueFaltan==0) return new EstadoLibre();
-    	throw new JugadorEstaPresoException();
-    }
-
-    @Override
-    public EstadoDeMovimientoDelJugador retroceder(Jugador unJugador, Casillero casilleroActual, int pasosTotal) {
-    	diasQueFaltan-=1;
-        if (diasQueFaltan==0) return new EstadoLibre();
-    	throw new JugadorEstaPresoException();
-    }
-
-
+	@Override
+	public EstadoDeMovimientoDelJugador mover(Jugador unJugador, Casillero casilleroActual, int pasosTotal, boolean direccion) {
+	diasQueFaltan-=1;
+    if (diasQueFaltan==0) return new EstadoLibre();
+	throw new JugadorEstaPresoException();
+	}
 }
