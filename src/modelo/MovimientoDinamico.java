@@ -2,7 +2,7 @@ package modelo;
 
 import modelo.jugador.Jugador;
 
-public abstract class MovimientoDinamico {
+public abstract class MovimientoDinamico extends Casillero {
 	
 	protected int primerValorMin;
 	protected int segundoValorMin;
@@ -17,7 +17,7 @@ public abstract class MovimientoDinamico {
 	protected abstract void segundoCaso(Jugador unJugador, int numeroObtenido);
 	protected abstract void tercerCaso(Jugador unJugador, int numeroObtenido);
 	
-	public void mover(Jugador unJugador, Casillero casillero, int numeroObtenido) {
+	public void mover(Jugador unJugador, int numeroObtenido) {
 		if (numeroObtenido>=primerValorMin && numeroObtenido<=primerValorMax) {
 			primerCaso(unJugador, numeroObtenido);
 		}
