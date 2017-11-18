@@ -18,12 +18,10 @@ public class AvanceDinamicoTest {
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
 		
-		jugador.ponerEnCasillero(avance);
-		
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		
-		avance.mover(jugador, 2);
+		avance.agregarJugador(jugador, 2);
 		Assert.assertTrue(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));		
@@ -39,13 +37,11 @@ public class AvanceDinamicoTest {
 		Casillero casillero3 = new Casillero();
 		Casillero casillero4 = new Casillero();
 		
-		jugador.ponerEnCasillero(avance);
-		
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
 		
-		avance.mover(jugador, 3);
+		avance.agregarJugador(jugador, 3);;
 		Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertTrue(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -63,14 +59,12 @@ public class AvanceDinamicoTest {
 		Casillero casillero4 = new Casillero();
 		Casillero casillero5 = new Casillero();
 		
-		jugador.ponerEnCasillero(avance);
-		
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
 		casillero4.agregarSiguiente(casillero5);
 		
-		avance.mover(jugador, 4);
+		avance.agregarJugador(jugador, 4);
 		Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
@@ -90,15 +84,13 @@ public class AvanceDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		
-		jugador.ponerEnCasillero(avance);
-		
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
 		casillero4.agregarSiguiente(casillero5);
 		casillero5.agregarSiguiente(casillero6);
 		
-		avance.mover(jugador, 5);
+		avance.agregarJugador(jugador, 5);
 		Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -120,8 +112,6 @@ public class AvanceDinamicoTest {
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
 		
-		jugador.ponerEnCasillero(avance);
-		
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
@@ -129,7 +119,7 @@ public class AvanceDinamicoTest {
 		casillero5.agregarSiguiente(casillero6);
 		casillero6.agregarSiguiente(casillero7);
 		
-		avance.mover(jugador, 6);
+		avance.agregarJugador(jugador, 6);
 		Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -154,8 +144,6 @@ public class AvanceDinamicoTest {
 		Casillero casillero7 = new Casillero();
 		Casillero casillero8 = new Casillero();
 		
-		jugador.ponerEnCasillero(avance);
-		
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
@@ -164,7 +152,7 @@ public class AvanceDinamicoTest {
 		casillero6.agregarSiguiente(casillero7);
 		casillero7.agregarSiguiente(casillero8);
 		
-		avance.mover(jugador, 7);
+		avance.agregarJugador(jugador, 7);
 		Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -183,13 +171,11 @@ public class AvanceDinamicoTest {
 		
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
-		
-		jugador.ponerEnCasillero(avance);
-				
+
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		
-		avance.mover(jugador, 8);
+		avance.agregarJugador(jugador, 8);
 		Assert.assertTrue(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -205,13 +191,11 @@ public class AvanceDinamicoTest {
 		Casillero casillero3 = new Casillero();
 		Casillero casillero4 = new Casillero();
 		
-		jugador.ponerEnCasillero(avance);
-		
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
 		
-		avance.mover(jugador, 9);
+		avance.agregarJugador(jugador, 9);
 		Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertTrue(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -226,13 +210,11 @@ public class AvanceDinamicoTest {
 		
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
-		
-		jugador.ponerEnCasillero(avance);
 				
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		
-		avance.mover(jugador, 10);
+		avance.agregarJugador(jugador, 10);
 		Assert.assertTrue(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -253,13 +235,11 @@ public class AvanceDinamicoTest {
 		Casillero casillero3 = new Casillero();
 		Casillero casillero4 = new Casillero();
 		
-		jugador.ponerEnCasillero(avance);
-
 		avance.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 		casillero3.agregarSiguiente(casillero4);
 
-		avance.mover(jugador, 11);
+		avance.agregarJugador(jugador, 11);
 		Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -284,8 +264,6 @@ public class AvanceDinamicoTest {
         Casillero casillero6 = new Casillero();
         Casillero casillero7 = new Casillero();
         Casillero casillero8 = new Casillero();
-        
-        jugador.ponerEnCasillero(avance);
 
         avance.agregarSiguiente(casillero2);
         casillero2.agregarSiguiente(casillero3);
@@ -295,7 +273,7 @@ public class AvanceDinamicoTest {
         casillero6.agregarSiguiente(casillero7);
         casillero7.agregarSiguiente(casillero8);
 
-        avance.mover(jugador, 12);
+        avance.agregarJugador(jugador, 12);
         Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
         Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
         Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -318,12 +296,10 @@ public class AvanceDinamicoTest {
         AvanceDinamico avance = new AvanceDinamico();
 
         Casillero casillero2 = new Casillero();
-        
-        jugador.ponerEnCasillero(avance);
 
         avance.agregarSiguiente(casillero2);
 
-        avance.mover(jugador, 12);
+        avance.agregarJugador(jugador, 12);
         Assert.assertTrue(avance.jugadorEstaEnCasillero(jugador));
         Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 
