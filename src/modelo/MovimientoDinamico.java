@@ -16,7 +16,11 @@ public abstract class MovimientoDinamico extends Casillero {
 	protected abstract void primerCaso(Jugador unJugador, int numeroObtenido);
 	protected abstract void segundoCaso(Jugador unJugador, int numeroObtenido);
 	protected abstract void tercerCaso(Jugador unJugador, int numeroObtenido);
-		
+
+	public void accionar(Jugador jugador, int pasosTotal){
+		mover(jugador, pasosTotal);
+	}
+
 	public void mover(Jugador unJugador, int numeroObtenido) {
 		if (numeroObtenido>=primerValorMin && numeroObtenido<=primerValorMax) {
 			primerCaso(unJugador, numeroObtenido);

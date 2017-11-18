@@ -35,6 +35,7 @@ public class Casillero {
 	
 	public void agregarJugador(Jugador unJugador, int pasosTotal) {
 		jugadores.add(unJugador);
+		unJugador.ponerEnCasillero(this);
 		this.accionar(unJugador, pasosTotal);
 	}
 	
