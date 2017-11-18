@@ -11,6 +11,6 @@ public class Policia {
     }
 
     public void apresarJugador(Jugador jugador){
-        this.carcel.apresarJugador(jugador);
+        this.carcel.agregarJugador(jugador);
     }
 }

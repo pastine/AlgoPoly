@@ -20,7 +20,7 @@ public class CarcelTest {
 	public void testApresarJugadorQuedaPreso() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 
 		Assert.assertTrue(carcel.estaEnLaCarcel(jugador));
 	}
@@ -37,7 +37,7 @@ public class CarcelTest {
 	public void testJugadorNoPuedePagarFianzaEnElPrimerTurnoPreso() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 		Assert.assertFalse(jugador.pagarFianza(carcel));
 	}
 
@@ -52,7 +52,7 @@ public class CarcelTest {
 	public void testJugadorNoPuedePagarFianzaEnElSegundoTurnoSiNoTieneSuficienteSaldo() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 		//carcel.restarDiaDeCondena();
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
@@ -70,7 +70,7 @@ public class CarcelTest {
 	public void testJugadorNoPuedePagarFianzaEnElTercerTurnoSiNoTieneSuficienteSaldo() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
@@ -89,7 +89,7 @@ public class CarcelTest {
 	public void testJugadorPuedePagarFianzaEnElSegundoTurnoPreso() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 		Assert.assertTrue(jugador.pagarFianza(carcel));
@@ -109,7 +109,7 @@ public class CarcelTest {
 		casillero1.agregarSiguiente(casillero2);
 		casillero2.agregarSiguiente(casillero3);
 
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 		jugador.pagarFianza(carcel);
@@ -122,7 +122,7 @@ public class CarcelTest {
 	public void testJugadorPuedePagarFianzaEnElTercerTurnoPreso() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
@@ -134,31 +134,27 @@ public class CarcelTest {
 	public void testJugadorPuedePagarFianzaEnElTercerTurnoYAvanzar(){
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
-		Casillero casillero3 = new Casillero();
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
 
+		carcel.agregarSiguiente(casillero1);
+		casillero2.agregarSiguiente(casillero2);
 
-		jugador.ponerEnCasillero(casillero1);
-
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 		jugador.pagarFianza(carcel);
 		jugador.mover(2);
-		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
+		Assert.assertTrue(casillero2.jugadorEstaEnCasillero(jugador));
 	}
 
 	@Test
 	public void testJugadorNoEstaPresoAlCuartoTurnoPreso() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
@@ -173,7 +169,7 @@ public class CarcelTest {
 	public void testJugadorAlEstarPresoNoPuedeAvanzar() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		carcel.apresarJugador(jugador);
+		carcel.agregarJugador(jugador);
 
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);

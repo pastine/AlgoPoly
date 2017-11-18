@@ -5,9 +5,14 @@ import modelo.jugador.EstadoLibre;
 import modelo.jugador.EstadoPreso;
 import modelo.jugador.SaldoInsuficienteException;
 
-public class Carcel {
+public class Carcel extends Casillero{
 	
-	public void apresarJugador(Jugador unJugador) {
+	public void agregarJugador(Jugador jugador){
+		super.agregarJugador(jugador);
+		apresarJugador(jugador);
+	}
+	
+	private void apresarJugador(Jugador unJugador) {
 		unJugador.cambiarEstado(new EstadoPreso());
 	}
 	
