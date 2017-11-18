@@ -2,9 +2,14 @@ package modelo;
 
 import modelo.jugador.Jugador;
 
-public class Quini6 {
+public class Quini6 extends Casillero{
+	
+	public void agregarJugador(Jugador jugador){
+		super.agregarJugador(jugador);
+		darPremio(jugador);
+	}
 
-	public void darPremio(Jugador unJugador){
+	private void darPremio(Jugador unJugador){
 		unJugador.recibirPremioQuini();
 	}
 
