@@ -45,9 +45,4 @@ public abstract class MovimientoDinamico extends Casillero {
         }
 		unJugador.mover(numeroCasilleros);
 	}
-	
-	@Override
-	public void agregarJugador(Jugador jugador){
-		mover(jugador, jugador.lanzarDados());
-	}
 }
