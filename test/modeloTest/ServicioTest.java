@@ -14,7 +14,7 @@ public class ServicioTest {
 		Jugador jugador = new Jugador();
 		int capitalAnterior = jugador.obtenerSaldo();
 		
-		Servicio tren = new Servicio(38000);
+		Servicio tren = new Servicio(38000, 450);
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 				
@@ -35,7 +35,7 @@ public class ServicioTest {
 		Jugador jugador = new Jugador();
 		int capitalAnterior = jugador.obtenerSaldo();
 		
-		Servicio tren = new Servicio(38000);
+		Servicio tren = new Servicio(38000, 450);
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -58,7 +58,7 @@ public class ServicioTest {
 		Jugador jugador = new Jugador();
 		int capitalAnterior = jugador.obtenerSaldo();
 		
-		Servicio tren = new Servicio(38000);
+		Servicio tren = new Servicio(38000, 450);
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -77,6 +77,32 @@ public class ServicioTest {
 		int capitalPosterior = jugador.obtenerSaldo();
 		
 		Assert.assertEquals(capitalAnterior, capitalPosterior + 1800);
+	}
+	
+	@Test
+	public void TestCaerEnTrenSinTenerSubteTeCobraEnBaseAlDadoTirado() {
+		Jugador jugador = new Jugador();
+		int capitalAnterior = jugador.obtenerSaldo();
+		
+		int costoMultiplicadorServicio = 450;
+		
+		Servicio tren = new Servicio(38000, costoMultiplicadorServicio);
+		int pasosTotal = jugador.lanzarDados();
+		
+		Casillero casillero = new Casillero();
+		jugador.ponerEnCasillero(casillero);
+		
+		for (int i = 1; i < pasosTotal; i++) {
+			casillero.agregarSiguiente(new Casillero());
+			casillero = casillero.obtenerSiguiente();
+		}
+		casillero.agregarSiguiente(tren);
+		
+		jugador.mover(pasosTotal);
+		
+		int capitalPosterior = jugador.obtenerSaldo();
+		int costoServicio = costoMultiplicadorServicio * pasosTotal;
+		Assert.assertEquals(capitalAnterior, capitalPosterior + costoServicio);
 	}
 
 }
