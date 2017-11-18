@@ -56,7 +56,7 @@ public class JugadorTest {
 	@Test
 	public void testLaCantidadDePropiedadesEnJugadorTrasComprarEsUno() {
 		Jugador jugador = new Jugador();
-		Terreno bsAs = new Terreno(1000);
+		Terreno bsAs = new Terreno(1000, 0);
 		jugador.comprarTerreno(bsAs);
 		Assert.assertEquals(jugador.obtenerCantidadDePropiedades(),1);
 	}

@@ -59,6 +59,7 @@ public class Jugador {
 		propiedades.add(terreno);
 		int costo = terreno.obtenerPrecio();
 		this.quitarDinero(costo);
+		terreno.cambiarDuenio(this);
 	}
 	
 	public boolean esDuenioDeTerreno(Terreno terreno) {
