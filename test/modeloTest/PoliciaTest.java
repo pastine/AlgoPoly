@@ -21,7 +21,7 @@ public class PoliciaTest {
         Policia policia = new Policia(carcel);
         Jugador jugador = new Jugador();
 
-        policia.apresarJugador(jugador);
+        policia.agregarJugador(jugador);
 
         Assert.assertTrue(carcel.estaEnLaCarcel(jugador));
     }
@@ -32,7 +32,7 @@ public class PoliciaTest {
         Policia policia = new Policia(carcel);
         Jugador jugador = new Jugador();
 
-        policia.apresarJugador(jugador);
+        policia.agregarJugador(jugador);
 
         thrown.expect(JugadorEstaPresoException.class);
         jugador.mover(1);
