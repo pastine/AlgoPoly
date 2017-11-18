@@ -38,7 +38,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 
-		retroceso.retroceder(jugador,casillero8,2);
+		retroceso.mover(jugador,casillero8,2);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -76,7 +76,7 @@ public class RetrocesoDinamicoTest {
 
 		jugador.ponerEnCasillero(casillero8);
 
-		retroceso.retroceder(jugador,casillero8,3);
+		retroceso.mover(jugador,casillero8,3);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -116,7 +116,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 
-		retroceso.retroceder(jugador,casillero8,4);
+		retroceso.mover(jugador,casillero8,4);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -152,7 +152,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 
-		retroceso.retroceder(jugador,casillero8,5);
+		retroceso.mover(jugador,casillero8,5);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
@@ -193,7 +193,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 		
-		retroceso.retroceder(jugador,casillero8,6);
+		retroceso.mover(jugador,casillero8,6);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -237,7 +237,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 
-		retroceso.retroceder(jugador,casillero8,2);
+		retroceso.mover(jugador,casillero8,2);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -274,7 +274,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 		
-		retroceso.retroceder(jugador,casillero8,7);
+		retroceso.mover(jugador,casillero8,7);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
@@ -310,7 +310,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 		
-		retroceso.retroceder(jugador,casillero8,8);
+		retroceso.mover(jugador,casillero8,8);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -346,7 +346,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 		
-		retroceso.retroceder(jugador,casillero8,9);
+		retroceso.mover(jugador,casillero8,9);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -382,7 +382,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero8);
 		
-		retroceso.retroceder(jugador,casillero8,10);
+		retroceso.mover(jugador,casillero8,10);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -427,7 +427,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero11);
 		
-		retroceso.retroceder(jugador,casillero11,11);
+		retroceso.mover(jugador,casillero11,11);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertTrue(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
@@ -472,7 +472,7 @@ public class RetrocesoDinamicoTest {
 		
 		jugador.ponerEnCasillero(casillero11);
 		
-		retroceso.retroceder(jugador,casillero11,12);
+		retroceso.mover(jugador,casillero11,12);
 		Assert.assertTrue(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));

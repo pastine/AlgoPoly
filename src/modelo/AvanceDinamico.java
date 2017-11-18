@@ -2,23 +2,30 @@ package modelo;
 
 import modelo.jugador.Jugador;
 
-public class AvanceDinamico {
+public class AvanceDinamico extends MovimientoDinamico{
 	
-	public void avanzar(Jugador unJugador, Casillero casillero, int numeroObtenido) {
-		if (numeroObtenido>=1 && numeroObtenido<=6) {
-			unJugador.mover(numeroObtenido-2);
-		}
-		if (numeroObtenido>=7 && numeroObtenido<=10) {
-			int saldo = unJugador.obtenerSaldo();
-			unJugador.mover(saldo%numeroObtenido);
-		}
-		if (numeroObtenido>=11 && numeroObtenido<=12) {
-			int numeroCasilleros = numeroObtenido - unJugador.obtenerCantidadDePropiedades();
-			if (numeroCasilleros<0) {
-			    numeroCasilleros = 0;
-            }
-			unJugador.mover(numeroCasilleros);
-		}
+	public AvanceDinamico(){
+		primerValorMin = 2;
+		segundoValorMin = 7;
+		tercerValorMin = 11 ;
+		
+		primerValorMax = 6;
+		segundoValorMax = 10;
+		tercerValorMax= 12;
 	}
-	
+
+	@Override
+	protected void primerCaso(Jugador unJugador, int numeroObtenido) {
+		super.resultadoMenosDos(unJugador,numeroObtenido);
+	}
+
+	@Override
+	protected void segundoCaso(Jugador unJugador, int numeroObtenido) {
+		super.restoDeDivision(unJugador, numeroObtenido);
+	}
+
+	@Override
+	protected void tercerCaso(Jugador unJugador, int numeroObtenido) {
+		super.resultadoPorCantidadDePropiedades(unJugador, numeroObtenido);
+	}
 }
