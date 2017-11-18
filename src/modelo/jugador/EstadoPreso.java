@@ -17,4 +17,9 @@ public class EstadoPreso implements EstadoDeMovimientoDelJugador{
     if (diasQueFaltan==0) unJugador.cambiarEstado(new EstadoLibre());
 	throw new JugadorEstaPresoException();
 	}
+	
+	@Override
+	public int mostrarDiasRestantes(){
+		return diasQueFaltan;
+	}
 }

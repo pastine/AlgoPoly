@@ -69,6 +69,10 @@ public class Jugador {
 	public boolean pagarFianza(Carcel carcel) {
 		return carcel.cobrarFianza(this);
 	}
+	
+	public int diasDeCarcelRestantes(){
+		return estadoMovimiento.mostrarDiasRestantes();
+	}
 
 	public void cambiarEstado(EstadoDeMovimientoDelJugador estadoNuevo){
 		this.estadoMovimiento = estadoNuevo;

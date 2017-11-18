@@ -15,4 +15,9 @@ public class EstadoLibre implements EstadoDeMovimientoDelJugador {
 	    }
 		casilleroActual.agregarJugador(unJugador);
 	}
+	
+	@Override
+	public int mostrarDiasRestantes(){
+		return 0;
+	}
 }

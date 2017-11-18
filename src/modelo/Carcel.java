@@ -5,17 +5,9 @@ import modelo.jugador.EstadoLibre;
 import modelo.jugador.EstadoPreso;
 import modelo.jugador.SaldoInsuficienteException;
 
-import java.util.HashMap;
-
 public class Carcel {
-	private HashMap<Jugador, Integer> prisioneros;
-	
-	public Carcel() {
-		prisioneros = new HashMap<Jugador, Integer>();
-	}
 	
 	public void apresarJugador(Jugador unJugador) {
-		prisioneros.put(unJugador, 3);
 		unJugador.cambiarEstado(new EstadoPreso());
 	}
 	
@@ -25,7 +17,7 @@ public class Carcel {
 	}
 	
 	public int turnosQueLeFaltan(Jugador jugador){
-		return this.prisioneros.getOrDefault(jugador, 0);
+		return jugador.diasDeCarcelRestantes();
 	}
 	
 	public boolean cobrarFianza(Jugador jugador) {
@@ -34,7 +26,6 @@ public class Carcel {
 			return false;
 		try {
 			jugador.quitarDinero(45000);
-			prisioneros.remove(jugador);
 			jugador.cambiarEstado(new EstadoLibre());
 			return true;
 		} catch (SaldoInsuficienteException e) {
