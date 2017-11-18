@@ -7,8 +7,7 @@ import modelo.jugador.SaldoInsuficienteException;
 
 public class Carcel extends Casillero{
 	
-	public void agregarJugador(Jugador jugador){
-		super.agregarJugador(jugador);
+	public void accionar(Jugador jugador, int pasosTotal){
 		apresarJugador(jugador);
 	}
 	

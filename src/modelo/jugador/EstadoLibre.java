@@ -13,7 +13,7 @@ public class EstadoLibre implements EstadoDeMovimientoDelJugador {
 			else 
 				casilleroActual = casilleroActual.obtenerAnterior();
 	    }
-		casilleroActual.agregarJugador(unJugador);
+		casilleroActual.agregarJugador(unJugador, pasosTotal);
 	}
 	
 	@Override

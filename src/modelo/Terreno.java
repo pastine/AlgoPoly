@@ -1,6 +1,6 @@
 package modelo;
 
-public class Terreno {
+public class Terreno extends Casillero{
 	private int precio;
 	
 	public Terreno(int unPrecio) {

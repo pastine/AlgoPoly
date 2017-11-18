@@ -30,7 +30,7 @@ public class CasilleroTest {
 	public void testAgregarJugadorDeUnCasillero() {
 		Casillero casillero = new Casillero();
 		Jugador jugador = new Jugador();
-		casillero.agregarJugador(jugador);
+		jugador.ponerEnCasillero(casillero);
 		Assert.assertTrue(casillero.jugadorEstaEnCasillero(jugador));
 	}
 	
@@ -38,7 +38,7 @@ public class CasilleroTest {
 	public void testQuitarJugadorDeUnCasillero() {
 		Casillero casillero = new Casillero();
 		Jugador jugador = new Jugador();
-		casillero.agregarJugador(jugador);
+		jugador.ponerEnCasillero(casillero);
 		casillero.quitarJugador(jugador);
 		Assert.assertFalse(casillero.jugadorEstaEnCasillero(jugador));
 	}

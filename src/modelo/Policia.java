@@ -10,11 +10,11 @@ public class Policia extends Casillero{
         this.carcel = carcel;
     }
     
-    public void agregarJugador(Jugador jugador){
-    	apresarJugador(jugador);
+    public void accionar(Jugador jugador, int pasosTotal){
+    	apresarJugador(jugador, pasosTotal);
     }
 
-    private void apresarJugador(Jugador jugador){
-        this.carcel.agregarJugador(jugador);
+    private void apresarJugador(Jugador jugador, int pasosTotal){
+        this.carcel.agregarJugador(jugador, pasosTotal);
     }
 }

@@ -14,7 +14,8 @@ public class Quini6Test {
         Quini6 unQuini = new Quini6();
         Jugador unJugador = new Jugador();
         int saldo_inicial = unJugador.obtenerSaldo();
-        unQuini.agregarJugador(unJugador);
+
+        unJugador.ponerEnCasillero(unQuini);
 
         Assert.assertEquals(unJugador.obtenerSaldo(), saldo_inicial + 50000);
     }
@@ -24,9 +25,9 @@ public class Quini6Test {
 
         Quini6 unQuini = new Quini6();
         Jugador unJugador = new Jugador();
-        unQuini.agregarJugador(unJugador);
+        unJugador.ponerEnCasillero(unQuini);
         int saldo_intermedio = unJugador.obtenerSaldo();
-        unQuini.agregarJugador(unJugador);
+        unJugador.ponerEnCasillero(unQuini);
 
         Assert.assertEquals(unJugador.obtenerSaldo(), saldo_intermedio + 30000);
     }
@@ -36,11 +37,11 @@ public class Quini6Test {
 
         Quini6 unQuini = new Quini6();
         Jugador unJugador = new Jugador();
-        unQuini.agregarJugador(unJugador);
-        unQuini.agregarJugador(unJugador);
+        unJugador.ponerEnCasillero(unQuini);
+        unJugador.ponerEnCasillero(unQuini);
         int saldo_final = unJugador.obtenerSaldo();
-        unQuini.agregarJugador(unJugador);
-
+        unJugador.ponerEnCasillero(unQuini);
+        
         Assert.assertEquals(unJugador.obtenerSaldo(), saldo_final);
     }
 
@@ -51,7 +52,7 @@ public class Quini6Test {
         Jugador unJugador = new Jugador();
         int saldo_inicial = unJugador.obtenerSaldo();
         for (int i = 0; i < 1000; i++) {
-        	unQuini.agregarJugador(unJugador);
+        	unJugador.ponerEnCasillero(unQuini);
         }
         Assert.assertEquals(unJugador.obtenerSaldo(), saldo_inicial + 80000);
     }
@@ -63,9 +64,9 @@ public class Quini6Test {
         Jugador jugadorA = new Jugador();
         Jugador jugadorB = new Jugador();
 
-        unQuini.agregarJugador(jugadorA);
-        unQuini.agregarJugador(jugadorB);
-        unQuini.agregarJugador(jugadorA);
+        jugadorA.ponerEnCasillero(unQuini);
+        jugadorB.ponerEnCasillero(unQuini);
+        jugadorA.ponerEnCasillero(unQuini);
 
         Assert.assertEquals(jugadorA.obtenerSaldo(), 100000 + 50000 + 30000);
     }
@@ -78,9 +79,9 @@ public class Quini6Test {
         Jugador jugadorB = new Jugador();
 
         
-        unQuini.agregarJugador(jugadorA);
-        unQuini.agregarJugador(jugadorB);
-        unQuini.agregarJugador(jugadorA);
+        jugadorA.ponerEnCasillero(unQuini);
+        jugadorB.ponerEnCasillero(unQuini);
+        jugadorA.ponerEnCasillero(unQuini);
         
 
         Assert.assertEquals(jugadorB.obtenerSaldo(), 100000 + 50000);

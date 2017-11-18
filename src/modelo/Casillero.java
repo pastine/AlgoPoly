@@ -33,9 +33,9 @@ public class Casillero {
 		return anterior;
 	}
 	
-	public void agregarJugador(Jugador unJugador) {
+	public void agregarJugador(Jugador unJugador, int pasosTotal) {
 		jugadores.add(unJugador);
-		
+		this.accionar(unJugador, pasosTotal);
 	}
 	
 	public void quitarJugador(Jugador unJugador) {
@@ -44,6 +44,10 @@ public class Casillero {
 	
 	public boolean jugadorEstaEnCasillero(Jugador unJugador) {
 		return jugadores.contains(unJugador);
+	}
+	
+	public void accionar(Jugador jugador, int pasosTotal) {
+		return;
 	}
 	
 }
