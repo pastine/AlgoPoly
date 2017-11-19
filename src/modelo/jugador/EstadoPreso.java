@@ -13,9 +13,9 @@ public class EstadoPreso implements EstadoDeMovimientoDelJugador{
 	
 	@Override
 	public void mover(Jugador unJugador, Casillero casilleroActual, int pasosTotal, boolean direccion) {
-	diasQueFaltan-=1;
-    if (diasQueFaltan==0) unJugador.cambiarEstado(new EstadoLibre());
-	throw new JugadorEstaPresoException();
+		diasQueFaltan-=1;
+	    if (diasQueFaltan==0) unJugador.cambiarEstado(new EstadoLibre());
+		throw new JugadorEstaPresoException();
 	}
 	
 	@Override
