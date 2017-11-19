@@ -186,4 +186,51 @@ public class ServicioTest {
 		Assert.assertEquals(capitalAnterior, capitalPosterior + costoServicio);
 	}
 	
+	@Test
+	public void TestCaerEnEdesurSinTenerAysaTeCobraEnBaseAlDadoTirado(){
+		Jugador jugador = new Jugador();
+		int capitalAnterior = jugador.obtenerSaldo();
+		int costoServicioParcial = 500;
+		Servicio edesur = new Servicio(35000, costoServicioParcial, 1000);
+		Jugador duenio = new Jugador();
+		duenio.comprarPropiedad(edesur);
+		int pasosTotal = jugador.lanzarDados();
+		Casillero casillero = new Casillero();
+		jugador.ponerEnCasillero(casillero);		
+		for (int i = 1; i < pasosTotal; i++) {
+			casillero.agregarSiguiente(new Casillero());
+			casillero = casillero.obtenerSiguiente();
+		}
+		casillero.agregarSiguiente(edesur);
+		jugador.mover(pasosTotal);
+		int capitalPosterior = jugador.obtenerSaldo();
+		int costoServicio = costoServicioParcial * pasosTotal;
+		Assert.assertEquals(capitalAnterior, capitalPosterior + costoServicio);
+	}
+	
+	@Test
+	public void TestCaerEnEdesurConAysaTeCobraEnBaseAlDadoTirado(){
+		Jugador jugador = new Jugador();
+		int capitalAnterior = jugador.obtenerSaldo();
+		int costoServicioTotal = 1000;
+		Servicio edesur = new Servicio(35000, 500, costoServicioTotal);
+		Servicio aysa = new Servicio(30000, 300, 500);
+		Jugador duenio = new Jugador();
+		duenio.comprarPropiedad(edesur);
+		duenio.comprarPropiedad(aysa);
+		edesur.asigarHermano(aysa);
+		int pasosTotal = jugador.lanzarDados();
+		Casillero casillero = new Casillero();
+		jugador.ponerEnCasillero(casillero);		
+		for (int i = 1; i < pasosTotal; i++) {
+			casillero.agregarSiguiente(new Casillero());
+			casillero = casillero.obtenerSiguiente();
+		}
+		casillero.agregarSiguiente(edesur);
+		jugador.mover(pasosTotal);
+		int capitalPosterior = jugador.obtenerSaldo();
+		int costoServicio = costoServicioTotal * pasosTotal;
+		Assert.assertEquals(capitalAnterior, capitalPosterior + costoServicio);
+	}
+
 }
