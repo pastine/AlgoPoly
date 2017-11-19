@@ -25,8 +25,8 @@ public class TerrenoTest {
 	public void testComprarTerrenoLePertenece() {
 		Terreno bsAs = new Terreno(1000,0);
 		Jugador jugador = new Jugador();
-		jugador.comprarTerreno(bsAs);
-		boolean pertenece = jugador.esDuenioDeTerreno(bsAs);
+		jugador.comprarPropiedad(bsAs);
+		boolean pertenece = jugador.esDuenioDePropiedad(bsAs);
 		Assert.assertTrue(pertenece);
 	}
 	
@@ -34,7 +34,7 @@ public class TerrenoTest {
 	public void testComprarTerrenoNoLePertenece() {
 		Terreno bsAs = new Terreno(1000, 0);
 		Jugador jugador = new Jugador();
-		boolean pertenece = jugador.esDuenioDeTerreno(bsAs);
+		boolean pertenece = jugador.esDuenioDePropiedad(bsAs);
 		Assert.assertFalse(pertenece);
 	}
 
@@ -44,7 +44,7 @@ public class TerrenoTest {
 		Terreno bsAs = new Terreno(precioTerreno,0);
 		Jugador jugador = new Jugador();
 		int saldoInicial = jugador.obtenerSaldo();
-		jugador.comprarTerreno(bsAs);
+		jugador.comprarPropiedad(bsAs);
 		Assert.assertEquals(saldoInicial, jugador.obtenerSaldo() + precioTerreno);
 	}
 
@@ -53,7 +53,7 @@ public class TerrenoTest {
 		int precioTerreno = 20000;
 		Terreno bsAs = new Terreno(precioTerreno,0);
 		Jugador jugador = new Jugador();
-		jugador.comprarTerreno(bsAs);
+		jugador.comprarPropiedad(bsAs);
 		Assert.assertEquals(jugador, bsAs.obtenerDuenio());
 	}
 
@@ -63,10 +63,10 @@ public class TerrenoTest {
 		Terreno bsAs = new Terreno(precioTerreno, 0);
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
-		jugadorA.comprarTerreno(bsAs);
+		jugadorA.comprarPropiedad(bsAs);
 
 		thrown.expect(PropiedadConDuenioException.class);
-		jugadorB.comprarTerreno(bsAs);
+		jugadorB.comprarPropiedad(bsAs);
 	}
 
 	@Test
@@ -77,7 +77,7 @@ public class TerrenoTest {
 		Jugador jugadorB = new Jugador();
 		int saldoInicial = jugadorB.obtenerSaldo();
 
-		jugadorA.comprarTerreno(bsAs);
+		jugadorA.comprarPropiedad(bsAs);
 		bsAs.agregarJugador(jugadorB, 0);
 
 		Assert.assertEquals(jugadorB.obtenerSaldo() + 1000, saldoInicial);
@@ -89,7 +89,7 @@ public class TerrenoTest {
 		Terreno bsAs = new Terreno(precioTerreno, 1000);
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
-		jugadorA.comprarTerreno(bsAs);
+		jugadorA.comprarPropiedad(bsAs);
 		int saldoInicial = jugadorA.obtenerSaldo();
 		bsAs.agregarJugador(jugadorB, 0);
 

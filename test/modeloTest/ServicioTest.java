@@ -1,14 +1,14 @@
 package modeloTest;
 
-import modelo.ServicioConDuenioException;
+import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.Assert;
+import org.junit.rules.ExpectedException;
 
 import modelo.Casillero;
+import modelo.PropiedadConDuenioException;
 import modelo.Servicio;
 import modelo.jugador.Jugador;
-import org.junit.rules.ExpectedException;
 
 public class ServicioTest {
 
@@ -26,8 +26,8 @@ public class ServicioTest {
 	public void testComprarServicioLePertenece() {
 		Servicio aysa = new Servicio(1000, 10);
 		Jugador jugador = new Jugador();
-		jugador.comprarServicio(aysa);
-		boolean pertenece = jugador.esDuenioDeServicio(aysa);
+		jugador.comprarPropiedad(aysa);
+		boolean pertenece = jugador.esDuenioDePropiedad(aysa);
 		Assert.assertTrue(pertenece);
 	}
 
@@ -35,7 +35,7 @@ public class ServicioTest {
 	public void testComprarServicioNoLePertenece() {
 		Servicio aysa = new Servicio(1000, 10);
 		Jugador jugador = new Jugador();
-		boolean pertenece = jugador.esDuenioDeServicio(aysa);
+		boolean pertenece = jugador.esDuenioDePropiedad(aysa);
 		Assert.assertFalse(pertenece);
 	}
 
@@ -45,7 +45,7 @@ public class ServicioTest {
 		Servicio aysa = new Servicio(precioServicio,0);
 		Jugador jugador = new Jugador();
 		int saldoInicial = jugador.obtenerSaldo();
-		jugador.comprarServicio(aysa);
+		jugador.comprarPropiedad(aysa);
 		Assert.assertEquals(saldoInicial, jugador.obtenerSaldo() + precioServicio);
 	}
 
@@ -54,7 +54,7 @@ public class ServicioTest {
 		int precioServicio = 20000;
 		Servicio aysa = new Servicio(precioServicio,0);
 		Jugador jugador = new Jugador();
-		jugador.comprarServicio(aysa);
+		jugador.comprarPropiedad(aysa);
 		Assert.assertEquals(jugador, aysa.obtenerDuenio());
 	}
 
@@ -64,10 +64,10 @@ public class ServicioTest {
 		Servicio aysa = new Servicio(precioServicio, 0);
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
-		jugadorA.comprarServicio(aysa);
+		jugadorA.comprarPropiedad(aysa);
 
-		thrown.expect(ServicioConDuenioException.class);
-		jugadorB.comprarServicio(aysa);
+		thrown.expect(PropiedadConDuenioException.class);
+		jugadorB.comprarPropiedad(aysa);
 	}
 
 	@Test
@@ -77,7 +77,7 @@ public class ServicioTest {
 		int capitalInicial = jugadorB.obtenerSaldo();
 
 		Servicio aysa = new Servicio(20000, 100);
-		jugadorA.comprarServicio(aysa);
+		jugadorA.comprarPropiedad(aysa);
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 
@@ -99,7 +99,7 @@ public class ServicioTest {
 		Jugador jugadorB = new Jugador();
 
 		Servicio aysa = new Servicio(20000, 100);
-		jugadorA.comprarServicio(aysa);
+		jugadorA.comprarPropiedad(aysa);
 		int capitalInicial = jugadorA.obtenerSaldo();
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -121,7 +121,7 @@ public class ServicioTest {
 		Jugador jugadorA = new Jugador();
 
 		Servicio aysa = new Servicio(20000, 100);
-		jugadorA.comprarServicio(aysa);
+		jugadorA.comprarPropiedad(aysa);
 		int capitalInicial = jugadorA.obtenerSaldo();
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
