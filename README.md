@@ -46,8 +46,8 @@
 - [ ] Agregar los mismos casos para Córdoba, Salta. 
 - [ ] Un jugador cuenta con Santa Fé y construye una casa. Verificar que su dinero disponible se decrementó en $4000.
 - [ ] Un jugador cae en un barrio con construcciones. Verificar que su dinero disponible reduzca en función del alquiler según la propiedad construida. Implementar esto para todos los barrios.
-- [ ] Un jugador cae en TRENES adquirida previamente por otro jugador que no se adueño de SUBTES. Verificar que su dinero se reduzca por 450 veces lo que dice los dados arrojados previamente.
-- [ ] Un jugador cae en TRENES adquirida previamente por otro jugador que además es el dueño de SUBTES. Verificar que su dinero se reduzca por 800 veces lo que dice los dados arrojados previamente.
+- [X] Un jugador cae en TRENES adquirida previamente por otro jugador que no se adueño de SUBTES. Verificar que su dinero se reduzca por 450 veces lo que dice los dados arrojados previamente.
+- [X] Un jugador cae en TRENES adquirida previamente por otro jugador que además es el dueño de SUBTES. Verificar que su dinero se reduzca por 800 veces lo que dice los dados arrojados previamente.
 - [ ] Un jugador intercambia una propiedad suya por otra propiedad de otro jugador. Verificar que un tercer jugador cae en el área y el cobro del dinero se acredita en la cuenta del jugador que ostenta la titularidad.
 - [ ] Un jugador intercambia una propiedad suya por otra propiedad de otro jugador. Verificar que un tercer jugador cae en el área y el cobro del dinero se acredita en la cuenta del jugador que ostenta la titularidad por un monto igual al área sin construcción.
 - [X] Un jugador cae en Impuesto al Lujo. Verificar que su dinero se reduzca un %10 de su efectivo.
