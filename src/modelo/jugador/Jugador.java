@@ -1,14 +1,13 @@
 package modelo.jugador;
 
 import java.util.ArrayList;
-import modelo.Dado;
-import modelo.Carcel;
-import modelo.Casillero;
-import modelo.Terreno;
+
+import modelo.*;
 
 public class Jugador {
 	private int saldo;
 	private ArrayList<Terreno> propiedades;
+	private ArrayList<Servicio> servicios;
 	private Casillero casilleroActual;
 	private EstadoDeMovimientoDelJugador estadoMovimiento;
 	private EstadoQuiniJugador estadoQuini;
@@ -17,6 +16,7 @@ public class Jugador {
 	public Jugador() {
 		saldo = 100000;
 		propiedades = new ArrayList<Terreno>();
+		servicios = new ArrayList<Servicio>();
 		estadoMovimiento = new EstadoLibre();
 		estadoQuini = new EstadoJugadorGanoQuiniCeroVeces();
 		direccionAvanzar = true;
@@ -61,9 +61,20 @@ public class Jugador {
 		this.quitarDinero(costo);
 		terreno.cambiarDuenio(this);
 	}
+
+	public void comprarServicio(Servicio servicio) {
+		servicios.add(servicio);
+		int costo = servicio.obtenerPrecio();
+		this.quitarDinero(costo);
+		servicio.cambiarDuenio(this);
+	}
 	
 	public boolean esDuenioDeTerreno(Terreno terreno) {
 		return propiedades.contains(terreno);
+	}
+
+	public boolean esDuenioDeServicio(Servicio servicio) {
+		return servicios.contains(servicio);
 	}
 	
 	public boolean pagarFianza(Carcel carcel) {

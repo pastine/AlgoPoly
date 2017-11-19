@@ -30,10 +30,6 @@ public class Terreno extends Casillero{
 		this.duenio = jugador;
 	}
 
-	public int obtenerAlquiler(){
-		return alquiler;
-	}
-
 	public void cobrarAlquiler(Jugador visitante){
 		if (duenio != null) {
 			duenio.recibirDinero(alquiler);
