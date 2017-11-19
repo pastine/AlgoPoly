@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import modelo.Casillero;
+import modelo.Propiedad;
 import modelo.PropiedadConDuenioException;
 import modelo.Servicio;
 import modelo.jugador.Jugador;
@@ -17,14 +18,14 @@ public class ServicioTest {
 
 	@Test
 	public void testAlCrearServicioLoCreaConElPrecioCorrecto() {
-		int precioServicio = 20000;
-		Servicio aysa = new Servicio(precioServicio, 10);
+		int precioServicio = 30000;
+		Servicio aysa = new Servicio(precioServicio, 300, 500);
 		Assert.assertEquals(precioServicio, aysa.obtenerPrecio());
 	}
 
 	@Test
 	public void testComprarServicioLePertenece() {
-		Servicio aysa = new Servicio(1000, 10);
+		Servicio aysa = new Servicio(30000, 300, 500);
 		Jugador jugador = new Jugador();
 		jugador.comprarPropiedad(aysa);
 		boolean pertenece = jugador.esDuenioDePropiedad(aysa);
@@ -33,7 +34,7 @@ public class ServicioTest {
 
 	@Test
 	public void testComprarServicioNoLePertenece() {
-		Servicio aysa = new Servicio(1000, 10);
+		Servicio aysa = new Servicio(30000, 300, 500);
 		Jugador jugador = new Jugador();
 		boolean pertenece = jugador.esDuenioDePropiedad(aysa);
 		Assert.assertFalse(pertenece);
@@ -41,8 +42,8 @@ public class ServicioTest {
 
 	@Test
 	public void testAlComprarServicioSeLeDescuentaElPrecioAlSaldoDelJugador() {
-		int precioServicio = 20000;
-		Servicio aysa = new Servicio(precioServicio,0);
+		int precioServicio = 30000;
+		Servicio aysa = new Servicio(precioServicio, 300, 500);
 		Jugador jugador = new Jugador();
 		int saldoInicial = jugador.obtenerSaldo();
 		jugador.comprarPropiedad(aysa);
@@ -51,8 +52,8 @@ public class ServicioTest {
 
 	@Test
 	public void testAlComprarServicioElNuevoDuenioEsElJugadorQueLoCompro() {
-		int precioServicio = 20000;
-		Servicio aysa = new Servicio(precioServicio,0);
+		int precioServicio = 30000;
+		Servicio aysa = new Servicio(precioServicio, 300, 500);
 		Jugador jugador = new Jugador();
 		jugador.comprarPropiedad(aysa);
 		Assert.assertEquals(jugador, aysa.obtenerDuenio());
@@ -60,8 +61,8 @@ public class ServicioTest {
 
 	@Test
 	public void testSiUnJugadorQuiereComprarUnServicioConDuenioLanzaPropiedadConDuenioException() {
-		int precioServicio = 20000;
-		Servicio aysa = new Servicio(precioServicio, 0);
+		int precioServicio = 30000;
+		Servicio aysa = new Servicio(precioServicio, 300, 500);
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
 		jugadorA.comprarPropiedad(aysa);
@@ -76,7 +77,7 @@ public class ServicioTest {
 		Jugador jugadorB = new Jugador();
 		int capitalInicial = jugadorB.obtenerSaldo();
 
-		Servicio aysa = new Servicio(20000, 100);
+		Servicio aysa = new Servicio(30000, 300, 500);
 		jugadorA.comprarPropiedad(aysa);
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -90,7 +91,7 @@ public class ServicioTest {
 
 		int capitalFinal = jugadorB.obtenerSaldo();
 
-		Assert.assertEquals(capitalInicial, capitalFinal + 200);
+		Assert.assertEquals(capitalInicial, capitalFinal + 600);
 	}
 
 	@Test
@@ -98,7 +99,7 @@ public class ServicioTest {
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
 
-		Servicio aysa = new Servicio(20000, 100);
+		Servicio aysa = new Servicio(30000, 300, 500);
 		jugadorA.comprarPropiedad(aysa);
 		int capitalInicial = jugadorA.obtenerSaldo();
 		Casillero casillero1 = new Casillero();
@@ -113,14 +114,14 @@ public class ServicioTest {
 
 		int capitalFinal = jugadorA.obtenerSaldo();
 
-		Assert.assertEquals(capitalInicial + 200 , capitalFinal);
+		Assert.assertEquals(capitalInicial + 600 , capitalFinal);
 	}
 
 	@Test
 	public void testSiUnJugadorCaeEnUnServicioDeSuPropiedadElSaldoNoCambia() {
 		Jugador jugadorA = new Jugador();
 
-		Servicio aysa = new Servicio(20000, 100);
+		Servicio aysa = new Servicio(30000, 300, 500);
 		jugadorA.comprarPropiedad(aysa);
 		int capitalInicial = jugadorA.obtenerSaldo();
 		Casillero casillero1 = new Casillero();
@@ -137,5 +138,52 @@ public class ServicioTest {
 
 		Assert.assertEquals(capitalInicial , capitalFinal);
 	}
-
+	
+	@Test
+	public void TestCaerEnTrenSinTenerSubteTeCobraEnBaseAlDadoTirado(){
+		Jugador jugador = new Jugador();
+		int capitalAnterior = jugador.obtenerSaldo();
+		int costoServicioParcial = 450;
+		Servicio tren = new Servicio(38000, costoServicioParcial, 800);
+		Jugador duenio = new Jugador();
+		duenio.comprarPropiedad(tren);
+		int pasosTotal = jugador.lanzarDados();
+		Casillero casillero = new Casillero();
+		jugador.ponerEnCasillero(casillero);		
+		for (int i = 1; i < pasosTotal; i++) {
+			casillero.agregarSiguiente(new Casillero());
+			casillero = casillero.obtenerSiguiente();
+		}
+		casillero.agregarSiguiente(tren);
+		jugador.mover(pasosTotal);
+		int capitalPosterior = jugador.obtenerSaldo();
+		int costoServicio = costoServicioParcial * pasosTotal;
+		Assert.assertEquals(capitalAnterior, capitalPosterior + costoServicio);
+	}
+	
+	@Test
+	public void TestCaerEnTrenConSubteTeCobraEnBaseAlDadoTirado(){
+		Jugador jugador = new Jugador();
+		int capitalAnterior = jugador.obtenerSaldo();
+		int costoServicioTotal = 800;
+		Servicio tren = new Servicio(38000, 450, costoServicioTotal);
+		Servicio subte = new Servicio(40000, 600, 1100);
+		Jugador duenio = new Jugador();
+		duenio.comprarPropiedad(tren);
+		duenio.comprarPropiedad(subte);
+		tren.asigarHermano(subte);
+		int pasosTotal = jugador.lanzarDados();
+		Casillero casillero = new Casillero();
+		jugador.ponerEnCasillero(casillero);		
+		for (int i = 1; i < pasosTotal; i++) {
+			casillero.agregarSiguiente(new Casillero());
+			casillero = casillero.obtenerSiguiente();
+		}
+		casillero.agregarSiguiente(tren);
+		jugador.mover(pasosTotal);
+		int capitalPosterior = jugador.obtenerSaldo();
+		int costoServicio = costoServicioTotal * pasosTotal;
+		Assert.assertEquals(capitalAnterior, capitalPosterior + costoServicio);
+	}
+	
 }

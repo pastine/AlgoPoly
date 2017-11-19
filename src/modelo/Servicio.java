@@ -3,12 +3,15 @@ package modelo;
 import modelo.jugador.Jugador;
 
 public class Servicio extends Propiedad{
-	private int costoMultiplicadorServicio;
+	private int costoServicioParcial;
+	private Propiedad hermano;
+	private int costoServicioTotal;
 	
-	public Servicio(int precio, int costoMultiplicadorServicio) {
+	public Servicio(int precio, int costoServicioParcial, int costoServicioTotal) {
 		super.precio = precio;
 		super.duenio = null;
-		this.costoMultiplicadorServicio = costoMultiplicadorServicio;
+		this.costoServicioParcial = costoServicioParcial;
+		this.costoServicioTotal = costoServicioTotal;
 	}
 	
 	public void accionar(Jugador jugador, int pasosTotal) {
@@ -16,7 +19,16 @@ public class Servicio extends Propiedad{
 	}
 	
 	private void cobrarServicio(Jugador jugador, int pasosTotal) {
-		jugador.quitarDinero(pasosTotal * costoMultiplicadorServicio);
-		duenio.recibirDinero(pasosTotal * costoMultiplicadorServicio);
+		int costoServicio;
+		if (duenio.esDuenioDePropiedad(hermano))
+			costoServicio = pasosTotal * costoServicioTotal;
+		else
+			costoServicio = pasosTotal * costoServicioParcial;
+		jugador.quitarDinero(costoServicio);
+		duenio.recibirDinero(costoServicio);
+	}
+	
+	public void asigarHermano(Propiedad hermano) {
+		this.hermano = hermano;
 	}
 }
