@@ -2,6 +2,7 @@ package modeloTest;
 
 import modelo.propiedad.ConstruccionNoPermitidaException;
 import modelo.propiedad.PropiedadConDuenioException;
+import modelo.propiedad.TerrenoDoble;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -144,7 +145,5 @@ public class TerrenoTest {
 		Assert.assertEquals(jugadorA.obtenerSaldo() + alquilerConCasa, saldoInicial);
 
 	}
-
-
 
 }

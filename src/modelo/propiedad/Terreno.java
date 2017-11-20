@@ -34,16 +34,19 @@ public class Terreno extends Propiedad{
 		estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
 	}
 
-	public int obtenerPrecioConstruccionCasa(){
-		return this.precioConstruccionCasa;
+	public int obtenerCantidadDeConstrucciones(){
+		return numeroCasas;
 	}
 
 	public void construirCasa(){
-		if (numeroCasas == 1) throw new ConstruccionNoPermitidaException();
+		if (!puedeConstruirCasa()) throw new ConstruccionNoPermitidaException();
 		duenio.quitarDinero(precioConstruccionCasa);
 		numeroCasas += 1;
 		estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
 	}
 
+	public boolean puedeConstruirCasa(){
+		return (numeroCasas < 1);
+	}
 
 }

@@ -8,6 +8,7 @@ import modelo.Dado;
 import modelo.propiedad.Propiedad;
 import modelo.propiedad.PropiedadConDuenioException;
 import modelo.propiedad.Terreno;
+import modelo.propiedad.TerrenoDoble;
 
 public class Jugador {
 	private int saldo;
@@ -100,4 +101,10 @@ public class Jugador {
 		if (this != terreno.obtenerDuenio()) throw new PropiedadConDuenioException();
 		terreno.construirCasa();
 	}
+
+	public void construirHotel(TerrenoDoble terrenoDoble){
+		if (this != terrenoDoble.obtenerDuenio()) throw new PropiedadConDuenioException();
+		terrenoDoble.construirHotel();
+	}
+
 }
