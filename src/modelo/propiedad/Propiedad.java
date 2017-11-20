@@ -1,8 +1,9 @@
-package modelo;
+package modelo.propiedad;
 
+import modelo.Casillero;
 import modelo.jugador.Jugador;
 
-public abstract class Propiedad extends Casillero{
+public abstract class Propiedad extends Casillero {
 	protected int precio;
 	protected Jugador duenio;
 	protected Propiedad hermano;

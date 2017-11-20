@@ -6,8 +6,8 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import modelo.Casillero;
-import modelo.PropiedadConDuenioException;
-import modelo.Servicio;
+import modelo.propiedad.PropiedadConDuenioException;
+import modelo.propiedad.Servicio;
 import modelo.jugador.Jugador;
 
 public class ServicioTest {

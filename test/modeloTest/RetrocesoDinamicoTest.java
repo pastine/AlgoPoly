@@ -1,6 +1,6 @@
 package modeloTest;
 
-import modelo.Terreno;
+import modelo.propiedad.Terreno;
 import org.junit.Assert;
 import org.junit.Test;
 

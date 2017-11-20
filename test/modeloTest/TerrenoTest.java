@@ -1,11 +1,11 @@
 package modeloTest;
 
-import modelo.PropiedadConDuenioException;
+import modelo.propiedad.PropiedadConDuenioException;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 
-import modelo.Terreno;
+import modelo.propiedad.Terreno;
 import modelo.jugador.Jugador;
 import org.junit.rules.ExpectedException;
 

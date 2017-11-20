@@ -3,6 +3,7 @@ package modelo.jugador;
 import java.util.ArrayList;
 
 import modelo.*;
+import modelo.propiedad.Propiedad;
 
 public class Jugador {
 	private int saldo;
