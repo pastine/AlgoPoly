@@ -4,7 +4,6 @@ import modelo.jugador.Jugador;
 
 public class Servicio extends Propiedad{
 	private int costoServicioParcial;
-	private Propiedad hermano;
 	private int costoServicioTotal;
 	
 	public Servicio(int precio, int costoServicioParcial, int costoServicioTotal) {
@@ -26,9 +25,5 @@ public class Servicio extends Propiedad{
 			costoServicio = pasosTotal * costoServicioParcial;
 		jugador.quitarDinero(costoServicio);
 		duenio.recibirDinero(costoServicio);
-	}
-	
-	public void asigarHermano(Propiedad hermano) {
-		this.hermano = hermano;
 	}
 }

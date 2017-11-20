@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import modelo.Casillero;
-import modelo.Propiedad;
 import modelo.PropiedadConDuenioException;
 import modelo.Servicio;
 import modelo.jugador.Jugador;
