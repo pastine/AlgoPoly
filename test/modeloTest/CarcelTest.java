@@ -1,6 +1,7 @@
 package modeloTest;
 
 import modelo.Casillero;
+import modelo.Tablero;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -103,12 +104,13 @@ public class CarcelTest {
 		Casillero casillero3 = new Casillero();
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
 
 		carcel.agregarJugador(jugador, 0);
-
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
 
 		carcel.agregarJugador(jugador, 0);
 		thrown.expect(JugadorEstaPresoException.class);
@@ -137,9 +139,11 @@ public class CarcelTest {
 		Casillero casillero2 = new Casillero();
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-
-		carcel.agregarSiguiente(casillero1);
-		casillero2.agregarSiguiente(casillero2);
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(carcel);
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
 
 		carcel.agregarJugador(jugador, 0);
 		thrown.expect(JugadorEstaPresoException.class);

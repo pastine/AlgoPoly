@@ -1,5 +1,6 @@
 package modeloTest;
 
+import javafx.scene.control.Tab;
 import modelo.*;
 import modelo.jugador.Jugador;
 import modelo.jugador.SaldoInsuficienteException;
@@ -69,12 +70,16 @@ public class JugadorTest {
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
-		
-		jugador.ponerEnCasillero(casillero1);
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		
+
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
+		casillero1.agregarJugador(jugador,0);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+
 		jugador.mover(2);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero2.jugadorEstaEnCasillero(jugador));
@@ -85,8 +90,8 @@ public class JugadorTest {
 	public void testAvanzar0PasoElJugadorEstaEnElMismoCasillero() {
 		Jugador jugador = new Jugador();
 		Casillero casillero = new Casillero();
-		
-		jugador.ponerEnCasillero(casillero);
+
+		casillero.agregarJugador(jugador,0);
 		
 		jugador.mover(0);
 		
