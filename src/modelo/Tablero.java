@@ -1,5 +1,6 @@
 package modelo;
 
+import modelo.casillero.*;
 import modelo.propiedad.Servicio;
 import modelo.propiedad.Terreno;
 import modelo.propiedad.TerrenoDoble;
@@ -45,7 +46,7 @@ public class Tablero {
         casilleros = new ArrayList<Casillero>();
     }
 
-    public Tablero inicializar(){
+    public static Tablero inicializar(){
 
         // Instanciación de todos los casilleros
         Casillero salida = new Casillero();
@@ -86,7 +87,7 @@ public class Tablero {
         edesur.asigarHermano(aysa);
 
         //Agrego los casilleros en orden al tablero
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.darTablero();
         tablero.agregarCasillero(salida);
         tablero.agregarCasillero(quini6);
         tablero.agregarCasillero(buenosAiresSur);
@@ -109,6 +110,10 @@ public class Tablero {
         tablero.agregarCasillero(tucuman);
 
         return tablero;
+    }
+
+    public Casillero obtenerPrimerCasillero(){
+        return casilleros.get(0);
     }
 
 

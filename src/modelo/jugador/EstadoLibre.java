@@ -1,6 +1,6 @@
 package modelo.jugador;
 
-import modelo.Casillero;
+import modelo.casillero.Casillero;
 import modelo.Tablero;
 
 public class EstadoLibre implements EstadoDeMovimientoDelJugador {

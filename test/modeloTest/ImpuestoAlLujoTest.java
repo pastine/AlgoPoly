@@ -5,7 +5,7 @@ package modeloTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import modelo.ImpuestoAlLujo;
+import modelo.casillero.ImpuestoAlLujo;
 import modelo.jugador.Jugador;
 
 public class ImpuestoAlLujoTest {

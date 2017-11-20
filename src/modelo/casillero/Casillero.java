@@ -1,4 +1,4 @@
-package modelo;
+package modelo.casillero;
 
 import java.util.ArrayList;
 

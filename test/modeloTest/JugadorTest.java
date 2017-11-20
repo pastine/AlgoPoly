@@ -1,7 +1,7 @@
 package modeloTest;
 
-import javafx.scene.control.Tab;
 import modelo.*;
+import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
 import modelo.jugador.SaldoInsuficienteException;
 

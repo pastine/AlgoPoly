@@ -1,12 +1,12 @@
 package modeloTest;
 
-import modelo.Casillero;
+import modelo.casillero.Casillero;
 import modelo.Tablero;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 
-import modelo.Carcel;
+import modelo.casillero.Carcel;
 import modelo.jugador.Jugador;
 import modelo.jugador.JugadorEstaPresoException;
 

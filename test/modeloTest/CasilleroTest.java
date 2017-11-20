@@ -1,10 +1,9 @@
 package modeloTest;
 
-import modelo.Tablero;
 import org.junit.Assert;
 import org.junit.Test;
 
-import modelo.Casillero;
+import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
 
 public class CasilleroTest {

@@ -2,8 +2,8 @@ package modelo.jugador;
 
 import java.util.ArrayList;
 
-import modelo.Carcel;
-import modelo.Casillero;
+import modelo.casillero.Carcel;
+import modelo.casillero.Casillero;
 import modelo.Dado;
 import modelo.propiedad.Propiedad;
 import modelo.propiedad.PropiedadConDuenioException;
@@ -118,4 +118,8 @@ public class Jugador {
 		this.propiedades.remove(viejaPropiedad);
 	}
 
+	public void ofrecerComprarPropiedad() {
+		// Acá debería saltar un PopUp que ofrezca comprar la propiedad actual, pero para simplificar el modelo siempre que cae lo va a comprar
+		comprarPropiedad((Propiedad) casilleroActual);
+	}
 }

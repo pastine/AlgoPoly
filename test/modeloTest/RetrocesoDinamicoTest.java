@@ -5,8 +5,8 @@ import modelo.propiedad.Terreno;
 import org.junit.Assert;
 import org.junit.Test;
 
-import modelo.Casillero;
-import modelo.RetrocesoDinamico;
+import modelo.casillero.Casillero;
+import modelo.casillero.RetrocesoDinamico;
 import modelo.jugador.Jugador;
 
 public class RetrocesoDinamicoTest {
