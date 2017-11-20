@@ -4,6 +4,7 @@ import modelo.*;
 import modelo.jugador.Jugador;
 import modelo.jugador.SaldoInsuficienteException;
 
+import modelo.propiedad.Propiedad;
 import modelo.propiedad.Terreno;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -57,7 +58,7 @@ public class JugadorTest {
 	@Test
 	public void testLaCantidadDePropiedadesEnJugadorTrasComprarEsUno() {
 		Jugador jugador = new Jugador();
-		Terreno bsAs = new Terreno(1000, 0, 0,0);
+		Terreno bsAs = new Terreno(1000, 0);
 		jugador.comprarPropiedad(bsAs);
 		Assert.assertEquals(jugador.obtenerCantidadDePropiedades(),1);
 	}
@@ -100,5 +101,43 @@ public class JugadorTest {
 			resultado = jugador.lanzarDados();
 			Assert.assertTrue(resultado<=12 && resultado>=1);
 		}
+	}
+	
+	@Test
+	public void testJugadoresIntercambianPropiedadesEstasCambianDeDuenioCorrectamente(){
+		Propiedad propiedad1 = new Terreno(10,20);
+		Propiedad propiedad2 = new Terreno(50,10);
+		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		
+		jugador1.comprarPropiedad(propiedad1);
+		jugador2.comprarPropiedad(propiedad2);
+		
+		jugador1.intercambiarPropiedad(jugador2, propiedad1, propiedad2);
+		
+		Assert.assertTrue(jugador2.esDuenioDePropiedad(propiedad1));
+		Assert.assertTrue(jugador1.esDuenioDePropiedad(propiedad2));
+	}
+	
+	@Test
+	public void testJugadoresIntercambianPropiedadesCuandoOtroCaeElAlquilerVaAlJuagadorCorrespondiente(){
+		Propiedad propiedad1 = new Terreno(10,20);
+		Propiedad propiedad2 = new Terreno(50,10);
+		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		Jugador jugador3 = new Jugador();
+		
+		jugador1.comprarPropiedad(propiedad1);
+		jugador2.comprarPropiedad(propiedad2);
+		
+		int dineroOriginal = jugador2.obtenerSaldo();
+		
+		jugador1.intercambiarPropiedad(jugador2, propiedad1, propiedad2);
+		
+		propiedad1.agregarJugador(jugador3, 2);
+		
+		Assert.assertTrue((dineroOriginal+20)==jugador2.obtenerSaldo());
 	}
 }
