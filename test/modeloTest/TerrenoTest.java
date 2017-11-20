@@ -29,7 +29,7 @@ public class TerrenoTest {
 		boolean pertenece = jugador.esDuenioDePropiedad(bsAs);
 		Assert.assertTrue(pertenece);
 	}
-	
+
 	@Test
 	public void testComprarTerrenoNoLePertenece() {
 		Terreno bsAs = new Terreno(1000, 0, 0,0);
@@ -57,17 +57,6 @@ public class TerrenoTest {
 		Assert.assertEquals(jugador, bsAs.obtenerDuenio());
 	}
 
-	@Test
-	public void testSiUnJugadorQuiereComprarUnTerrenoConDuenioLanzaPropiedadConDuenioException() {
-		int precioTerreno = 20000;
-		Terreno bsAs = new Terreno(precioTerreno, 0, 0,0);
-		Jugador jugadorA = new Jugador();
-		Jugador jugadorB = new Jugador();
-		jugadorA.comprarPropiedad(bsAs);
-
-		thrown.expect(PropiedadConDuenioException.class);
-		jugadorB.comprarPropiedad(bsAs);
-	}
 
 	@Test
 	public void testSiUnJugadorCaeEnUnTerrenoConDuenioElSaldoDelPrimeroDisminuyeIgualQueElPrecioDelAlquiler() {
@@ -107,7 +96,19 @@ public class TerrenoTest {
 
 		Assert.assertEquals(jugadorA.obtenerSaldo() + costoConstruccion, saldoInicial);
 	}
-
+	
+	@Test
+	public void testSiUnJugadorQuiereComprarUnTerrenoConDuenioLanzaPropiedadConDuenioException() {
+	int precioTerreno = 20000;
+		Terreno bsAs = new Terreno(precioTerreno, 0, 0,0);
+		Jugador jugadorA = new Jugador();
+		Jugador jugadorB = new Jugador();
+		jugadorA.comprarPropiedad(bsAs);
+		
+		thrown.expect(PropiedadConDuenioException.class);
+	 	jugadorB.comprarPropiedad(bsAs);
+	}
+	
 	@Test
 	public void testUnJugadorQueCuentaConUnTerrenoSimpleNoPuedeConstruirDosCasas() {
 		Terreno santaFe = new Terreno(15000, 1500, 3500,4000);
@@ -144,7 +145,5 @@ public class TerrenoTest {
 		Assert.assertEquals(jugadorA.obtenerSaldo() + alquilerConCasa, saldoInicial);
 
 	}
-
-
 
 }
