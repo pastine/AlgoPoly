@@ -12,10 +12,10 @@ public class Terreno extends Propiedad{
 	}
 
 	public void accionar(Jugador jugador, int pasosTotal){
-		cobrarAlquiler(jugador);
+		cobrar(jugador,pasosTotal);
 	}
 
-	private void cobrarAlquiler(Jugador visitante){
+	protected void cobrar(Jugador visitante, int pasosTotal){
 		if (duenio != null) {
 			duenio.recibirDinero(alquiler);
 			visitante.quitarDinero(alquiler);

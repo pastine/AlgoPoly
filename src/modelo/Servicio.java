@@ -14,10 +14,10 @@ public class Servicio extends Propiedad{
 	}
 	
 	public void accionar(Jugador jugador, int pasosTotal) {
-		cobrarServicio(jugador, pasosTotal);
+		cobrar(jugador, pasosTotal);
 	}
 	
-	private void cobrarServicio(Jugador jugador, int pasosTotal) {
+	protected void cobrar(Jugador jugador, int pasosTotal) {
 		int costoServicio;
 		if (duenio.esDuenioDePropiedad(hermano))
 			costoServicio = pasosTotal * costoServicioTotal;

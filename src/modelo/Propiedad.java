@@ -23,4 +23,6 @@ public abstract class Propiedad extends Casillero{
 	public void asigarHermano(Propiedad hermano) {
 		this.hermano = hermano;
 	}
+
+	protected abstract void cobrar(Jugador jugador, int pasosTotal);
 }
