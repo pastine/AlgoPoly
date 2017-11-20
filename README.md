@@ -16,23 +16,14 @@
 + Pastine, Casimiro
 
 ### TO DO:
-1ra Entrega (16 de Noviembre)
-- [X] Agregar .gitignore para las clases compiladas
-- [X] Set up de Travis para integración continua
-- [X] Un jugador cae en Quini 6 por primera vez. Verificar que su capital se incrementa en $50000. 
-- [X] Un jugador cae en Quini 6 por segunda vez. Verificar que su capital se incrementa en $30000.
-- [X] Un jugador cae en Quini 6 más de dos veces. Verificar que su capital no se incrementa.
-- [X] Un jugador cae en un Barrio, se adueña de este. Verificamos que este jugador es el propietario.
-- [X] Un jugador cae en la Cárcel, no puede ejecutar una acción. Verificar que no puede desplazarse.
-- [X] Un jugador cae en la Cárcel, puede pagar la fianza si el turno es 2 o 3. Verificar que luego de esto puede moverse.
-- [X] Un jugador cae en la Cárcel, no puede pagar la fianza por falta de fondos siendo el turno es 2 o 3. Verificar que luego de esto no se puede moverse.
-- [X] Un jugador cae en Avance dinámico habiendo sumado 2,3,4,5 o 6. Verificar que su posición es equivalente a avanzar dos casilleros menos que la suma obtenida.
-- [X] Un jugador cae en Avance dinámico habiendo sumado 7,8,9 o 10. Verificar que su posición es equivalente a avanzar una #cantidad de efectivo del jugador % número sacado. 
-- [X] Un jugador cae en Avance dinámico habiendo sumado 11 o 12. Verificar que su posición es equivalente a avanzar el número sacado menos la sumatoria de propiedades del jugador. 
-- [X] Todas las pruebas pertinentes que permitan verificar el comportamiento de retroceso dinámico.
-- [X] Un jugador cae en Policía. Verificar que no pueda desempeñar ninguna acción y que su ubicación sea ahora la Cárcel.
 
-
+3ra y última Entrega: (30 de Noviembre)
+- [ ] Un jugador arroja los dados y ambos tienen el mismo valor. Verificar que puede volver a jugar. 
+- [ ] Un jugador arroja los dados y ambos tienen el mismo valor en dos oportunidades. Verificar que puede volver a jugar.
+- [ ] Un jugador no cuenta con efectivo y cae en un área que genera gasto. Verificar que un tercer jugador cae en el área que entregó el primer jugador y el cobro del dinero se acredita en la cuenta del jugador que ostenta la titularidad por un monto igual al área sin construcción.
+- [ ] Un jugador arroja los dados. Verificar que este paso de su posición actual a la posición indicada por los dados.
+- [ ] No se puede construir hoteles en terrenos simples (no dobles)
+- [ ] Fin del juego en todas sus variantes.
 
 2da Entrega (23 de Noviembre)
 
@@ -53,3 +44,20 @@
 - [X] Un jugador cae en Impuesto al Lujo. Verificar que su dinero se reduzca un %10 de su efectivo.
 - [X] Un jugador cae en EDESUR adquirida previamente por otro jugador que no se adueño de AYSA. Verificar que su dinero se reduzca por 500 veces lo que dice los dados arrojados previamente. 
 - [X] Un jugador cae en EDESUR adquirida previamente por otro jugador que además es el dueño de AYSA. Verificar que su dinero se reduzca por 1000 veces lo que dice los dados arrojados previamente.
+
+
+1ra Entrega (16 de Noviembre)
+- [X] Agregar .gitignore para las clases compiladas
+- [X] Set up de Travis para integración continua
+- [X] Un jugador cae en Quini 6 por primera vez. Verificar que su capital se incrementa en $50000. 
+- [X] Un jugador cae en Quini 6 por segunda vez. Verificar que su capital se incrementa en $30000.
+- [X] Un jugador cae en Quini 6 más de dos veces. Verificar que su capital no se incrementa.
+- [X] Un jugador cae en un Barrio, se adueña de este. Verificamos que este jugador es el propietario.
+- [X] Un jugador cae en la Cárcel, no puede ejecutar una acción. Verificar que no puede desplazarse.
+- [X] Un jugador cae en la Cárcel, puede pagar la fianza si el turno es 2 o 3. Verificar que luego de esto puede moverse.
+- [X] Un jugador cae en la Cárcel, no puede pagar la fianza por falta de fondos siendo el turno es 2 o 3. Verificar que luego de esto no se puede moverse.
+- [X] Un jugador cae en Avance dinámico habiendo sumado 2,3,4,5 o 6. Verificar que su posición es equivalente a avanzar dos casilleros menos que la suma obtenida.
+- [X] Un jugador cae en Avance dinámico habiendo sumado 7,8,9 o 10. Verificar que su posición es equivalente a avanzar una #cantidad de efectivo del jugador % número sacado. 
+- [X] Un jugador cae en Avance dinámico habiendo sumado 11 o 12. Verificar que su posición es equivalente a avanzar el número sacado menos la sumatoria de propiedades del jugador. 
+- [X] Todas las pruebas pertinentes que permitan verificar el comportamiento de retroceso dinámico.
+- [X] Un jugador cae en Policía. Verificar que no pueda desempeñar ninguna acción y que su ubicación sea ahora la Cárcel.
