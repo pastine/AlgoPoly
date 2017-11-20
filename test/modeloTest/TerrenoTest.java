@@ -58,7 +58,6 @@ public class TerrenoTest {
 	}
 
 	@Test
-<<<<<<< Updated upstream
 	public void testSiUnJugadorQuiereComprarUnTerrenoConDuenioLanzaPropiedadConDuenioException() {
 		int precioTerreno = 20000;
 		Terreno bsAs = new Terreno(precioTerreno, 0, 0,0);
@@ -71,8 +70,6 @@ public class TerrenoTest {
 	}
 
 	@Test
-=======
->>>>>>> Stashed changes
 	public void testSiUnJugadorCaeEnUnTerrenoConDuenioElSaldoDelPrimeroDisminuyeIgualQueElPrecioDelAlquiler() {
 		int precioTerreno = 20000;
 		Terreno bsAs = new Terreno(precioTerreno, 1000, 0,0);
