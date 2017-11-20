@@ -29,7 +29,7 @@ public class AlgoPoly {
             try{
                 jugadorActual.mover(numeroPasos);
             } catch (SaldoInsuficienteException e){
-                System.out.print("Se fue el jugador" + turnos.poll().toString());
+                turnos.poll();
                 continue;
             } catch (JugadorEstaPresoException e) {
 
@@ -37,8 +37,6 @@ public class AlgoPoly {
             turnos.add(turnos.poll());
             jugadorActual = turnos.peek();
         }
-        System.out.print("GANO EL JUGADOR" + turnos.peek().toString());
-
     }
 
     private void crearTableroYJugadores(){
