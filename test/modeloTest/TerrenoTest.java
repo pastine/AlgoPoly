@@ -1,5 +1,6 @@
 package modeloTest;
 
+import modelo.propiedad.ConstruccionNoPermitidaException;
 import modelo.propiedad.PropiedadConDuenioException;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -16,13 +17,13 @@ public class TerrenoTest {
 	@Test
 	public void testAlCrearTerrenoLoCreaConElPrecioCorrecto() {
 		int precioTerreno = 20000;
-		Terreno bsAs = new Terreno(precioTerreno,0);
+		Terreno bsAs = new Terreno(precioTerreno,0, 0,0);
 		Assert.assertEquals(precioTerreno, bsAs.obtenerPrecio());
 	}
 
 	@Test
 	public void testComprarTerrenoLePertenece() {
-		Terreno bsAs = new Terreno(1000,0);
+		Terreno bsAs = new Terreno(1000,0, 0,0);
 		Jugador jugador = new Jugador();
 		jugador.comprarPropiedad(bsAs);
 		boolean pertenece = jugador.esDuenioDePropiedad(bsAs);
@@ -31,7 +32,7 @@ public class TerrenoTest {
 	
 	@Test
 	public void testComprarTerrenoNoLePertenece() {
-		Terreno bsAs = new Terreno(1000, 0);
+		Terreno bsAs = new Terreno(1000, 0, 0,0);
 		Jugador jugador = new Jugador();
 		boolean pertenece = jugador.esDuenioDePropiedad(bsAs);
 		Assert.assertFalse(pertenece);
@@ -40,7 +41,7 @@ public class TerrenoTest {
 	@Test
 	public void testAlComprarTerrenoSeLeDescuentaElPrecioAlSaldoDelJugador() {
 		int precioTerreno = 20000;
-		Terreno bsAs = new Terreno(precioTerreno,0);
+		Terreno bsAs = new Terreno(precioTerreno,0, 0,0);
 		Jugador jugador = new Jugador();
 		int saldoInicial = jugador.obtenerSaldo();
 		jugador.comprarPropiedad(bsAs);
@@ -50,7 +51,7 @@ public class TerrenoTest {
 	@Test
 	public void testAlComprarTerrenoElNuevoDuenioEsElJugadorQueLoCompro() {
 		int precioTerreno = 20000;
-		Terreno bsAs = new Terreno(precioTerreno,0);
+		Terreno bsAs = new Terreno(precioTerreno,0, 0,0);
 		Jugador jugador = new Jugador();
 		jugador.comprarPropiedad(bsAs);
 		Assert.assertEquals(jugador, bsAs.obtenerDuenio());
@@ -59,7 +60,7 @@ public class TerrenoTest {
 	@Test
 	public void testSiUnJugadorQuiereComprarUnTerrenoConDuenioLanzaPropiedadConDuenioException() {
 		int precioTerreno = 20000;
-		Terreno bsAs = new Terreno(precioTerreno, 0);
+		Terreno bsAs = new Terreno(precioTerreno, 0, 0,0);
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
 		jugadorA.comprarPropiedad(bsAs);
@@ -71,7 +72,7 @@ public class TerrenoTest {
 	@Test
 	public void testSiUnJugadorCaeEnUnTerrenoConDuenioElSaldoDelPrimeroDisminuyeIgualQueElPrecioDelAlquiler() {
 		int precioTerreno = 20000;
-		Terreno bsAs = new Terreno(precioTerreno, 1000);
+		Terreno bsAs = new Terreno(precioTerreno, 1000, 0,0);
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
 		int saldoInicial = jugadorB.obtenerSaldo();
@@ -85,7 +86,7 @@ public class TerrenoTest {
 	@Test
 	public void testSiUnJugadorCaeEnUnTerrenoConDuenioElSaldoDelSegundoAumentaIgualQueElPrecioDelAlquiler() {
 		int precioTerreno = 20000;
-		Terreno bsAs = new Terreno(precioTerreno, 1000);
+		Terreno bsAs = new Terreno(precioTerreno, 1000, 0,0);
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
 		jugadorA.comprarPropiedad(bsAs);
@@ -94,6 +95,56 @@ public class TerrenoTest {
 
 		Assert.assertEquals(jugadorA.obtenerSaldo(), saldoInicial + 1000);
 	}
+
+	@Test
+	public void testUnJugadorCuentaConUnTerrenoYConstruyeUnaPropiedadSuDineroSeDecrementaEnElPrecioDeConstruccionDeCasa() {
+		int costoConstruccion = 4000;
+		Terreno santaFe = new Terreno(15000, 1500, 3500,costoConstruccion);
+		Jugador jugadorA = new Jugador();
+		jugadorA.comprarPropiedad(santaFe);
+		int saldoInicial = jugadorA.obtenerSaldo();
+		jugadorA.construirCasa(santaFe);
+
+		Assert.assertEquals(jugadorA.obtenerSaldo() + costoConstruccion, saldoInicial);
+	}
+
+	@Test
+	public void testUnJugadorQueCuentaConUnTerrenoSimpleNoPuedeConstruirDosCasas() {
+		Terreno santaFe = new Terreno(15000, 1500, 3500,4000);
+		Jugador jugadorA = new Jugador();
+		jugadorA.comprarPropiedad(santaFe);
+
+		jugadorA.construirCasa(santaFe);
+		thrown.expect(ConstruccionNoPermitidaException.class);
+		jugadorA.construirCasa(santaFe);
+	}
+
+	@Test
+	public void testUnJugadorQueNoEsDuenioDeUnaPropiedadSimpleNoPuedeConstruirUnaCasa() {
+		Terreno santaFe = new Terreno(15000, 1500, 3500,4000);
+		Jugador jugadorA = new Jugador();
+		Jugador jugadorB = new Jugador();
+		jugadorB.comprarPropiedad(santaFe);
+
+		thrown.expect(PropiedadConDuenioException.class);
+		jugadorA.construirCasa(santaFe);
+	}
+
+	@Test
+	public void testUnJugadorQueCaeEnUnaPropiedadConCasaConstruidaSeLeDisminuyeElDineroIgualAlAlquilerConCasaDeLaPropiedad() {
+		int alquilerConCasa = 3500;
+		Terreno santaFe = new Terreno(15000, 1500, alquilerConCasa,4000);
+		Jugador jugadorA = new Jugador();
+		Jugador jugadorB = new Jugador();
+		jugadorB.comprarPropiedad(santaFe);
+		jugadorB.construirCasa(santaFe);
+		int saldoInicial = jugadorA.obtenerSaldo();
+		santaFe.agregarJugador(jugadorA,0);
+
+		Assert.assertEquals(jugadorA.obtenerSaldo() + alquilerConCasa, saldoInicial);
+
+	}
+
 
 
 }

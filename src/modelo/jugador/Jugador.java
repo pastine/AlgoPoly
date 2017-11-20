@@ -2,8 +2,12 @@ package modelo.jugador;
 
 import java.util.ArrayList;
 
-import modelo.*;
+import modelo.Carcel;
+import modelo.Casillero;
+import modelo.Dado;
 import modelo.propiedad.Propiedad;
+import modelo.propiedad.PropiedadConDuenioException;
+import modelo.propiedad.Terreno;
 
 public class Jugador {
 	private int saldo;
@@ -90,5 +94,10 @@ public class Jugador {
 		int resultado = dado.tirarDado();
 		resultado += dado.tirarDado();
 		return resultado;
+	}
+
+	public void construirCasa(Terreno terreno){
+		if (this != terreno.obtenerDuenio()) throw new PropiedadConDuenioException();
+		terreno.construirCasa();
 	}
 }

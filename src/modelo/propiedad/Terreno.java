@@ -2,16 +2,24 @@ package modelo.propiedad;
 
 import modelo.jugador.Jugador;
 
-public class Terreno extends Propiedad{
-	private int alquiler;
-	private EstadoCobroTerreno estadoCobroTerreno;
+import java.util.ArrayList;
 
-	public Terreno(int unPrecio, int alquiler) {
+public class Terreno extends Propiedad{
+	protected EstadoCobroTerreno estadoCobroTerreno;
+	protected ArrayList<Integer> preciosAlquiler;
+	protected int numeroCasas;
+	protected int precioConstruccionCasa;
+
+	public Terreno(int unPrecio, int alquilerSinCasa, int alquilerConCasa, int costoConstruccionCasa) {
 		super.precio = unPrecio;
 		super.duenio = null;
 		super.hermano = this;
-		this.alquiler = alquiler;
-		this.estadoCobroTerreno = new EstadoCobroTerreno(alquiler);
+		this.preciosAlquiler = new ArrayList<Integer>();
+		this.preciosAlquiler.add(alquilerSinCasa);
+		this.preciosAlquiler.add(alquilerConCasa);
+		this.estadoCobroTerreno = new EstadoCobroTerreno(alquilerSinCasa);
+		this.numeroCasas = 0;
+		this.precioConstruccionCasa = costoConstruccionCasa;
 	}
 
 	public void accionar(Jugador jugador, int pasosTotal){
@@ -23,6 +31,19 @@ public class Terreno extends Propiedad{
 	}
 
 	public void actualizarEstadoCobro(){
-
+		estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
 	}
+
+	public int obtenerPrecioConstruccionCasa(){
+		return this.precioConstruccionCasa;
+	}
+
+	public void construirCasa(){
+		if (numeroCasas == 1) throw new ConstruccionNoPermitidaException();
+		duenio.quitarDinero(precioConstruccionCasa);
+		numeroCasas += 1;
+		estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
+	}
+
+
 }

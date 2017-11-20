@@ -226,7 +226,7 @@ public class AvanceDinamicoTest {
 		Jugador jugador = new Jugador();
 		int numeroPropiedades = 8;
 		for (int i = 0; i < numeroPropiedades; i++) {
-			jugador.comprarPropiedad(new Terreno(1, 0));
+			jugador.comprarPropiedad(new Terreno(1, 0,0,0));
 		}
 
 		AvanceDinamico avance = new AvanceDinamico();
@@ -252,7 +252,7 @@ public class AvanceDinamicoTest {
         Jugador jugador = new Jugador();
         int numeroPropiedades = 5;
         for (int i = 0; i < numeroPropiedades; i++) {
-            jugador.comprarPropiedad(new Terreno(1, 0));
+            jugador.comprarPropiedad(new Terreno(1, 0,0,0));
         }
 
         AvanceDinamico avance = new AvanceDinamico();
@@ -290,7 +290,7 @@ public class AvanceDinamicoTest {
         Jugador jugador = new Jugador();
         int numeroPropiedades = 13;
         for (int i = 0; i < numeroPropiedades; i++) {
-            jugador.comprarPropiedad(new Terreno(1, 0));
+            jugador.comprarPropiedad(new Terreno(1, 0,0,0));
         }
 
         AvanceDinamico avance = new AvanceDinamico();

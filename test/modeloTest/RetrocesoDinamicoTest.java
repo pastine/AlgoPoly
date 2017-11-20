@@ -15,7 +15,7 @@ public class RetrocesoDinamicoTest {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
 
-		jugador.comprarPropiedad(new Terreno(1, 0));
+		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
 
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -51,7 +51,7 @@ public class RetrocesoDinamicoTest {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
 
-		jugador.comprarPropiedad(new Terreno(1, 0));
+		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
 
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -86,9 +86,9 @@ public class RetrocesoDinamicoTest {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
 
-		jugador.comprarPropiedad(new Terreno(1, 0));
-		jugador.comprarPropiedad(new Terreno(1, 0));
-		jugador.comprarPropiedad(new Terreno(1, 0));
+		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
+		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
+		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
 
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -156,10 +156,10 @@ public class RetrocesoDinamicoTest {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
 
-		jugador.comprarPropiedad(new Terreno(1,0));
-		jugador.comprarPropiedad(new Terreno(1,0));
-		jugador.comprarPropiedad(new Terreno(1,0));
-		jugador.comprarPropiedad(new Terreno(1,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
 
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -194,11 +194,11 @@ public class RetrocesoDinamicoTest {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
 
-		jugador.comprarPropiedad(new Terreno(1,0));
-		jugador.comprarPropiedad(new Terreno(1,0));
-		jugador.comprarPropiedad(new Terreno(1,0));
-		jugador.comprarPropiedad(new Terreno(1,0));
-		jugador.comprarPropiedad(new Terreno(1,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
+		jugador.comprarPropiedad(new Terreno(1,0,0,0));
 
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
