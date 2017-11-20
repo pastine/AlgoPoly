@@ -57,6 +57,16 @@ public class ServicioTest {
 		jugador.comprarPropiedad(aysa);
 		Assert.assertEquals(jugador, aysa.obtenerDuenio());
 	}
+	@Test
+	public void testSiUnJugadorQuiereComprarUnServicioConDuenioLanzaPropiedadConDuenioException() {
+		int precioServicio = 30000;
+		Servicio aysa = new Servicio(precioServicio, 300, 500);
+		Jugador jugadorA = new Jugador();
+		Jugador jugadorB = new Jugador();
+		jugadorA.comprarPropiedad(aysa);
+		thrown.expect(PropiedadConDuenioException.class);
+		jugadorB.comprarPropiedad(aysa);
+	}
 
 	@Test
 	public void testSiUnJugadorCaeEnUnServicioConDuenioElSaldoDelPrimeroDisminuyeLaCantidadDePasosPorElMultiplicador() {

@@ -2,7 +2,6 @@ package modeloTest;
 
 import modelo.propiedad.ConstruccionNoPermitidaException;
 import modelo.propiedad.PropiedadConDuenioException;
-import modelo.propiedad.TerrenoDoble;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -97,7 +96,19 @@ public class TerrenoTest {
 
 		Assert.assertEquals(jugadorA.obtenerSaldo() + costoConstruccion, saldoInicial);
 	}
-
+	
+	@Test
+	public void testSiUnJugadorQuiereComprarUnTerrenoConDuenioLanzaPropiedadConDuenioException() {
+	int precioTerreno = 20000;
+		Terreno bsAs = new Terreno(precioTerreno, 0, 0,0);
+		Jugador jugadorA = new Jugador();
+		Jugador jugadorB = new Jugador();
+		jugadorA.comprarPropiedad(bsAs);
+		
+		thrown.expect(PropiedadConDuenioException.class);
+	 	jugadorB.comprarPropiedad(bsAs);
+	}
+	
 	@Test
 	public void testUnJugadorQueCuentaConUnTerrenoSimpleNoPuedeConstruirDosCasas() {
 		Terreno santaFe = new Terreno(15000, 1500, 3500,4000);

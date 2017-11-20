@@ -60,10 +60,9 @@ public class Jugador {
 	}
 
 	public void comprarPropiedad(Propiedad propiedad) {
+		propiedad.comprar(this);
 		propiedades.add(propiedad);
-		int costo = propiedad.obtenerPrecio();
-		this.quitarDinero(costo);
-		propiedad.cambiarDuenio(this);
+		
 	}
 
 	public boolean esDuenioDePropiedad(Propiedad propiedad) {
