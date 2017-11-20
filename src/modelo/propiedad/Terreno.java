@@ -38,7 +38,8 @@ public class Terreno extends Propiedad{
 		return this.precioConstruccionCasa;
 	}
 
-	public void construirCasa(){
+	public void construirCasa(Jugador jugador){
+		if (duenio != jugador) throw new PropiedadConDuenioException();
 		if (numeroCasas == 1) throw new ConstruccionNoPermitidaException();
 		duenio.quitarDinero(precioConstruccionCasa);
 		numeroCasas += 1;

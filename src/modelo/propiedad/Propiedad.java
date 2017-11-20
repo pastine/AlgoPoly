@@ -17,7 +17,6 @@ public abstract class Propiedad extends Casillero {
 	}
 	
 	public void cambiarDuenio(Jugador jugador){
-		if (duenio != null) throw new PropiedadConDuenioException();
 		this.duenio = jugador;
 		this.actualizarEstadoCobro();
 		this.hermano.actualizarEstadoCobro();
@@ -29,4 +28,12 @@ public abstract class Propiedad extends Casillero {
 
 	protected abstract void cobrar(Jugador jugador, int pasosTotal);
 	public abstract void actualizarEstadoCobro();
+
+	public void comprar(Jugador jugador) {
+		if (duenio != null) throw new PropiedadConDuenioException();
+		this.duenio = jugador;
+		this.actualizarEstadoCobro();
+		this.hermano.actualizarEstadoCobro();
+		
+	}
 }

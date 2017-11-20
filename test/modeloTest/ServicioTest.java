@@ -65,9 +65,9 @@ public class ServicioTest {
 		Jugador jugadorA = new Jugador();
 		Jugador jugadorB = new Jugador();
 		jugadorA.comprarPropiedad(aysa);
-
 		thrown.expect(PropiedadConDuenioException.class);
 		jugadorB.comprarPropiedad(aysa);
+
 	}
 
 	@Test
