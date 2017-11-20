@@ -101,4 +101,42 @@ public class JugadorTest {
 			Assert.assertTrue(resultado<=12 && resultado>=1);
 		}
 	}
+	
+	@Test
+	public void testJugadoresIntercambianPropiedadesEstasCambianDeDuenioCorrectamente(){
+		Terreno propiedad1 = new Terreno(10,20);
+		Terreno propiedad2 = new Terreno(50,10);
+		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		
+		jugador1.comprarPropiedad(propiedad1);
+		jugador2.comprarPropiedad(propiedad2);
+		
+		jugador1.intercambiarPropiedad(jugador2, propiedad1, propiedad2);
+		
+		Assert.assertTrue(jugador2.esDuenioDePropiedad(propiedad1));
+		Assert.assertTrue(jugador1.esDuenioDePropiedad(propiedad2));
+	}
+	
+	@Test
+	public void testJugadoresIntercambianPropiedadesCuandoOtroCaeElAlquilerVaAlJuagadorCorrespondiente(){
+		Terreno propiedad1 = new Terreno(10,20);
+		Terreno propiedad2 = new Terreno(50,10);
+		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		Jugador jugador3 = new Jugador();
+		
+		jugador1.comprarPropiedad(propiedad1);
+		jugador2.comprarPropiedad(propiedad2);
+		
+		int dineroOriginal = jugador2.obtenerSaldo();
+		
+		jugador1.intercambiarPropiedad(jugador2, propiedad1, propiedad2);
+		
+		propiedad1.agregarJugador(jugador3, 2);
+		
+		Assert.assertTrue((dineroOriginal+20)==jugador2.obtenerSaldo());
+	}
 }
