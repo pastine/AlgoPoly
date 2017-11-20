@@ -140,4 +140,27 @@ public class JugadorTest {
 		
 		Assert.assertTrue((dineroOriginal+20)==jugador2.obtenerSaldo());
 	}
+	
+	@Test
+	public void testJugadoresIntercambianPropiedadesConConstruccionPeroEstasVuelvenANoTenerNada(){
+		Propiedad propiedad1 = new Terreno(10,20,5,0);
+		Propiedad propiedad2 = new Terreno(50,10,0,0);
+		
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
+		Jugador jugador3 = new Jugador();
+		
+		jugador1.comprarPropiedad(propiedad1);
+		jugador2.comprarPropiedad(propiedad2);
+		
+		jugador1.construirCasa((Terreno)propiedad1);
+		
+		int dineroOriginal = jugador2.obtenerSaldo();
+		
+		jugador1.intercambiarPropiedad(jugador2, propiedad1, propiedad2);
+		
+		propiedad1.agregarJugador(jugador3, 2);
+		
+		Assert.assertTrue((dineroOriginal+20)==jugador2.obtenerSaldo());
+	}
 }

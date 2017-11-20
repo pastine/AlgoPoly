@@ -48,5 +48,11 @@ public class Terreno extends Propiedad{
 	public boolean puedeConstruirCasa(){
 		return (numeroCasas < 1);
 	}
+	
 
+	@Override
+	public void cambiarDuenio(Jugador jugador) {
+		this.numeroCasas = 0;
+		super.cambiarDuenio(jugador);
+	}
 }
