@@ -435,4 +435,112 @@ public class TerrenoDobleTest {
     	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
     }
     
+    @Test
+    public void testUnJugadorQuiereConstruirHotelConSolo1CasaEnCadaPropiedadYSuDineroNoSeReduce() {
+    	TerrenoDoble buenosAiresSur = new TerrenoDoble(20000,2000,3000,3500, 5000,5000, 8000);
+    	TerrenoDoble buenosAiresNorte = new TerrenoDoble(25000, 2500, 3500, 4000, 6000, 5500, 9000);
+    	buenosAiresNorte.asigarHermano(buenosAiresSur);
+    	buenosAiresSur.asigarHermano(buenosAiresNorte);
+    	Jugador jugador = new Jugador();
+    	jugador.comprarPropiedad(buenosAiresSur);
+    	jugador.comprarPropiedad(buenosAiresNorte);
+    	jugador.construirCasa(buenosAiresSur);
+    	jugador.construirCasa(buenosAiresNorte);
+    	jugador.construirCasa(buenosAiresNorte);
+    	
+    	int capitalAntesDeConstruir = jugador.obtenerSaldo();
+    	
+    	thrown.expect(ConstruccionNoPermitidaException.class);
+    	jugador.construirHotel(buenosAiresNorte);
+    	
+    	int capitalDespuesDeConstruir = jugador.obtenerSaldo();
+    	
+    	Assert.assertEquals(capitalAntesDeConstruir, capitalDespuesDeConstruir);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnCordobaNorteCon2CasasDeOtroJugadorYSuCapitalSeReduce2900() {
+    	int alquilerCon2Casas = 2900;
+    	TerrenoDoble cordobaNorte = new TerrenoDoble(20000, 1300, 1800, alquilerCon2Casas, 3500, 2200, 3500);
+    	TerrenoDoble cordobaSur = new TerrenoDoble(18000, 1000, 1500, 2500, 3000, 2000, 3000);
+    	Jugador duenio = new Jugador();
+    	cordobaNorte.asigarHermano(cordobaSur);
+    	cordobaSur.asigarHermano(cordobaNorte);
+    	duenio.comprarPropiedad(cordobaNorte);
+    	duenio.comprarPropiedad(cordobaSur);
+    	duenio.construirCasa(cordobaSur);
+    	duenio.construirCasa(cordobaNorte);
+    	duenio.construirCasa(cordobaSur);
+    	duenio.construirCasa(cordobaNorte);
+    	Jugador jugadorConMalaSuerte = new Jugador();
+    	int capitalInicial = jugadorConMalaSuerte.obtenerSaldo();
+    	cordobaNorte.agregarJugador(jugadorConMalaSuerte, 0);
+    	int capitalFinal = jugadorConMalaSuerte.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + alquilerCon2Casas);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnSaltaNorteCon2CasasDeOtroJugadorYSuCapitalSeReduce3850() {
+    	int alquilerCon2Casas = 3850;
+    	TerrenoDoble saltaNorte = new TerrenoDoble(23000, 2000, 3250, alquilerCon2Casas, 5500, 4500, 7500);
+    	TerrenoDoble saltaSur = new TerrenoDoble(23000, 2000, 3250, 3850, 5500, 4500, 7500);
+    	Jugador duenio = new Jugador();
+    	saltaNorte.asigarHermano(saltaSur);
+    	saltaSur.asigarHermano(saltaNorte);
+    	duenio.comprarPropiedad(saltaNorte);
+    	duenio.comprarPropiedad(saltaSur);
+    	duenio.construirCasa(saltaSur);
+    	duenio.construirCasa(saltaNorte);
+    	duenio.construirCasa(saltaSur);
+    	duenio.construirCasa(saltaNorte);
+    	Jugador jugadorConMalaSuerte = new Jugador();
+    	int capitalInicial = jugadorConMalaSuerte.obtenerSaldo();
+    	saltaNorte.agregarJugador(jugadorConMalaSuerte, 0);
+    	int capitalFinal = jugadorConMalaSuerte.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + alquilerCon2Casas);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnCordobaNorteConHotelDeOtroJugadorYSuCapitalSeReduce3500() {
+    	int alquilerConHotel = 3500;
+    	TerrenoDoble cordobaNorte = new TerrenoDoble(20000, 1300, 1800, 2900, alquilerConHotel, 2200, 3500);
+    	TerrenoDoble cordobaSur = new TerrenoDoble(18000, 1000, 1500, 2500, 3000, 2000, 3000);
+    	Jugador duenio = new Jugador();
+    	cordobaNorte.asigarHermano(cordobaSur);
+    	cordobaSur.asigarHermano(cordobaNorte);
+    	duenio.comprarPropiedad(cordobaNorte);
+    	duenio.comprarPropiedad(cordobaSur);
+    	duenio.construirCasa(cordobaSur);
+    	duenio.construirCasa(cordobaNorte);
+    	duenio.construirCasa(cordobaSur);
+    	duenio.construirCasa(cordobaNorte);
+    	duenio.construirHotel(cordobaNorte);
+    	Jugador jugadorConMalaSuerte = new Jugador();
+    	int capitalInicial = jugadorConMalaSuerte.obtenerSaldo();
+    	cordobaNorte.agregarJugador(jugadorConMalaSuerte, 0);
+    	int capitalFinal = jugadorConMalaSuerte.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + alquilerConHotel);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnSaltaNorteConHotelDeOtroJugadorYSuCapitalSeReduce() {
+    	int alquilerConHotel = 5500;
+    	TerrenoDoble saltaNorte = new TerrenoDoble(23000, 2000, 3250, 3850, alquilerConHotel, 4500, 7500);
+    	TerrenoDoble saltaSur = new TerrenoDoble(23000, 2000, 3250, 3850, 5500, 4500, 7500);
+    	Jugador duenio = new Jugador();
+    	saltaNorte.asigarHermano(saltaSur);
+    	saltaSur.asigarHermano(saltaNorte);
+    	duenio.comprarPropiedad(saltaNorte);
+    	duenio.comprarPropiedad(saltaSur);
+    	duenio.construirCasa(saltaSur);
+    	duenio.construirCasa(saltaNorte);
+    	duenio.construirCasa(saltaSur);
+    	duenio.construirCasa(saltaNorte);
+    	duenio.construirHotel(saltaNorte);
+    	Jugador jugadorConMalaSuerte = new Jugador();
+    	int capitalInicial = jugadorConMalaSuerte.obtenerSaldo();
+    	saltaNorte.agregarJugador(jugadorConMalaSuerte, 0);
+    	int capitalFinal = jugadorConMalaSuerte.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + alquilerConHotel);
+    }
 }
