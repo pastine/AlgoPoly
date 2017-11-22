@@ -368,5 +368,70 @@ public class TerrenoDobleTest {
         jugadorA.construirHotel(buenosAiresSur);
 
     }
-
+    
+    @Test
+    public void testUnJugadorCaeEnBsAsSurLoCompraYSuDineroSeReduce20000() {
+    	int costoPropiedad = 20000;
+    	TerrenoDoble buenosAiresSur = new TerrenoDoble(costoPropiedad,2000,3000,3500, 5000,5000, 8000);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(buenosAiresSur);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnBsAsNorteLoCompraYSuDineroSeReduce25000() {
+    	int costoPropiedad = 25000;
+    	TerrenoDoble buenosAiresNorte = new TerrenoDoble(costoPropiedad, 2500, 3500, 4000, 6000, 5500, 9000);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(buenosAiresNorte);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnCordobaSurLoCompraYSuDineroSeReduce18000() {
+    	int costoPropiedad = 18000;
+    	TerrenoDoble cordobaSur = new TerrenoDoble(costoPropiedad, 1000, 1500, 2500, 3000, 2000, 3000);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(cordobaSur);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnCordobaNorteLoCompraYSuDineroSeReduce20000() {
+    	int costoPropiedad = 20000;
+    	TerrenoDoble cordobaNorte = new TerrenoDoble(costoPropiedad, 1300, 1800, 2900, 3500, 2200, 3500);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(cordobaNorte);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnSaltaNorteLoCompraYSuDineroSeReduce23000() {
+    	int costoPropiedad = 23000;
+    	TerrenoDoble saltaNorte = new TerrenoDoble(costoPropiedad, 2000, 3250, 3850, 5500, 4500, 7500);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(saltaNorte);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnSaltaSurLoCompraYSuDineroSeReduce23000() {
+    	int costoPropiedad = 23000;
+    	TerrenoDoble saltaSur = new TerrenoDoble(costoPropiedad, 2000, 3250, 3850, 5500, 4500, 7500);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(saltaSur);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
 }

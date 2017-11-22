@@ -7,6 +7,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import modelo.propiedad.Terreno;
+import modelo.propiedad.TerrenoDoble;
 import modelo.jugador.Jugador;
 import org.junit.rules.ExpectedException;
 
@@ -143,7 +144,39 @@ public class TerrenoTest {
 		santaFe.agregarJugador(jugadorA,0);
 
 		Assert.assertEquals(jugadorA.obtenerSaldo() + alquilerConCasa, saldoInicial);
-
 	}
+	
+    @Test
+    public void testUnJugadorCaeEnSantaFeLoCompraYSuDineroSeReduce15000() {
+    	int costoPropiedad = 15000;
+    	Terreno santaFe = new Terreno(costoPropiedad, 1500, 3500, 4000);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(santaFe);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnNeuquenLoCompraYSuDineroSeReduce17000() {
+    	int costoPropiedad = 17000;
+    	Terreno neuquen = new Terreno(costoPropiedad, 1800, 3800, 4800);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(neuquen);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
+    
+    @Test
+    public void testUnJugadorCaeEnTucumanLoCompraYSuDineroSeReduce25000() {
+    	int costoPropiedad = 25000;
+    	Terreno santaFe = new Terreno(costoPropiedad, 2500, 4500, 7000);
+    	Jugador jugador = new Jugador();
+    	int capitalInicial = jugador.obtenerSaldo();
+    	jugador.comprarPropiedad(santaFe);
+    	int capitalFinal = jugador.obtenerSaldo();
+    	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
+    }
 
 }
