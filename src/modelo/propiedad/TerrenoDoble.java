@@ -14,19 +14,13 @@ public class TerrenoDoble extends Terreno {
         preciosAlquiler.add(alquilerConHotel);
     }
 
-    @Override
-    public void construirCasa(){
-        if (!puedeConstruirCasa()) throw new ConstruccionNoPermitidaException();
-        duenio.quitarDinero(precioConstruccionCasa);
-        numeroCasas += 1;
-        estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
-    }
-
     public void construirHotel(){
         if (!puedeConstruirHotel()) throw new ConstruccionNoPermitidaException();
+        else {
         duenio.quitarDinero(precioConstruccionHotel);
         numeroCasas += 1;
         estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
+        }
     }
 
     public boolean puedeConstruirCasa(){

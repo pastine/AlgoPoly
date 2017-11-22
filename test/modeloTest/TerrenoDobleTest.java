@@ -434,4 +434,5 @@ public class TerrenoDobleTest {
     	int capitalFinal = jugador.obtenerSaldo();
     	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
     }
+    
 }
