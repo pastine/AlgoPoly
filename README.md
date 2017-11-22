@@ -31,12 +31,12 @@
 - [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y construye una casa. Verificar que su dinero disponible se decrementó en $5000.
 - [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 1 casa en el Sur y una en el Norte. Verificar que al caer un contrincante en esta área (sur o nortre) el dinero de este se reduce en un monto de $3000. 
 - [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 2 casa en el Sur y una en el Norte. Verificar que al caer un contrincante en esta área (sur o nortre) el dinero de este se reduce en un monto de $3500. 
-- [ ] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte, no tiene cubierta la máxima capacidad de casas y construye una hotel. Verificar que su dinero disponible NO se decrementó. 
+- [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte, no tiene cubierta la máxima capacidad de casas y construye una hotel. Verificar que su dinero disponible NO se decrementó. 
 - [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 2 casa en el Sur, dos casas en el Norte y construye una hotel. Verificar que su dinero disponible se decrementó en $8000. 
 - [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 2 casa en el Sur, dos casas en el Norte y construye una hotel. Verificar que al caer un contrincante en esta área el dinero de este se reduce en un monto de $5000.
-- [ ] Agregar los mismos casos para Córdoba, Salta. 
+- [X] Agregar los mismos casos para Córdoba, Salta. 
 - [X] Un jugador cuenta con Santa Fé y construye una casa. Verificar que su dinero disponible se decrementó en $4000.
-- [ ] Un jugador cae en un barrio con construcciones. Verificar que su dinero disponible reduzca en función del alquiler según la propiedad construida. Implementar esto para todos los barrios.
+- [X] Un jugador cae en un barrio con construcciones. Verificar que su dinero disponible reduzca en función del alquiler según la propiedad construida. Implementar esto para todos los barrios.
 - [X] Un jugador cae en TRENES adquirida previamente por otro jugador que no se adueño de SUBTES. Verificar que su dinero se reduzca por 450 veces lo que dice los dados arrojados previamente.
 - [X] Un jugador cae en TRENES adquirida previamente por otro jugador que además es el dueño de SUBTES. Verificar que su dinero se reduzca por 800 veces lo que dice los dados arrojados previamente.
 - [X] Un jugador intercambia una propiedad suya por otra propiedad de otro jugador. Verificar que un tercer jugador cae en el área y el cobro del dinero se acredita en la cuenta del jugador que ostenta la titularidad.
