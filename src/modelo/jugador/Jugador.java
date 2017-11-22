@@ -91,9 +91,7 @@ public class Jugador {
 
 	public int lanzarDados(){
 		Dado dado = Dado.darDado();
-		int resultado = dado.tirarDado();
-		resultado += dado.tirarDado();
-		return resultado;
+		return dado.tirarDado();
 	}
 
 	public void construirCasa(Terreno terreno){

@@ -25,7 +25,13 @@ public class AlgoPoly {
         Jugador jugadorActual = turnos.peek();
         while (turnos.size() > 1) {
             ofrecerOpciones(jugadorActual);
-            int numeroPasos = jugadorActual.lanzarDados();
+            int numeroPasos1 = jugadorActual.lanzarDados();
+            int numeroPasos2 = jugadorActual.lanzarDados();
+            while(numeroPasos1 == numeroPasos2){
+            	numeroPasos1 = jugadorActual.lanzarDados();
+                numeroPasos2 = jugadorActual.lanzarDados();
+            }
+            int numeroPasos = numeroPasos1 + numeroPasos2;
             try{
                 jugadorActual.mover(numeroPasos);
             } catch (SaldoInsuficienteException e){
