@@ -16,28 +16,23 @@ public class Jugador {
 	private Casillero casilleroActual;
 	private EstadoDeMovimientoDelJugador estadoMovimiento;
 	private EstadoQuiniJugador estadoQuini;
-	private boolean direccionAvanzar;
 
 	public Jugador() {
 		saldo = 100000;
 		propiedades = new ArrayList<Propiedad>();
 		estadoMovimiento = new EstadoLibre();
 		estadoQuini = new EstadoJugadorGanoQuiniCeroVeces();
-		direccionAvanzar = true;
 	}
 	public void ponerEnCasillero(Casillero casillero) {
 		this.casilleroActual = casillero;
 	}
 
 	public void mover(int pasosTotal) {
-		estadoMovimiento.mover(this, casilleroActual, pasosTotal, direccionAvanzar);
+		estadoMovimiento.mover(this, casilleroActual, pasosTotal);
 	}
-
+	
 	public void cambiarDireccion() {
-		if (direccionAvanzar)
-			direccionAvanzar = false;
-		else
-			direccionAvanzar = true;
+		estadoMovimiento.cambiarDireccion();
 	}
 
 	public int obtenerSaldo() {
