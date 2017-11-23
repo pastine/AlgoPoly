@@ -1,4 +1,4 @@
-package modelo.jugador;
+package modelo.jugador.estados;
 
 import modelo.Casillero;
 

@@ -1,8 +1,8 @@
 package modelo.propiedad;
 
 import modelo.propiedad.ConstruccionNoPermitidaException;
-import modelo.propiedad.EstadoCobroTerreno;
 import modelo.propiedad.Terreno;
+import modelo.propiedad.estados.EstadoCobroTerreno;
 
 public class TerrenoDoble extends Terreno {
     private int precioConstruccionHotel;
@@ -16,11 +16,9 @@ public class TerrenoDoble extends Terreno {
 
     public void construirHotel(){
         if (!puedeConstruirHotel()) throw new ConstruccionNoPermitidaException();
-        else {
         duenio.quitarDinero(precioConstruccionHotel);
         numeroCasas += 1;
         estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
-        }
     }
 
     public boolean puedeConstruirCasa(){

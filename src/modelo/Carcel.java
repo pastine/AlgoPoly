@@ -1,9 +1,9 @@
 package modelo;
 
 import modelo.jugador.Jugador;
-import modelo.jugador.EstadoLibre;
-import modelo.jugador.EstadoPreso;
 import modelo.jugador.SaldoInsuficienteException;
+import modelo.jugador.estados.EstadoLibre;
+import modelo.jugador.estados.EstadoPreso;
 
 public class Carcel extends Casillero{
 	

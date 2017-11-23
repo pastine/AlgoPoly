@@ -1,4 +1,4 @@
-package modelo.propiedad;
+package modelo.propiedad.estados;
 
 import modelo.jugador.Jugador;
 

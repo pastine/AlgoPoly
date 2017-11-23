@@ -1,6 +1,7 @@
-package modelo.jugador;
+package modelo.jugador.estados;
 
 import modelo.Casillero;
+import modelo.jugador.Jugador;
 
 public class EstadoLibre implements EstadoDeMovimientoDelJugador {
 	

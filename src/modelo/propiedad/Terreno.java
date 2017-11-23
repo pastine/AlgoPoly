@@ -1,6 +1,7 @@
 package modelo.propiedad;
 
 import modelo.jugador.Jugador;
+import modelo.propiedad.estados.EstadoCobroTerreno;
 
 import java.util.ArrayList;
 

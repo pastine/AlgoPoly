@@ -1,6 +1,7 @@
 package modelo.propiedad;
 
 import modelo.jugador.Jugador;
+import modelo.propiedad.estados.EstadoCobroServicio;
 
 public class Servicio extends Propiedad{
 	private int costoServicioParcial;
