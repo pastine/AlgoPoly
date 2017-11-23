@@ -12,36 +12,48 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class AlgoPoly {
     private Tablero tablero;
     private ArrayList<Jugador> jugadores;
-    private ArrayBlockingQueue<Jugador> turnos;
+    private Turnos turnos;
 
     public AlgoPoly(){
         jugadores = new ArrayList<Jugador>();
-        turnos = new ArrayBlockingQueue<Jugador>(3);
     }
 
     public void iniciarJuego(){
         crearTableroYJugadores();
-        turnos = asignarTurnos(jugadores);
-        Jugador jugadorActual = turnos.peek();
-        while (turnos.size() > 1) {
+        turnos = new Turnos(jugadores);
+            Jugador jugadorActual = turnos.obtenerJugadorDelTurnoActual();
+        while (turnos.cantidadDeJugadoresEnJuego() > 1) {
+            // Ofrece las opciones de comprar casas, vender, intercambiar, etc.
             ofrecerOpciones(jugadorActual);
-            int numeroPasos1 = jugadorActual.lanzarDados();
-            int numeroPasos2 = jugadorActual.lanzarDados();
-            while(numeroPasos1 == numeroPasos2){
-            	numeroPasos1 = jugadorActual.lanzarDados();
+            //Tira los dados. Si saca 2 veces los mismos numeros pierde el turno.
+            int numeroPasos1 = 0;
+            int numeroPasos2 = 0;
+            boolean pierdeTurno = false;
+            for (int i = 1; i < 3; i++) {
+                numeroPasos1 = jugadorActual.lanzarDados();
                 numeroPasos2 = jugadorActual.lanzarDados();
+                if (numeroPasos1 != numeroPasos2) {
+                    break;
+                } else if (i == 2){
+                    pierdeTurno = true;
+                }
             }
+            if(pierdeTurno){
+                turnos.finalizarTurno();
+                continue;
+            }
+
+            // Avanza
             int numeroPasos = numeroPasos1 + numeroPasos2;
             try{
                 jugadorActual.mover(numeroPasos);
             } catch (SaldoInsuficienteException e){
-                turnos.poll();
+                turnos.removerJugadorDelJuego();
                 continue;
             } catch (JugadorEstaPresoException e) {
 
             }
-            turnos.add(turnos.poll());
-            jugadorActual = turnos.peek();
+            turnos.finalizarTurno();
         }
     }
 
@@ -53,15 +65,6 @@ public class AlgoPoly {
             jugadores.add(auxiliar);
             salida.agregarJugador(auxiliar,0);
         }
-    }
-
-    private ArrayBlockingQueue<Jugador> asignarTurnos(ArrayList<Jugador> jugadores){
-        Collections.shuffle(jugadores);
-        ArrayBlockingQueue turnos = new ArrayBlockingQueue<Jugador>(3);
-        for (int i = 0; i < 3; i++) {
-            turnos.add(jugadores.get(i));
-        }
-        return turnos;
     }
 
     private void ofrecerOpciones(Jugador jugadorActual){
