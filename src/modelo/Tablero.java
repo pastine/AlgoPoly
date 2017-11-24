@@ -25,7 +25,6 @@ public class Tablero {
         casilleros.add(unCasillero);
     }
 
-
     public Casillero obtenerSiguiente(Casillero unCasillero) {
         int posicion = casilleros.indexOf(unCasillero);
         if (posicion == -1) throw new CasilleroNoEncontradoException();

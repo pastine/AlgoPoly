@@ -1,6 +1,6 @@
 package modelo.jugador.estados;
 
-import modelo.Casillero;
+import modelo.casillero.Casillero;
 
 public interface EstadoDireccion {
 	

@@ -1,12 +1,13 @@
 package modelo.jugador.estados;
 
-import modelo.Casillero;
+import modelo.casillero.Casillero;
+import modelo.Tablero;
 
 public class EstadoDireccionAvanzar implements EstadoDireccion{
 
 	public Casillero obtenerCasilleroAdyacente(Casillero actual) {
-		
-		return actual.obtenerSiguiente();
+		Tablero tablero = Tablero.darTablero();
+		return tablero.obtenerSiguiente(actual);
 	}
 	
 	public EstadoDireccion cambiarDireccion() {
