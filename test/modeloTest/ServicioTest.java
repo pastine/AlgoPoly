@@ -1,11 +1,12 @@
 package modeloTest;
 
+import modelo.Tablero;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import modelo.Casillero;
+import modelo.casillero.Casillero;
 import modelo.propiedad.PropiedadConDuenioException;
 import modelo.propiedad.Servicio;
 import modelo.jugador.Jugador;
@@ -82,11 +83,13 @@ public class ServicioTest {
 		jugadorA.comprarPropiedad(aysa);
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(aysa);
 
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(aysa);
-
-		jugadorB.ponerEnCasillero(casillero1);
+		casillero1.agregarJugador(jugadorB,0);
 
 		jugadorB.mover(2);
 
@@ -108,11 +111,14 @@ public class ServicioTest {
 		int capitalInicial = jugadorA.obtenerSaldo();
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(aysa);
 
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(aysa);
 
-		jugadorB.ponerEnCasillero(casillero1);
+		casillero1.agregarJugador(jugadorB,0);
 
 		jugadorB.mover(2);
 
@@ -130,11 +136,14 @@ public class ServicioTest {
 		int capitalInicial = jugadorA.obtenerSaldo();
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(aysa);
 
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(aysa);
 
-		jugadorA.ponerEnCasillero(casillero1);
+		casillero1.agregarJugador(jugadorA,0);
 
 		jugadorA.mover(2);
 
@@ -155,12 +164,18 @@ public class ServicioTest {
 		duenio.comprarPropiedad(tren);
 		int pasosTotal = jugador.lanzarDados();
 		Casillero casillero = new Casillero();
-		jugador.ponerEnCasillero(casillero);		
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(casillero);
+
+		casillero.agregarJugador(jugador,0);
+
+
 		for (int i = 1; i < pasosTotal; i++) {
-			casillero.agregarSiguiente(new Casillero());
-			casillero = casillero.obtenerSiguiente();
+			Casillero auxiliar = new Casillero();
+			tablero.agregarCasillero(auxiliar);
 		}
-		casillero.agregarSiguiente(tren);
+		tablero.agregarCasillero(tren);
 		jugador.mover(pasosTotal);
 		int capitalPosterior = jugador.obtenerSaldo();
 		int costoServicio = costoServicioParcial * pasosTotal;
@@ -180,12 +195,16 @@ public class ServicioTest {
 		tren.asigarHermano(subte);
 		int pasosTotal = jugador.lanzarDados();
 		Casillero casillero = new Casillero();
-		jugador.ponerEnCasillero(casillero);		
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(casillero);
+
+		casillero.agregarJugador(jugador,0);
 		for (int i = 1; i < pasosTotal; i++) {
-			casillero.agregarSiguiente(new Casillero());
-			casillero = casillero.obtenerSiguiente();
+			Casillero auxiliar = new Casillero();
+			tablero.agregarCasillero(auxiliar);
 		}
-		casillero.agregarSiguiente(tren);
+		tablero.agregarCasillero(tren);
 		jugador.mover(pasosTotal);
 		int capitalPosterior = jugador.obtenerSaldo();
 		int costoServicio = costoServicioTotal * pasosTotal;
@@ -204,12 +223,16 @@ public class ServicioTest {
 		duenio.comprarPropiedad(edesur);
 		int pasosTotal = jugador.lanzarDados();
 		Casillero casillero = new Casillero();
-		jugador.ponerEnCasillero(casillero);		
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(casillero);
+
+		casillero.agregarJugador(jugador,0);
 		for (int i = 1; i < pasosTotal; i++) {
-			casillero.agregarSiguiente(new Casillero());
-			casillero = casillero.obtenerSiguiente();
+			Casillero auxiliar = new Casillero();
+			tablero.agregarCasillero(auxiliar);
 		}
-		casillero.agregarSiguiente(edesur);
+		tablero.agregarCasillero(edesur);
 		jugador.mover(pasosTotal);
 		int capitalPosterior = jugador.obtenerSaldo();
 		int costoServicio = costoServicioParcial * pasosTotal;
@@ -229,12 +252,16 @@ public class ServicioTest {
 		edesur.asigarHermano(aysa);
 		int pasosTotal = jugador.lanzarDados();
 		Casillero casillero = new Casillero();
-		jugador.ponerEnCasillero(casillero);		
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+		tablero.agregarCasillero(casillero);
+
+		casillero.agregarJugador(jugador,0);
 		for (int i = 1; i < pasosTotal; i++) {
-			casillero.agregarSiguiente(new Casillero());
-			casillero = casillero.obtenerSiguiente();
+			Casillero auxiliar = new Casillero();
+			tablero.agregarCasillero(auxiliar);
 		}
-		casillero.agregarSiguiente(edesur);
+		tablero.agregarCasillero(edesur);
 		jugador.mover(pasosTotal);
 		int capitalPosterior = jugador.obtenerSaldo();
 		int costoServicio = costoServicioTotal * pasosTotal;

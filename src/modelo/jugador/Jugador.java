@@ -2,8 +2,8 @@ package modelo.jugador;
 
 import java.util.ArrayList;
 
-import modelo.Carcel;
-import modelo.Casillero;
+import modelo.casillero.Carcel;
+import modelo.casillero.Casillero;
 import modelo.Dado;
 import modelo.jugador.estados.EstadoDeMovimientoDelJugador;
 import modelo.jugador.estados.EstadoJugadorGanoQuiniCeroVeces;
@@ -90,9 +90,7 @@ public class Jugador {
 
 	public int lanzarDados(){
 		Dado dado = Dado.darDado();
-		int resultado = dado.tirarDado();
-		resultado += dado.tirarDado();
-		return resultado;
+		return dado.tirarDado();
 	}
 
 	public void construirCasa(Terreno terreno){
@@ -117,4 +115,8 @@ public class Jugador {
 		this.propiedades.remove(viejaPropiedad);
 	}
 
+	public void ofrecerComprarPropiedad() {
+		// Acá debería saltar un PopUp que ofrezca comprar la propiedad actual, pero para simplificar el modelo siempre que cae lo va a comprar
+		comprarPropiedad((Propiedad) casilleroActual);
+	}
 }

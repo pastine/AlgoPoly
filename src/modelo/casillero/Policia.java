@@ -1,6 +1,5 @@
-package modelo;
+package modelo.casillero;
 
-import modelo.Carcel;
 import modelo.jugador.Jugador;
 
 public class Policia extends Casillero{

@@ -1,11 +1,12 @@
 package modeloTest;
 
+import modelo.Tablero;
 import modelo.propiedad.Terreno;
 import org.junit.Assert;
 import org.junit.Test;
 
-import modelo.Casillero;
-import modelo.RetrocesoDinamico;
+import modelo.casillero.Casillero;
+import modelo.casillero.RetrocesoDinamico;
 import modelo.jugador.Jugador;
 
 public class RetrocesoDinamicoTest {
@@ -16,6 +17,8 @@ public class RetrocesoDinamicoTest {
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
 
 		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
 
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -24,14 +27,16 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
+
 		
 		retroceso.agregarJugador(jugador, 2);
 		
@@ -52,6 +57,8 @@ public class RetrocesoDinamicoTest {
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
 
 		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
 
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
@@ -60,14 +67,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 
 		retroceso.agregarJugador(jugador, 3);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -90,6 +98,8 @@ public class RetrocesoDinamicoTest {
 		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
 		jugador.comprarPropiedad(new Terreno(1, 0,0,0));
 
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -97,14 +107,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 4);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -122,7 +133,10 @@ public class RetrocesoDinamicoTest {
 	public void testJugadorRetrocedeCincoCasillerosObteniendoNumeroCincoYConJugadorConCeroPropiedades() {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
-		
+
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -130,14 +144,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 5);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -161,6 +176,9 @@ public class RetrocesoDinamicoTest {
 		jugador.comprarPropiedad(new Terreno(1,0,0,0));
 		jugador.comprarPropiedad(new Terreno(1,0,0,0));
 
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -168,14 +186,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 6);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -200,6 +219,9 @@ public class RetrocesoDinamicoTest {
 		jugador.comprarPropiedad(new Terreno(1,0,0,0));
 		jugador.comprarPropiedad(new Terreno(1,0,0,0));
 
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -207,14 +229,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 2);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -232,7 +255,10 @@ public class RetrocesoDinamicoTest {
 	public void testJugadorRetrocedeCincoCasillerosObteniendoNumeroSieteYConJugadorConSaldo100000() {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
-		
+
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -240,14 +266,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 7);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -265,7 +292,10 @@ public class RetrocesoDinamicoTest {
 	public void testJugadorRetrocedeCeroCasillerosObteniendoNumeroOchoYConJugadorConSaldo100000() {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
-		
+
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -273,14 +303,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 8);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -298,7 +329,10 @@ public class RetrocesoDinamicoTest {
 	public void testJugadorRetrocedeUnCasillerosObteniendoNumeroNueveYConJugadorConSaldo100000() {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
-		
+
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -306,14 +340,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 9);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -331,7 +366,10 @@ public class RetrocesoDinamicoTest {
 	public void testJugadorRetrocedeCeroCasillerosObteniendoNumeroDiezYConJugadorConSaldo100000() {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
-		
+
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -339,14 +377,15 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero5 = new Casillero();
 		Casillero casillero6 = new Casillero();
 		Casillero casillero7 = new Casillero();
-		
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 10);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -364,7 +403,10 @@ public class RetrocesoDinamicoTest {
 	public void testJugadorRetrocedeNueveCasillerosObteniendoNumeroOnce(){
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
-		
+
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -375,17 +417,19 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero8 = new Casillero();
 		Casillero casillero9 = new Casillero();
 		Casillero casillero10 = new Casillero();
-	
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(casillero8);
-		casillero8.agregarSiguiente(casillero9);
-		casillero9.agregarSiguiente(casillero10);
-		casillero10.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(casillero8);
+		tablero.agregarCasillero(casillero9);
+		tablero.agregarCasillero(casillero10);
+		tablero.agregarCasillero(retroceso);
+
 		
 		retroceso.agregarJugador(jugador, 11);
 		Assert.assertFalse(casillero1.jugadorEstaEnCasillero(jugador));
@@ -406,7 +450,10 @@ public class RetrocesoDinamicoTest {
 	public void testJugadorRetrocedeDiezCasillerosObteniendoNumeroDoce() {
 		Jugador jugador = new Jugador();
 		RetrocesoDinamico retroceso = new RetrocesoDinamico();
-		
+
+		Tablero tablero = Tablero.darTablero();
+		tablero.limpiarTablero();
+
 		Casillero casillero1 = new Casillero();
 		Casillero casillero2 = new Casillero();
 		Casillero casillero3 = new Casillero();
@@ -417,17 +464,18 @@ public class RetrocesoDinamicoTest {
 		Casillero casillero8 = new Casillero();
 		Casillero casillero9 = new Casillero();
 		Casillero casillero10 = new Casillero();
-	
-		casillero1.agregarSiguiente(casillero2);
-		casillero2.agregarSiguiente(casillero3);
-		casillero3.agregarSiguiente(casillero4);
-		casillero4.agregarSiguiente(casillero5);
-		casillero5.agregarSiguiente(casillero6);
-		casillero6.agregarSiguiente(casillero7);
-		casillero7.agregarSiguiente(casillero8);
-		casillero8.agregarSiguiente(casillero9);
-		casillero9.agregarSiguiente(casillero10);
-		casillero10.agregarSiguiente(retroceso);
+
+		tablero.agregarCasillero(casillero1);
+		tablero.agregarCasillero(casillero2);
+		tablero.agregarCasillero(casillero3);
+		tablero.agregarCasillero(casillero4);
+		tablero.agregarCasillero(casillero5);
+		tablero.agregarCasillero(casillero6);
+		tablero.agregarCasillero(casillero7);
+		tablero.agregarCasillero(casillero8);
+		tablero.agregarCasillero(casillero9);
+		tablero.agregarCasillero(casillero10);
+		tablero.agregarCasillero(retroceso);
 		
 		retroceso.agregarJugador(jugador, 12);
 		Assert.assertTrue(casillero1.jugadorEstaEnCasillero(jugador));

@@ -1,4 +1,4 @@
-package modelo;
+package modelo.casillero;
 
 import java.util.ArrayList;
 
@@ -7,32 +7,13 @@ import java.util.List;
 import modelo.jugador.Jugador;
 
 public class Casillero {
-	private Casillero anterior;
-	private Casillero siguiente;
-	private List<Jugador> jugadores = new ArrayList<Jugador>();
+	private ArrayList<Jugador> jugadores;
 	
 	public Casillero() {
-		anterior = null;
-		siguiente = null;
+		jugadores = new ArrayList<Jugador>();
 	}
 	
-	public void agregarSiguiente(Casillero casillero) {
-		this.siguiente = casillero;
-		casillero.agregarAnterior(this);
-	}
-	
-	private void agregarAnterior(Casillero casillero) {
-		this.anterior = casillero;
-	}
-	
-	public Casillero obtenerSiguiente() {
-		return siguiente;
-	}
-	
-	public Casillero obtenerAnterior() {
-		return anterior;
-	}
-	
+
 	public void agregarJugador(Jugador unJugador, int pasosTotal) {
 		jugadores.add(unJugador);
 		unJugador.ponerEnCasillero(this);

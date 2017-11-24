@@ -17,7 +17,8 @@ public class Servicio extends Propiedad{
 		this.estadoCobroServicio = new EstadoCobroServicio(costoServicioParcial);
 
 	}
-	
+
+	@Override
 	public void accionar(Jugador jugador, int pasosTotal) {
 		cobrar(jugador, pasosTotal);
 	}

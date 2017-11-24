@@ -10,9 +10,12 @@ public class EstadoCobroServicio {
     }
 
     public void cobrar(Jugador duenio, Jugador jugador, int pasosTotal){
-        if (duenio == null) return;
-        int costoFinal = pasosTotal * costoServicio;
-        jugador.quitarDinero(costoFinal);
-        duenio.recibirDinero(costoFinal);
+        if (duenio == null) {
+            jugador.ofrecerComprarPropiedad();
+        } else {
+            int costoFinal = pasosTotal * costoServicio;
+            jugador.quitarDinero(costoFinal);
+            duenio.recibirDinero(costoFinal);
+        }
     }
 }

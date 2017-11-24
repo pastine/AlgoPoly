@@ -3,8 +3,8 @@ package modeloTest;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.Assert;
-import modelo.Carcel;
-import modelo.Policia;
+import modelo.casillero.Carcel;
+import modelo.casillero.Policia;
 import modelo.jugador.Jugador;
 import modelo.jugador.JugadorEstaPresoException;
 

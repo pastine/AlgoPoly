@@ -1,6 +1,5 @@
 package modelo.jugador.estados;
 
-import modelo.Casillero;
 import modelo.jugador.Jugador;
 import modelo.jugador.JugadorEstaPresoException;
 
