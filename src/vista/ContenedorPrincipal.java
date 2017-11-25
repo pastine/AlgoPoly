@@ -50,7 +50,7 @@ public class ContenedorPrincipal extends BorderPane{
         VBox contenedorVertical = new VBox(botonMover, botonExit);
         contenedorVertical.setPadding(new Insets(15));
         contenedorVertical.setSpacing(25);
-        Image imagen = new Image("file:src/vista/imagenes/negro.jpg");
+        Image imagen = new Image("vista/imagenes/negro.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         contenedorVertical.setBackground(new Background(imagenDeFondo));
         this.setLeft(contenedorVertical);
@@ -65,7 +65,7 @@ public class ContenedorPrincipal extends BorderPane{
         contenedorCentral.setAlignment(Pos.CENTER);
         contenedorCentral.setSpacing(20);
         contenedorCentral.setPadding(new Insets(25));
-        Image imagen = new Image("file:src/vista/imagenes/tableroFoto.jpg");
+        Image imagen = new Image("vista/imagenes/tableroFoto.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         contenedorCentral.setBackground(new Background(imagenDeFondo));
 
