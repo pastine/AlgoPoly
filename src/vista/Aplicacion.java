@@ -25,9 +25,10 @@ public class Aplicacion extends Application {
         algoPoly.iniciarJuego();
         algoPoly.lanzarDadosYMover();
         
-       
+        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo.mp3").toString();
+
         
-        Media file = new Media("file:///C:/Users/XP/Documents/GitHub/AlgoPoly/src/vista/sonidos/cancionDeFondo.mp3");
+        Media file = new Media(path);
 
 		mediaplayer = new MediaPlayer(file);
 		mediaplayer.setAutoPlay(true);
