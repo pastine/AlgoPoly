@@ -14,10 +14,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import vista.eventos.BotonJugarEventHandler;
 
+
+
 public class ContenedorBienvenidos extends VBox {
 
     Stage stage;
-
+	
     public ContenedorBienvenidos(Stage stage, Scene proximaEscena) {
 
         super();
@@ -28,10 +30,12 @@ public class ContenedorBienvenidos extends VBox {
         this.setSpacing(20);
         this.setPadding(new Insets(25));
         
+ 
+        
         //Image imagen = new Image("Insertar FOTO aqui");
         //BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         //this.setBackground(new Background(imagenDeFondo));
-        
+       
         Button botonJugar = new Button();
         botonJugar.setText("JUGAR");
         botonJugar.setDefaultButton(true);
@@ -42,5 +46,6 @@ public class ContenedorBienvenidos extends VBox {
 
         this.getChildren().addAll(botonJugar);
     }
+    
 
 }
