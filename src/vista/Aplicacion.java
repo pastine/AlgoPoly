@@ -1,12 +1,8 @@
 package vista;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
-import modelo.jugador.Jugador;
 
 public class Aplicacion extends Application {
 	
@@ -21,13 +17,9 @@ public class Aplicacion extends Application {
         stage.setTitle("AlgoPoly");
         
         AlgoPoly algoPoly = new AlgoPoly();
-        Jugador jugador = new Jugador();
         algoPoly.iniciarJuego();
-        algoPoly.lanzarDadosYMover();
-       
-     
-        
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, jugador);
+           
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, algoPoly);
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
         
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);

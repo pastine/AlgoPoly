@@ -79,8 +79,7 @@ public class VistaJugador {
     private void dibujarFormas() {
     	
     	//clear
-    	canvas.getGraphicsContext2D().setFill(Color.ALICEBLUE);
-        canvas.getGraphicsContext2D().fillRect(0, 0, 930, 520);
+        canvas.getGraphicsContext2D().clearRect(0, 0, 930, 520);
         
         canvas.getGraphicsContext2D().setFill(Color.BLACK);
         canvas.getGraphicsContext2D().fillOval(posicionesHorizontales.get(posicionActual), posicionesVerticales.get(posicionActual), 50, 50);

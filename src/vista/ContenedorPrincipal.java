@@ -15,7 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import modelo.jugador.Jugador;
+import modelo.AlgoPoly;
 import vista.eventos.BotonDetenerEventHandler;
 import vista.eventos.BotonMoverEventHandler;
 import vista.eventos.BotonSalirEventHandler;
@@ -23,14 +23,14 @@ import vista.eventos.BotonSalirEventHandler;
 public class ContenedorPrincipal extends BorderPane{
 	
 	Stage stage;
-	Jugador jugador;
+	AlgoPoly algoPoly;
 	Canvas canvasCentral;
 	VBox contenedorCentral;
 	VistaJugador vistaJugador;
 	
 	MediaPlayer mediaplayer;
 	
-	public ContenedorPrincipal(Stage stage, Jugador jugador) {
+	public ContenedorPrincipal(Stage stage, AlgoPoly algoPoly) {
 
         this.setCentro();
         
@@ -39,19 +39,18 @@ public class ContenedorPrincipal extends BorderPane{
 		mediaplayer = new MediaPlayer(file);
 		mediaplayer.setAutoPlay(true);
 		mediaplayer.setVolume(0.2);
-			
-		//MediaView mediaView = new MediaView(mediaplayer);
 		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
 		mediaplayer.play();
-        this.setBotonera(jugador);
+        
+		this.setBotonera(algoPoly);
 	}
 	
-	private void setBotonera(Jugador jugador) {
+	private void setBotonera(AlgoPoly algoPoly) {
 
 	    Button botonMover = new Button();
 	    botonMover.setText("Mover");
 	    botonMover.setDefaultButton(true);
-	    BotonMoverEventHandler botonMoverHandler = new BotonMoverEventHandler(jugador, vistaJugador);
+	    BotonMoverEventHandler botonMoverHandler = new BotonMoverEventHandler(algoPoly, vistaJugador);
 	    botonMover.setOnAction(botonMoverHandler);
 	    
 	    Button botonDetenerMusica = new Button();
