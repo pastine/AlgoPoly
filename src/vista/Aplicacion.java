@@ -26,7 +26,7 @@ public class Aplicacion extends Application {
         Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
 
         stage.setScene(escenaBienvenidos);
-        stage.setFullScreen(false);
+        stage.setFullScreen(true);
 
         stage.show();
     }

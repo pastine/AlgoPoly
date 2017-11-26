@@ -67,6 +67,7 @@ public class ContenedorPrincipal extends BorderPane{
         VBox contenedorVertical = new VBox(botonMover, botonDetenerMusica, botonExit);
         contenedorVertical.setPadding(new Insets(15));
         contenedorVertical.setSpacing(25);
+        
         Image imagen = new Image("vista/imagenes/negro.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         contenedorVertical.setBackground(new Background(imagenDeFondo));

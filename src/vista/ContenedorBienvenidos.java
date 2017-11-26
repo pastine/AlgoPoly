@@ -26,7 +26,7 @@ public class ContenedorBienvenidos extends VBox {
 
         this.stage = stage;
 
-        this.setAlignment(Pos.TOP_LEFT);
+        this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.setPadding(new Insets(25));
         
@@ -38,6 +38,7 @@ public class ContenedorBienvenidos extends VBox {
         botonJugar.setText("JUGAR");
         botonJugar.setDefaultButton(true);
         botonJugar.setPrefSize(100, 50);
+        //botonJugar.setDisable(true); para poner en gris un boton.
 
         BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, proximaEscena);
         botonJugar.setOnAction(botonJugarHandler);
