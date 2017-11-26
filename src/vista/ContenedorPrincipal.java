@@ -12,8 +12,11 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.jugador.Jugador;
+import vista.eventos.BotonDetenerEventHandler;
 import vista.eventos.BotonMoverEventHandler;
 import vista.eventos.BotonSalirEventHandler;
 
@@ -23,13 +26,23 @@ public class ContenedorPrincipal extends BorderPane{
 	Jugador jugador;
 	Canvas canvasCentral;
 	VBox contenedorCentral;
-	
 	VistaJugador vistaJugador;
+	
+	MediaPlayer mediaplayer;
 	
 	public ContenedorPrincipal(Stage stage, Jugador jugador) {
 
         this.setCentro();
         
+        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo.mp3").toString();
+        Media file = new Media(path);
+		mediaplayer = new MediaPlayer(file);
+		mediaplayer.setAutoPlay(true);
+		mediaplayer.setVolume(0.2);
+			
+		//MediaView mediaView = new MediaView(mediaplayer);
+		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
+		mediaplayer.play();
         this.setBotonera(jugador);
 	}
 	
@@ -41,19 +54,28 @@ public class ContenedorPrincipal extends BorderPane{
 	    BotonMoverEventHandler botonMoverHandler = new BotonMoverEventHandler(jugador, vistaJugador);
 	    botonMover.setOnAction(botonMoverHandler);
 	    
+	    Button botonDetenerMusica = new Button();
+	    botonDetenerMusica.setText("Detener musica de fondo");
+	    BotonDetenerEventHandler botonDetenerHandler = new BotonDetenerEventHandler(mediaplayer);
+	    botonDetenerMusica.setOnAction(botonDetenerHandler);
+	    
 	    Button botonExit = new Button();
 	    botonExit.setText("Exit");
 	    botonExit.setCancelButton(true);
 	    BotonSalirEventHandler botonExitHandler = new BotonSalirEventHandler();
 	    botonExit.setOnAction(botonExitHandler);
 	    
-        VBox contenedorVertical = new VBox(botonMover, botonExit);
+	    
+        VBox contenedorVertical = new VBox(botonMover, botonDetenerMusica, botonExit);
         contenedorVertical.setPadding(new Insets(15));
         contenedorVertical.setSpacing(25);
         Image imagen = new Image("vista/imagenes/negro.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         contenedorVertical.setBackground(new Background(imagenDeFondo));
         this.setLeft(contenedorVertical);
+        
+        
+        
         
     }
 	
@@ -72,4 +94,7 @@ public class ContenedorPrincipal extends BorderPane{
         this.setCenter(contenedorCentral);
     }
 
+	
+
+	
 }
