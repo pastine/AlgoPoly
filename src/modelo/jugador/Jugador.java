@@ -132,6 +132,7 @@ public class Jugador {
 		this.recibirDinero((int)(valor*0.85));
 		propiedad.cambiarDuenio(null);
 		this.propiedades.remove(propiedad);
+	}
 
 	public int obtenerCoordenadaHorizontal(){
 		return casilleroActual.obtenerCoordenadaHorizontal();
