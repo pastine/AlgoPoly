@@ -3,6 +3,7 @@ package modelo.jugador;
 import java.util.ArrayList;
 import java.util.Random;
 
+import modelo.CoordenadasCasillero;
 import modelo.casillero.Carcel;
 import modelo.casillero.Casillero;
 import modelo.Dado;
@@ -131,5 +132,12 @@ public class Jugador {
 		this.recibirDinero((int)(valor*0.85));
 		propiedad.cambiarDuenio(null);
 		this.propiedades.remove(propiedad);
+
+	public int obtenerCoordenadaHorizontal(){
+		return casilleroActual.obtenerCoordenadaHorizontal();
+	}
+
+	public int obtenerCoordenadaVertical(){
+		return casilleroActual.obtenerCoordenadaVertical();
 	}
 }

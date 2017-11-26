@@ -36,7 +36,6 @@ public class AlgoPoly {
             }
         }
         if(pierdeTurno){
-            turnos.finalizarTurno();
             return 0;
         }
 
@@ -50,7 +49,6 @@ public class AlgoPoly {
         	jugadorActual.venderPropiedad();
             return 0;
         } catch (JugadorEstaPresoException e) {
-            turnos.finalizarTurno();
             return 0;
         }
 		return numeroPasos;

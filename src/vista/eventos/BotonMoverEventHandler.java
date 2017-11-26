@@ -21,8 +21,7 @@ public class BotonMoverEventHandler implements EventHandler<ActionEvent> {
     	Jugador jugadorActual = algoPoly.devolverJugadorActual();
     	int pasosTotal = algoPoly.lanzarDadosYMover();
         vistaJugador.update(pasosTotal, jugadorActual);
-        algoPoly.finalizarTurno();
-        System.out.println(pasosTotal);
+        System.out.println("DEBUG: El jugador " + jugadorActual.toString() + " avanzo "+ pasosTotal + " pasos y tiene $" + jugadorActual.obtenerSaldo());
     }
     
 }

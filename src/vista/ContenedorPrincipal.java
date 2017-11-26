@@ -17,6 +17,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import vista.eventos.BotonSilenciarEventHandler;
+import vista.eventos.BotonFinalizarTurnoEventHandler;
 import vista.eventos.BotonMoverEventHandler;
 import vista.eventos.BotonSalirEventHandler;
 
@@ -52,19 +53,25 @@ public class ContenedorPrincipal extends BorderPane{
 	    BotonMoverEventHandler botonMoverHandler = new BotonMoverEventHandler(algoPoly, vistaJugador);
 	    botonMover.setOnAction(botonMoverHandler);
 	    
+	    Button botonFinalizarTurno = new Button();
+	    botonFinalizarTurno.setText("FinalizarTurno");
+	    BotonFinalizarTurnoEventHandler botonFinalizarHandler = new BotonFinalizarTurnoEventHandler(algoPoly);
+	    botonFinalizarTurno.setOnAction(botonFinalizarHandler);
+	    
 	    Button botonDetenerMusica = new Button();
 	    botonDetenerMusica.setText("Silenciar");
+	    botonDetenerMusica.setCancelButton(true);
 	    BotonSilenciarEventHandler botonDetenerHandler = new BotonSilenciarEventHandler(mediaplayer);
 	    botonDetenerMusica.setOnAction(botonDetenerHandler);
 	    
 	    Button botonExit = new Button();
 	    botonExit.setText("Exit");
-	    botonExit.setCancelButton(true);
+	    //botonExit.setCancelButton(true);
 	    BotonSalirEventHandler botonExitHandler = new BotonSalirEventHandler();
 	    botonExit.setOnAction(botonExitHandler);
 	    
 	    
-        VBox contenedorVertical = new VBox(botonMover, botonDetenerMusica, botonExit);
+        VBox contenedorVertical = new VBox(botonMover, botonFinalizarTurno, botonDetenerMusica, botonExit);
         contenedorVertical.setPadding(new Insets(15));
         contenedorVertical.setSpacing(25);
         
