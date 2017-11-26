@@ -27,6 +27,7 @@ public class ContenedorPrincipal extends BorderPane{
 	AlgoPoly algoPoly;
 	Canvas canvasCentral;
 	VBox contenedorCentral;
+	VBox contenedorLeft;
 	VistaJugador vistaJugador;
 	MediaPlayer mediaplayer;
 	
@@ -50,12 +51,12 @@ public class ContenedorPrincipal extends BorderPane{
 	    Button botonMover = new Button();
 	    botonMover.setText("Mover");
 	    botonMover.setDefaultButton(true);
-	    BotonMoverEventHandler botonMoverHandler = new BotonMoverEventHandler(algoPoly, vistaJugador);
+	    BotonMoverEventHandler botonMoverHandler = new BotonMoverEventHandler(this, algoPoly, vistaJugador);
 	    botonMover.setOnAction(botonMoverHandler);
-	    
+
 	    Button botonFinalizarTurno = new Button();
 	    botonFinalizarTurno.setText("FinalizarTurno");
-	    BotonFinalizarTurnoEventHandler botonFinalizarHandler = new BotonFinalizarTurnoEventHandler(algoPoly);
+	    BotonFinalizarTurnoEventHandler botonFinalizarHandler = new BotonFinalizarTurnoEventHandler(this, algoPoly);
 	    botonFinalizarTurno.setOnAction(botonFinalizarHandler);
 	    
 	    Button botonDetenerMusica = new Button();
@@ -71,14 +72,14 @@ public class ContenedorPrincipal extends BorderPane{
 	    botonExit.setOnAction(botonExitHandler);
 	    
 	    
-        VBox contenedorVertical = new VBox(botonMover, botonFinalizarTurno, botonDetenerMusica, botonExit);
-        contenedorVertical.setPadding(new Insets(15));
-        contenedorVertical.setSpacing(25);
+        contenedorLeft = new VBox(botonMover, botonFinalizarTurno, botonDetenerMusica, botonExit);
+		contenedorLeft.setPadding(new Insets(15));
+		contenedorLeft.setSpacing(25);
         
         Image imagen = new Image("vista/imagenes/negro.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        contenedorVertical.setBackground(new Background(imagenDeFondo));
-        this.setLeft(contenedorVertical);
+		contenedorLeft.setBackground(new Background(imagenDeFondo));
+        this.setLeft(contenedorLeft);
     }
 	
 	private void setCentro(AlgoPoly algoPoly) {
@@ -96,7 +97,16 @@ public class ContenedorPrincipal extends BorderPane{
         this.setCenter(contenedorCentral);
     }
 
-	
+	public void deshabilitarBotonesAlFinalizarTurno() {
+		contenedorLeft.getChildren().get(0).setDisable(false);
+		contenedorLeft.getChildren().get(1).setDisable(true);
+	}
 
-	
+
+    public void deshabilitarBotonesTrasMover() {
+		contenedorLeft.getChildren().get(0).setDisable(true);
+		contenedorLeft.getChildren().get(1).setDisable(false);
+	}
+
+
 }
