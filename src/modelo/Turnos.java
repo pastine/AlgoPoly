@@ -25,9 +25,11 @@ public class Turnos {
         turnos.add(turnos.poll());
     }
 
-    // removerJugador elimina el jugador actual del juego, y cambia el turno al siguiente jugador
+    // removerJugador elimina el jugador actual del juego
     public void removerJugadorDelJuego(){
         turnos.poll();
+        //Hago que el próximo turno sea del que venía despues del eliminado
+        turnos.add(turnos.poll());
     }
 
     public int cantidadDeJugadoresEnJuego(){

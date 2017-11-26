@@ -2,6 +2,7 @@ package modelo.jugador;
 
 import java.util.ArrayList;
 
+import modelo.CoordenadasCasillero;
 import modelo.casillero.Carcel;
 import modelo.casillero.Casillero;
 import modelo.Dado;
@@ -118,5 +119,13 @@ public class Jugador {
 	public void ofrecerComprarPropiedad() {
 		// Acá debería saltar un PopUp que ofrezca comprar la propiedad actual, pero para simplificar el modelo siempre que cae lo va a comprar
 		comprarPropiedad((Propiedad) casilleroActual);
+	}
+
+	public int obtenerCoordenadaHorizontal(){
+		return casilleroActual.obtenerCoordenadaHorizontal();
+	}
+
+	public int obtenerCoordenadaVertical(){
+		return casilleroActual.obtenerCoordenadaVertical();
 	}
 }

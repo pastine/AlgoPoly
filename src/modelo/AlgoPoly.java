@@ -47,7 +47,6 @@ public class AlgoPoly {
             turnos.removerJugadorDelJuego();
             return 0;
         } catch (JugadorEstaPresoException e) {
-            turnos.finalizarTurno();
             return 0;
         }
 		return numeroPasos;
