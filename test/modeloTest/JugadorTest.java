@@ -1,6 +1,6 @@
 package modeloTest;
 
-import modelo.*;
+import modelo.Tablero;
 import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
 import modelo.jugador.SaldoInsuficienteException;
@@ -168,4 +168,5 @@ public class JugadorTest {
 		
 		Assert.assertTrue((dineroOriginal+20)==jugador2.obtenerSaldo());
 	}
+
 }

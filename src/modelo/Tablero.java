@@ -108,6 +108,65 @@ public class Tablero {
         tablero.agregarCasillero(retrocesoDinamico);
         tablero.agregarCasillero(tucuman);
 
+        //Agrego coordenadas
+        int x0 = 0;
+        int x1 = 174;
+        int x2 = 348;
+        int x3 = 522;
+        int x4 = 696;
+        int x5 = 870;
+        int y0 = 0;
+        int y1 = 90;
+        int y2 = 180;
+        int y3 = 270;
+        int y4 = 360;
+        int y5 = 450;
+
+        //Salida
+        CoordenadasCasillero coordenadasSalida = new CoordenadasCasillero(x5,y5);
+        salida.asignarCoordenadas(coordenadasSalida);
+        CoordenadasCasillero coordenadasQuini6 = new CoordenadasCasillero(x4,y5);
+        quini6.asignarCoordenadas(coordenadasQuini6);
+        CoordenadasCasillero coordenadasBuenosAiresSur = new CoordenadasCasillero(x3,y5);
+        buenosAiresSur.asignarCoordenadas(coordenadasBuenosAiresSur);
+        CoordenadasCasillero coordenadasEdesur = new CoordenadasCasillero(x2,y5);
+        edesur.asignarCoordenadas(coordenadasEdesur);
+        CoordenadasCasillero coordenadasBuenosAiresNorte = new CoordenadasCasillero(x1,y5);
+        buenosAiresNorte.asignarCoordenadas(coordenadasBuenosAiresNorte);
+        //Carcel
+        CoordenadasCasillero coordenadasCarcel = new CoordenadasCasillero(x0,y5);
+        carcel.asignarCoordenadas(coordenadasCarcel);
+        CoordenadasCasillero coordenadasCordobaSur = new CoordenadasCasillero(x0,y4);
+        cordobaSur.asignarCoordenadas(coordenadasCordobaSur);
+        CoordenadasCasillero coordenadasAvanceDinamico = new CoordenadasCasillero(x0,y3);
+        avanceDinamico.asignarCoordenadas(coordenadasAvanceDinamico);
+        CoordenadasCasillero coordenadasSubte = new CoordenadasCasillero(x0,y2);
+        subte.asignarCoordenadas(coordenadasSubte);
+        CoordenadasCasillero coordenadasCordobaNorte = new CoordenadasCasillero(x0,y1);
+        cordobaNorte.asignarCoordenadas(coordenadasCordobaNorte);
+        //Impuesto al lujo
+        CoordenadasCasillero coordenadasImpuestoAlLujo = new CoordenadasCasillero(x0,y0);
+        impuestoAlLujo.asignarCoordenadas(coordenadasImpuestoAlLujo);
+        CoordenadasCasillero coordenadasSantaFe = new CoordenadasCasillero(x1,y0);
+        santaFe.asignarCoordenadas(coordenadasSantaFe);
+        CoordenadasCasillero coordenadasAysa = new CoordenadasCasillero(x2,y0);
+        aysa.asignarCoordenadas(coordenadasAysa);
+        CoordenadasCasillero coordenadasSaltaNorte = new CoordenadasCasillero(x3,y0);
+        saltaNorte.asignarCoordenadas(coordenadasSaltaNorte);
+        CoordenadasCasillero coordenadasSaltaSur = new CoordenadasCasillero(x4,y0);
+        saltaSur.asignarCoordenadas(coordenadasSaltaSur);
+        //Policia
+        CoordenadasCasillero coordenadasPolicia = new CoordenadasCasillero(x5,y0);
+        policia.asignarCoordenadas(coordenadasPolicia);
+        CoordenadasCasillero coordenadasTren = new CoordenadasCasillero(x5,y1);
+        tren.asignarCoordenadas(coordenadasTren);
+        CoordenadasCasillero coordenadasNeuquen = new CoordenadasCasillero(x5,y2);
+        neuquen.asignarCoordenadas(coordenadasNeuquen);
+        CoordenadasCasillero coordenadasRetrocesoDinamico = new CoordenadasCasillero(x5,y3);
+        retrocesoDinamico.asignarCoordenadas(coordenadasRetrocesoDinamico);
+        CoordenadasCasillero coordenadasTucuman = new CoordenadasCasillero(x5,y4);
+        tucuman.asignarCoordenadas(coordenadasTucuman);
+
         return tablero;
     }
 

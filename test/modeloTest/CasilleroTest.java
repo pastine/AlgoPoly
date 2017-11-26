@@ -1,5 +1,6 @@
 package modeloTest;
 
+import modelo.CoordenadasCasillero;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -24,6 +25,16 @@ public class CasilleroTest {
 		casillero.quitarJugador(jugador);
 		Assert.assertFalse(casillero.jugadorEstaEnCasillero(jugador));
 	}
-	
+
+	@Test
+	public void testUnCasilleroObtieneBienLasCoordenadasDelMismo(){
+		Casillero casillero = new Casillero();
+		CoordenadasCasillero coordenadas = new CoordenadasCasillero(10,20);
+		casillero.asignarCoordenadas(coordenadas);
+
+		Assert.assertEquals(casillero.obtenerCoordenadaHorizontal(),10);
+		Assert.assertEquals(casillero.obtenerCoordenadaVertical(),20);
+
+	}
 	
 }
