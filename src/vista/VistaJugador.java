@@ -1,9 +1,6 @@
 package vista;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
 import modelo.AlgoPoly;
@@ -31,6 +28,7 @@ public class VistaJugador {
     	//clear
         canvas.getGraphicsContext2D().clearRect(0, 0, 930, 520);
 
+        int contador = 0;
         for (int i = 0; i < 3; i++){
         	Jugador jugador = jugadores.get(i);
         	if (i == 0)
@@ -39,8 +37,8 @@ public class VistaJugador {
         		canvas.getGraphicsContext2D().setFill(Color.RED);
         	if (i == 2)
         		canvas.getGraphicsContext2D().setFill(Color.BLACK);
-        	canvas.getGraphicsContext2D().fillOval(jugador.obtenerCoordenadaHorizontal(), jugador.obtenerCoordenadaVertical(), 50, 50);
-        
+        	canvas.getGraphicsContext2D().fillOval(jugador.obtenerCoordenadaHorizontal() + contador, jugador.obtenerCoordenadaVertical() + contador, 45, 45);
+        	contador += 7;
         }
     }
 

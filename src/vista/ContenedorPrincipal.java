@@ -54,12 +54,13 @@ public class ContenedorPrincipal extends BorderPane{
 	    
 	    Button botonDetenerMusica = new Button();
 	    botonDetenerMusica.setText("Silenciar");
+	    botonDetenerMusica.setCancelButton(true);
 	    BotonSilenciarEventHandler botonDetenerHandler = new BotonSilenciarEventHandler(mediaplayer);
 	    botonDetenerMusica.setOnAction(botonDetenerHandler);
 	    
 	    Button botonExit = new Button();
 	    botonExit.setText("Exit");
-	    botonExit.setCancelButton(true);
+	    //botonExit.setCancelButton(true);
 	    BotonSalirEventHandler botonExitHandler = new BotonSalirEventHandler();
 	    botonExit.setOnAction(botonExitHandler);
 	    
