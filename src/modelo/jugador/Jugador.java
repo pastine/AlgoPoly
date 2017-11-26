@@ -54,10 +54,11 @@ public class Jugador {
 	}
 
 	public void quitarDinero(int dinero) {
-		if(dinero > this.obtenerSaldo()){
-			throw new SaldoInsuficienteException();
+		while (dinero > this.obtenerSaldo() && this.obtenerCantidadDePropiedades() > 0){
+			this.venderPropiedad();
 		}
 		saldo -= dinero;
+		if (saldo < 0) throw new SaldoInsuficienteException();
 	}
 
 	public void comprarPropiedad(Propiedad propiedad) {

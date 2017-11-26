@@ -230,7 +230,37 @@ public class JugadorTest {
 		if (jugador.esDuenioDePropiedad(terrenoDobleHermano)){
 			Assert.assertEquals(terrenoDoble.obtenerCantidadDeConstrucciones(),0);
 		}
+	}
+	
+	@Test
+	public void testJugadorDebeVenderMasDeUnaPropiedadParaAfrontarGasto(){
+		Jugador jugador = new Jugador();
+		Propiedad servicio1 = new Servicio(49000, 20, 40);
+		Propiedad servicio2 = new Servicio(49000, 20, 40);
 		
+		jugador.comprarPropiedad(servicio2);
+		jugador.comprarPropiedad(servicio1);
 		
+		Assert.assertEquals(jugador.obtenerCantidadDePropiedades(),2);
+		
+		jugador.quitarDinero(50000);
+		
+		Assert.assertEquals(jugador.obtenerCantidadDePropiedades(),0);
+	}
+	
+	@Test
+	public void testJugadorDebeVenderUnaSolaPropiedadParaAfrontarGasto(){
+		Jugador jugador = new Jugador();
+		Propiedad servicio1 = new Servicio(25000, 20, 40);
+		Propiedad servicio2 = new Servicio(25000, 20, 40);
+		
+		jugador.comprarPropiedad(servicio2);
+		jugador.comprarPropiedad(servicio1);
+		
+		Assert.assertEquals(jugador.obtenerCantidadDePropiedades(),2);
+		
+		jugador.quitarDinero(60000);
+		
+		Assert.assertEquals(jugador.obtenerCantidadDePropiedades(),1);
 	}
 }
