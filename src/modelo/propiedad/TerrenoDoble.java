@@ -30,6 +30,14 @@ public class TerrenoDoble extends Terreno {
         int diferencia = ((Terreno)hermano).obtenerCantidadDeConstrucciones() - this.numeroCasas;
         return (diferencia == 1 || diferencia == 0) && (numeroCasas == 2);
     }
+    
+    public int obtenerValorTotal(){
+    	int valor = this.precio;
+    	if(this.numeroCasas>0) valor += this.precioConstruccionCasa;
+    	if(this.numeroCasas>1) valor += this.precioConstruccionCasa;
+    	if(this.numeroCasas>2) valor += this.precioConstruccionHotel;
+    	return valor;
+    }
 
 }
 

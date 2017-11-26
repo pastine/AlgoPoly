@@ -56,4 +56,10 @@ public class Terreno extends Propiedad{
 		this.numeroCasas = 0;
 		super.cambiarDuenio(jugador);
 	}
+	
+	public int obtenerValorTotal(){
+		int valor = this.precio;
+		if(this.numeroCasas>0) valor += this.precioConstruccionCasa;
+		return valor;
+	}
 }

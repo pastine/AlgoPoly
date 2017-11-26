@@ -1,6 +1,7 @@
 package modelo.jugador;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import modelo.casillero.Carcel;
 import modelo.casillero.Casillero;
@@ -118,5 +119,17 @@ public class Jugador {
 	public void ofrecerComprarPropiedad() {
 		// Acá debería saltar un PopUp que ofrezca comprar la propiedad actual, pero para simplificar el modelo siempre que cae lo va a comprar
 		comprarPropiedad((Propiedad) casilleroActual);
+	}
+	
+	public void venderPropiedad(){
+		//Popup para que el jugador elija cual quiere vender
+		//Por ahora elijo una al azar
+		int cantidad = this.obtenerCantidadDePropiedades();
+		Random random = new Random();
+		Propiedad propiedad = this.propiedades.get(random.nextInt(cantidad));
+		int valor = propiedad.obtenerValorTotal();
+		this.recibirDinero((int)(valor*0.85));
+		propiedad.cambiarDuenio(null);
+		this.propiedades.remove(propiedad);
 	}
 }

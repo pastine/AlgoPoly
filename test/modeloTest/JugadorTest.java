@@ -6,7 +6,10 @@ import modelo.jugador.Jugador;
 import modelo.jugador.SaldoInsuficienteException;
 
 import modelo.propiedad.Propiedad;
+import modelo.propiedad.Servicio;
 import modelo.propiedad.Terreno;
+import modelo.propiedad.TerrenoDoble;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -169,4 +172,65 @@ public class JugadorTest {
 		Assert.assertTrue((dineroOriginal+20)==jugador2.obtenerSaldo());
 	}
 
+	@Test
+	public void testjugadorVendePropiedadYYaNoEsPropietarioDeLaMisma(){
+		Jugador jugador = new Jugador();
+		Propiedad propiedad = new Servicio(10,15,20);
+		
+		jugador.comprarPropiedad(propiedad);
+		
+		jugador.venderPropiedad();
+		
+		Assert.assertFalse(jugador.esDuenioDePropiedad(propiedad)); 
+	}
+	
+	@Test
+	public void testJugadorVendeTerrenoCon1CasaYSeLeDevuelveCorrectamenteElDinero(){
+		Jugador jugador = new Jugador();
+		Terreno terreno = new Terreno(10,2,5,10);
+		
+		int saldoInicial = jugador.obtenerSaldo();
+		
+		jugador.comprarPropiedad(terreno);
+		Assert.assertEquals(jugador.obtenerSaldo(),saldoInicial-10);
+		jugador.construirCasa(terreno);
+		Assert.assertEquals(jugador.obtenerSaldo(),saldoInicial-20);
+		
+		jugador.venderPropiedad();
+		
+		Assert.assertEquals(jugador.obtenerSaldo(),100000-20+(int)(20*0.85));
+	}
+	
+	@Test
+	public void testJugadorVendeTerreno(){
+		Jugador jugador = new Jugador();
+		TerrenoDoble terrenoDoble = new TerrenoDoble(10,2,3,4,5,10,20);
+		TerrenoDoble terrenoDobleHermano = new TerrenoDoble(10,2,3,4,5,10,20);
+		
+		terrenoDoble.asigarHermano(terrenoDobleHermano);
+		terrenoDobleHermano.asigarHermano(terrenoDoble);
+		
+		jugador.comprarPropiedad(terrenoDoble);
+		jugador.comprarPropiedad(terrenoDobleHermano);
+		
+		jugador.construirCasa(terrenoDoble);
+		jugador.construirCasa(terrenoDobleHermano);
+		
+		jugador.construirCasa(terrenoDoble);
+		jugador.construirCasa(terrenoDobleHermano);
+		
+		jugador.construirHotel(terrenoDoble);
+		jugador.construirHotel(terrenoDobleHermano);
+		
+		jugador.venderPropiedad();
+		
+		if (jugador.esDuenioDePropiedad(terrenoDoble)){
+			Assert.assertEquals(terrenoDobleHermano.obtenerCantidadDeConstrucciones(),0);
+		}
+		if (jugador.esDuenioDePropiedad(terrenoDobleHermano)){
+			Assert.assertEquals(terrenoDoble.obtenerCantidadDeConstrucciones(),0);
+		}
+		
+		
+	}
 }

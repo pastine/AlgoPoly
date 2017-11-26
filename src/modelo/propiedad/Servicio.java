@@ -34,5 +34,9 @@ public class Servicio extends Propiedad{
 			estadoCobroServicio = new EstadoCobroServicio(costoServicioParcial);
 		}
 	}
+	
+	public int obtenerValorTotal(){
+		return this.precio;
+	}
 
 }

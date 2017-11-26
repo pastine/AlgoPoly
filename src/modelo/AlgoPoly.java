@@ -44,7 +44,10 @@ public class AlgoPoly {
         try{
         	jugadorActual.mover(numeroPasos);
         } catch (SaldoInsuficienteException e){
-            turnos.removerJugadorDelJuego();
+        	if(jugadorActual.obtenerCantidadDePropiedades()==0){
+        		turnos.removerJugadorDelJuego();
+        	}
+        	jugadorActual.venderPropiedad();
             return 0;
         } catch (JugadorEstaPresoException e) {
             turnos.finalizarTurno();

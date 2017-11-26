@@ -36,4 +36,5 @@ public abstract class Propiedad extends Casillero {
 
 	protected abstract void cobrar(Jugador jugador, int pasosTotal);
 	public abstract void actualizarEstadoCobro();
+	public abstract int obtenerValorTotal();
 }
