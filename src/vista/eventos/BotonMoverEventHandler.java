@@ -3,6 +3,7 @@ package vista.eventos;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import modelo.AlgoPoly;
+import modelo.jugador.Jugador;
 import vista.VistaJugador;
 
 public class BotonMoverEventHandler implements EventHandler<ActionEvent> {
@@ -17,8 +18,10 @@ public class BotonMoverEventHandler implements EventHandler<ActionEvent> {
 	
     @Override
     public void handle(ActionEvent actionEvent) {
+    	Jugador jugadorActual = algoPoly.devolverJugadorActual();
     	int pasosTotal = algoPoly.lanzarDadosYMover();
-        vistaJugador.update(pasosTotal);
+        vistaJugador.update(pasosTotal, jugadorActual);
+        algoPoly.finalizarTurno();
         System.out.println(pasosTotal);
     }
     

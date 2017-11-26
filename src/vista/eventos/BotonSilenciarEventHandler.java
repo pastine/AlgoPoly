@@ -7,9 +7,9 @@ import javafx.scene.media.MediaPlayer;
 
 
 
-public class BotonDetenerEventHandler  implements EventHandler<ActionEvent> {
+public class BotonSilenciarEventHandler  implements EventHandler<ActionEvent> {
 	private MediaPlayer mediaplayer;
-	public BotonDetenerEventHandler (MediaPlayer mediaplayer) {
+	public BotonSilenciarEventHandler (MediaPlayer mediaplayer) {
 		this.mediaplayer = mediaplayer;
 	}
 	

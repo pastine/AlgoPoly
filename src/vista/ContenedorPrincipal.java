@@ -16,7 +16,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
-import vista.eventos.BotonDetenerEventHandler;
+import vista.eventos.BotonSilenciarEventHandler;
 import vista.eventos.BotonMoverEventHandler;
 import vista.eventos.BotonSalirEventHandler;
 
@@ -27,12 +27,11 @@ public class ContenedorPrincipal extends BorderPane{
 	Canvas canvasCentral;
 	VBox contenedorCentral;
 	VistaJugador vistaJugador;
-	
 	MediaPlayer mediaplayer;
 	
 	public ContenedorPrincipal(Stage stage, AlgoPoly algoPoly) {
 
-        this.setCentro();
+        this.setCentro(algoPoly);
         
         String path = Aplicacion.class.getResource("sonidos/cancionDeFondo.mp3").toString();
         Media file = new Media(path);
@@ -54,8 +53,8 @@ public class ContenedorPrincipal extends BorderPane{
 	    botonMover.setOnAction(botonMoverHandler);
 	    
 	    Button botonDetenerMusica = new Button();
-	    botonDetenerMusica.setText("Detener musica de fondo");
-	    BotonDetenerEventHandler botonDetenerHandler = new BotonDetenerEventHandler(mediaplayer);
+	    botonDetenerMusica.setText("Silenciar");
+	    BotonSilenciarEventHandler botonDetenerHandler = new BotonSilenciarEventHandler(mediaplayer);
 	    botonDetenerMusica.setOnAction(botonDetenerHandler);
 	    
 	    Button botonExit = new Button();
@@ -72,15 +71,11 @@ public class ContenedorPrincipal extends BorderPane{
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         contenedorVertical.setBackground(new Background(imagenDeFondo));
         this.setLeft(contenedorVertical);
-        
-        
-        
-        
     }
 	
-	private void setCentro() {
+	private void setCentro(AlgoPoly algoPoly) {
 		canvasCentral = new Canvas(930, 520);
-		vistaJugador = new VistaJugador(canvasCentral);
+		vistaJugador = new VistaJugador(canvasCentral, algoPoly);
         vistaJugador.dibujar();
 		contenedorCentral = new VBox(canvasCentral);
         contenedorCentral.setAlignment(Pos.CENTER);

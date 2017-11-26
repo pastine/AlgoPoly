@@ -23,7 +23,6 @@ public class AlgoPoly {
     
     public int lanzarDadosYMover() {
     	Jugador jugadorActual = turnos.obtenerJugadorDelTurnoActual();
-    	//System.out.println("HOLA");
         int numeroPasos1 = 0;
         int numeroPasos2 = 0;
         boolean pierdeTurno = false;
@@ -62,6 +61,18 @@ public class AlgoPoly {
             jugadores.add(auxiliar);
             salida.agregarJugador(auxiliar,0);
         }
+    }
+    
+    public ArrayList<Jugador> devolverJugadores() {
+    	return jugadores;
+    }
+    
+    public Jugador devolverJugadorActual() {
+    	return turnos.obtenerJugadorDelTurnoActual();
+    }
+    
+    public void finalizarTurno() {
+    	turnos.finalizarTurno();
     }
     
 }

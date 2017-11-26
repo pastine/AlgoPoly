@@ -30,11 +30,9 @@ public class ContenedorBienvenidos extends VBox {
         this.setSpacing(20);
         this.setPadding(new Insets(25));
         
- 
-        
-        //Image imagen = new Image("Insertar FOTO aqui");
-        //BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-        //this.setBackground(new Background(imagenDeFondo));
+        Image imagen = new Image("vista/imagenes/hombrecitoDelMonopoly.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        this.setBackground(new Background(imagenDeFondo));
        
         Button botonJugar = new Button();
         botonJugar.setText("JUGAR");
