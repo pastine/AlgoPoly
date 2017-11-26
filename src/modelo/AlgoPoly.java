@@ -36,7 +36,6 @@ public class AlgoPoly {
             }
         }
         if(pierdeTurno){
-            turnos.finalizarTurno();
             return 0;
         }
 
