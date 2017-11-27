@@ -2,7 +2,6 @@ package vista.eventos;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import modelo.AlgoPoly;
 import vista.ContenedorPrincipal;
 

@@ -17,6 +17,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import vista.eventos.BotonSilenciarEventHandler;
+import vista.eventos.BotonComprarPropiedadEventHandler;
 import vista.eventos.BotonFinalizarTurnoEventHandler;
 import vista.eventos.BotonMoverEventHandler;
 import vista.eventos.BotonSalirEventHandler;
@@ -35,7 +36,7 @@ public class ContenedorPrincipal extends BorderPane{
 
         this.setCentro(algoPoly);
         
-        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo.mp3").toString();
+        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo2.mp3").toString();
         Media file = new Media(path);
 		mediaplayer = new MediaPlayer(file);
 		mediaplayer.setAutoPlay(true);
@@ -53,6 +54,12 @@ public class ContenedorPrincipal extends BorderPane{
 	    botonMover.setDefaultButton(true);
 	    BotonMoverEventHandler botonMoverHandler = new BotonMoverEventHandler(this, algoPoly, vistaJugador);
 	    botonMover.setOnAction(botonMoverHandler);
+	    
+	    Button botonComprar = new Button();
+	    botonComprar.setText("Comprar");
+	    BotonComprarPropiedadEventHandler botonComprarHandler = new BotonComprarPropiedadEventHandler(this, algoPoly);
+	    botonComprar.setOnAction(botonComprarHandler);
+	    botonComprar.setDisable(true);
 
 	    Button botonFinalizarTurno = new Button();
 	    botonFinalizarTurno.setText("FinalizarTurno");
@@ -72,7 +79,7 @@ public class ContenedorPrincipal extends BorderPane{
 	    botonExit.setOnAction(botonExitHandler);
 	    
 	    
-        contenedorLeft = new VBox(botonMover, botonFinalizarTurno, botonDetenerMusica, botonExit);
+        contenedorLeft = new VBox(botonMover, botonComprar, botonFinalizarTurno, botonDetenerMusica, botonExit);
 		contenedorLeft.setPadding(new Insets(15));
 		contenedorLeft.setSpacing(25);
         
@@ -100,12 +107,16 @@ public class ContenedorPrincipal extends BorderPane{
 	public void deshabilitarBotonesAlFinalizarTurno() {
 		contenedorLeft.getChildren().get(0).setDisable(false);
 		contenedorLeft.getChildren().get(1).setDisable(true);
+		contenedorLeft.getChildren().get(2).setDisable(true);
 	}
 
 
     public void deshabilitarBotonesTrasMover() {
 		contenedorLeft.getChildren().get(0).setDisable(true);
-		contenedorLeft.getChildren().get(1).setDisable(false);
+		//Jugador jugadorActual = algoPoly.devolverJugadorActual();
+		//if (algoPoly.puedoComprar(jugadorActual))
+			contenedorLeft.getChildren().get(1).setDisable(false);
+		contenedorLeft.getChildren().get(2).setDisable(false);
 	}
 
 

@@ -33,6 +33,10 @@ public abstract class Propiedad extends Casillero {
 	public void asigarHermano(Propiedad hermano) {
 		this.hermano = hermano;
 	}
+	
+	public boolean puedoComprar() {
+		return (duenio == null);
+	}
 
 	protected abstract void cobrar(Jugador jugador, int pasosTotal);
 	public abstract void actualizarEstadoCobro();

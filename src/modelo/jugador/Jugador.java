@@ -142,4 +142,8 @@ public class Jugador {
 	public int obtenerCoordenadaVertical(){
 		return casilleroActual.obtenerCoordenadaVertical();
 	}
+	public Casillero obtenerCasillero() {
+		return casilleroActual;
+	}
+	
 }

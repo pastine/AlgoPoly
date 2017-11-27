@@ -2,7 +2,6 @@ package vista.eventos;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import modelo.AlgoPoly;
 import modelo.jugador.Jugador;
 import vista.ContenedorPrincipal;
@@ -23,10 +22,11 @@ public class BotonMoverEventHandler implements EventHandler<ActionEvent> {
 	
     @Override
     public void handle(ActionEvent actionEvent) {
-		contenedor.deshabilitarBotonesTrasMover();
+		//contenedor.deshabilitarBotonesTrasMover();
     	Jugador jugadorActual = algoPoly.devolverJugadorActual();
     	int pasosTotal = algoPoly.lanzarDadosYMover();
         vistaJugador.update(pasosTotal, jugadorActual);
+        contenedor.deshabilitarBotonesTrasMover();
         System.out.println("DEBUG: El jugador " + jugadorActual.toString() + " avanzo "+ pasosTotal + " pasos y tiene $" + jugadorActual.obtenerSaldo());
 	}
     

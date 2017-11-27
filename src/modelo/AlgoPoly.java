@@ -4,6 +4,7 @@ import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
 import modelo.jugador.JugadorEstaPresoException;
 import modelo.jugador.SaldoInsuficienteException;
+import modelo.propiedad.Propiedad;
 
 import java.util.ArrayList;
 
@@ -71,6 +72,16 @@ public class AlgoPoly {
     
     public void finalizarTurno() {
     	turnos.finalizarTurno();
+    }
+    
+    public boolean puedoComprar(Jugador jugadorActual) {
+    	Casillero casilleroActual = jugadorActual.obtenerCasillero();
+    	return casilleroActual.puedoComprar();
+    }
+    
+    public void comprarPropiedad(Jugador jugadorActual) {
+    	Casillero casilleroActual = jugadorActual.obtenerCasillero();
+    	jugadorActual.comprarPropiedad((Propiedad) casilleroActual);
     }
     
 }

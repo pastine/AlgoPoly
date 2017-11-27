@@ -46,4 +46,9 @@ public class Casillero {
 	public int obtenerCoordenadaVertical(){
 		return coordenadas.obtenerCoordenadaVertical();
 	}
+
+
+	public boolean puedoComprar() {
+		return false;
+	}
 }
