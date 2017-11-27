@@ -21,8 +21,8 @@
 - [ ] Un jugador arroja los dados y ambos tienen el mismo valor. Verificar que puede volver a jugar. 
 - [ ] Un jugador arroja los dados y ambos tienen el mismo valor en dos oportunidades. Verificar que puede volver a jugar.
 - [X] Un jugador no cuenta con efectivo y cae en un área que genera gasto. Verificar que un tercer jugador cae en el área que entregó el primer jugador y el cobro del dinero se acredita en la cuenta del jugador que ostenta la titularidad por un monto igual al área sin construcción.
-- [ ] Un jugador arroja los dados. Verificar que este paso de su posición actual a la posición indicada por los dados.
-- [ ] No se puede construir hoteles en terrenos simples (no dobles)
+- [X] Un jugador arroja los dados. Verificar que este paso de su posición actual a la posición indicada por los dados.
+- [X] No se puede construir hoteles en terrenos simples (no dobles)
 - [ ] Fin del juego en todas sus variantes.
 
 2da Entrega (23 de Noviembre)

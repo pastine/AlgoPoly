@@ -178,5 +178,21 @@ public class TerrenoTest {
     	int capitalFinal = jugador.obtenerSaldo();
     	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
     }
+    
+    @Test
+    public void testNoSePuedeConstruirHotelEnTerrenoSimple(){
+    	Terreno terreno = new Terreno(1000,250,500,700);
+    	Jugador jugador = new Jugador();
+    	
+    	jugador.comprarPropiedad(terreno);
+    	
+    	jugador.construirCasa(terreno);
+    	
+    	thrown.expect(ConstruccionNoPermitidaException.class);
+    	jugador.construirCasa(terreno);
+    	
+    	thrown.expect(ConstruccionNoPermitidaException.class);
+    	jugador.construirHotel((TerrenoDoble)terreno);
+    }
 
 }
