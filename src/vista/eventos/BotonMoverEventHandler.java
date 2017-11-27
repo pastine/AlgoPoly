@@ -23,10 +23,9 @@ public class BotonMoverEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
     	Jugador jugadorActual = algoPoly.devolverJugadorActual();
-    	int pasosTotal = algoPoly.lanzarDadosYMover();
+    	algoPoly.lanzarDadosYMover();
         vistaJugador.update();
         contenedor.deshabilitarBotonesTrasMover(jugadorActual);
-        System.out.println("DEBUG: El jugador " + jugadorActual.toString() + " avanzo "+ pasosTotal + " pasos y tiene $" + jugadorActual.obtenerSaldo());
 	}
     
 }

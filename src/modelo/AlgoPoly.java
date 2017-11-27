@@ -19,12 +19,15 @@ public class AlgoPoly {
 
     public void iniciarJuego(){
         crearTableroYJugadores();
-        turnos = new Turnos(jugadores);
-        
-        //La idea es pedir los nombres a traves de la vista.
         jugadores.get(0).asginarNombre("MARTA");
         jugadores.get(1).asginarNombre("NESTOR");
         jugadores.get(2).asginarNombre("ZULMA");
+        turnos = new Turnos(jugadores);
+        
+        //La idea es pedir los nombres a traves de la vista.
+        //jugadores.get(0).asginarNombre("MARTA");
+        //jugadores.get(1).asginarNombre("NESTOR");
+        //jugadores.get(2).asginarNombre("ZULMA");
     }
     
     public int lanzarDadosYMover() {

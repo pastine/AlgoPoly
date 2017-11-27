@@ -37,7 +37,7 @@ public class ContenedorPrincipal extends BorderPane{
 
         this.setCentro(algoPoly);
         
-        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo4.mp3").toString();
+        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo3.mp3").toString();
         Media file = new Media(path);
 		mediaplayer = new MediaPlayer(file);
 		mediaplayer.setAutoPlay(true);
@@ -58,13 +58,13 @@ public class ContenedorPrincipal extends BorderPane{
 	    
 	    Button botonComprar = new Button();
 	    botonComprar.setText("Comprar");
-	    BotonComprarPropiedadEventHandler botonComprarHandler = new BotonComprarPropiedadEventHandler(this, algoPoly);
+	    BotonComprarPropiedadEventHandler botonComprarHandler = new BotonComprarPropiedadEventHandler(this, algoPoly, vistaJugador);
 	    botonComprar.setOnAction(botonComprarHandler);
 	    botonComprar.setDisable(true);
 
 	    Button botonFinalizarTurno = new Button();
 	    botonFinalizarTurno.setText("FinalizarTurno");
-	    BotonFinalizarTurnoEventHandler botonFinalizarHandler = new BotonFinalizarTurnoEventHandler(this, algoPoly);
+	    BotonFinalizarTurnoEventHandler botonFinalizarHandler = new BotonFinalizarTurnoEventHandler(this, algoPoly, vistaJugador);
 	    botonFinalizarTurno.setOnAction(botonFinalizarHandler);
 	    
 	    Button botonDetenerMusica = new Button();
@@ -95,7 +95,8 @@ public class ContenedorPrincipal extends BorderPane{
 		
 		
 		vistaJugador = new VistaJugador(canvasCentral, algoPoly);
-        vistaJugador.dibujar();
+		vistaJugador.update();
+		vistaJugador.update(); //porque sino queda chico la primera vez. Habria que preguntar como solucionar este BUG.
 		contenedorCentral = new VBox(canvasCentral);
         contenedorCentral.setAlignment(Pos.CENTER);
         contenedorCentral.setSpacing(20);
