@@ -42,7 +42,7 @@ public class VistaJugador {
         }
     }
 
-    public void update(int pasosTotal, Jugador jugadorActual) {
+    public void update() {
         this.dibujar();
     }
 

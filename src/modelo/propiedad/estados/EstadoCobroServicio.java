@@ -11,7 +11,7 @@ public class EstadoCobroServicio {
 
     public void cobrar(Jugador duenio, Jugador jugador, int pasosTotal){
         if (duenio == null) {
-            jugador.ofrecerComprarPropiedad();
+            //jugador.ofrecerComprarPropiedad();
         } else {
             int costoFinal = pasosTotal * costoServicio;
             jugador.quitarDinero(costoFinal);

@@ -22,11 +22,10 @@ public class BotonMoverEventHandler implements EventHandler<ActionEvent> {
 	
     @Override
     public void handle(ActionEvent actionEvent) {
-		//contenedor.deshabilitarBotonesTrasMover();
     	Jugador jugadorActual = algoPoly.devolverJugadorActual();
     	int pasosTotal = algoPoly.lanzarDadosYMover();
-        vistaJugador.update(pasosTotal, jugadorActual);
-        contenedor.deshabilitarBotonesTrasMover();
+        vistaJugador.update();
+        contenedor.deshabilitarBotonesTrasMover(jugadorActual);
         System.out.println("DEBUG: El jugador " + jugadorActual.toString() + " avanzo "+ pasosTotal + " pasos y tiene $" + jugadorActual.obtenerSaldo());
 	}
     

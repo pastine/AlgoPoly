@@ -16,6 +16,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
+import modelo.jugador.Jugador;
 import vista.eventos.BotonSilenciarEventHandler;
 import vista.eventos.BotonComprarPropiedadEventHandler;
 import vista.eventos.BotonFinalizarTurnoEventHandler;
@@ -36,7 +37,7 @@ public class ContenedorPrincipal extends BorderPane{
 
         this.setCentro(algoPoly);
         
-        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo2.mp3").toString();
+        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo4.mp3").toString();
         Media file = new Media(path);
 		mediaplayer = new MediaPlayer(file);
 		mediaplayer.setAutoPlay(true);
@@ -110,10 +111,12 @@ public class ContenedorPrincipal extends BorderPane{
 		contenedorLeft.getChildren().get(2).setDisable(true);
 	}
 
+	public void deshabilitarBotonesTrasComprar() {
+		contenedorLeft.getChildren().get(1).setDisable(true);
+	}
 
-    public void deshabilitarBotonesTrasMover() {
+    public void deshabilitarBotonesTrasMover(Jugador jugadorActual) {
 		contenedorLeft.getChildren().get(0).setDisable(true);
-		//Jugador jugadorActual = algoPoly.devolverJugadorActual();
 		//if (algoPoly.puedoComprar(jugadorActual))
 			contenedorLeft.getChildren().get(1).setDisable(false);
 		contenedorLeft.getChildren().get(2).setDisable(false);

@@ -3,7 +3,6 @@ package modelo.jugador;
 import java.util.ArrayList;
 import java.util.Random;
 
-import modelo.CoordenadasCasillero;
 import modelo.casillero.Carcel;
 import modelo.casillero.Casillero;
 import modelo.Dado;

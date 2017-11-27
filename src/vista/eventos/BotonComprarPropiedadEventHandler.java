@@ -21,6 +21,7 @@ public class BotonComprarPropiedadEventHandler implements EventHandler<ActionEve
 		Jugador jugadorActual = algoPoly.devolverJugadorActual();
 		if (algoPoly.puedoComprar(jugadorActual))
 			algoPoly.comprarPropiedad(jugadorActual);
+		contenedor.deshabilitarBotonesTrasComprar();
 	}
 	
 }
