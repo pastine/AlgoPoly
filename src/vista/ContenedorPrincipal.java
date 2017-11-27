@@ -102,7 +102,6 @@ public class ContenedorPrincipal extends BorderPane{
 		
 		vistaJugador = new VistaJugador(canvasCentral, algoPoly);
 		vistaJugador.update();
-		vistaJugador.update(); //porque sino queda chico la primera vez. Habria que preguntar como solucionar este BUG.
 		contenedorCentral = new VBox(canvasCentral);
         contenedorCentral.setAlignment(Pos.CENTER);
         contenedorCentral.setSpacing(20);
@@ -115,9 +114,9 @@ public class ContenedorPrincipal extends BorderPane{
     }
 
 	public void deshabilitarBotonesAlFinalizarTurno() {
-		contenedorLeft.getChildren().get(0).setDisable(false);
-		contenedorLeft.getChildren().get(1).setDisable(true);
-		contenedorLeft.getChildren().get(2).setDisable(true);
+		contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
+		contenedorLeft.getChildren().get(1).setDisable(true); // Comprar 1
+		contenedorLeft.getChildren().get(2).setDisable(true); // Finalizar 2
 	}
 
 	public void deshabilitarBotonesTrasComprar() {

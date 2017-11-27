@@ -49,25 +49,45 @@ public class Tablero {
 
         // Instanciación de todos los casilleros
         Casillero salida = new Casillero();
+        salida.asignarNombre("SALIDA");
         Quini6 quini6 = new Quini6();
+        quini6.asignarNombre("QUINI6");
         TerrenoDoble buenosAiresSur = new TerrenoDoble(20000, 2000, 3000, 3500, 5000, 5000, 8000);
+        buenosAiresSur.asignarNombre("BUENOS AIRES SUR");
         Servicio edesur = new Servicio(35000, 500, 1000);
+        edesur.asignarNombre("EDESUR");
         TerrenoDoble buenosAiresNorte = new TerrenoDoble(25000, 2500, 3500, 4000, 6000, 5500, 9000);
+        buenosAiresNorte.asignarNombre("BUENOS AIRES NORTE");
         Carcel carcel = new Carcel();
+        carcel.asignarNombre("CARCEL");
         TerrenoDoble cordobaSur = new TerrenoDoble(18000, 1000, 1500, 2500, 3000, 2000, 3000);
+        cordobaSur.asignarNombre("CORDOBA SUR");
         AvanceDinamico avanceDinamico = new AvanceDinamico();
+        avanceDinamico.asignarNombre("AVANCE DINAMICO");
         Servicio subte = new Servicio(40000, 600, 1100);
+        subte.asignarNombre("SUBTE");
         TerrenoDoble cordobaNorte = new TerrenoDoble(20000, 1300, 1800, 2900, 3500, 2200, 3500);
+        cordobaNorte.asignarNombre("CORDOBA NORTE");
         ImpuestoAlLujo impuestoAlLujo = new ImpuestoAlLujo();
+        impuestoAlLujo.asignarNombre("IMPUESTO AL LUJO");
         Terreno santaFe = new Terreno(15000, 1500, 3500, 4000);
+        santaFe.asignarNombre("SANTA FE");
         Servicio aysa = new Servicio(30000, 300, 500);
+        aysa.asignarNombre("AYSA");
         TerrenoDoble saltaNorte = new TerrenoDoble(23000, 2000, 3250, 3850, 5500, 4500, 7500);
+        saltaNorte.asignarNombre("SALTA NORTE");
         TerrenoDoble saltaSur = new TerrenoDoble(23000, 2000, 3250, 3850, 5500, 4500, 7500);
+        saltaSur.asignarNombre("SALTA SUR");
         Policia policia = new Policia(carcel);
+        policia.asignarNombre("POLICIA");
         Servicio tren = new Servicio(38000, 450, 800);
+        tren.asignarNombre("TREN");
         Terreno neuquen = new Terreno(17000, 1800, 3800, 4800);
+        neuquen.asignarNombre("NEUQUEN");
         RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();
+        retrocesoDinamico.asignarNombre("RETROCESO DINAMICO");
         Terreno tucuman = new Terreno(25000, 2500, 4500, 7000);
+        tucuman.asignarNombre("TUCUMAN");
 
         // Relaciones entre casilleros
         buenosAiresNorte.asigarHermano(buenosAiresSur);

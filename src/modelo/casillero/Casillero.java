@@ -2,14 +2,13 @@ package modelo.casillero;
 
 import java.util.ArrayList;
 
-import java.util.List;
-
 import modelo.CoordenadasCasillero;
 import modelo.jugador.Jugador;
 
 public class Casillero {
 	private ArrayList<Jugador> jugadores;
 	private CoordenadasCasillero coordenadas;
+	private String nombre;
 	
 	public Casillero() {
 		jugadores = new ArrayList<Jugador>();
@@ -50,5 +49,13 @@ public class Casillero {
 
 	public boolean puedoComprar() {
 		return false;
+	}
+
+	public void asignarNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public String pedirNombre() {
+		return nombre;
 	}
 }

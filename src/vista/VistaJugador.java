@@ -32,7 +32,7 @@ public class VistaJugador {
 
         int contador = 0;
         int contadorHorizontal = 55;
-        int contadorVertical = 65; //65 arriba de todo
+        int contadorVertical = 70; //65 arriba de todo
         for (int i = 0; i < 3; i++){
         	Jugador jugador = jugadores.get(i);
         	if (i == 0)
@@ -45,12 +45,17 @@ public class VistaJugador {
         	canvas.getGraphicsContext2D().fillOval(jugador.obtenerCoordenadaHorizontal() + contador, jugador.obtenerCoordenadaVertical() + contador, 45, 45);
         	contador += 7;
         	
-        	String situacionJugador = algoPoly.pedirSituacion(jugador);
+        	String situacionJugador = algoPoly.pedirSituacionJugador(jugador);
+        	canvas.getGraphicsContext2D().setFont(new Font("Verdana", 20));
         	canvas.getGraphicsContext2D().fillText(situacionJugador, contadorHorizontal, contadorVertical);
-        	canvas.getGraphicsContext2D().setFont(new Font("Verdana", 19));
         	
         	contadorHorizontal += 280;
         }
+        
+        
+        String situacionCasillero = algoPoly.pedirSituacionCasillero(algoPoly.devolverJugadorActual());
+        canvas.getGraphicsContext2D().fillText(situacionCasillero, 355, 355);
+        
     }
 
     public void update() {
