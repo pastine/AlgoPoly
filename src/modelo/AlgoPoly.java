@@ -103,7 +103,7 @@ public class AlgoPoly {
 	public String pedirSituacionCasillero(Jugador jugadorActual) {
 		Casillero casilleroActual = jugadorActual.obtenerCasillero();
 		String situacionCasillero = "Casillero: ";
-		situacionCasillero += casilleroActual.pedirNombre();
+		situacionCasillero += casilleroActual.pedirNombre() + "\n";
 		situacionCasillero += casilleroActual.pedirSituacion();
 		return situacionCasillero;
 	}

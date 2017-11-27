@@ -18,4 +18,9 @@ public class EstadoCobroTerreno {
             duenio.recibirDinero(costoAlquiler);
         }
     }
+
+	public int obtenerCostoAlquiler() {
+		return costoAlquiler;
+	}
+
 }

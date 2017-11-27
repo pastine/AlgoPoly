@@ -18,4 +18,8 @@ public class EstadoCobroServicio {
             duenio.recibirDinero(costoFinal);
         }
     }
+    
+    public int obtenerCostoServicio() {
+    	return costoServicio;
+    }
 }

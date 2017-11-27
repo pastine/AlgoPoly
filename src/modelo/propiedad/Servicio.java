@@ -38,5 +38,14 @@ public class Servicio extends Propiedad{
 	public int obtenerValorTotal(){
 		return this.precio;
 	}
+	
+	public String pedirSituacion() {
+		String situacion = "\nCosto Servicio: " + precio;
+		situacion += "\nPropietario: ";
+		if (duenio != null)
+			situacion += duenio.pedirNombre();
+		situacion += "\nservicio: " + estadoCobroServicio.obtenerCostoServicio() + " x dados";
+		return situacion;
+	}
 
 }

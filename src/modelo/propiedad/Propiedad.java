@@ -38,13 +38,7 @@ public abstract class Propiedad extends Casillero {
 		return (duenio == null);
 	}
 	
-	public String pedirSituacion() {
-		String situacion = "\nCosto Propiedad: " + precio;
-		situacion += "\nPropietario: ";
-		if (duenio != null)
-			situacion += duenio.pedirNombre();
-		return situacion;
-	}
+	public abstract String pedirSituacion();
 	protected abstract void cobrar(Jugador jugador, int pasosTotal);
 	public abstract void actualizarEstadoCobro();
 	public abstract int obtenerValorTotal();
