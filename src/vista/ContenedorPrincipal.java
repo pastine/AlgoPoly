@@ -21,6 +21,7 @@ import vista.eventos.BotonSilenciarEventHandler;
 import vista.eventos.BotonComprarPropiedadEventHandler;
 import vista.eventos.BotonFinalizarTurnoEventHandler;
 import vista.eventos.BotonMoverEventHandler;
+import vista.eventos.BotonPedirEventHandler;
 import vista.eventos.BotonSalirEventHandler;
 
 public class ContenedorPrincipal extends BorderPane{
@@ -79,8 +80,13 @@ public class ContenedorPrincipal extends BorderPane{
 	    BotonSalirEventHandler botonExitHandler = new BotonSalirEventHandler();
 	    botonExit.setOnAction(botonExitHandler);
 	    
+	    Button botonPedir = new Button();
+	    botonPedir.setText("Pedir nombre");
+	    BotonPedirEventHandler botonPedirHandler = new BotonPedirEventHandler();
+	    botonPedir.setOnAction(botonPedirHandler);
 	    
-        contenedorLeft = new VBox(botonMover, botonComprar, botonFinalizarTurno, botonDetenerMusica, botonExit);
+	    
+        contenedorLeft = new VBox(botonMover, botonComprar, botonFinalizarTurno, botonDetenerMusica, botonExit, botonPedir);
 		contenedorLeft.setPadding(new Insets(15));
 		contenedorLeft.setSpacing(25);
         
