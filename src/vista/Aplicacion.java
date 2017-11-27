@@ -18,13 +18,14 @@ public class Aplicacion extends Application {
         
         AlgoPoly algoPoly = new AlgoPoly();
         algoPoly.iniciarJuego();
-           
+        
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, algoPoly);
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
         
-        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
+        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego,algoPoly);
         Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
-
+        
+        
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
 

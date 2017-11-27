@@ -19,10 +19,14 @@ public class AlgoPoly {
 
     public void iniciarJuego(){
         crearTableroYJugadores();
-        jugadores.get(0).asginarNombre("MARTA");
-        jugadores.get(1).asginarNombre("NESTOR");
-        jugadores.get(2).asginarNombre("ZULMA");
+        cambiarNombres("MARTA","NESTOR","ZULMA");
         turnos = new Turnos(jugadores);
+    }
+    
+    public void cambiarNombres(String jugador1,String jugador2,String  jugador3) {
+        jugadores.get(0).asginarNombre(jugador1);
+        jugadores.get(1).asginarNombre(jugador2);
+        jugadores.get(2).asginarNombre(jugador3);
     }
     
     public int lanzarDadosYMover() {

@@ -67,6 +67,7 @@ public class ContenedorPrincipal extends BorderPane{
 	    botonFinalizarTurno.setText("FinalizarTurno");
 	    BotonFinalizarTurnoEventHandler botonFinalizarHandler = new BotonFinalizarTurnoEventHandler(this, algoPoly, vistaJugador);
 	    botonFinalizarTurno.setOnAction(botonFinalizarHandler);
+	    botonFinalizarTurno.setDisable(true);
 	    
 	    Button botonDetenerMusica = new Button();
 	    botonDetenerMusica.setText("Silenciar");

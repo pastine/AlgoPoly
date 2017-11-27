@@ -6,18 +6,25 @@ import javafx.scene.control.*;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.layout.*;
 import javafx.util.Pair;
+import modelo.AlgoPoly;
 
 
 public class BotonPedirEventHandler implements EventHandler<ActionEvent> {
+	AlgoPoly algoPoly;
+    public BotonPedirEventHandler(AlgoPoly algoPoly) {
+		this.algoPoly = algoPoly;
+	}
 
-    @Override
+
+
+	@Override
     public void handle(ActionEvent actionEvent) {
-    	Dialog<Pair<String, String>> dialog = new Dialog<>();
-    	dialog.setTitle("Nombre de jugadores");
-    	dialog.setHeaderText("Ingrese nombre de jugadores");
+    	Dialog<Pair<String, String>> dialogo = new Dialog<>();
+    	dialogo.setTitle("Nombre de jugadores");
+    	dialogo.setHeaderText("Ingrese nombre de jugadores");
 
     	ButtonType aceptarButtonType = new ButtonType("Aceptar", ButtonData.OK_DONE);
-    	dialog.getDialogPane().getButtonTypes().addAll(aceptarButtonType, ButtonType.CANCEL);
+    	dialogo.getDialogPane().getButtonTypes().addAll(aceptarButtonType, ButtonType.CANCEL);
 
     	GridPane grid = new GridPane();
     	grid.setHgap(10);
@@ -42,18 +49,17 @@ public class BotonPedirEventHandler implements EventHandler<ActionEvent> {
     	grid.add(new Label("Jugador 3:"), 0, 2);
     	grid.add(jugador3, 1, 2);
 
-    	dialog.getDialogPane().setContent(grid);
+    	dialogo.getDialogPane().setContent(grid);
 
-    	dialog.setResultConverter(dialogButton -> {
+    	dialogo.setResultConverter(dialogButton -> {
     	    if (dialogButton == aceptarButtonType) {
-    	    	System.out.println(jugador1.getText());
-        		System.out.println(jugador2.getText());
-        		System.out.println(jugador3.getText());
+    	    	algoPoly.cambiarNombres(jugador1.getText(), jugador2.getText(), jugador3.getText()); // cambia nombre de jugadores
+    	    	
     	    }
     	    return null;
     	});
 
-    	dialog.showAndWait();
+    	dialogo.showAndWait();
 
     }
 

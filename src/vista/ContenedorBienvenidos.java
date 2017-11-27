@@ -12,6 +12,7 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import modelo.AlgoPoly;
 import vista.eventos.BotonJugarEventHandler;
 import vista.eventos.BotonPedirEventHandler;
 
@@ -21,7 +22,7 @@ public class ContenedorBienvenidos extends VBox {
 
     Stage stage;
 	
-    public ContenedorBienvenidos(Stage stage, Scene proximaEscena) {
+    public ContenedorBienvenidos(Stage stage, Scene proximaEscena, AlgoPoly algoPoly) {
 
         super();
 
@@ -42,9 +43,10 @@ public class ContenedorBienvenidos extends VBox {
         
 	    Button botonPedir = new Button();
 	    botonPedir.setText("Pedir nombre");
-	    BotonPedirEventHandler botonPedirHandler = new BotonPedirEventHandler();
+	    BotonPedirEventHandler botonPedirHandler = new BotonPedirEventHandler(algoPoly); // cambia nombre de jugadores
 	    botonPedir.setOnAction(botonPedirHandler);
-
+	    
+	    
         BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, proximaEscena);
         botonJugar.setOnAction(botonJugarHandler);
 
