@@ -16,6 +16,7 @@ import modelo.propiedad.Terreno;
 import modelo.propiedad.TerrenoDoble;
 
 public class Jugador {
+	private String nombre;
 	private int saldo;
 	private ArrayList<Propiedad> propiedades;
 	private Casillero casilleroActual;
@@ -143,6 +144,14 @@ public class Jugador {
 	}
 	public Casillero obtenerCasillero() {
 		return casilleroActual;
+	}
+	
+	public void asginarNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public String pedirNombre() {
+		return nombre;
 	}
 	
 }

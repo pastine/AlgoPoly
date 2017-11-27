@@ -20,6 +20,11 @@ public class AlgoPoly {
     public void iniciarJuego(){
         crearTableroYJugadores();
         turnos = new Turnos(jugadores);
+        
+        //La idea es pedir los nombres a traves de la vista.
+        jugadores.get(0).asginarNombre("MARTA");
+        jugadores.get(1).asginarNombre("NESTOR");
+        jugadores.get(2).asginarNombre("ZULMA");
     }
     
     public int lanzarDadosYMover() {
@@ -83,5 +88,18 @@ public class AlgoPoly {
     	Casillero casilleroActual = jugadorActual.obtenerCasillero();
     	jugadorActual.comprarPropiedad((Propiedad) casilleroActual);
     }
-    
+
+	public String pedirSituacion(Jugador jugador) {
+		Jugador jugadorActual = this.devolverJugadorActual();
+		
+		String situacionJugador = "Jugador: ";
+		situacionJugador += jugador.pedirNombre();
+		situacionJugador += "\nSaldo actual: ";
+		situacionJugador += jugador.obtenerSaldo();
+		
+		if (jugadorActual == jugador)
+			situacionJugador += "\nTURNO ACTUAL.";
+		return situacionJugador;
+	}
+
 }

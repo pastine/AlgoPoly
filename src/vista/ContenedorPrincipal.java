@@ -92,6 +92,8 @@ public class ContenedorPrincipal extends BorderPane{
 	
 	private void setCentro(AlgoPoly algoPoly) {
 		canvasCentral = new Canvas(930, 520);
+		
+		
 		vistaJugador = new VistaJugador(canvasCentral, algoPoly);
         vistaJugador.dibujar();
 		contenedorCentral = new VBox(canvasCentral);
