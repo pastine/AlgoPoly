@@ -1,11 +1,7 @@
 package vista.eventos;
 
-import java.util.Optional;
-
-import javafx.application.*;
 import javafx.geometry.*;
 import javafx.event.*;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.layout.*;
@@ -16,19 +12,13 @@ public class BotonPedirEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-    	// Create the custom dialog.
     	Dialog<Pair<String, String>> dialog = new Dialog<>();
     	dialog.setTitle("Nombre de jugadores");
     	dialog.setHeaderText("Ingrese nombre de jugadores");
 
-    	// Set the icon (must be included in the project).
-    	//dialog.setGraphic(new ImageView(this.getClass().getResource("login.png").toString()));
-
-    	// Set the button types.
     	ButtonType aceptarButtonType = new ButtonType("Aceptar", ButtonData.OK_DONE);
     	dialog.getDialogPane().getButtonTypes().addAll(aceptarButtonType, ButtonType.CANCEL);
 
-    	// Create the username and password labels and fields.
     	GridPane grid = new GridPane();
     	grid.setHgap(10);
     	grid.setVgap(10);
@@ -52,13 +42,8 @@ public class BotonPedirEventHandler implements EventHandler<ActionEvent> {
     	grid.add(new Label("Jugador 3:"), 0, 2);
     	grid.add(jugador3, 1, 2);
 
-    	
-
     	dialog.getDialogPane().setContent(grid);
 
-    	
-
-    	// Convierte el resultado de cuando tocan aceptar
     	dialog.setResultConverter(dialogButton -> {
     	    if (dialogButton == aceptarButtonType) {
     	    	System.out.println(jugador1.getText());

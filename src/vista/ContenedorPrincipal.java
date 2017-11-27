@@ -70,7 +70,6 @@ public class ContenedorPrincipal extends BorderPane{
 	    
 	    Button botonDetenerMusica = new Button();
 	    botonDetenerMusica.setText("Silenciar");
-	    botonDetenerMusica.setCancelButton(true);
 	    BotonSilenciarEventHandler botonDetenerHandler = new BotonSilenciarEventHandler(mediaplayer);
 	    botonDetenerMusica.setOnAction(botonDetenerHandler);
 	    
@@ -80,13 +79,7 @@ public class ContenedorPrincipal extends BorderPane{
 	    BotonSalirEventHandler botonExitHandler = new BotonSalirEventHandler();
 	    botonExit.setOnAction(botonExitHandler);
 	    
-	    Button botonPedir = new Button();
-	    botonPedir.setText("Pedir nombre");
-	    BotonPedirEventHandler botonPedirHandler = new BotonPedirEventHandler();
-	    botonPedir.setOnAction(botonPedirHandler);
-	    
-	    
-        contenedorLeft = new VBox(botonMover, botonComprar, botonFinalizarTurno, botonDetenerMusica, botonExit, botonPedir);
+	    contenedorLeft = new VBox(botonMover, botonComprar, botonFinalizarTurno, botonDetenerMusica, botonExit);
 		contenedorLeft.setPadding(new Insets(15));
 		contenedorLeft.setSpacing(25);
         
@@ -114,7 +107,8 @@ public class ContenedorPrincipal extends BorderPane{
     }
 
 	public void deshabilitarBotonesAlFinalizarTurno() {
-		contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
+		//if (algoPoly.puedoMover(algoPoly.devolverJugadorActual()))
+			contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
 		contenedorLeft.getChildren().get(1).setDisable(true); // Comprar 1
 		contenedorLeft.getChildren().get(2).setDisable(true); // Finalizar 2
 	}
@@ -123,9 +117,9 @@ public class ContenedorPrincipal extends BorderPane{
 		contenedorLeft.getChildren().get(1).setDisable(true);
 	}
 
-    public void deshabilitarBotonesTrasMover(Jugador jugadorActual) {
+    public void deshabilitarBotonesTrasMover() {
 		contenedorLeft.getChildren().get(0).setDisable(true);
-		//if (algoPoly.puedoComprar(jugadorActual))
+		//if (algoPoly.puedoComprar(algoPoly.devolverJugadorActual()))
 			contenedorLeft.getChildren().get(1).setDisable(false);
 		contenedorLeft.getChildren().get(2).setDisable(false);
 	}

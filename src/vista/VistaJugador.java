@@ -54,7 +54,7 @@ public class VistaJugador {
         
         
         String situacionCasillero = algoPoly.pedirSituacionCasillero(algoPoly.devolverJugadorActual());
-        canvas.getGraphicsContext2D().fillText(situacionCasillero, 355, 355);
+        canvas.getGraphicsContext2D().fillText(situacionCasillero, 345, 355);
         
     }
 

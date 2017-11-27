@@ -13,6 +13,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import vista.eventos.BotonJugarEventHandler;
+import vista.eventos.BotonPedirEventHandler;
 
 
 
@@ -38,12 +39,16 @@ public class ContenedorBienvenidos extends VBox {
         botonJugar.setText("JUGAR");
         botonJugar.setDefaultButton(true);
         botonJugar.setPrefSize(100, 50);
-        //botonJugar.setDisable(true); para poner en gris un boton.
+        
+	    Button botonPedir = new Button();
+	    botonPedir.setText("Pedir nombre");
+	    BotonPedirEventHandler botonPedirHandler = new BotonPedirEventHandler();
+	    botonPedir.setOnAction(botonPedirHandler);
 
         BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, proximaEscena);
         botonJugar.setOnAction(botonJugarHandler);
 
-        this.getChildren().addAll(botonJugar);
+        this.getChildren().addAll(botonJugar, botonPedir);
     }
     
 

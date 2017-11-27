@@ -104,7 +104,12 @@ public class AlgoPoly {
 		Casillero casilleroActual = jugadorActual.obtenerCasillero();
 		String situacionCasillero = "Casillero: ";
 		situacionCasillero += casilleroActual.pedirNombre();
+		situacionCasillero += casilleroActual.pedirSituacion();
 		return situacionCasillero;
+	}
+
+	public boolean puedoMover(Jugador jugadorActual) {
+		return (jugadorActual.diasDeCarcelRestantes() == 0);
 	}
 
 }

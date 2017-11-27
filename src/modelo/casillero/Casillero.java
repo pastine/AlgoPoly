@@ -58,4 +58,9 @@ public class Casillero {
 	public String pedirNombre() {
 		return nombre;
 	}
+
+
+	public String pedirSituacion() {
+		return "";
+	}
 }
