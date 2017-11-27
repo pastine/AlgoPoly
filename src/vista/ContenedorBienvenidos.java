@@ -22,10 +22,10 @@ public class ContenedorBienvenidos extends VBox {
 
     Stage stage;
 	
-    public ContenedorBienvenidos(Stage stage, Scene proximaEscena, AlgoPoly algoPoly) {
+    public ContenedorBienvenidos(Stage stage, AlgoPoly algoPoly) {
 
         super();
-
+        
         this.stage = stage;
 
         this.setAlignment(Pos.CENTER);
@@ -47,7 +47,7 @@ public class ContenedorBienvenidos extends VBox {
 	    botonPedir.setOnAction(botonPedirHandler);
 	    
 	    
-        BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, proximaEscena);
+        BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage,algoPoly);
         botonJugar.setOnAction(botonJugarHandler);
 
         this.getChildren().addAll(botonJugar, botonPedir);
