@@ -116,7 +116,12 @@ public class TerrenoTest {
 		Jugador jugadorA = new Jugador();
 		jugadorA.comprarPropiedad(santaFe);
 
+		Assert.assertTrue(santaFe.puedoConstruir());
+		Assert.assertTrue(santaFe.puedeConstruirCasa());
 		jugadorA.construirCasa(santaFe);
+
+		Assert.assertFalse(santaFe.puedoConstruir());
+		Assert.assertFalse(santaFe.puedeConstruirCasa());
 		thrown.expect(ConstruccionNoPermitidaException.class);
 		jugadorA.construirCasa(santaFe);
 	}
@@ -128,6 +133,8 @@ public class TerrenoTest {
 		Jugador jugadorB = new Jugador();
 		jugadorB.comprarPropiedad(santaFe);
 
+		Assert.assertTrue(santaFe.puedoConstruir());
+		Assert.assertTrue(santaFe.puedeConstruirCasa());
 		thrown.expect(PropiedadConDuenioException.class);
 		jugadorA.construirCasa(santaFe);
 	}
@@ -179,20 +186,4 @@ public class TerrenoTest {
     	Assert.assertEquals(capitalInicial, capitalFinal + costoPropiedad);
     }
     
-    @Test
-    public void testNoSePuedeConstruirHotelEnTerrenoSimple(){
-    	Terreno terreno = new Terreno(1000,250,500,700);
-    	Jugador jugador = new Jugador();
-    	
-    	jugador.comprarPropiedad(terreno);
-    	
-    	jugador.construirCasa(terreno);
-    	
-    	thrown.expect(ConstruccionNoPermitidaException.class);
-    	jugador.construirCasa(terreno);
-    	
-    	thrown.expect(ConstruccionNoPermitidaException.class);
-    	jugador.construirHotel((TerrenoDoble)terreno);
-    }
-
 }
