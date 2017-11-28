@@ -1,8 +1,6 @@
 package vista;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 

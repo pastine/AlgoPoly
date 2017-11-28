@@ -24,7 +24,7 @@ public class Jugador {
 	private EstadoQuiniJugador estadoQuini;
 
 	public Jugador() {
-		saldo = 100000;
+		saldo = 10000;
 		propiedades = new ArrayList<Propiedad>();
 		estadoMovimiento = new EstadoLibre();
 		estadoQuini = new EstadoJugadorGanoQuiniCeroVeces();

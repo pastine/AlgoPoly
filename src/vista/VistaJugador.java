@@ -8,14 +8,10 @@ import modelo.AlgoPoly;
 import modelo.jugador.Jugador;
 
 public class VistaJugador {
-
-	ArrayList<Jugador> jugadores;
 	AlgoPoly algoPoly;
     Canvas canvas;
 
     public VistaJugador(Canvas canvas, AlgoPoly algoPoly) {
-
-        this.jugadores = algoPoly.devolverJugadores();
         this.algoPoly = algoPoly;
         this.canvas = canvas;
 
@@ -29,11 +25,13 @@ public class VistaJugador {
     	
     	//clear
         canvas.getGraphicsContext2D().clearRect(0, 0, 930, 520);
-
+        
+        ArrayList<Jugador> jugadores = algoPoly.devolverJugadores();
+        
         int contador = 0;
         int contadorHorizontal = 55;
         int contadorVertical = 70; //65 arriba de todo
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < jugadores.size(); i++){
         	Jugador jugador = jugadores.get(i);
         	if (i == 0)
         		canvas.getGraphicsContext2D().setFill(Color.DARKBLUE);

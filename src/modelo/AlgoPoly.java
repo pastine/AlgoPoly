@@ -61,7 +61,9 @@ public class AlgoPoly {
         try{
         	jugadorActual.mover(numeroPasos);
         } catch (SaldoInsuficienteException e){
-        	turnos.removerJugadorDelJuego();
+        	Jugador jugadorEliminado = turnos.removerJugadorDelJuego();
+        	jugadores.remove(jugadorEliminado);
+        	
             return 0;
         } catch (JugadorEstaPresoException e) {
             return 0;
