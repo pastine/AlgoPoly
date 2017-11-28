@@ -22,7 +22,11 @@ public class Servicio extends Propiedad{
 	public void accionar(Jugador jugador, int pasosTotal) {
 		cobrar(jugador, pasosTotal);
 	}
-	
+
+	public void asignarHermano(Servicio hermano) {
+		this.hermano = hermano;
+	}
+
 	protected void cobrar(Jugador jugador, int pasosTotal) {
 		this.estadoCobroServicio.cobrar(this.duenio, jugador, pasosTotal);
 	}

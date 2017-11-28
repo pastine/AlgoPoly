@@ -667,4 +667,26 @@ public class TerrenoDobleTest {
     	int capitalFinal = jugadorConMalaSuerte.obtenerSaldo();
     	Assert.assertEquals(capitalInicial, capitalFinal + alquilerConHotel);
     }
+
+    @Test
+    public void testAlVenderUnaPropiedadSeRecuperaEl85PorcientoDelValorDeEsaPropiedadYDeLasConstruccionesDelHermano() {
+        int alquilerConHotel = 5500;
+        TerrenoDoble saltaNorte = new TerrenoDoble(23000, 2000, 3250, 3850, alquilerConHotel, 4500, 7500);
+        TerrenoDoble saltaSur = new TerrenoDoble(23000, 2000, 3250, 3850, 5500, 4500, 7500);
+        Jugador duenio = new Jugador();
+        saltaNorte.asignarHermano(saltaSur);
+        saltaSur.asignarHermano(saltaNorte);
+        duenio.comprarPropiedad(saltaNorte);
+        duenio.comprarPropiedad(saltaSur);
+        duenio.construirCasa(saltaSur);
+        duenio.construirCasa(saltaNorte);
+        duenio.construirCasa(saltaSur);
+        duenio.construirCasa(saltaNorte);
+        duenio.construirHotel(saltaSur);
+        duenio.construirHotel(saltaNorte);
+
+        int capitalInicial = duenio.obtenerSaldo();
+        duenio.venderPropiedad(saltaNorte);
+        Assert.assertTrue(capitalInicial + (23000 + 4500 * 4 + 7500 * 2) * 0.85 == duenio.obtenerSaldo());
+    }
 }

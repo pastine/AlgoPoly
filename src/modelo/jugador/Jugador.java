@@ -60,7 +60,7 @@ public class Jugador {
 
 	public void quitarDinero(int dinero) {
 		while (dinero > this.obtenerSaldo() && this.obtenerCantidadDePropiedades() > 0){
-			this.venderPropiedad();
+			this.venderPropiedad(obtenerPropiedades().get(0));
 		}
 		saldo -= dinero;
 		if (saldo < 0) throw new SaldoInsuficienteException();
@@ -124,12 +124,7 @@ public class Jugador {
 	}
 
 
-	public void venderPropiedad(){
-		//Popup para que el jugador elija cual quiere vender
-		//Por ahora elijo una al azar
-		int cantidad = this.obtenerCantidadDePropiedades();
-		Random random = new Random();
-		Propiedad propiedad = this.propiedades.get(random.nextInt(cantidad));
+	public void venderPropiedad(Propiedad propiedad){
 		int valor = propiedad.obtenerValorTotal();
 		this.recibirDinero((int)(valor*0.85));
 		propiedad.cambiarDuenio(null);

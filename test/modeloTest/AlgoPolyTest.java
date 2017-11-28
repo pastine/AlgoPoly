@@ -30,7 +30,7 @@ public class AlgoPolyTest {
     	
     	Assert.assertTrue(jugador1.esDuenioDePropiedad(propiedad));
     	
-    	jugador1.venderPropiedad();
+    	jugador1.venderPropiedad(propiedad);
     	
     	Assert.assertFalse(jugador1.esDuenioDePropiedad(propiedad));
     	

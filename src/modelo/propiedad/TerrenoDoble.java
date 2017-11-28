@@ -1,9 +1,11 @@
 package modelo.propiedad;
 
+import modelo.jugador.Jugador;
 import modelo.propiedad.estados.EstadoCobroTerreno;
 
 public class TerrenoDoble extends Terreno {
     private int precioConstruccionHotel;
+    private TerrenoDoble hermano;
 
     public TerrenoDoble(int unPrecio, int alquilerSinCasa, int alquilerConUnaCasa, int alquilerConDosCasas, int alquilerConHotel, int costoConstruccionCasa, int costoConstruccionHotel){
         super(unPrecio, alquilerSinCasa, alquilerConUnaCasa, costoConstruccionCasa);
@@ -11,7 +13,11 @@ public class TerrenoDoble extends Terreno {
         preciosAlquiler.add(alquilerConDosCasas);
         preciosAlquiler.add(alquilerConHotel);
     }
-    
+
+    public void asignarHermano(TerrenoDoble hermano) {
+        this.hermano = hermano;
+    }
+
     public void construirHotel(){
         if (!permiteConstruirHotel() || precioConstruccionCasa > duenio.obtenerSaldo()) throw new ConstruccionNoPermitidaException();
         duenio.quitarDinero(precioConstruccionHotel);
@@ -42,11 +48,27 @@ public class TerrenoDoble extends Terreno {
     }
     
     public int obtenerValorTotal(){
-    	int valor = this.precio;
-    	if(this.numeroCasas>0) valor += this.precioConstruccionCasa;
-    	if(this.numeroCasas>1) valor += this.precioConstruccionCasa;
-    	if(this.numeroCasas>2) valor += this.precioConstruccionHotel;
-    	return valor;
+    	return obtenerValorPropio() + obtenerValorDeLasConstruccionesDelHermano();
+    }
+
+    public int obtenerValorPropio(){
+        int valor = this.precio;
+        if(this.numeroCasas>0) valor += this.precioConstruccionCasa;
+        if(this.numeroCasas>1) valor += this.precioConstruccionCasa;
+        if(this.numeroCasas>2) valor += this.precioConstruccionHotel;
+        return valor;
+    }
+
+    public int obtenerValorDeLasConstruccionesDelHermano(){
+        return hermano.obtenerValorPropio() - hermano.obtenerPrecio();
+    }
+
+
+    @Override
+    public void cambiarDuenio(Jugador jugador) {
+        removerConstrucciones();
+        this.hermano.removerConstrucciones();
+        super.cambiarDuenio(jugador);
     }
 
 }

@@ -176,7 +176,7 @@ public class JugadorTest {
 		
 		jugador.comprarPropiedad(propiedad);
 		
-		jugador.venderPropiedad();
+		jugador.venderPropiedad(propiedad);
 		
 		Assert.assertFalse(jugador.esDuenioDePropiedad(propiedad)); 
 	}
@@ -193,7 +193,7 @@ public class JugadorTest {
 		jugador.construirCasa(terreno);
 		Assert.assertEquals(jugador.obtenerSaldo(),saldoInicial-20);
 		
-		jugador.venderPropiedad();
+		jugador.venderPropiedad(terreno);
 		
 		Assert.assertEquals(jugador.obtenerSaldo(),100000-20+(int)(20*0.85));
 	}
@@ -219,14 +219,13 @@ public class JugadorTest {
 		jugador.construirHotel(terrenoDoble);
 		jugador.construirHotel(terrenoDobleHermano);
 		
-		jugador.venderPropiedad();
-		
-		if (jugador.esDuenioDePropiedad(terrenoDoble)){
-			Assert.assertEquals(terrenoDobleHermano.obtenerCantidadDeConstrucciones(),0);
-		}
-		if (jugador.esDuenioDePropiedad(terrenoDobleHermano)){
-			Assert.assertEquals(terrenoDoble.obtenerCantidadDeConstrucciones(),0);
-		}
+		jugador.venderPropiedad(terrenoDoble);
+
+		Assert.assertTrue(terrenoDoble.obtenerDuenio() != jugador);
+		Assert.assertTrue(terrenoDobleHermano.obtenerDuenio() == jugador);
+		Assert.assertEquals(terrenoDobleHermano.obtenerCantidadDeConstrucciones(),0);
+		Assert.assertEquals(terrenoDoble.obtenerCantidadDeConstrucciones(),0);
+
 	}
 	
 	@Test
