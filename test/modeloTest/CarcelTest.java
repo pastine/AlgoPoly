@@ -69,6 +69,7 @@ public class CarcelTest {
 		
 	}
 
+	
 	@Test
 	public void testJugadorNoPuedePagarFianzaEnElTercerTurnoSiNoTieneSuficienteSaldo() {
 		Carcel carcel = new Carcel();
@@ -85,6 +86,27 @@ public class CarcelTest {
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 
+	}
+	
+	@Test
+	public void testJugadorTiene100DeSalarioYIntentaPagarLaFianzaEnElSegundoTurnoYNoLeDescuentanElDinero() {
+		Carcel carcel = new Carcel();
+		Jugador jugador = new Jugador();
+		jugador.quitarDinero(99900);
+		
+		carcel.agregarJugador(jugador, 0);
+		thrown.expect(JugadorEstaPresoException.class);
+		jugador.mover(1);
+		thrown.expect(JugadorEstaPresoException.class);
+		jugador.mover(1);
+		
+		Assert.assertFalse(jugador.pagarFianza(carcel));
+		Assert.assertEquals(jugador.obtenerSaldo(), 100);
+		thrown.expect(JugadorEstaPresoException.class);
+		
+		
+		jugador.mover(1);
+		
 	}
 
 	@Test
