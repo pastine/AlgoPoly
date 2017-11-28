@@ -11,6 +11,8 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import vista.eventos.BotonJugarEventHandler;
@@ -23,9 +25,18 @@ public class ContenedorBienvenidos extends VBox {
     Stage stage;
 	
     public ContenedorBienvenidos(Stage stage, AlgoPoly algoPoly) {
-
-        super();
+    	super();
+    	MediaPlayer mediaplayer;
+ 
+        String path = Aplicacion.class.getResource("sonidos/cancionDeBienvenida1.mp3").toString();
         
+        Media file = new Media(path);
+		mediaplayer = new MediaPlayer(file);
+		mediaplayer.setAutoPlay(true);
+		mediaplayer.setVolume(0.2);
+		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
+		mediaplayer.play();
+	
         this.stage = stage;
 
         this.setAlignment(Pos.CENTER);
@@ -43,11 +54,11 @@ public class ContenedorBienvenidos extends VBox {
         
 	    Button botonPedir = new Button();
 	    botonPedir.setText("Pedir nombre");
-	    BotonPedirEventHandler botonPedirHandler = new BotonPedirEventHandler(algoPoly); // cambia nombre de jugadores
+	    BotonPedirEventHandler botonPedirHandler = new BotonPedirEventHandler(algoPoly); 
 	    botonPedir.setOnAction(botonPedirHandler);
 	    
 	    
-        BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage,algoPoly);
+        BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage,algoPoly,mediaplayer);
         botonJugar.setOnAction(botonJugarHandler);
 
         this.getChildren().addAll(botonJugar, botonPedir);

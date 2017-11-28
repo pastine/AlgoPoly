@@ -16,13 +16,11 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
-import modelo.jugador.Jugador;
 import vista.eventos.BotonSilenciarEventHandler;
 import vista.eventos.BotonComprarPropiedadEventHandler;
 import vista.eventos.BotonFinalizarTurnoEventHandler;
 import vista.eventos.BotonMoverEventHandler;
 import vista.eventos.BotonPagarFianzaEventHandler;
-import vista.eventos.BotonPedirEventHandler;
 import vista.eventos.BotonSalirEventHandler;
 
 public class ContenedorPrincipal extends BorderPane{
@@ -38,11 +36,23 @@ public class ContenedorPrincipal extends BorderPane{
 	public ContenedorPrincipal(Stage stage, AlgoPoly algoPoly) {
 		this.algoPoly = algoPoly;
 		this.stage = stage;
+		this.setMusica();
         this.setCentro(algoPoly);
         
 		this.setBotonera(algoPoly);
+	
 	}
 	
+	public void setMusica() {
+        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo3.mp3").toString();
+        
+        Media file = new Media(path);
+		this.mediaplayer = new MediaPlayer(file);
+		mediaplayer.setAutoPlay(true);
+		mediaplayer.setVolume(0.2);
+		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
+		mediaplayer.play();
+	}
 	private void setBotonera(AlgoPoly algoPoly) {
 
 	    Button botonMover = new Button();
