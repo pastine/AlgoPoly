@@ -33,6 +33,7 @@ public class Carcel extends Casillero{
 			jugador.cambiarEstado(new EstadoLibre());
 			return true;
 		} catch (SaldoInsuficienteException e) {
+			jugador.recibirDinero(45000);
 			return false;
 		}
 	}
