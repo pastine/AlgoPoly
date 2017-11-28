@@ -38,8 +38,14 @@ public abstract class Propiedad extends Casillero {
 		return (duenio == null && saldo >= precio);
 	}
 	
+	public boolean puedoConstruir() {
+		return false;
+	}
+	
 	public abstract String pedirSituacion();
 	protected abstract void cobrar(Jugador jugador, int pasosTotal);
 	public abstract void actualizarEstadoCobro();
 	public abstract int obtenerValorTotal();
+
+
 }

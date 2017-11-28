@@ -103,7 +103,16 @@ public class AlgoPoly {
     	Casillero casilleroActual = jugadorActual.obtenerCasillero();
     	jugadorActual.comprarPropiedad((Propiedad) casilleroActual);
     }
-
+    
+    public boolean puedoConstruir(Propiedad propiedad) {
+    	return propiedad.puedoConstruir();
+    	
+    }
+    
+    public ArrayList<Propiedad> obtenerPropiedades(Jugador jugadorActual){
+    	return jugadorActual.obtenerPropiedades();
+    }
+    
 	public String pedirSituacionJugador(Jugador jugador) {
 		Jugador jugadorActual = this.devolverJugadorActual();
 		

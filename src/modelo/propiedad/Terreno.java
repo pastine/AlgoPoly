@@ -45,7 +45,10 @@ public class Terreno extends Propiedad{
 		numeroCasas += 1;
 		estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
 	}
-
+	
+	public boolean puedoConstruir() {
+		return puedeConstruirCasa();
+	}
 	public boolean puedeConstruirCasa(){
 		return (numeroCasas < 1);
 	}

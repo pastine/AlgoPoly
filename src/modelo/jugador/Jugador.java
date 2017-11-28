@@ -45,10 +45,15 @@ public class Jugador {
 		return saldo;
 	}
 
+	public	ArrayList<Propiedad> obtenerPropiedades(){
+		return propiedades;
+	}
+	
 	public int obtenerCantidadDePropiedades() {
 		return propiedades.size();
 	}
 
+	
 	public void recibirDinero(int dinero) {
 		saldo += dinero;
 	}

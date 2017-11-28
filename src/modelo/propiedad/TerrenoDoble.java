@@ -20,15 +20,19 @@ public class TerrenoDoble extends Terreno {
         numeroCasas += 1;
         estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
     }
-
+    
+    public boolean puedoConstruir() {
+		return puedeConstruirCasa() || puedeConstruirHotel();
+	}
+    
     public boolean puedeConstruirCasa(){
         int diferencia = ((Terreno)hermano).obtenerCantidadDeConstrucciones() - this.numeroCasas;
-        return (diferencia == 1 || diferencia == 0) && (numeroCasas < 2);
+        return (diferencia == 1 || diferencia == 0) && (numeroCasas < 2) && hermano.obtenerDuenio() == duenio;
     }
-
+    
     public boolean puedeConstruirHotel(){
         int diferencia = ((Terreno)hermano).obtenerCantidadDeConstrucciones() - this.numeroCasas;
-        return (diferencia == 1 || diferencia == 0) && (numeroCasas == 2);
+        return (diferencia == 1 || diferencia == 0) && (numeroCasas == 2) && hermano.obtenerDuenio() == duenio;
     }
     
     public int obtenerValorTotal(){
