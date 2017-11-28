@@ -1,13 +1,12 @@
 package modeloTest;
 
 import modelo.Tablero;
-import modelo.propiedad.Terreno;
-import org.junit.Assert;
-import org.junit.Test;
-
 import modelo.casillero.Casillero;
 import modelo.casillero.RetrocesoDinamico;
 import modelo.jugador.Jugador;
+import modelo.propiedad.Terreno;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class RetrocesoDinamicoTest {
 

@@ -1,11 +1,8 @@
 package modelo.jugador;
 
-import java.util.ArrayList;
-import java.util.Random;
-
+import modelo.Dado;
 import modelo.casillero.Carcel;
 import modelo.casillero.Casillero;
-import modelo.Dado;
 import modelo.jugador.estados.EstadoDeMovimientoDelJugador;
 import modelo.jugador.estados.EstadoJugadorGanoQuiniCeroVeces;
 import modelo.jugador.estados.EstadoLibre;
@@ -14,6 +11,9 @@ import modelo.propiedad.Propiedad;
 import modelo.propiedad.PropiedadConDuenioException;
 import modelo.propiedad.Terreno;
 import modelo.propiedad.TerrenoDoble;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Jugador {
 	private String nombre;
@@ -123,11 +123,7 @@ public class Jugador {
 		this.propiedades.remove(viejaPropiedad);
 	}
 
-	public void ofrecerComprarPropiedad() {
-		// Acá debería saltar un PopUp que ofrezca comprar la propiedad actual, pero para simplificar el modelo siempre que cae lo va a comprar
-		comprarPropiedad((Propiedad) casilleroActual);
-	}
-	
+
 	public void venderPropiedad(){
 		//Popup para que el jugador elija cual quiere vender
 		//Por ahora elijo una al azar

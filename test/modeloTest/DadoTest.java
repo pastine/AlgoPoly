@@ -1,7 +1,7 @@
 package modeloTest;
 
-import org.junit.Assert;
 import modelo.Dado;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class DadoTest {

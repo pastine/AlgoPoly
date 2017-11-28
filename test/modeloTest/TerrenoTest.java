@@ -1,14 +1,12 @@
 package modeloTest;
 
+import modelo.jugador.Jugador;
 import modelo.propiedad.ConstruccionNoPermitidaException;
 import modelo.propiedad.PropiedadConDuenioException;
+import modelo.propiedad.Terreno;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-
-import modelo.propiedad.Terreno;
-import modelo.propiedad.TerrenoDoble;
-import modelo.jugador.Jugador;
 import org.junit.rules.ExpectedException;
 
 public class TerrenoTest {

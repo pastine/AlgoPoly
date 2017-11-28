@@ -5,24 +5,12 @@ import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
-import vista.eventos.BotonSilenciarEventHandler;
-import vista.eventos.BotonVentanaDeConstruirEventHandler;
-import vista.eventos.BotonComprarPropiedadEventHandler;
-import vista.eventos.BotonFinalizarTurnoEventHandler;
-import vista.eventos.BotonMoverEventHandler;
-import vista.eventos.BotonPagarFianzaEventHandler;
-import vista.eventos.BotonSalirEventHandler;
+import vista.eventos.*;
 
 public class ContenedorPrincipal extends BorderPane{
 	

@@ -1,10 +1,14 @@
 package vista.eventos;
 
-import javafx.geometry.*;
-import javafx.event.*;
-import javafx.scene.control.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.ButtonBar.ButtonData;
-import javafx.scene.layout.*;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
 import modelo.AlgoPoly;
 

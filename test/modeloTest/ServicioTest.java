@@ -1,15 +1,14 @@
 package modeloTest;
 
 import modelo.Tablero;
+import modelo.casillero.Casillero;
+import modelo.jugador.Jugador;
+import modelo.propiedad.PropiedadConDuenioException;
+import modelo.propiedad.Servicio;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import modelo.casillero.Casillero;
-import modelo.propiedad.PropiedadConDuenioException;
-import modelo.propiedad.Servicio;
-import modelo.jugador.Jugador;
 
 public class ServicioTest {
 

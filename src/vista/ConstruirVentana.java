@@ -1,7 +1,5 @@
 package vista;
 
-import java.util.ArrayList;
-
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,7 +11,8 @@ import modelo.AlgoPoly;
 import modelo.jugador.Jugador;
 import modelo.propiedad.Propiedad;
 import vista.eventos.BotonConstruirEventHandler;
-import vista.eventos.BotonSilenciarEventHandler;
+
+import java.util.ArrayList;
 
 public class ConstruirVentana {
 

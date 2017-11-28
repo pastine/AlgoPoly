@@ -1,7 +1,5 @@
 package modelo.propiedad;
 
-import modelo.propiedad.ConstruccionNoPermitidaException;
-import modelo.propiedad.Terreno;
 import modelo.propiedad.estados.EstadoCobroTerreno;
 
 public class TerrenoDoble extends Terreno {

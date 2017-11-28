@@ -1,7 +1,7 @@
 package modelo.jugador.estados;
 
-import modelo.casillero.Casillero;
 import modelo.Tablero;
+import modelo.casillero.Casillero;
 
 public class EstadoDireccionRetroceder implements EstadoDireccion{
 

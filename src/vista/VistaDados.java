@@ -2,9 +2,8 @@ package vista;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
-import modelo.AlgoPoly;
-
 import javafx.scene.paint.Color;
+import modelo.AlgoPoly;
 
 public class VistaDados {
     AlgoPoly algoPoly;

@@ -4,16 +4,13 @@ import modelo.Tablero;
 import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
 import modelo.jugador.SaldoInsuficienteException;
-
 import modelo.propiedad.Propiedad;
 import modelo.propiedad.Servicio;
 import modelo.propiedad.Terreno;
 import modelo.propiedad.TerrenoDoble;
-
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-
 import org.junit.rules.ExpectedException;
 
 public class JugadorTest {

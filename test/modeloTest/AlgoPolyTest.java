@@ -1,9 +1,9 @@
 package modeloTest;
+
 import modelo.AlgoPoly;
 import modelo.jugador.Jugador;
 import modelo.propiedad.Propiedad;
 import modelo.propiedad.Servicio;
-
 import org.junit.Assert;
 import org.junit.Test;
 

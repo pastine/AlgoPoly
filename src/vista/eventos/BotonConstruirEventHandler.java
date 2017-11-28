@@ -6,7 +6,6 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import modelo.propiedad.Propiedad;
-import vista.ConstruirVentana;
 
 public class BotonConstruirEventHandler implements EventHandler<ActionEvent> {
 	private AlgoPoly algoPoly;

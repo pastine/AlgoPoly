@@ -1,8 +1,8 @@
 package modelo.jugador.estados;
 
+import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
 import modelo.jugador.JugadorEstaPresoException;
-import modelo.casillero.Casillero;
 
 public class EstadoPreso implements EstadoDeMovimientoDelJugador{
 	

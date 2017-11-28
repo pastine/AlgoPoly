@@ -1,11 +1,12 @@
 package vista;
 
-import java.util.ArrayList;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import modelo.AlgoPoly;
 import modelo.jugador.Jugador;
+
+import java.util.ArrayList;
 
 public class VistaJugador {
 	AlgoPoly algoPoly;

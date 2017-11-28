@@ -1,9 +1,9 @@
 package modelo.casillero;
 
-import java.util.ArrayList;
-
 import modelo.CoordenadasCasillero;
 import modelo.jugador.Jugador;
+
+import java.util.ArrayList;
 
 public class Casillero {
 	private ArrayList<Jugador> jugadores;

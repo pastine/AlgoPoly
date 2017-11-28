@@ -1,7 +1,7 @@
 package modelo.jugador.estados;
 
-import modelo.jugador.Jugador;
 import modelo.casillero.Casillero;
+import modelo.jugador.Jugador;
 
 public interface EstadoDeMovimientoDelJugador {
 	

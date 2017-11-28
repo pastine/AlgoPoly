@@ -5,7 +5,6 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import vista.ConstruirVentana;
-import vista.ContenedorPrincipal;
 import vista.VistaJugador;
 
 

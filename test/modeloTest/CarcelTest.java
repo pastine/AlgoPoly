@@ -1,15 +1,13 @@
 package modeloTest;
 
-import modelo.casillero.Casillero;
 import modelo.Tablero;
+import modelo.casillero.Carcel;
+import modelo.casillero.Casillero;
+import modelo.jugador.Jugador;
+import modelo.jugador.JugadorEstaPresoException;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-
-import modelo.casillero.Carcel;
-import modelo.jugador.Jugador;
-import modelo.jugador.JugadorEstaPresoException;
-
 import org.junit.rules.ExpectedException;
 
 public class CarcelTest {

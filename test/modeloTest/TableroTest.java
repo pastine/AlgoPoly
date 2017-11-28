@@ -1,12 +1,12 @@
 package modeloTest;
+
+import modelo.Tablero;
+import modelo.casillero.Casillero;
 import modelo.casillero.CasilleroNoEncontradoException;
+import modelo.jugador.Jugador;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-
-import modelo.casillero.Casillero;
-import modelo.jugador.Jugador;
-import modelo.Tablero;
 import org.junit.rules.ExpectedException;
 
 public class TableroTest {
