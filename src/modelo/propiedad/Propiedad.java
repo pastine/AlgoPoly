@@ -42,6 +42,13 @@ public abstract class Propiedad extends Casillero {
 		return false;
 	}
 	
+	public void construir() {
+		return;
+	}
+	public String toString() {
+		return this.pedirNombre();
+	}
+	
 	public abstract String pedirSituacion();
 	protected abstract void cobrar(Jugador jugador, int pasosTotal);
 	public abstract void actualizarEstadoCobro();

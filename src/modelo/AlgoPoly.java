@@ -106,7 +106,10 @@ public class AlgoPoly {
     
     public boolean puedoConstruir(Propiedad propiedad) {
     	return propiedad.puedoConstruir();
-    	
+    }
+    
+    public void construir(Propiedad propiedad) {
+    	propiedad.construir();
     }
     
     public ArrayList<Propiedad> obtenerPropiedades(Jugador jugadorActual){

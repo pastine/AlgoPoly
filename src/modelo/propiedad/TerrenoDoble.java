@@ -13,7 +13,7 @@ public class TerrenoDoble extends Terreno {
         preciosAlquiler.add(alquilerConDosCasas);
         preciosAlquiler.add(alquilerConHotel);
     }
-
+    
     public void construirHotel(){
         if (!puedeConstruirHotel()) throw new ConstruccionNoPermitidaException();
         duenio.quitarDinero(precioConstruccionHotel);

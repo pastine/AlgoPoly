@@ -21,14 +21,15 @@ public class ConstruirVentana {
 		Stage ventana = new Stage();
 		ventana.initOwner(stage);
 		ventana.initModality(Modality.APPLICATION_MODAL);
+		ventana.setTitle("Construir");
 		VBox layout = new VBox(5);
 		Scene escena = new Scene(layout);
-		setEscena(layout,algoPoly);
+		setEscena(ventana,layout,algoPoly);
 		ventana.setScene(escena);
 		ventana.showAndWait();
 	}
 	
-	private static void setEscena(VBox layout,AlgoPoly algoPoly) {
+	private static void setEscena(Stage ventana,VBox layout,AlgoPoly algoPoly) {
 		layout.setAlignment(Pos.CENTER);
 		Jugador jugadorActual = algoPoly.devolverJugadorActual();
 		ArrayList<Propiedad> propiedades = algoPoly.obtenerPropiedades(jugadorActual);
@@ -40,7 +41,7 @@ public class ConstruirVentana {
 		}
 		Button botonConstruir = new Button();
 		botonConstruir.setText("Construir");
-	    BotonConstruirEventHandler botonConstruirHandler = new BotonConstruirEventHandler(algoPoly,listaDePropiedades);
+	    BotonConstruirEventHandler botonConstruirHandler = new BotonConstruirEventHandler(ventana,algoPoly,listaDePropiedades);
 	    botonConstruir.setOnAction(botonConstruirHandler);
 	    
 		

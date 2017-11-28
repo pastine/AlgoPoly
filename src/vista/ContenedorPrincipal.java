@@ -17,6 +17,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import vista.eventos.BotonSilenciarEventHandler;
+import vista.eventos.BotonVentanaDeConstruirEventHandler;
 import vista.eventos.BotonComprarPropiedadEventHandler;
 import vista.eventos.BotonFinalizarTurnoEventHandler;
 import vista.eventos.BotonMoverEventHandler;
@@ -70,7 +71,8 @@ public class ContenedorPrincipal extends BorderPane{
 	    
 	    Button botonConstruir = new Button();
 	    botonConstruir.setText("Construir");
-	    botonConstruir.setOnAction(e-> ConstruirVentana.MostrarVentana(stage,algoPoly));
+	    BotonVentanaDeConstruirEventHandler botonConstruirHandler = new BotonVentanaDeConstruirEventHandler(stage, algoPoly, vistaJugador);
+	    botonConstruir.setOnAction(botonConstruirHandler);
 	    
 	    
 	    Button botonPagarFianza = new Button();
