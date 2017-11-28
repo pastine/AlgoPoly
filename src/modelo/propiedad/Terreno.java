@@ -43,16 +43,16 @@ public class Terreno extends Propiedad{
 		construirCasa();
 	}
 	public void construirCasa(){
-		if (!puedeConstruirCasa()) throw new ConstruccionNoPermitidaException();
+		if (!permiteConstruirCasa()) throw new ConstruccionNoPermitidaException();
 		duenio.quitarDinero(precioConstruccionCasa);
 		numeroCasas += 1;
 		estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
 	}
 	
-	public boolean puedoConstruir() {
-		return puedeConstruirCasa();
+	public boolean permiteConstruir() {
+		return permiteConstruirCasa();
 	}
-	public boolean puedeConstruirCasa(){
+	public boolean permiteConstruirCasa(){
 		return (numeroCasas < 1);
 	}
 	

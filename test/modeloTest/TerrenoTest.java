@@ -114,12 +114,12 @@ public class TerrenoTest {
 		Jugador jugadorA = new Jugador();
 		jugadorA.comprarPropiedad(santaFe);
 
-		Assert.assertTrue(santaFe.puedoConstruir());
-		Assert.assertTrue(santaFe.puedeConstruirCasa());
+		Assert.assertTrue(santaFe.permiteConstruir());
+		Assert.assertTrue(santaFe.permiteConstruirCasa());
 		jugadorA.construirCasa(santaFe);
 
-		Assert.assertFalse(santaFe.puedoConstruir());
-		Assert.assertFalse(santaFe.puedeConstruirCasa());
+		Assert.assertFalse(santaFe.permiteConstruir());
+		Assert.assertFalse(santaFe.permiteConstruirCasa());
 		thrown.expect(ConstruccionNoPermitidaException.class);
 		jugadorA.construirCasa(santaFe);
 	}
@@ -131,8 +131,8 @@ public class TerrenoTest {
 		Jugador jugadorB = new Jugador();
 		jugadorB.comprarPropiedad(santaFe);
 
-		Assert.assertTrue(santaFe.puedoConstruir());
-		Assert.assertTrue(santaFe.puedeConstruirCasa());
+		Assert.assertTrue(santaFe.permiteConstruir());
+		Assert.assertTrue(santaFe.permiteConstruirCasa());
 		thrown.expect(PropiedadConDuenioException.class);
 		jugadorA.construirCasa(santaFe);
 	}

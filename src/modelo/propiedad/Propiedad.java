@@ -30,15 +30,15 @@ public abstract class Propiedad extends Casillero {
 		this.hermano.actualizarEstadoCobro();
 	}
 
-	public void asigarHermano(Propiedad hermano) {
+	public void asignarHermano(Propiedad hermano) {
 		this.hermano = hermano;
 	}
 	
-	public boolean puedoComprar(int saldo) {
+	public boolean permiteSerComprado(int saldo) {
 		return (duenio == null && saldo >= precio);
 	}
 	
-	public boolean puedoConstruir() {
+	public boolean permiteConstruir() {
 		return false;
 	}
 	

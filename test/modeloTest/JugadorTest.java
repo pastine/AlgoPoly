@@ -204,8 +204,8 @@ public class JugadorTest {
 		TerrenoDoble terrenoDoble = new TerrenoDoble(10,2,3,4,5,10,20);
 		TerrenoDoble terrenoDobleHermano = new TerrenoDoble(10,2,3,4,5,10,20);
 		
-		terrenoDoble.asigarHermano(terrenoDobleHermano);
-		terrenoDobleHermano.asigarHermano(terrenoDoble);
+		terrenoDoble.asignarHermano(terrenoDobleHermano);
+		terrenoDobleHermano.asignarHermano(terrenoDoble);
 		
 		jugador.comprarPropiedad(terrenoDoble);
 		jugador.comprarPropiedad(terrenoDobleHermano);

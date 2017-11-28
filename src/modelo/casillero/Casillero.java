@@ -47,7 +47,7 @@ public class Casillero {
 	}
 
 
-	public boolean puedoComprar(int saldo) {
+	public boolean permiteSerComprado(int saldo) {
 		return false;
 	}
 

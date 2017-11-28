@@ -96,7 +96,7 @@ public class AlgoPoly {
     
     public boolean puedoComprar(Jugador jugadorActual) {
     	Casillero casilleroActual = jugadorActual.obtenerCasillero();
-    	return casilleroActual.puedoComprar(jugadorActual.obtenerSaldo());
+    	return casilleroActual.permiteSerComprado(jugadorActual.obtenerSaldo());
     }
     
     public void comprarPropiedad(Jugador jugadorActual) {
@@ -105,7 +105,7 @@ public class AlgoPoly {
     }
     
     public boolean puedoConstruir(Propiedad propiedad) {
-    	return propiedad.puedoConstruir();
+    	return propiedad.permiteConstruir();
     }
     
     public void construir(Propiedad propiedad) {

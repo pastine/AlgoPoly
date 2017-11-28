@@ -90,20 +90,20 @@ public class Tablero {
         tucuman.asignarNombre("TUCUMAN");
 
         // Relaciones entre casilleros
-        buenosAiresNorte.asigarHermano(buenosAiresSur);
-        buenosAiresSur.asigarHermano(buenosAiresNorte);
+        buenosAiresNorte.asignarHermano(buenosAiresSur);
+        buenosAiresSur.asignarHermano(buenosAiresNorte);
 
-        cordobaNorte.asigarHermano(cordobaSur);
-        cordobaSur.asigarHermano(cordobaNorte);
+        cordobaNorte.asignarHermano(cordobaSur);
+        cordobaSur.asignarHermano(cordobaNorte);
 
-        saltaNorte.asigarHermano(saltaSur);
-        saltaSur.asigarHermano(saltaNorte);
+        saltaNorte.asignarHermano(saltaSur);
+        saltaSur.asignarHermano(saltaNorte);
 
-        subte.asigarHermano(tren);
-        tren.asigarHermano(subte);
+        subte.asignarHermano(tren);
+        tren.asignarHermano(subte);
 
-        aysa.asigarHermano(edesur);
-        edesur.asigarHermano(aysa);
+        aysa.asignarHermano(edesur);
+        edesur.asignarHermano(aysa);
 
         //Agrego los casilleros en orden al tablero
         Tablero tablero = Tablero.darTablero();

@@ -76,7 +76,7 @@ public class ServicioTest {
 
 		Servicio aysa = new Servicio(30000, 300, 500);
 		Servicio edesur = new Servicio(35000, 500, 1000);
-		aysa.asigarHermano(edesur);
+		aysa.asignarHermano(edesur);
 
 
 		jugadorA.comprarPropiedad(aysa);
@@ -104,7 +104,7 @@ public class ServicioTest {
 
 		Servicio aysa = new Servicio(30000, 300, 500);
 		Servicio edesur = new Servicio(35000, 500, 1000);
-		aysa.asigarHermano(edesur);
+		aysa.asignarHermano(edesur);
 
 		jugadorA.comprarPropiedad(aysa);
 		int capitalInicial = jugadorA.obtenerSaldo();
@@ -158,7 +158,7 @@ public class ServicioTest {
 		int costoServicioParcial = 450;
 		Servicio tren = new Servicio(38000, costoServicioParcial, 800);
 		Servicio subte = new Servicio(40000, 600, 1100);
-		tren.asigarHermano(subte);
+		tren.asignarHermano(subte);
 		Jugador duenio = new Jugador();
 		duenio.comprarPropiedad(tren);
 		int pasosTotal = jugador.lanzarDados();
@@ -191,7 +191,7 @@ public class ServicioTest {
 		Jugador duenio = new Jugador();
 		duenio.comprarPropiedad(tren);
 		duenio.comprarPropiedad(subte);
-		tren.asigarHermano(subte);
+		tren.asignarHermano(subte);
 		int pasosTotal = jugador.lanzarDados();
 		Casillero casillero = new Casillero();
 		Tablero tablero = Tablero.darTablero();
@@ -217,7 +217,7 @@ public class ServicioTest {
 		int costoServicioParcial = 500;
 		Servicio edesur = new Servicio(35000, costoServicioParcial, 1000);
 		Servicio aysa = new Servicio(30000, 300,500);
-		edesur.asigarHermano(aysa);
+		edesur.asignarHermano(aysa);
 		Jugador duenio = new Jugador();
 		duenio.comprarPropiedad(edesur);
 		int pasosTotal = jugador.lanzarDados();
@@ -248,7 +248,7 @@ public class ServicioTest {
 		Jugador duenio = new Jugador();
 		duenio.comprarPropiedad(edesur);
 		duenio.comprarPropiedad(aysa);
-		edesur.asigarHermano(aysa);
+		edesur.asignarHermano(aysa);
 		int pasosTotal = jugador.lanzarDados();
 		Casillero casillero = new Casillero();
 		Tablero tablero = Tablero.darTablero();
