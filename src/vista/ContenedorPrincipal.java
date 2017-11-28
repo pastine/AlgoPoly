@@ -36,7 +36,8 @@ public class ContenedorPrincipal extends BorderPane{
 	MediaPlayer mediaplayer;
 	
 	public ContenedorPrincipal(Stage stage, AlgoPoly algoPoly) {
-
+		this.algoPoly = algoPoly;
+		this.stage = stage;
         this.setCentro(algoPoly);
         
 		this.setBotonera(algoPoly);
@@ -107,10 +108,11 @@ public class ContenedorPrincipal extends BorderPane{
     }
 
 	public void deshabilitarBotonesAlFinalizarTurno() {
-		//if (algoPoly.puedoMover(algoPoly.devolverJugadorActual()))
-			contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
+		contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
 		contenedorLeft.getChildren().get(1).setDisable(true); // Comprar 1
 		contenedorLeft.getChildren().get(2).setDisable(true); // PagarFianza 2
+		if (algoPoly.puedoPagarFianza(algoPoly.devolverJugadorActual()))
+			contenedorLeft.getChildren().get(2).setDisable(false); //Pagar Fianza 2
 		contenedorLeft.getChildren().get(3).setDisable(true); // Finalizar 3
 	}
 
@@ -120,10 +122,9 @@ public class ContenedorPrincipal extends BorderPane{
 
     public void deshabilitarBotonesTrasMover() {
 		contenedorLeft.getChildren().get(0).setDisable(true); // Mover 0
-		//if (algoPoly.puedoComprar(algoPoly.devolverJugadorActual()))
+		if (algoPoly.puedoComprar(algoPoly.devolverJugadorActual()))
 			contenedorLeft.getChildren().get(1).setDisable(false); //Comprar 1
-		//if (algoPoly.devolverJugadorActual().diasDeCarcelRestantes() == 0);
-			contenedorLeft.getChildren().get(2).setDisable(false); //Pagar Fianza 2
+		contenedorLeft.getChildren().get(2).setDisable(true); //Pagar Fianza 2
 		contenedorLeft.getChildren().get(3).setDisable(false); //Finalizar 3
 	}
 

@@ -34,8 +34,8 @@ public abstract class Propiedad extends Casillero {
 		this.hermano = hermano;
 	}
 	
-	public boolean puedoComprar() {
-		return (duenio == null);
+	public boolean puedoComprar(int saldo) {
+		return (duenio == null && saldo >= precio);
 	}
 	
 	public abstract String pedirSituacion();
