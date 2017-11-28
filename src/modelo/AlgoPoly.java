@@ -1,5 +1,6 @@
 package modelo;
 
+import modelo.casillero.Carcel;
 import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
 import modelo.jugador.JugadorEstaPresoException;
@@ -109,11 +110,21 @@ public class AlgoPoly {
 		String situacionCasillero = "Casillero: ";
 		situacionCasillero += casilleroActual.pedirNombre() + "\n";
 		situacionCasillero += casilleroActual.pedirSituacion();
+		if (!puedoMover(jugadorActual))
+			situacionCasillero += "Turnos restantes: " + jugadorActual.diasDeCarcelRestantes();
 		return situacionCasillero;
 	}
 
 	public boolean puedoMover(Jugador jugadorActual) {
 		return (jugadorActual.diasDeCarcelRestantes() == 0);
+	}
+
+	public boolean puedoPagarFianza(Jugador jugadorActual) {
+		return (jugadorActual.diasDeCarcelRestantes() == 2 || jugadorActual.diasDeCarcelRestantes() == 1);
+	}
+
+	public void pagarFianzajugadorActual(Jugador jugadorActual) {
+		jugadorActual.pagarFianza((Carcel) jugadorActual.obtenerCasillero());
 	}
 
 }

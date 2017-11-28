@@ -21,6 +21,7 @@ import vista.eventos.BotonSilenciarEventHandler;
 import vista.eventos.BotonComprarPropiedadEventHandler;
 import vista.eventos.BotonFinalizarTurnoEventHandler;
 import vista.eventos.BotonMoverEventHandler;
+import vista.eventos.BotonPagarFianzaEventHandler;
 import vista.eventos.BotonPedirEventHandler;
 import vista.eventos.BotonSalirEventHandler;
 
@@ -38,14 +39,6 @@ public class ContenedorPrincipal extends BorderPane{
 
         this.setCentro(algoPoly);
         
-        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo3.mp3").toString();
-        Media file = new Media(path);
-		mediaplayer = new MediaPlayer(file);
-		mediaplayer.setAutoPlay(true);
-		mediaplayer.setVolume(0.2);
-		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
-		mediaplayer.play();
-        
 		this.setBotonera(algoPoly);
 	}
 	
@@ -62,6 +55,12 @@ public class ContenedorPrincipal extends BorderPane{
 	    BotonComprarPropiedadEventHandler botonComprarHandler = new BotonComprarPropiedadEventHandler(this, algoPoly, vistaJugador);
 	    botonComprar.setOnAction(botonComprarHandler);
 	    botonComprar.setDisable(true);
+	    
+	    Button botonPagarFianza = new Button();
+	    botonPagarFianza.setText("Pagar fianza");
+	    BotonPagarFianzaEventHandler botonPagarFianzaHandler = new BotonPagarFianzaEventHandler(this, algoPoly, vistaJugador);
+	    botonPagarFianza.setOnAction(botonPagarFianzaHandler);
+	    botonPagarFianza.setDisable(true);
 
 	    Button botonFinalizarTurno = new Button();
 	    botonFinalizarTurno.setText("FinalizarTurno");
@@ -80,7 +79,7 @@ public class ContenedorPrincipal extends BorderPane{
 	    BotonSalirEventHandler botonExitHandler = new BotonSalirEventHandler();
 	    botonExit.setOnAction(botonExitHandler);
 	    
-	    contenedorLeft = new VBox(botonMover, botonComprar, botonFinalizarTurno, botonDetenerMusica, botonExit);
+	    contenedorLeft = new VBox(botonMover, botonComprar, botonPagarFianza, botonFinalizarTurno, botonDetenerMusica, botonExit);
 		contenedorLeft.setPadding(new Insets(15));
 		contenedorLeft.setSpacing(25);
         
@@ -111,18 +110,21 @@ public class ContenedorPrincipal extends BorderPane{
 		//if (algoPoly.puedoMover(algoPoly.devolverJugadorActual()))
 			contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
 		contenedorLeft.getChildren().get(1).setDisable(true); // Comprar 1
-		contenedorLeft.getChildren().get(2).setDisable(true); // Finalizar 2
+		contenedorLeft.getChildren().get(2).setDisable(true); // PagarFianza 2
+		contenedorLeft.getChildren().get(3).setDisable(true); // Finalizar 3
 	}
 
 	public void deshabilitarBotonesTrasComprar() {
-		contenedorLeft.getChildren().get(1).setDisable(true);
+		contenedorLeft.getChildren().get(1).setDisable(true); // Comprar 1
 	}
 
     public void deshabilitarBotonesTrasMover() {
-		contenedorLeft.getChildren().get(0).setDisable(true);
+		contenedorLeft.getChildren().get(0).setDisable(true); // Mover 0
 		//if (algoPoly.puedoComprar(algoPoly.devolverJugadorActual()))
-			contenedorLeft.getChildren().get(1).setDisable(false);
-		contenedorLeft.getChildren().get(2).setDisable(false);
+			contenedorLeft.getChildren().get(1).setDisable(false); //Comprar 1
+		//if (algoPoly.devolverJugadorActual().diasDeCarcelRestantes() == 0);
+			contenedorLeft.getChildren().get(2).setDisable(false); //Pagar Fianza 2
+		contenedorLeft.getChildren().get(3).setDisable(false); //Finalizar 3
 	}
 
 

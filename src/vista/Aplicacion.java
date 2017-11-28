@@ -1,6 +1,8 @@
 package vista;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 
@@ -18,6 +20,14 @@ public class Aplicacion extends Application {
         
         AlgoPoly algoPoly = new AlgoPoly();
         algoPoly.iniciarJuego();
+        
+        String path = Aplicacion.class.getResource("sonidos/cancionDeFondo3.mp3").toString();
+        Media file = new Media(path);
+		MediaPlayer mediaplayer = new MediaPlayer(file);
+		mediaplayer.setAutoPlay(true);
+		mediaplayer.setVolume(0.2);
+		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
+		mediaplayer.play();
         
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage,algoPoly);
         Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
