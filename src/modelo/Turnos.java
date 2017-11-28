@@ -35,4 +35,5 @@ public class Turnos {
     public int cantidadDeJugadoresEnJuego(){
         return turnos.size();
     }
+
 }
