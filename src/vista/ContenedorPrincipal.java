@@ -31,6 +31,7 @@ public class ContenedorPrincipal extends BorderPane{
 	VBox contenedorCentral;
 	VBox contenedorLeft;
 	VistaJugador vistaJugador;
+	VistaDados vistaDados;
 	MediaPlayer mediaplayer;
 	
 	public ContenedorPrincipal(Stage stage, AlgoPoly algoPoly) {
@@ -89,8 +90,12 @@ public class ContenedorPrincipal extends BorderPane{
 	    //botonExit.setCancelButton(true);
 	    BotonSalirEventHandler botonExitHandler = new BotonSalirEventHandler();
 	    botonExit.setOnAction(botonExitHandler);
+
+		Canvas canvasDados = new Canvas(110, 220);
+		vistaDados = new VistaDados(canvasDados, algoPoly);
+		vistaDados.update();
 	    
-	    contenedorLeft = new VBox(botonMover, botonComprar, botonPagarFianza, botonFinalizarTurno, botonDetenerMusica, botonExit);
+	    contenedorLeft = new VBox(botonMover, botonComprar, botonPagarFianza, botonFinalizarTurno, botonDetenerMusica, botonExit, canvasDados);
 		contenedorLeft.setPadding(new Insets(15));
 		contenedorLeft.setSpacing(25);
         
@@ -136,6 +141,7 @@ public class ContenedorPrincipal extends BorderPane{
 			contenedorLeft.getChildren().get(1).setDisable(false); //Comprar 1
 		contenedorLeft.getChildren().get(2).setDisable(true); //Pagar Fianza 2
 		contenedorLeft.getChildren().get(3).setDisable(false); //Finalizar 3
+		vistaDados.update();
 	}
 
 

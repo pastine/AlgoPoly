@@ -14,6 +14,9 @@ public class AlgoPoly {
     private Tablero tablero;
     private ArrayList<Jugador> jugadores;
     private Turnos turnos;
+    private int ultimoDado1 = 6;
+    private int ultimoDado2 = 6;
+
 
     public AlgoPoly(){
         jugadores = new ArrayList<Jugador>();
@@ -41,13 +44,11 @@ public class AlgoPoly {
     
     public int lanzarDadosYMover() {
     	Jugador jugadorActual = turnos.obtenerJugadorDelTurnoActual();
-        int numeroPasos1 = 0;
-        int numeroPasos2 = 0;
         boolean pierdeTurno = false;
         for (int i = 1; i < 3; i++) {
-        	numeroPasos1 = jugadorActual.lanzarDados();
-            numeroPasos2 = jugadorActual.lanzarDados();
-            if (numeroPasos1 != numeroPasos2) {
+        	ultimoDado1 = jugadorActual.lanzarDados();
+            ultimoDado2 = jugadorActual.lanzarDados();
+            if (ultimoDado1 != ultimoDado2) {
             	break;
             } else if (i == 2){
                 pierdeTurno = true;
@@ -57,9 +58,9 @@ public class AlgoPoly {
             return 0;
         }
 
-        int numeroPasos = numeroPasos1 + numeroPasos2;
+        int sumaPasos = ultimoDado1 + ultimoDado2;
         try{
-        	jugadorActual.mover(numeroPasos);
+        	jugadorActual.mover(sumaPasos);
         } catch (SaldoInsuficienteException e){
         	Jugador jugadorEliminado = turnos.removerJugadorDelJuego();
         	jugadores.remove(jugadorEliminado);
@@ -68,7 +69,7 @@ public class AlgoPoly {
         } catch (JugadorEstaPresoException e) {
             return 0;
         }
-		return numeroPasos;
+		return sumaPasos;
     }
 
     private void crearTableroYJugadores(){
@@ -138,4 +139,11 @@ public class AlgoPoly {
 		jugadorActual.pagarFianza((Carcel) jugadorActual.obtenerCasillero());
 	}
 
+	public int obtenerPrimerDadoActual(){
+        return ultimoDado1;
+    }
+
+    public int obtenerSegundoDadoActual(){
+        return ultimoDado2;
+    }
 }
