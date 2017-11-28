@@ -13,7 +13,7 @@ public class TerrenoDoble extends Terreno {
     }
     
     public void construirHotel(){
-        if (!permiteConstruirHotel()) throw new ConstruccionNoPermitidaException();
+        if (!permiteConstruirHotel() || precioConstruccionCasa > duenio.obtenerSaldo()) throw new ConstruccionNoPermitidaException();
         duenio.quitarDinero(precioConstruccionHotel);
         numeroCasas += 1;
         estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
@@ -22,7 +22,15 @@ public class TerrenoDoble extends Terreno {
     public boolean permiteConstruir() {
 		return permiteConstruirCasa() || permiteConstruirHotel();
 	}
-    
+
+    public void construir() {
+        try {
+            construirHotel();
+        } catch (ConstruccionNoPermitidaException e) {
+            construirCasa();
+        }
+    }
+
     public boolean permiteConstruirCasa(){
         int diferencia = ((Terreno)hermano).obtenerCantidadDeConstrucciones() - this.numeroCasas;
         return (diferencia == 1 || diferencia == 0) && (numeroCasas < 2) && hermano.obtenerDuenio() == duenio;

@@ -43,7 +43,7 @@ public class Terreno extends Propiedad{
 		construirCasa();
 	}
 	public void construirCasa(){
-		if (!permiteConstruirCasa()) throw new ConstruccionNoPermitidaException();
+		if (!permiteConstruirCasa() || precioConstruccionCasa > duenio.obtenerSaldo()) throw new ConstruccionNoPermitidaException();
 		duenio.quitarDinero(precioConstruccionCasa);
 		numeroCasas += 1;
 		estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));

@@ -122,10 +122,14 @@ public class AlgoPoly {
 		String situacionJugador = "Jugador: ";
 		situacionJugador += jugador.pedirNombre();
 		situacionJugador += "\nSaldo actual: ";
-		situacionJugador += jugador.obtenerSaldo();
-		
-		if (jugadorActual == jugador)
-			situacionJugador += "\nTURNO ACTUAL.";
+		situacionJugador += jugador.obtenerSaldo() + "\n";
+		if (jugador.obtenerCantidadDePropiedades() > 0)
+            situacionJugador += "Propiedades:\n";
+        for (Propiedad propiedad: jugador.obtenerPropiedades()) {
+            situacionJugador += "-" + propiedad.toString() +"\n";
+        }
+        if (jugadorActual == jugador)
+			situacionJugador += "TURNO ACTUAL.";
 		return situacionJugador;
 	}
 

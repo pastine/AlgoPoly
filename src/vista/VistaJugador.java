@@ -45,7 +45,7 @@ public class VistaJugador {
         	contador += 7;
         	
         	String situacionJugador = algoPoly.pedirSituacionJugador(jugador);
-        	canvas.getGraphicsContext2D().setFont(new Font("Verdana", 20));
+        	canvas.getGraphicsContext2D().setFont(new Font("Verdana", 14));
         	canvas.getGraphicsContext2D().fillText(situacionJugador, contadorHorizontal, contadorVertical);
         	
         	contadorHorizontal += 280;
