@@ -61,7 +61,12 @@ public class ContenedorPrincipal extends BorderPane{
 		botonVender.setText("Vender");
 		BotonVentanaDeVenderEventHandler botonVenderHandler = new BotonVentanaDeVenderEventHandler(stage, algoPoly, vistaJugador);
 		botonVender.setOnAction(botonVenderHandler);
-
+		
+		Button botonIntercambiar = new Button();
+		botonIntercambiar.setText("Intercambiar");
+		BotonVentanaDeIntercambiarEventHandler botonIntercambiarHandler = new BotonVentanaDeIntercambiarEventHandler(stage, algoPoly, vistaJugador);
+		botonIntercambiar.setOnAction(botonIntercambiarHandler);
+		    
 		Button botonConstruir = new Button();
 		botonConstruir.setText("Construir");
 		BotonVentanaDeConstruirEventHandler botonConstruirHandler = new BotonVentanaDeConstruirEventHandler(stage, algoPoly, vistaJugador);
@@ -79,6 +84,7 @@ public class ContenedorPrincipal extends BorderPane{
 	    BotonFinalizarTurnoEventHandler botonFinalizarHandler = new BotonFinalizarTurnoEventHandler(this, algoPoly, vistaJugador);
 	    botonFinalizarTurno.setOnAction(botonFinalizarHandler);
 	    botonFinalizarTurno.setDisable(true);
+	   
 	    
 	    Button botonDetenerMusica = new Button();
 	    botonDetenerMusica.setText("Silenciar");
@@ -97,7 +103,7 @@ public class ContenedorPrincipal extends BorderPane{
 		vistaDados.update();
 	    
 
-	    contenedorLeft = new VBox(botonMover, botonComprar, botonVender, botonConstruir, botonPagarFianza, botonFinalizarTurno, botonDetenerMusica,botonExit, canvasDados);
+	    contenedorLeft = new VBox(botonMover, botonComprar,botonIntercambiar, botonVender, botonConstruir, botonPagarFianza, botonFinalizarTurno,botonDetenerMusica,botonExit, canvasDados);
 
 		contenedorLeft.setPadding(new Insets(15));
 		contenedorLeft.setSpacing(25);
@@ -128,10 +134,10 @@ public class ContenedorPrincipal extends BorderPane{
 	public void deshabilitarBotonesAlFinalizarTurno() {
 		contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
 		contenedorLeft.getChildren().get(1).setDisable(true); // Comprar 1
-		contenedorLeft.getChildren().get(4).setDisable(true); // PagarFianza 4
+		contenedorLeft.getChildren().get(5).setDisable(true); // PagarFianza 5
 		if (algoPoly.puedoPagarFianza(algoPoly.devolverJugadorActual()))
-			contenedorLeft.getChildren().get(4).setDisable(false); //Pagar Fianza 4
-		contenedorLeft.getChildren().get(5).setDisable(true); // Finalizar 5
+			contenedorLeft.getChildren().get(5).setDisable(false); //Pagar Fianza 5
+		contenedorLeft.getChildren().get(6).setDisable(true); // Finalizar 6
 	}
 
 	public void deshabilitarBotonesTrasComprar() {
@@ -142,8 +148,8 @@ public class ContenedorPrincipal extends BorderPane{
 		contenedorLeft.getChildren().get(0).setDisable(true); // Mover 0
 		if (algoPoly.puedoComprar(algoPoly.devolverJugadorActual()))
 			contenedorLeft.getChildren().get(1).setDisable(false); //Comprar 1
-		contenedorLeft.getChildren().get(4).setDisable(true); //Pagar Fianza 4
-		contenedorLeft.getChildren().get(5).setDisable(false); //Finalizar 5
+		contenedorLeft.getChildren().get(5).setDisable(true); //Pagar Fianza 5
+		contenedorLeft.getChildren().get(6).setDisable(false); //Finalizar 6
 		vistaDados.update();
 	}
 

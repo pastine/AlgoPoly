@@ -110,6 +110,10 @@ public class Jugador {
 		if (this != terrenoDoble.obtenerDuenio()) throw new PropiedadConDuenioException();
 		terrenoDoble.construirHotel();
 	}
+	
+	public String toString() {
+		return this.pedirNombre();
+	}
 
 	public void intercambiarPropiedad(Jugador otroJugador, Propiedad miPropiedad, Propiedad otraPropiedad){
 		otroJugador.aceptarPropiedad(miPropiedad, otraPropiedad);

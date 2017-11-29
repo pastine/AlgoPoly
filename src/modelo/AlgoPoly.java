@@ -89,7 +89,7 @@ public class AlgoPoly {
     public Jugador devolverJugadorActual() {
     	return turnos.obtenerJugadorDelTurnoActual();
     }
-    
+       
     public void finalizarTurno() {
     	turnos.finalizarTurno();
     }
