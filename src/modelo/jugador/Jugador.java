@@ -78,7 +78,13 @@ public class Jugador {
 
 	public boolean pagarFianza() {
 		Carcel carcel = (Carcel)this.casilleroActual;
-		return carcel.cobrarFianza(this);
+		boolean result = false;
+		try {
+			result = carcel.cobrarFianza(this);
+		}catch (Exception e) {
+			return false;
+		}
+		return result;
 	}
 
 	public int diasDeCarcelRestantes(){
