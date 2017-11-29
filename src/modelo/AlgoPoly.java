@@ -24,8 +24,6 @@ public class AlgoPoly {
 
     public void iniciarJuego(){
         crearTableroYJugadores();
-        
-        cambiarNombres("MARTA","NESTOR","ZULMA");
         turnos = new Turnos(jugadores);
     }
     
@@ -154,7 +152,7 @@ public class AlgoPoly {
 	}
 
 	public void pagarFianzajugadorActual(Jugador jugadorActual) {
-		jugadorActual.pagarFianza((Carcel) jugadorActual.obtenerCasillero());
+		jugadorActual.pagarFianza();
 	}
 
 	public int obtenerPrimerDadoActual(){

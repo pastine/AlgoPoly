@@ -76,7 +76,8 @@ public class Jugador {
 		return propiedades.contains(propiedad);
 	}
 
-	public boolean pagarFianza(Carcel carcel) {
+	public boolean pagarFianza() {
+		Carcel carcel = (Carcel)this.casilleroActual;
 		return carcel.cobrarFianza(this);
 	}
 

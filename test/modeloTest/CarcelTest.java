@@ -39,7 +39,7 @@ public class CarcelTest {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
 		carcel.agregarJugador(jugador, 0);
-		Assert.assertFalse(jugador.pagarFianza(carcel));
+		Assert.assertFalse(jugador.pagarFianza());
 		
 	}
 
@@ -47,7 +47,7 @@ public class CarcelTest {
 	public void testJugadorNoPuedePagarFianzaSiNoEstaPreso() {
 		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
-		Assert.assertFalse(jugador.pagarFianza(carcel));
+		Assert.assertFalse(jugador.pagarFianza());
 		
 	}
 
@@ -60,7 +60,7 @@ public class CarcelTest {
 		jugador.mover(1);
 		jugador.quitarDinero(jugador.obtenerSaldo());
 
-		Assert.assertFalse(jugador.pagarFianza(carcel));
+		Assert.assertFalse(jugador.pagarFianza());
 		Assert.assertTrue(carcel.estaEnLaCarcel(jugador));
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
@@ -79,7 +79,7 @@ public class CarcelTest {
 		jugador.mover(1);
 		jugador.quitarDinero(jugador.obtenerSaldo());
 
-		Assert.assertFalse(jugador.pagarFianza(carcel));
+		Assert.assertFalse(jugador.pagarFianza());
 		Assert.assertTrue(carcel.estaEnLaCarcel(jugador));
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
@@ -98,7 +98,7 @@ public class CarcelTest {
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
 		
-		Assert.assertFalse(jugador.pagarFianza(carcel));
+		Assert.assertFalse(jugador.pagarFianza());
 		Assert.assertEquals(jugador.obtenerSaldo(), 100);
 		thrown.expect(JugadorEstaPresoException.class);
 		
@@ -114,7 +114,7 @@ public class CarcelTest {
 		carcel.agregarJugador(jugador, 0);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
-		Assert.assertTrue(jugador.pagarFianza(carcel));
+		Assert.assertTrue(jugador.pagarFianza());
 	}
 
 	@Test
@@ -135,7 +135,7 @@ public class CarcelTest {
 		carcel.agregarJugador(jugador, 0);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
-		jugador.pagarFianza(carcel);
+		jugador.pagarFianza();
 		jugador.mover(2);
 		Assert.assertTrue(casillero3.jugadorEstaEnCasillero(jugador));
 	}
@@ -150,7 +150,7 @@ public class CarcelTest {
 		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
-		Assert.assertTrue(jugador.pagarFianza(carcel));
+		Assert.assertTrue(jugador.pagarFianza());
 	}
 
 	@Test
@@ -170,7 +170,7 @@ public class CarcelTest {
 		jugador.mover(1);
 		thrown.expect(JugadorEstaPresoException.class);
 		jugador.mover(1);
-		jugador.pagarFianza(carcel);
+		jugador.pagarFianza();
 		jugador.mover(2);
 		Assert.assertTrue(casillero2.jugadorEstaEnCasillero(jugador));
 		
