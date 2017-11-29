@@ -141,6 +141,7 @@ public class ContenedorPrincipal extends BorderPane{
 
 	public void deshabilitarBotonesAlFinalizarTurno() {
 		contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
+		((Button) contenedorLeft.getChildren().get(0)).setDefaultButton(true);
 		contenedorLeft.getChildren().get(1).setDisable(true); // Comprar 1
 		contenedorLeft.getChildren().get(2).setDisable(false); // Intercambiar 2
 		contenedorLeft.getChildren().get(3).setDisable(false); // Vender 2
@@ -149,6 +150,7 @@ public class ContenedorPrincipal extends BorderPane{
 		if (algoPoly.puedoPagarFianza(algoPoly.devolverJugadorActual()))
 			contenedorLeft.getChildren().get(5).setDisable(false); // Pagar Fianza 5
 		contenedorLeft.getChildren().get(6).setDisable(true); // Finalizar 6
+		((Button) contenedorLeft.getChildren().get(6)).setDefaultButton(false);
 	}
 
 	public void deshabilitarBotonesTrasComprar() {
@@ -157,6 +159,7 @@ public class ContenedorPrincipal extends BorderPane{
 
     public void deshabilitarBotonesTrasMover() {
 		contenedorLeft.getChildren().get(0).setDisable(true); // Mover 0
+		((Button) contenedorLeft.getChildren().get(0)).setDefaultButton(false);
 		if (algoPoly.puedoComprar(algoPoly.devolverJugadorActual()))
 			contenedorLeft.getChildren().get(1).setDisable(false); //Comprar 1
 		contenedorLeft.getChildren().get(2).setDisable(true); // Intercambiar 2
@@ -164,6 +167,7 @@ public class ContenedorPrincipal extends BorderPane{
 		contenedorLeft.getChildren().get(4).setDisable(true); // Construir 4		
 		contenedorLeft.getChildren().get(5).setDisable(true); // Pagar Fianza 5
 		contenedorLeft.getChildren().get(6).setDisable(false); // Finalizar 6
+		((Button) contenedorLeft.getChildren().get(6)).setDefaultButton(true);
 		vistaDados.update();
 	}
 
