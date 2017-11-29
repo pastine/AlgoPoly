@@ -44,7 +44,7 @@ public class Servicio extends Propiedad{
 	}
 	
 	public String pedirSituacion() {
-		String situacion = "\nCosto Servicio: " + precio;
+		String situacion = "\nCosto Servicio: $" + precio;
 		situacion += "\nPropietario: ";
 		if (duenio != null)
 			situacion += duenio.pedirNombre();

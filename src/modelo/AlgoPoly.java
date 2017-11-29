@@ -121,7 +121,7 @@ public class AlgoPoly {
 		
 		String situacionJugador = "Jugador: ";
 		situacionJugador += jugador.pedirNombre();
-		situacionJugador += "\nSaldo actual: ";
+		situacionJugador += "\nSaldo actual: $";
 		situacionJugador += jugador.obtenerSaldo() + "\n";
 		if (jugador.obtenerCantidadDePropiedades() > 0)
             situacionJugador += "Propiedades:\n";
@@ -138,8 +138,10 @@ public class AlgoPoly {
 		String situacionCasillero = "Casillero: ";
 		situacionCasillero += casilleroActual.pedirNombre() + "\n";
 		situacionCasillero += casilleroActual.pedirSituacion();
-		if (!puedoMover(jugadorActual))
+		if (!puedoMover(jugadorActual)) {
 			situacionCasillero += "Turnos restantes: " + jugadorActual.diasDeCarcelRestantes();
+			situacionCasillero += "\nFianza: $45000";
+		}
 		return situacionCasillero;
 	}
 

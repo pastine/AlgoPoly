@@ -70,7 +70,7 @@ public class Terreno extends Propiedad{
 	}
 	
 	public String pedirSituacion() {
-		String situacion = "\nCosto Terreno: " + precio;
+		String situacion = "\nCosto Terreno: $" + precio;
 		situacion += "\nPropietario: ";
 		if (duenio != null)
 			situacion += duenio.pedirNombre();
