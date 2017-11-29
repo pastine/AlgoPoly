@@ -3,6 +3,8 @@ package vista;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
@@ -10,7 +12,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import vista.eventos.BotonJugarEventHandler;
-import vista.eventos.BotonPedirEventHandler;
+import vista.eventos.BotonNombresEventHandler;
 
 
 
@@ -45,17 +47,28 @@ public class ContenedorBienvenidos extends VBox {
         botonJugar.setText("JUGAR");
         botonJugar.setDefaultButton(true);
         botonJugar.setPrefSize(100, 50);
-        
-	    Button botonPedir = new Button();
-	    botonPedir.setText("Pedir nombre");
-	    BotonPedirEventHandler botonPedirHandler = new BotonPedirEventHandler(algoPoly); 
-	    botonPedir.setOnAction(botonPedirHandler);
 	    
+	    TextField jugador1 = new TextField();
+    	jugador1.setPromptText("nombre jugador 1");
+    	jugador1.setMaxWidth(250);
+    	
+    	TextField jugador2 = new TextField();
+    	jugador2.setPromptText("nombre jugador 2");
+    	jugador2.setMaxWidth(250);
+    	
+    	TextField jugador3 = new TextField();
+    	jugador3.setPromptText("nombre jugador 3");
+    	jugador3.setMaxWidth(250);
+    	
+    	Button botonNombres = new Button();
+        botonNombres.setText("Aceptar");
+	    BotonNombresEventHandler botonNombesHandler = new BotonNombresEventHandler(algoPoly, jugador1, jugador2, jugador3);
+	    botonNombres.setOnAction(botonNombesHandler);
 	    
-        BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage,algoPoly,mediaplayer);
+        BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, algoPoly, mediaplayer, jugador1.getText(), jugador2.getText(), jugador3.getText());
         botonJugar.setOnAction(botonJugarHandler);
 
-        this.getChildren().addAll(botonJugar, botonPedir);
+        this.getChildren().addAll(botonJugar, jugador1, jugador2, jugador3, botonNombres);
     }
     
 
