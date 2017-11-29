@@ -3,7 +3,6 @@ package vista;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
@@ -47,6 +46,7 @@ public class ContenedorBienvenidos extends VBox {
         botonJugar.setText("JUGAR");
         botonJugar.setDefaultButton(true);
         botonJugar.setPrefSize(100, 50);
+        botonJugar.setDisable(true);
 	    
 	    TextField jugador1 = new TextField();
     	jugador1.setPromptText("nombre");
@@ -65,7 +65,7 @@ public class ContenedorBienvenidos extends VBox {
     	
     	Button botonNombres = new Button();
         botonNombres.setText("Aceptar");
-	    BotonNombresEventHandler botonNombesHandler = new BotonNombresEventHandler(algoPoly, jugador1, jugador2, jugador3);
+	    BotonNombresEventHandler botonNombesHandler = new BotonNombresEventHandler(algoPoly, this, jugador1, jugador2, jugador3);
 	    botonNombres.setOnAction(botonNombesHandler);
 	    
         BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, algoPoly, mediaplayer, jugador1.getText(), jugador2.getText(), jugador3.getText());
@@ -74,5 +74,8 @@ public class ContenedorBienvenidos extends VBox {
         this.getChildren().addAll(botonJugar, jugador1, jugador2, jugador3, botonNombres);
     }
     
+    public void habilitarJugarTrasAceptar() {
+    	 this.getChildren().get(0).setDisable(false);
+    }
 
 }
