@@ -1,6 +1,7 @@
 package vista;
 
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import modelo.AlgoPoly;
@@ -34,6 +35,15 @@ public class VistaDados {
 
         canvas.getGraphicsContext2D().drawImage(imagenDado1,0,0);
         canvas.getGraphicsContext2D().drawImage(imagenDado2,0,100);
+
+        if (algoPoly.obtenerPrimerDadoActual() == algoPoly.obtenerSegundoDadoActual()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Turno perdido");
+            alert.setHeaderText(null);
+            alert.setContentText("Por haber sacado dos veces dados iguales perdes el turno!");
+
+            alert.showAndWait();
+        }
     }
 
 
