@@ -11,10 +11,8 @@ public class EstadoCobroTerreno {
     }
 
     public void cobrar(Jugador duenio, Jugador jugador){
-        if (duenio == null) {
-            //jugador.ofrecerComprarPropiedad();
-        } else {
-            jugador.quitarDinero(costoAlquiler);
+        if (duenio != null) {
+        	jugador.quitarDinero(costoAlquiler);
             duenio.recibirDinero(costoAlquiler);
         }
     }

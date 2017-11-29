@@ -39,7 +39,7 @@ public class VistaJugador {
         	if (i == 1)
         		canvas.getGraphicsContext2D().setFill(Color.RED);
         	if (i == 2)
-        		canvas.getGraphicsContext2D().setFill(Color.BLACK);
+        		canvas.getGraphicsContext2D().setFill(Color.GREEN);
         	
         	canvas.getGraphicsContext2D().fillOval(jugador.obtenerCoordenadaHorizontal() + contador, jugador.obtenerCoordenadaVertical() + contador, 45, 45);
         	contador += 7;
@@ -47,7 +47,7 @@ public class VistaJugador {
         	String situacionJugador = algoPoly.pedirSituacionJugador(jugador);
         	canvas.getGraphicsContext2D().setFont(new Font("Verdana", 15));
         	canvas.getGraphicsContext2D().fillText(situacionJugador, contadorHorizontal, contadorVertical);
-        	
+        	canvas.getGraphicsContext2D().setFill(Color.BLACK);
         	contadorHorizontal += 280;
         }
         
