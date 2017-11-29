@@ -88,10 +88,15 @@ public class ContenedorPrincipal extends BorderPane{
 	    botonFinalizarTurno.setOnAction(botonFinalizarHandler);
 	    botonFinalizarTurno.setDisable(true);
 	   
+	    Button botonReproducirMusica = new Button();
+	    botonReproducirMusica.setText("Reproducir");
+	    BotonReproducirMusicaEventHandler botonReproducirHandler = new BotonReproducirMusicaEventHandler(this, mediaplayer);
+	    botonReproducirMusica.setOnAction(botonReproducirHandler);
+	    botonReproducirMusica.setDisable(true);
 	    
 	    Button botonDetenerMusica = new Button();
 	    botonDetenerMusica.setText("Silenciar");
-	    BotonSilenciarEventHandler botonDetenerHandler = new BotonSilenciarEventHandler(mediaplayer);
+	    BotonSilenciarEventHandler botonDetenerHandler = new BotonSilenciarEventHandler(this, mediaplayer);
 	    botonDetenerMusica.setOnAction(botonDetenerHandler);
 	    
 	    
@@ -106,7 +111,7 @@ public class ContenedorPrincipal extends BorderPane{
 		vistaDados.update();
 	    
 
-	    contenedorLeft = new VBox(botonMover, botonComprar,botonIntercambiar, botonVender, botonConstruir, botonPagarFianza, botonFinalizarTurno,botonDetenerMusica,botonExit, canvasDados);
+	    contenedorLeft = new VBox(botonMover, botonComprar,botonIntercambiar, botonVender, botonConstruir, botonPagarFianza, botonFinalizarTurno,canvasDados, botonReproducirMusica, botonDetenerMusica, botonExit);
 
 		contenedorLeft.setPadding(new Insets(15));
 		contenedorLeft.setSpacing(25);
@@ -160,6 +165,16 @@ public class ContenedorPrincipal extends BorderPane{
 		contenedorLeft.getChildren().get(5).setDisable(true); // Pagar Fianza 5
 		contenedorLeft.getChildren().get(6).setDisable(false); // Finalizar 6
 		vistaDados.update();
+	}
+
+	public void deshabilitarTrasSilenciar() {
+		contenedorLeft.getChildren().get(8).setDisable(false); // Reproducir 8
+		contenedorLeft.getChildren().get(9).setDisable(true); // Silenciar 9
+	}
+
+	public void deshabilitarTrasReproducir() {
+		contenedorLeft.getChildren().get(8).setDisable(true); // Reproducir 8
+		contenedorLeft.getChildren().get(9).setDisable(false); // Silenciar 9
 	}
 
 

@@ -28,7 +28,7 @@ public class ContenedorBienvenidos extends VBox {
         Media file = new Media(path);
 		mediaplayer = new MediaPlayer(file);
 		mediaplayer.setAutoPlay(true);
-		mediaplayer.setVolume(0.2);
+		mediaplayer.setVolume(0.3);
 		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
 		mediaplayer.play();
 	
