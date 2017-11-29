@@ -105,7 +105,7 @@ public class AlgoPoly {
     }
     
     public boolean puedoConstruir(Propiedad propiedad) {
-    	return propiedad.permiteConstruir();
+    	return propiedad.permiteConstruir(devolverJugadorActual().obtenerSaldo());
     }
     
     public void construir(Propiedad propiedad) {
@@ -148,7 +148,7 @@ public class AlgoPoly {
 	}
 
 	public boolean puedoPagarFianza(Jugador jugadorActual) {
-		return (jugadorActual.diasDeCarcelRestantes() == 2 || jugadorActual.diasDeCarcelRestantes() == 1);
+		return (jugadorActual.diasDeCarcelRestantes() == 2 || jugadorActual.diasDeCarcelRestantes() == 1) && jugadorActual.obtenerSaldo() >= 45000;
 	}
 
 	public void pagarFianzajugadorActual(Jugador jugadorActual) {

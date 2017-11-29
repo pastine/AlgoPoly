@@ -34,7 +34,7 @@ public abstract class Propiedad extends Casillero {
 		return (duenio == null && saldo >= precio);
 	}
 	
-	public boolean permiteConstruir() {
+	public boolean permiteConstruir(int saldo) {
 		return false;
 	}
 	

@@ -19,14 +19,14 @@ public class TerrenoDoble extends Terreno {
     }
 
     public void construirHotel(){
-        if (!permiteConstruirHotel() || precioConstruccionHotel > duenio.obtenerSaldo()) throw new ConstruccionNoPermitidaException();
+        if (!permiteConstruirHotel(duenio.obtenerSaldo())) throw new ConstruccionNoPermitidaException();
         duenio.quitarDinero(precioConstruccionHotel);
         numeroCasas += 1;
         estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
     }
     
-    public boolean permiteConstruir() {
-		return permiteConstruirCasa() || permiteConstruirHotel();
+    public boolean permiteConstruir(int saldo) {
+		return permiteConstruirCasa(saldo) || permiteConstruirHotel(saldo);
 	}
 
     public void construir() {
@@ -37,14 +37,14 @@ public class TerrenoDoble extends Terreno {
         }
     }
 
-    public boolean permiteConstruirCasa(){
+    public boolean permiteConstruirCasa(int saldo){
         int diferencia = ((Terreno)hermano).obtenerCantidadDeConstrucciones() - this.numeroCasas;
-        return (diferencia == 1 || diferencia == 0) && (numeroCasas < 2) && hermano.obtenerDuenio() == duenio;
+        return (diferencia == 1 || diferencia == 0) && (numeroCasas < 2) && hermano.obtenerDuenio() == duenio && saldo >= precioConstruccionCasa;
     }
     
-    public boolean permiteConstruirHotel(){
+    public boolean permiteConstruirHotel(int saldo){
         int diferencia = ((Terreno)hermano).obtenerCantidadDeConstrucciones() - this.numeroCasas;
-        return (diferencia == 1 || diferencia == 0) && (numeroCasas == 2) && hermano.obtenerDuenio() == duenio;
+        return (diferencia == 1 || diferencia == 0) && (numeroCasas == 2) && hermano.obtenerDuenio() == duenio && saldo >= precioConstruccionHotel;
     }
     
     public int obtenerValorTotal(){

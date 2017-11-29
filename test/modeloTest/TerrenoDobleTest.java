@@ -26,9 +26,9 @@ public class TerrenoDobleTest {
 
 
         int saldoInicial = jugadorA.obtenerSaldo();
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresSur);
 
         Assert.assertEquals(jugadorA.obtenerSaldo() + 5000, saldoInicial);
@@ -46,9 +46,9 @@ public class TerrenoDobleTest {
 
 
         int saldoInicial = jugadorA.obtenerSaldo();
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
         Assert.assertEquals(jugadorA.obtenerSaldo() + 5500, saldoInicial);
@@ -65,9 +65,9 @@ public class TerrenoDobleTest {
         jugadorA.comprarPropiedad(buenosAiresNorte);
         jugadorA.comprarPropiedad(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
 
         jugadorA.construirCasa(buenosAiresNorte);
 
@@ -92,9 +92,9 @@ public class TerrenoDobleTest {
         jugadorA.comprarPropiedad(buenosAiresNorte);
         jugadorA.comprarPropiedad(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
 
         jugadorA.construirCasa(buenosAiresSur);
 
@@ -119,19 +119,19 @@ public class TerrenoDobleTest {
         jugadorA.comprarPropiedad(buenosAiresNorte);
         jugadorA.comprarPropiedad(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
 
@@ -156,19 +156,19 @@ public class TerrenoDobleTest {
         jugadorA.comprarPropiedad(buenosAiresNorte);
         jugadorA.comprarPropiedad(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresSur);
 
 
@@ -193,38 +193,38 @@ public class TerrenoDobleTest {
         jugadorA.comprarPropiedad(buenosAiresNorte);
         jugadorA.comprarPropiedad(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirHotel(buenosAiresNorte);
 
-        Assert.assertFalse(buenosAiresNorte.permiteConstruir());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
 
 
         int saldoInicialA = jugadorA.obtenerSaldo();
@@ -248,38 +248,38 @@ public class TerrenoDobleTest {
         jugadorA.comprarPropiedad(buenosAiresNorte);
         jugadorA.comprarPropiedad(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresSur.permiteConstruir());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertTrue(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirHotel(buenosAiresSur);
 
-        Assert.assertFalse(buenosAiresSur.permiteConstruir());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
 
         int saldoInicialA = jugadorA.obtenerSaldo();
         int saldoInicialB = jugadorB.obtenerSaldo();
@@ -345,14 +345,14 @@ public class TerrenoDobleTest {
         jugadorA.comprarPropiedad(buenosAiresNorte);
         jugadorA.comprarPropiedad(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         jugadorA.construirCasa(buenosAiresNorte);
 
-        Assert.assertFalse(buenosAiresNorte.permiteConstruir());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(ConstruccionNoPermitidaException.class);
         jugadorA.construirCasa(buenosAiresNorte);
     }
@@ -372,21 +372,21 @@ public class TerrenoDobleTest {
         jugadorA.construirCasa(buenosAiresSur);
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertFalse(buenosAiresSur.permiteConstruir());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(ConstruccionNoPermitidaException.class);
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertFalse(buenosAiresNorte.permiteConstruir());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(ConstruccionNoPermitidaException.class);
         jugadorA.construirHotel(buenosAiresNorte);
 
-        Assert.assertFalse(buenosAiresSur.permiteConstruir());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(ConstruccionNoPermitidaException.class);
         jugadorA.construirHotel(buenosAiresSur);
 
@@ -407,9 +407,9 @@ public class TerrenoDobleTest {
         jugadorA.construirCasa(buenosAiresSur);
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertFalse(buenosAiresSur.permiteConstruir());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(ConstruccionNoPermitidaException.class);
         jugadorA.construirHotel(buenosAiresSur);
 
@@ -430,9 +430,9 @@ public class TerrenoDobleTest {
         jugadorA.construirCasa(buenosAiresSur);
         jugadorA.construirCasa(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(ConstruccionNoPermitidaException.class);
         jugadorA.construirHotel(buenosAiresNorte);
 
@@ -449,9 +449,9 @@ public class TerrenoDobleTest {
         jugadorA.comprarPropiedad(buenosAiresNorte);
         jugadorA.comprarPropiedad(buenosAiresSur);
 
-        Assert.assertTrue(buenosAiresNorte.permiteConstruir());
-        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel());
+        Assert.assertTrue(buenosAiresNorte.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertTrue(buenosAiresNorte.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresNorte.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(ConstruccionNoPermitidaException.class);
         jugadorA.construirHotel(buenosAiresNorte);
 
@@ -467,9 +467,9 @@ public class TerrenoDobleTest {
 
         jugadorA.comprarPropiedad(buenosAiresNorte);
 
-        Assert.assertFalse(buenosAiresSur.permiteConstruir());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(PropiedadConDuenioException.class);
         jugadorA.construirCasa(buenosAiresSur);
 
@@ -485,9 +485,9 @@ public class TerrenoDobleTest {
 
         jugadorA.comprarPropiedad(buenosAiresNorte);
 
-        Assert.assertFalse(buenosAiresSur.permiteConstruir());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa());
-        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel());
+        Assert.assertFalse(buenosAiresSur.permiteConstruir(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirCasa(jugadorA.obtenerSaldo()));
+        Assert.assertFalse(buenosAiresSur.permiteConstruirHotel(jugadorA.obtenerSaldo()));
         thrown.expect(PropiedadConDuenioException.class);
         jugadorA.construirHotel(buenosAiresSur);
 

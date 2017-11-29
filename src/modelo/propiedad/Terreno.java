@@ -43,17 +43,17 @@ public class Terreno extends Propiedad{
 		construirCasa();
 	}
 	public void construirCasa(){
-		if (!permiteConstruirCasa() || precioConstruccionCasa > duenio.obtenerSaldo()) throw new ConstruccionNoPermitidaException();
+		if (!permiteConstruirCasa(duenio.obtenerSaldo())) throw new ConstruccionNoPermitidaException();
 		duenio.quitarDinero(precioConstruccionCasa);
 		numeroCasas += 1;
 		estadoCobroTerreno = new EstadoCobroTerreno(preciosAlquiler.get(numeroCasas));
 	}
 	
-	public boolean permiteConstruir() {
-		return permiteConstruirCasa();
+	public boolean permiteConstruir(int saldo) {
+		return permiteConstruirCasa(saldo);
 	}
-	public boolean permiteConstruirCasa(){
-		return (numeroCasas < 1);
+	public boolean permiteConstruirCasa(int saldo){
+		return (numeroCasas < 1) && saldo >= precioConstruccionCasa;
 	}
 	public void removerConstrucciones() { this.numeroCasas = 0; }
 
