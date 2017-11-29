@@ -31,7 +31,7 @@ public class VistaJugador {
         
         int contador = 0;
         int contadorHorizontal = 55;
-        int contadorVertical = 70; //65 arriba de todo
+        int contadorVertical = 65; //65 arriba de todo
         for (int i = 0; i < jugadores.size(); i++){
         	Jugador jugador = jugadores.get(i);
         	if (i == 0)
@@ -45,7 +45,7 @@ public class VistaJugador {
         	contador += 7;
         	
         	String situacionJugador = algoPoly.pedirSituacionJugador(jugador);
-        	canvas.getGraphicsContext2D().setFont(new Font("Verdana", 14));
+        	canvas.getGraphicsContext2D().setFont(new Font("Verdana", 15));
         	canvas.getGraphicsContext2D().fillText(situacionJugador, contadorHorizontal, contadorVertical);
         	
         	contadorHorizontal += 280;

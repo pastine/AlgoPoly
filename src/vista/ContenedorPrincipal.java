@@ -61,16 +61,19 @@ public class ContenedorPrincipal extends BorderPane{
 		botonVender.setText("Vender");
 		BotonVentanaDeVenderEventHandler botonVenderHandler = new BotonVentanaDeVenderEventHandler(stage, algoPoly, vistaJugador);
 		botonVender.setOnAction(botonVenderHandler);
+		botonVender.setDisable(true);
 		
 		Button botonIntercambiar = new Button();
 		botonIntercambiar.setText("Intercambiar");
 		BotonVentanaDeIntercambiarEventHandler botonIntercambiarHandler = new BotonVentanaDeIntercambiarEventHandler(stage, algoPoly, vistaJugador);
 		botonIntercambiar.setOnAction(botonIntercambiarHandler);
+		botonIntercambiar.setDisable(true);
 		    
 		Button botonConstruir = new Button();
 		botonConstruir.setText("Construir");
 		BotonVentanaDeConstruirEventHandler botonConstruirHandler = new BotonVentanaDeConstruirEventHandler(stage, algoPoly, vistaJugador);
 		botonConstruir.setOnAction(botonConstruirHandler);
+		botonConstruir.setDisable(true);
 
 		Button botonPagarFianza = new Button();
 		botonPagarFianza.setText("Pagar fianza");
@@ -134,9 +137,12 @@ public class ContenedorPrincipal extends BorderPane{
 	public void deshabilitarBotonesAlFinalizarTurno() {
 		contenedorLeft.getChildren().get(0).setDisable(false); // Mover 0
 		contenedorLeft.getChildren().get(1).setDisable(true); // Comprar 1
+		contenedorLeft.getChildren().get(2).setDisable(false); // Intercambiar 2
+		contenedorLeft.getChildren().get(3).setDisable(false); // Vender 2
+		contenedorLeft.getChildren().get(4).setDisable(false); // Construir 4
 		contenedorLeft.getChildren().get(5).setDisable(true); // PagarFianza 5
 		if (algoPoly.puedoPagarFianza(algoPoly.devolverJugadorActual()))
-			contenedorLeft.getChildren().get(5).setDisable(false); //Pagar Fianza 5
+			contenedorLeft.getChildren().get(5).setDisable(false); // Pagar Fianza 5
 		contenedorLeft.getChildren().get(6).setDisable(true); // Finalizar 6
 	}
 
@@ -148,8 +154,11 @@ public class ContenedorPrincipal extends BorderPane{
 		contenedorLeft.getChildren().get(0).setDisable(true); // Mover 0
 		if (algoPoly.puedoComprar(algoPoly.devolverJugadorActual()))
 			contenedorLeft.getChildren().get(1).setDisable(false); //Comprar 1
-		contenedorLeft.getChildren().get(5).setDisable(true); //Pagar Fianza 5
-		contenedorLeft.getChildren().get(6).setDisable(false); //Finalizar 6
+		contenedorLeft.getChildren().get(2).setDisable(true); // Intercambiar 2
+		contenedorLeft.getChildren().get(3).setDisable(true); // Vender 2
+		contenedorLeft.getChildren().get(4).setDisable(true); // Construir 4		
+		contenedorLeft.getChildren().get(5).setDisable(true); // Pagar Fianza 5
+		contenedorLeft.getChildren().get(6).setDisable(false); // Finalizar 6
 		vistaDados.update();
 	}
 
