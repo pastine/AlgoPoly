@@ -68,7 +68,7 @@ public class ContenedorBienvenidos extends VBox {
 	    BotonNombresEventHandler botonNombesHandler = new BotonNombresEventHandler(algoPoly, this, jugador1, jugador2, jugador3);
 	    botonNombres.setOnAction(botonNombesHandler);
 	    
-        BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, algoPoly, mediaplayer, jugador1.getText(), jugador2.getText(), jugador3.getText());
+        BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, algoPoly, mediaplayer);
         botonJugar.setOnAction(botonJugarHandler);
 
         this.getChildren().addAll(botonJugar, jugador1, jugador2, jugador3, botonNombres);
