@@ -14,8 +14,8 @@ public class AlgoPoly {
     private Tablero tablero;
     private ArrayList<Jugador> jugadores;
     private Turnos turnos;
-    private int ultimoDado1 = 6;
-    private int ultimoDado2 = 6;
+    private int ultimoDado1 = 1;
+    private int ultimoDado2 = 2;
 
 
     public AlgoPoly(){

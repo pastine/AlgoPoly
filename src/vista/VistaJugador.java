@@ -1,6 +1,7 @@
 package vista;
 
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import modelo.AlgoPoly;
@@ -54,7 +55,15 @@ public class VistaJugador {
         
         String situacionCasillero = algoPoly.pedirSituacionCasillero(algoPoly.devolverJugadorActual());
         canvas.getGraphicsContext2D().fillText(situacionCasillero, 345, 355);
-        
+
+        if (jugadores.size() == 1){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Felicitaciones");
+            alert.setHeaderText(null);
+            alert.setContentText("El jugador " + jugadores.get(0).pedirNombre() + " es el ganador!");
+
+            alert.showAndWait();
+        }
     }
 
     public void update() {
