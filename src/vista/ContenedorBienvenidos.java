@@ -49,16 +49,19 @@ public class ContenedorBienvenidos extends VBox {
         botonJugar.setPrefSize(100, 50);
 	    
 	    TextField jugador1 = new TextField();
-    	jugador1.setPromptText("nombre jugador 1");
+    	jugador1.setPromptText("nombre");
     	jugador1.setMaxWidth(250);
+    	jugador1.setText("Jugador 1");
     	
     	TextField jugador2 = new TextField();
-    	jugador2.setPromptText("nombre jugador 2");
+    	jugador2.setPromptText("nombre");
     	jugador2.setMaxWidth(250);
+    	jugador2.setText("Jugador 2");
     	
     	TextField jugador3 = new TextField();
-    	jugador3.setPromptText("nombre jugador 3");
+    	jugador3.setPromptText("nombre");
     	jugador3.setMaxWidth(250);
+    	jugador3.setText("Jugador 3");
     	
     	Button botonNombres = new Button();
         botonNombres.setText("Aceptar");
