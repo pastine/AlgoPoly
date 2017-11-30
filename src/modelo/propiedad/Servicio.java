@@ -48,7 +48,7 @@ public class Servicio extends Propiedad{
 		situacion += "\nPropietario: ";
 		if (duenio != null)
 			situacion += duenio.pedirNombre();
-		situacion += "\nservicio: " + estadoCobroServicio.obtenerCostoServicio() + " x dados";
+		situacion += "\nServicio: $" + estadoCobroServicio.obtenerCostoServicio() + " x dados";
 		return situacion;
 	}
 

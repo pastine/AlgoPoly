@@ -78,7 +78,7 @@ public class Terreno extends Propiedad{
 		situacion += "\nPropietario: ";
 		if (duenio != null)
 			situacion += duenio.pedirNombre();
-		situacion += "\nAlquiler: " + this.obtenerCostoAlquiler();
+		situacion += "\nAlquiler: $" + this.obtenerCostoAlquiler();
 		situacion += "\nConstrucciones: " + numeroCasas;
 		return situacion;
 	}
