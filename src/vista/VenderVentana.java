@@ -30,8 +30,6 @@ public class VenderVentana {
         setEscena(ventana,contenedor,algoPoly);
         ventana.setScene(escena);
         ventana.showAndWait();
-        System.out.println(ventana.getHeight());
-        System.out.println(ventana.getWidth());
         
     }
 
