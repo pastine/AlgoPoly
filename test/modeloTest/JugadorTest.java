@@ -3,7 +3,7 @@ package modeloTest;
 import modelo.Tablero;
 import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
-import modelo.jugador.SaldoInsuficienteException;
+import modelo.jugador.excepciones.SaldoInsuficienteException;
 import modelo.propiedad.Propiedad;
 import modelo.propiedad.Servicio;
 import modelo.propiedad.Terreno;

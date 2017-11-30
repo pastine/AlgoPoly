@@ -1,10 +1,9 @@
 package modelo;
 
-import modelo.casillero.Carcel;
 import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
-import modelo.jugador.JugadorEstaPresoException;
-import modelo.jugador.SaldoInsuficienteException;
+import modelo.jugador.excepciones.JugadorEstaPresoException;
+import modelo.jugador.excepciones.SaldoInsuficienteException;
 import modelo.propiedad.Propiedad;
 
 import java.util.ArrayList;

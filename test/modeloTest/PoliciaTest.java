@@ -3,7 +3,7 @@ package modeloTest;
 import modelo.casillero.Carcel;
 import modelo.casillero.Policia;
 import modelo.jugador.Jugador;
-import modelo.jugador.JugadorEstaPresoException;
+import modelo.jugador.excepciones.JugadorEstaPresoException;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

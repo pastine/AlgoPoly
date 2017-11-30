@@ -7,13 +7,13 @@ import modelo.jugador.estados.EstadoDeMovimientoDelJugador;
 import modelo.jugador.estados.EstadoJugadorGanoQuiniCeroVeces;
 import modelo.jugador.estados.EstadoLibre;
 import modelo.jugador.estados.EstadoQuiniJugador;
+import modelo.jugador.excepciones.SaldoInsuficienteException;
 import modelo.propiedad.Propiedad;
 import modelo.propiedad.PropiedadConDuenioException;
 import modelo.propiedad.Terreno;
 import modelo.propiedad.TerrenoDoble;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Jugador {
 	private String nombre;

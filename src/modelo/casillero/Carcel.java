@@ -1,7 +1,7 @@
 package modelo.casillero;
 
 import modelo.jugador.Jugador;
-import modelo.jugador.SaldoInsuficienteException;
+import modelo.jugador.excepciones.SaldoInsuficienteException;
 import modelo.jugador.estados.EstadoLibre;
 import modelo.jugador.estados.EstadoPreso;
 
