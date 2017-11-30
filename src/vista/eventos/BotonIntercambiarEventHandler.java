@@ -9,11 +9,11 @@ import modelo.jugador.Jugador;
 import modelo.propiedad.Propiedad;
 
 public class BotonIntercambiarEventHandler implements EventHandler<ActionEvent> {
-    private AlgoPoly algoPoly;
-    private ListView<Propiedad> listaDePropiedadesJugadorActual;
-    private ListView<Jugador> listaDeJugadores;
-    private ListView<Propiedad> listaDePropiedadesOtroJugador;
-    private Stage ventana;
+    private final AlgoPoly algoPoly;
+    private final ListView<Propiedad> listaDePropiedadesJugadorActual;
+    private final ListView<Jugador> listaDeJugadores;
+    private final ListView<Propiedad> listaDePropiedadesOtroJugador;
+    private final Stage ventana;
 
     public BotonIntercambiarEventHandler (Stage ventana, AlgoPoly algoPoly, ListView<Jugador> listaDeJugadores, ListView<Propiedad> listaDePropiedadesJugadorActual, ListView<Propiedad> listaDePropiedadesOtroJugador) {
         this.algoPoly = algoPoly;

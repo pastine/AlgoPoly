@@ -7,8 +7,8 @@ import vista.ContenedorPrincipal;
 
 public class BotonReproducirMusicaEventHandler implements EventHandler<ActionEvent>{
 	
-	private MediaPlayer mediaplayer;
-	private ContenedorPrincipal contenedor;
+	private final MediaPlayer mediaplayer;
+	private final ContenedorPrincipal contenedor;
 	
 	public BotonReproducirMusicaEventHandler (ContenedorPrincipal contenedor, MediaPlayer mediaplayer) {
 		this.mediaplayer = mediaplayer;

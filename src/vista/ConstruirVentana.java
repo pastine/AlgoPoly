@@ -33,11 +33,10 @@ public class ConstruirVentana {
 		Jugador jugadorActual = algoPoly.devolverJugadorActual();
 		ArrayList<Propiedad> propiedades = algoPoly.obtenerPropiedades(jugadorActual);
 		ListView<Propiedad> listaDePropiedades = new ListView<>();
-		for (int i=0; i<propiedades.size();i++) {
-			Propiedad propiedad = propiedades.get(i);
-			if (algoPoly.puedoConstruir(propiedad))
-				listaDePropiedades.getItems().add(propiedades.get(i));
-		}
+        for (Propiedad propiedad : propiedades) {
+            if (algoPoly.puedoConstruir(propiedad))
+                listaDePropiedades.getItems().add(propiedad);
+        }
 		Button botonConstruir = new Button();
 		botonConstruir.setText("Construir");
 	    BotonConstruirEventHandler botonConstruirHandler = new BotonConstruirEventHandler(ventana,algoPoly,listaDePropiedades);

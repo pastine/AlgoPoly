@@ -8,9 +8,9 @@ import vista.IntercambiarVentana;
 import vista.VistaJugador;
 
 public class BotonVentanaDeIntercambiarEventHandler implements EventHandler<ActionEvent> {
-    Stage stage;
-    AlgoPoly algoPoly;
-    VistaJugador vistaJugador;
+    private final Stage stage;
+    private final AlgoPoly algoPoly;
+    private final VistaJugador vistaJugador;
 
     public BotonVentanaDeIntercambiarEventHandler (Stage stage, AlgoPoly algoPoly, VistaJugador vistaJugador) {
         this.stage = stage;

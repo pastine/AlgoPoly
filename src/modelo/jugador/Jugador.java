@@ -18,14 +18,14 @@ import java.util.ArrayList;
 public class Jugador {
 	private String nombre;
 	private int saldo;
-	private ArrayList<Propiedad> propiedades;
+	private final ArrayList<Propiedad> propiedades;
 	private Casillero casilleroActual;
 	private EstadoDeMovimientoDelJugador estadoMovimiento;
 	private EstadoQuiniJugador estadoQuini;
 
 	public Jugador() {
 		saldo = 100000;
-		propiedades = new ArrayList<Propiedad>();
+		propiedades = new ArrayList<>();
 		estadoMovimiento = new EstadoLibre();
 		estadoQuini = new EstadoJugadorGanoQuiniCeroVeces();
 	}
@@ -78,7 +78,7 @@ public class Jugador {
 
 	public boolean pagarFianza() {
 		Carcel carcel = (Carcel)this.casilleroActual;
-		boolean result = false;
+		boolean result;
 		try {
 			result = carcel.cobrarFianza(this);
 		}catch (Exception e) {
@@ -129,7 +129,7 @@ public class Jugador {
 		miPropiedad.cambiarDuenio(otroJugador);
 	}
 
-	public void aceptarPropiedad(Propiedad nuevaPropiedad, Propiedad viejaPropiedad){
+	private void aceptarPropiedad(Propiedad nuevaPropiedad, Propiedad viejaPropiedad){
 		this.propiedades.add(nuevaPropiedad);
 		this.propiedades.remove(viejaPropiedad);
 	}

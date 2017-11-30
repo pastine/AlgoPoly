@@ -14,14 +14,12 @@ import vista.eventos.*;
 
 public class ContenedorPrincipal extends BorderPane{
 	
-	Stage stage;
-	AlgoPoly algoPoly;
-	Canvas canvasCentral;
-	VBox contenedorCentral;
-	VBox contenedorLeft;
-	VistaJugador vistaJugador;
-	VistaDados vistaDados;
-	MediaPlayer mediaplayer;
+	private final Stage stage;
+	private final AlgoPoly algoPoly;
+    private VBox contenedorLeft;
+	private VistaJugador vistaJugador;
+	private VistaDados vistaDados;
+	private MediaPlayer mediaplayer;
 	
 	public ContenedorPrincipal(Stage stage, AlgoPoly algoPoly) {
 		this.algoPoly = algoPoly;
@@ -33,7 +31,7 @@ public class ContenedorPrincipal extends BorderPane{
 	
 	}
 	
-	public void setMusica() {
+	private void setMusica() {
         String path = Aplicacion.class.getResource("sonidos/cancionDeFondo3.mp3").toString();
         
         Media file = new Media(path);
@@ -123,12 +121,12 @@ public class ContenedorPrincipal extends BorderPane{
     }
 	
 	private void setCentro(AlgoPoly algoPoly) {
-		canvasCentral = new Canvas(930, 520);
+        Canvas canvasCentral = new Canvas(930, 520);
 		
 		
 		vistaJugador = new VistaJugador(canvasCentral, algoPoly);
 		vistaJugador.update();
-		contenedorCentral = new VBox(canvasCentral);
+        VBox contenedorCentral = new VBox(canvasCentral);
         contenedorCentral.setAlignment(Pos.CENTER);
         contenedorCentral.setSpacing(20);
         contenedorCentral.setPadding(new Insets(25));

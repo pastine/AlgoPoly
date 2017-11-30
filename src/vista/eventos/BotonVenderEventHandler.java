@@ -8,9 +8,9 @@ import modelo.AlgoPoly;
 import modelo.propiedad.Propiedad;
 
 public class BotonVenderEventHandler implements EventHandler<ActionEvent> {
-    private AlgoPoly algoPoly;
-    private ListView<Propiedad> listaDePropiedades;
-    private Stage ventana;
+    private final AlgoPoly algoPoly;
+    private final ListView<Propiedad> listaDePropiedades;
+    private final Stage ventana;
 
     public BotonVenderEventHandler (Stage ventana, AlgoPoly algoPoly, ListView<Propiedad> listaDePropiedades) {
         this.algoPoly = algoPoly;

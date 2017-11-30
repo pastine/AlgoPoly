@@ -11,10 +11,9 @@ import vista.ContenedorPrincipal;
 
 public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;
-    Scene proximaEscena;
-    AlgoPoly algoPoly;
-    MediaPlayer mediaplayer;
+    private final Stage stage;
+    private final AlgoPoly algoPoly;
+    private final MediaPlayer mediaplayer;
 
     
 

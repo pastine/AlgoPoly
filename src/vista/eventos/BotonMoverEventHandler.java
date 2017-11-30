@@ -9,9 +9,9 @@ import vista.VistaJugador;
 
 
 public class BotonMoverEventHandler implements EventHandler<ActionEvent> {
-	ContenedorPrincipal contenedor;
-	AlgoPoly algoPoly;
-	VistaJugador vistaJugador;
+	private final ContenedorPrincipal contenedor;
+	private final AlgoPoly algoPoly;
+	private final VistaJugador vistaJugador;
 
 	public BotonMoverEventHandler (ContenedorPrincipal contenedor, AlgoPoly algoPoly, VistaJugador vistaJugador) {
 		this.contenedor = contenedor;

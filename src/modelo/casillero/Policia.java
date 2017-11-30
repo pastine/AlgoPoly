@@ -3,7 +3,7 @@ package modelo.casillero;
 import modelo.jugador.Jugador;
 
 public class Policia extends Casillero{
-    private Carcel carcel;
+    private final Carcel carcel;
 
     public Policia(Carcel carcel){
         this.carcel = carcel;

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class TurnosTest {
     @Test
     public void testAlCrearLosTurnosSeAgreganTodosLosJugadores() {
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+        ArrayList<Jugador> jugadores = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             Jugador auxiliar = new Jugador();
             jugadores.add(auxiliar);
@@ -24,7 +24,7 @@ public class TurnosTest {
 
     @Test
     public void testAlRemoverUnJugadorLaCantidadDeJugadoresDeLaClaseTurnosDisminuyeEnUno() {
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+        ArrayList<Jugador> jugadores = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             Jugador auxiliar = new Jugador();
             jugadores.add(auxiliar);
@@ -37,7 +37,7 @@ public class TurnosTest {
 
     @Test
     public void testLaRondaDeTurnosVuelveAComenzarIndefinidamente() {
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+        ArrayList<Jugador> jugadores = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             Jugador auxiliar = new Jugador();
             jugadores.add(auxiliar);

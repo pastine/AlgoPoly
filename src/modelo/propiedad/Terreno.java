@@ -6,16 +6,16 @@ import modelo.propiedad.estados.EstadoCobroTerreno;
 import java.util.ArrayList;
 
 public class Terreno extends Propiedad{
-	protected EstadoCobroTerreno estadoCobroTerreno;
-	protected ArrayList<Integer> preciosAlquiler;
-	protected int numeroCasas;
-	protected int precioConstruccionCasa;
+	EstadoCobroTerreno estadoCobroTerreno;
+	final ArrayList<Integer> preciosAlquiler;
+	int numeroCasas;
+	final int precioConstruccionCasa;
 
 	public Terreno(int unPrecio, int alquilerSinCasa, int alquilerConCasa, int costoConstruccionCasa) {
 		super.precio = unPrecio;
 		super.duenio = null;
 		super.hermano = this;
-		this.preciosAlquiler = new ArrayList<Integer>();
+		this.preciosAlquiler = new ArrayList<>();
 		this.preciosAlquiler.add(alquilerSinCasa);
 		this.preciosAlquiler.add(alquilerConCasa);
 		this.estadoCobroTerreno = new EstadoCobroTerreno(alquilerSinCasa);
@@ -24,10 +24,10 @@ public class Terreno extends Propiedad{
 	}
 
 	public void accionar(Jugador jugador, int pasosTotal){
-		cobrar(jugador,pasosTotal);
+		cobrar(jugador);
 	}
 
-	protected void cobrar(Jugador visitante, int pasosTotal){
+	private void cobrar(Jugador visitante){
 		estadoCobroTerreno.cobrar(this.duenio, visitante);
 	}
 
@@ -55,7 +55,7 @@ public class Terreno extends Propiedad{
 	public boolean permiteConstruirCasa(int saldo){
 		return (numeroCasas < 1) && saldo >= precioConstruccionCasa;
 	}
-	public void removerConstrucciones() { this.numeroCasas = 0; }
+	void removerConstrucciones() { this.numeroCasas = 0; }
 
 	@Override
 	public void cambiarDuenio(Jugador jugador) {

@@ -6,12 +6,11 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import modelo.propiedad.Propiedad;
-import vista.ConstruirVentana;
 
 public class BotonConstruirEventHandler implements EventHandler<ActionEvent> {
-	private AlgoPoly algoPoly;
-	private ListView<Propiedad> listaDePropiedades;
-	private Stage ventana;
+	private final AlgoPoly algoPoly;
+	private final ListView<Propiedad> listaDePropiedades;
+	private final Stage ventana;
 	
 	public BotonConstruirEventHandler (Stage ventana, AlgoPoly algoPoly, ListView<Propiedad> listaDePropiedades) {
 		this.algoPoly = algoPoly;

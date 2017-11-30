@@ -9,9 +9,9 @@ package vista.eventos;
 
 
 public class BotonVentanaDeVenderEventHandler implements EventHandler<ActionEvent> {
-    Stage stage;
-    AlgoPoly algoPoly;
-    VistaJugador vistaJugador;
+    private final Stage stage;
+    private final AlgoPoly algoPoly;
+    private final VistaJugador vistaJugador;
 
     public BotonVentanaDeVenderEventHandler (Stage stage, AlgoPoly algoPoly, VistaJugador vistaJugador) {
         this.stage = stage;

@@ -4,7 +4,7 @@ import modelo.jugador.Jugador;
 import modelo.propiedad.estados.EstadoCobroTerreno;
 
 public class TerrenoDoble extends Terreno {
-    private int precioConstruccionHotel;
+    private final int precioConstruccionHotel;
     private TerrenoDoble hermano;
 
     public TerrenoDoble(int unPrecio, int alquilerSinCasa, int alquilerConUnaCasa, int alquilerConDosCasas, int alquilerConHotel, int costoConstruccionCasa, int costoConstruccionHotel){
@@ -38,12 +38,12 @@ public class TerrenoDoble extends Terreno {
     }
 
     public boolean permiteConstruirCasa(int saldo){
-        int diferencia = ((Terreno)hermano).obtenerCantidadDeConstrucciones() - this.numeroCasas;
+        int diferencia = hermano.obtenerCantidadDeConstrucciones() - this.numeroCasas;
         return (diferencia == 1 || diferencia == 0) && (numeroCasas < 2) && hermano.obtenerDuenio() == duenio && saldo >= precioConstruccionCasa;
     }
     
     public boolean permiteConstruirHotel(int saldo){
-        int diferencia = ((Terreno)hermano).obtenerCantidadDeConstrucciones() - this.numeroCasas;
+        int diferencia = hermano.obtenerCantidadDeConstrucciones() - this.numeroCasas;
         return (diferencia == 1 || diferencia == 0) && (numeroCasas == 2) && hermano.obtenerDuenio() == duenio && saldo >= precioConstruccionHotel;
     }
     
@@ -51,7 +51,7 @@ public class TerrenoDoble extends Terreno {
     	return obtenerValorPropio() + obtenerValorDeLasConstruccionesDelHermano();
     }
 
-    public int obtenerValorPropio(){
+    private int obtenerValorPropio(){
         int valor = this.precio;
         if(this.numeroCasas>0) valor += this.precioConstruccionCasa;
         if(this.numeroCasas>1) valor += this.precioConstruccionCasa;
@@ -59,7 +59,7 @@ public class TerrenoDoble extends Terreno {
         return valor;
     }
 
-    public int obtenerValorDeLasConstruccionesDelHermano(){
+    private int obtenerValorDeLasConstruccionesDelHermano(){
         return hermano.obtenerValorPropio() - hermano.obtenerPrecio();
     }
 

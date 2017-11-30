@@ -9,9 +9,9 @@ import vista.VistaJugador;
 
 
 public class BotonVentanaDeConstruirEventHandler implements EventHandler<ActionEvent> {
-	Stage stage;
-	AlgoPoly algoPoly;
-	VistaJugador vistaJugador;
+	private final Stage stage;
+	private final AlgoPoly algoPoly;
+	private final VistaJugador vistaJugador;
 	
 	public BotonVentanaDeConstruirEventHandler (Stage stage, AlgoPoly algoPoly, VistaJugador vistaJugador) {
 		this.stage = stage;

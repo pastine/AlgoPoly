@@ -1,8 +1,8 @@
 package modelo;
 
 public class CoordenadasCasillero {
-    int x;
-    int y;
+    private final int x;
+    private final int y;
 
     public CoordenadasCasillero(int horizontal, int vertical){
         this.x = horizontal;

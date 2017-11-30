@@ -6,11 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import modelo.AlgoPoly;
 
-public class VistaDados {
-    AlgoPoly algoPoly;
-    Canvas canvas;
-    Image imagenDado1;
-    Image imagenDado2;
+class VistaDados {
+    private final AlgoPoly algoPoly;
+    private final Canvas canvas;
 
 
     public VistaDados(Canvas canvas, AlgoPoly algoPoly) {
@@ -18,7 +16,7 @@ public class VistaDados {
         this.canvas = canvas;
     }
 
-    public void recargarImagenes(){
+    private void recargarImagenes(){
         canvas.getGraphicsContext2D().clearRect(0, 0, 220, 220);
         canvas.getGraphicsContext2D().setFill(Color.WHITE);
         String urlPrimerDado = "";
@@ -30,8 +28,8 @@ public class VistaDados {
             if (algoPoly.obtenerSegundoDadoActual() == i)
                 urlSegundoDado = "vista/imagenes/dado" + i + ".jpg";
         }
-        imagenDado1 = new Image(urlPrimerDado,100,100,false,false);
-        imagenDado2 = new Image(urlSegundoDado,100,100,false,false);
+        Image imagenDado1 = new Image(urlPrimerDado, 100, 100, false, false);
+        Image imagenDado2 = new Image(urlSegundoDado, 100, 100, false, false);
 
         canvas.getGraphicsContext2D().drawImage(imagenDado1,0,0);
         canvas.getGraphicsContext2D().drawImage(imagenDado2,0,100);

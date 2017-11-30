@@ -9,9 +9,9 @@ import vista.VistaJugador;
 
 public class BotonComprarPropiedadEventHandler implements EventHandler<ActionEvent>{
 
-	ContenedorPrincipal contenedor;
-	AlgoPoly algoPoly;
-	VistaJugador vistaJugador;
+	private final ContenedorPrincipal contenedor;
+	private final AlgoPoly algoPoly;
+	private final VistaJugador vistaJugador;
 	
 	public BotonComprarPropiedadEventHandler (ContenedorPrincipal contenedor,AlgoPoly algoPoly, VistaJugador vistaJugador) {
 		this.contenedor = contenedor;

@@ -8,9 +8,9 @@ import vista.VistaJugador;
 
 public class BotonFinalizarTurnoEventHandler implements EventHandler<ActionEvent>{
 
-	ContenedorPrincipal contenedor;
-	VistaJugador vistaJugador;
-	AlgoPoly algoPoly;
+	private final ContenedorPrincipal contenedor;
+	private final VistaJugador vistaJugador;
+	private final AlgoPoly algoPoly;
 	
 	public BotonFinalizarTurnoEventHandler (ContenedorPrincipal contenedor,AlgoPoly algoPoly, VistaJugador vistaJugador) {
 		this.contenedor = contenedor;

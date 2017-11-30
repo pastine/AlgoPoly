@@ -48,8 +48,8 @@ public class AvanceDinamicoTest {
 		tablero.agregarCasillero(casillero3);
 		tablero.agregarCasillero(casillero4);
 
-		avance.agregarJugador(jugador, 3);;
-		Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
+		avance.agregarJugador(jugador, 3);
+        Assert.assertFalse(avance.jugadorEstaEnCasillero(jugador));
 		Assert.assertTrue(casillero2.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero3.jugadorEstaEnCasillero(jugador));
 		Assert.assertFalse(casillero4.jugadorEstaEnCasillero(jugador));

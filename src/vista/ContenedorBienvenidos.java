@@ -17,8 +17,6 @@ import vista.eventos.BotonNombresEventHandler;
 
 public class ContenedorBienvenidos extends VBox {
 
-    Stage stage;
-	
     public ContenedorBienvenidos(Stage stage, AlgoPoly algoPoly) {
     	super();
     	MediaPlayer mediaplayer;
@@ -31,8 +29,6 @@ public class ContenedorBienvenidos extends VBox {
 		mediaplayer.setVolume(0.3);
 		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
 		mediaplayer.play();
-	
-        this.stage = stage;
 
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);

@@ -13,7 +13,7 @@ import org.junit.rules.ExpectedException;
 public class CarcelTest {
 
 	@Rule
-	public ExpectedException thrown = ExpectedException.none();
+	public final ExpectedException thrown = ExpectedException.none();
 
 	@Test
 	public void testApresarJugadorQuedaPreso() {
@@ -45,7 +45,6 @@ public class CarcelTest {
 
 	@Test
 	public void testJugadorNoPuedePagarFianzaSiNoEstaPreso() {
-		Carcel carcel = new Carcel();
 		Jugador jugador = new Jugador();
 		Assert.assertFalse(jugador.pagarFianza());
 		

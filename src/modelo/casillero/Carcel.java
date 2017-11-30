@@ -20,7 +20,7 @@ public class Carcel extends Casillero{
 		return (turnosRestantes > 0);
 	}
 	
-	public int turnosQueLeFaltan(Jugador jugador){
+	private int turnosQueLeFaltan(Jugador jugador){
 		return jugador.diasDeCarcelRestantes();
 	}
 	

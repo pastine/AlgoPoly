@@ -10,15 +10,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class AlgoPoly {
-    private Tablero tablero;
-    private ArrayList<Jugador> jugadores;
+    private final ArrayList<Jugador> jugadores;
     private Turnos turnos;
     private int ultimoDado1 = 1;
     private int ultimoDado2 = 2;
 
 
     public AlgoPoly(){
-        jugadores = new ArrayList<Jugador>();
+        jugadores = new ArrayList<>();
     }
 
     public void iniciarJuego(){
@@ -28,7 +27,7 @@ public class AlgoPoly {
     
 
     public void cambiarNombres(String nombreJugador1, String nombreJugador2, String nombreJugador3) {
-    	ArrayList<String> nombresJugadores = new ArrayList<String>();
+    	ArrayList<String> nombresJugadores = new ArrayList<>();
     	nombresJugadores.add(nombreJugador1);
     	nombresJugadores.add(nombreJugador2);
     	nombresJugadores.add(nombreJugador3);
@@ -39,7 +38,7 @@ public class AlgoPoly {
         jugadores.get(2).asginarNombre(nombresJugadores.get(2));
     }
     
-    public int lanzarDadosYMover() {
+    public void lanzarDadosYMover() {
     	Jugador jugadorActual = turnos.obtenerJugadorDelTurnoActual();
         boolean pierdeTurno = false;
         for (int i = 1; i < 3; i++) {
@@ -52,7 +51,7 @@ public class AlgoPoly {
             }
         }
         if(pierdeTurno){
-            return 0;
+            return;
         }
 
         int sumaPasos = ultimoDado1 + ultimoDado2;
@@ -61,16 +60,13 @@ public class AlgoPoly {
         } catch (SaldoInsuficienteException e){
         	Jugador jugadorEliminado = turnos.removerJugadorDelJuego();
         	jugadores.remove(jugadorEliminado);
-        	
-            return 0;
-        } catch (JugadorEstaPresoException e) {
-            return 0;
+
+        } catch (JugadorEstaPresoException ignored) {
         }
-		return sumaPasos;
     }
 
     private void crearTableroYJugadores(){
-        tablero = Tablero.inicializar();
+        Tablero tablero = Tablero.inicializar();
         Casillero salida = tablero.obtenerPrimerCasillero();
         for (int i = 0; i < 3; i++) {
             Jugador auxiliar = new Jugador();
@@ -116,18 +112,18 @@ public class AlgoPoly {
 	public String pedirSituacionJugador(Jugador jugador) {
 		Jugador jugadorActual = this.devolverJugadorActual();
 		
-		String situacionJugador = "Jugador: ";
-		situacionJugador += jugador.pedirNombre();
-		situacionJugador += "\nSaldo actual: $";
-		situacionJugador += jugador.obtenerSaldo() + "\n";
+		StringBuilder situacionJugador = new StringBuilder("Jugador: ");
+		situacionJugador.append(jugador.pedirNombre());
+		situacionJugador.append("\nSaldo actual: $");
+		situacionJugador.append(jugador.obtenerSaldo()).append("\n");
 		if (jugador.obtenerCantidadDePropiedades() > 0)
-            situacionJugador += "Propiedades:\n";
+            situacionJugador.append("Propiedades:\n");
         for (Propiedad propiedad: jugador.obtenerPropiedades()) {
-            situacionJugador += "-" + propiedad.toString() +"\n";
+            situacionJugador.append("-").append(propiedad.toString()).append("\n");
         }
         if (jugadorActual == jugador)
-			situacionJugador += "TURNO ACTUAL.";
-		return situacionJugador;
+			situacionJugador.append("TURNO ACTUAL.");
+		return situacionJugador.toString();
 	}
 
 	public String pedirSituacionCasillero(Jugador jugadorActual) {
@@ -142,7 +138,7 @@ public class AlgoPoly {
 		return situacionCasillero;
 	}
 
-	public boolean puedoMover(Jugador jugadorActual) {
+	private boolean puedoMover(Jugador jugadorActual) {
 		return (jugadorActual.diasDeCarcelRestantes() == 0);
 	}
 

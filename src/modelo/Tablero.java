@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 
 public class Tablero {
-    private ArrayList<Casillero> casilleros = new ArrayList<Casillero>();
+    private ArrayList<Casillero> casilleros = new ArrayList<>();
     private static Tablero tablero = null;
 
     private Tablero(){
@@ -42,7 +42,7 @@ public class Tablero {
     }
 
     public void limpiarTablero() {
-        casilleros = new ArrayList<Casillero>();
+        casilleros = new ArrayList<>();
     }
 
     public static Tablero inicializar(){

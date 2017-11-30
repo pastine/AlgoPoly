@@ -8,11 +8,11 @@ import vista.ContenedorBienvenidos;
 
 public class BotonNombresEventHandler implements EventHandler<ActionEvent>{
 
-	private TextField nombre1Field;
-	private TextField nombre3Field;
-	private TextField nombre2Field;
-	private AlgoPoly algoPoly;
-	private ContenedorBienvenidos contenedor;
+	private final TextField nombre1Field;
+	private final TextField nombre3Field;
+	private final TextField nombre2Field;
+	private final AlgoPoly algoPoly;
+	private final ContenedorBienvenidos contenedor;
 	
 	
 	public BotonNombresEventHandler(AlgoPoly algoPoly, ContenedorBienvenidos contenedor, TextField nombre1Field,  TextField nombre2Field, TextField nombre3Field) {

@@ -7,8 +7,8 @@ import vista.ContenedorPrincipal;
 
 public class BotonSilenciarEventHandler  implements EventHandler<ActionEvent> {
 	
-	private MediaPlayer mediaplayer;
-	private ContenedorPrincipal contenedor;
+	private final MediaPlayer mediaplayer;
+	private final ContenedorPrincipal contenedor;
 	
 	public BotonSilenciarEventHandler (ContenedorPrincipal contenedor, MediaPlayer mediaplayer) {
 		this.mediaplayer = mediaplayer;

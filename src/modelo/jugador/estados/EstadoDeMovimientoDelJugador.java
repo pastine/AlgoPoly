@@ -5,10 +5,10 @@ import modelo.jugador.Jugador;
 
 public interface EstadoDeMovimientoDelJugador {
 	
-	public abstract void mover(Jugador unJugador, Casillero casilleroActual, int pasosTotal);
+	void mover(Jugador unJugador, Casillero casilleroActual, int pasosTotal);
 		
-	public abstract int mostrarDiasRestantes();
+	int mostrarDiasRestantes();
 	
-	public void cambiarDireccion();
+	void cambiarDireccion();
 }
 

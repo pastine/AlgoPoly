@@ -6,12 +6,12 @@ import modelo.jugador.Jugador;
 import java.util.ArrayList;
 
 public class Casillero {
-	private ArrayList<Jugador> jugadores;
+	private final ArrayList<Jugador> jugadores;
 	private CoordenadasCasillero coordenadas;
 	private String nombre;
 	
 	public Casillero() {
-		jugadores = new ArrayList<Jugador>();
+		jugadores = new ArrayList<>();
 		coordenadas = new CoordenadasCasillero(0, 0);
 	}
 	
@@ -30,8 +30,7 @@ public class Casillero {
 		return jugadores.contains(unJugador);
 	}
 	
-	public void accionar(Jugador jugador, int pasosTotal) {
-		return;
+	protected void accionar(Jugador jugador, int pasosTotal) {
 	}
 
 	public void asignarCoordenadas(CoordenadasCasillero coordenadas){

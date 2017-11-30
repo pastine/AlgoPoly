@@ -32,8 +32,8 @@ public class VenderVentana {
         Jugador jugadorActual = algoPoly.devolverJugadorActual();
         ArrayList<Propiedad> propiedades = algoPoly.obtenerPropiedades(jugadorActual);
         ListView<Propiedad> listaDePropiedades = new ListView<>();
-        for (int i=0; i<propiedades.size();i++) {
-            listaDePropiedades.getItems().add(propiedades.get(i));
+        for (Propiedad propiedade : propiedades) {
+            listaDePropiedades.getItems().add(propiedade);
         }
         Button botonVender = new Button();
         botonVender.setText("Vender");

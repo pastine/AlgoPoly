@@ -4,8 +4,8 @@ import modelo.jugador.Jugador;
 import modelo.propiedad.estados.EstadoCobroServicio;
 
 public class Servicio extends Propiedad{
-	private int costoServicioParcial;
-	private int costoServicioTotal;
+	private final int costoServicioParcial;
+	private final int costoServicioTotal;
 	private EstadoCobroServicio estadoCobroServicio;
 	
 	public Servicio(int precio, int costoServicioParcial, int costoServicioTotal) {
@@ -27,7 +27,7 @@ public class Servicio extends Propiedad{
 		this.hermano = hermano;
 	}
 
-	protected void cobrar(Jugador jugador, int pasosTotal) {
+	private void cobrar(Jugador jugador, int pasosTotal) {
 		this.estadoCobroServicio.cobrar(this.duenio, jugador, pasosTotal);
 	}
 

@@ -60,19 +60,19 @@ public class IntercambiarVentana {
         listaDeJugadores.getSelectionModel().selectedItemProperty().addListener((v,valorViejo,valorNuevo) -> {
         	ArrayList<Propiedad> propiedadesJugadorSeleccionado = algoPoly.obtenerPropiedades(valorNuevo);
         	listaDePropiedadesOtroJugador.getItems().clear();
-        	for (int i=0; i<propiedadesJugadorSeleccionado.size();i++) {
-        		listaDePropiedadesOtroJugador.getItems().add(propiedadesJugadorSeleccionado.get(i));
-             }
+            for (Propiedad aPropiedadesJugadorSeleccionado : propiedadesJugadorSeleccionado) {
+                listaDePropiedadesOtroJugador.getItems().add(aPropiedadesJugadorSeleccionado);
+            }
         });
-       
-        
-        for (int i=0; i<propiedades.size();i++) {
-            listaDePropiedades.getItems().add(propiedades.get(i));
+
+
+        for (Propiedad propiedade : propiedades) {
+            listaDePropiedades.getItems().add(propiedade);
         }
-        
-        for (int i=0; i<jugadores.size();i++) {
-        	if (jugadores.get(i)!=jugadorActual)
-        		listaDeJugadores.getItems().add(jugadores.get(i));
+
+        for (Jugador jugadore : jugadores) {
+            if (jugadore != jugadorActual)
+                listaDeJugadores.getItems().add(jugadore);
         }
         
         

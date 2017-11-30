@@ -9,9 +9,9 @@ import vista.VistaJugador;
 
 public class BotonPagarFianzaEventHandler implements EventHandler<ActionEvent> {
 	
-	ContenedorPrincipal contenedor;
-	AlgoPoly algoPoly;
-	VistaJugador vistaJugador;
+	private final ContenedorPrincipal contenedor;
+	private final AlgoPoly algoPoly;
+	private final VistaJugador vistaJugador;
 
 	public BotonPagarFianzaEventHandler (ContenedorPrincipal contenedor, AlgoPoly algoPoly, VistaJugador vistaJugador) {
 		this.contenedor = contenedor;

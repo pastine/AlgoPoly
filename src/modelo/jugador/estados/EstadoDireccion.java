@@ -4,7 +4,7 @@ import modelo.casillero.Casillero;
 
 public interface EstadoDireccion {
 	
-	public Casillero obtenerCasilleroAdyacente(Casillero actual);
+	Casillero obtenerCasilleroAdyacente(Casillero actual);
 	
-	public EstadoDireccion cambiarDireccion();
+	EstadoDireccion cambiarDireccion();
 }

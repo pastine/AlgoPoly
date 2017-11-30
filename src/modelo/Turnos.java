@@ -7,14 +7,12 @@ import java.util.Collections;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class Turnos {
-    private ArrayBlockingQueue<Jugador> turnos;
+    private final ArrayBlockingQueue<Jugador> turnos;
 
     public Turnos(ArrayList<Jugador> jugadores){
-        turnos = new ArrayBlockingQueue<Jugador>(3);
+        turnos = new ArrayBlockingQueue<>(3);
         Collections.shuffle(jugadores);
-        for (Jugador jugador: jugadores) {
-            turnos.add(jugador);
-        }
+        turnos.addAll(jugadores);
     }
 
     public Jugador obtenerJugadorDelTurnoActual(){

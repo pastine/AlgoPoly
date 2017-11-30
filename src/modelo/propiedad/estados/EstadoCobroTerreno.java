@@ -4,7 +4,7 @@ import modelo.jugador.Jugador;
 
 public class EstadoCobroTerreno {
 
-    protected int costoAlquiler;
+    private final int costoAlquiler;
 
     public EstadoCobroTerreno(int costoAlquiler){
         this.costoAlquiler = costoAlquiler;

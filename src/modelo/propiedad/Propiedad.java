@@ -4,9 +4,9 @@ import modelo.casillero.Casillero;
 import modelo.jugador.Jugador;
 
 public abstract class Propiedad extends Casillero {
-	protected int precio;
-	protected Jugador duenio;
-	protected Propiedad hermano;
+	int precio;
+	Jugador duenio;
+	Propiedad hermano;
 
 	public int obtenerPrecio() {
 		return precio;
@@ -39,19 +39,15 @@ public abstract class Propiedad extends Casillero {
 	}
 	
 	public void construir() {
-		return;
 	}
-	public void removerConstrucciones() { return; }
-	public int obtenerCantidadDeConstrucciones(){
-		return 0;
-	}
+
 	public String toString() {
 		return this.pedirNombre();
 	}
 	
 	public abstract String pedirSituacion();
-	protected abstract void cobrar(Jugador jugador, int pasosTotal);
-	public abstract void actualizarEstadoCobro();
+
+	protected abstract void actualizarEstadoCobro();
 	public abstract int obtenerValorTotal();
 
 

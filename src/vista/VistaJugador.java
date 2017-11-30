@@ -10,8 +10,8 @@ import modelo.jugador.Jugador;
 import java.util.ArrayList;
 
 public class VistaJugador {
-	AlgoPoly algoPoly;
-    Canvas canvas;
+	private final AlgoPoly algoPoly;
+    private final Canvas canvas;
 
     public VistaJugador(Canvas canvas, AlgoPoly algoPoly) {
         this.algoPoly = algoPoly;
@@ -19,7 +19,7 @@ public class VistaJugador {
 
     }
 
-    public void dibujar() {
+    private void dibujar() {
         this.dibujarFormas();
     }
 
