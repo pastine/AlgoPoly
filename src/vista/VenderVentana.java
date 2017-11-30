@@ -18,11 +18,7 @@ import java.util.ArrayList;
 
 public class VenderVentana {
     public static void MostrarVentana(Stage stage,AlgoPoly algoPoly) {
-        Stage ventana = new Stage();
-        ventana.setHeight(500);
-        ventana.setWidth(400);
-        
-        
+        Stage ventana = new Stage();     
         
         ventana.initOwner(stage);
         ventana.initModality(Modality.APPLICATION_MODAL);
@@ -38,7 +34,8 @@ public class VenderVentana {
     private static void setEscena(Stage ventana,BorderPane contenedor,AlgoPoly algoPoly) {
     	VBox layoutIzq = new VBox(5);
     	VBox layoutDer = new VBox(5);
-    	//layoutIzq.setAlignment(Pos.CENTER);
+    	layoutIzq.setAlignment(Pos.CENTER);
+    	
         Jugador jugadorActual = algoPoly.devolverJugadorActual();
         ArrayList<Propiedad> propiedades = algoPoly.obtenerPropiedades(jugadorActual);
         ListView<Propiedad> listaDePropiedades = new ListView<>();

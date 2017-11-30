@@ -69,12 +69,16 @@ public class Terreno extends Propiedad{
 		return valor;
 	}
 	
+	public int obtenerCostoAlquiler() {
+		return estadoCobroTerreno.obtenerCostoAlquiler();
+		
+	}
 	public String pedirSituacion() {
 		String situacion = "\nCosto Terreno: $" + precio;
 		situacion += "\nPropietario: ";
 		if (duenio != null)
 			situacion += duenio.pedirNombre();
-		situacion += "\nAlquiler: " + estadoCobroTerreno.obtenerCostoAlquiler();
+		situacion += "\nAlquiler: " + this.obtenerCostoAlquiler();
 		return situacion;
 	}
 }

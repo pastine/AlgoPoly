@@ -105,7 +105,7 @@ public class ContenedorPrincipal extends BorderPane{
 	    botonExit.setOnAction(botonExitHandler);
 
 		Canvas canvasDados = new Canvas(110, 220);
-		vistaDados = new VistaDados(canvasDados, algoPoly);
+		vistaDados = new VistaDados(stage,canvasDados, algoPoly);
 		vistaDados.update();
 	    
 

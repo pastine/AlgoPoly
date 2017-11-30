@@ -4,16 +4,18 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import modelo.AlgoPoly;
 
 class VistaDados {
     private final AlgoPoly algoPoly;
     private final Canvas canvas;
+    private final Stage stage;
 
-
-    public VistaDados(Canvas canvas, AlgoPoly algoPoly) {
+    public VistaDados(Stage stage, Canvas canvas, AlgoPoly algoPoly) {
         this.algoPoly = algoPoly;
         this.canvas = canvas;
+        this.stage = stage;
     }
 
     private void recargarImagenes(){
@@ -36,6 +38,7 @@ class VistaDados {
 
         if (algoPoly.obtenerPrimerDadoActual() == algoPoly.obtenerSegundoDadoActual()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.initOwner(stage);
             alert.setTitle("Turno perdido");
             alert.setHeaderText(null);
             alert.setContentText("Por haber sacado dos veces dados iguales perdes el turno!");
