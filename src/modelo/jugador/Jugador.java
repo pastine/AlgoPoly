@@ -136,8 +136,7 @@ public class Jugador {
 
 
 	public void venderPropiedad(Propiedad propiedad){
-		int valor = propiedad.obtenerValorTotal();
-		this.recibirDinero((int)(valor*0.85));
+		this.recibirDinero(propiedad.obtenerValorDeVenta());
 		propiedad.cambiarDuenio(null);
 		this.propiedades.remove(propiedad);
 	}

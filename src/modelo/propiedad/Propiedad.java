@@ -50,5 +50,9 @@ public abstract class Propiedad extends Casillero {
 	protected abstract void actualizarEstadoCobro();
 	public abstract int obtenerValorTotal();
 
+	public int obtenerValorDeVenta() {
+		return (int)(this.obtenerValorTotal()*0.85);
+	}
+
 
 }
