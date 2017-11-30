@@ -124,7 +124,7 @@ public class ContenedorPrincipal extends BorderPane{
         Canvas canvasCentral = new Canvas(930, 520);
 		
 		
-		vistaJugador = new VistaJugador(canvasCentral, algoPoly);
+		vistaJugador = new VistaJugador(stage,canvasCentral, algoPoly);
 		vistaJugador.update();
         VBox contenedorCentral = new VBox(canvasCentral);
         contenedorCentral.setAlignment(Pos.CENTER);

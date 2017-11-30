@@ -4,6 +4,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import modelo.AlgoPoly;
 import modelo.jugador.Jugador;
 
@@ -11,11 +12,13 @@ import java.util.ArrayList;
 
 public class VistaJugador {
 	private final AlgoPoly algoPoly;
+	private final Stage stage;
     private final Canvas canvas;
 
-    public VistaJugador(Canvas canvas, AlgoPoly algoPoly) {
+    public VistaJugador(Stage stage,Canvas canvas, AlgoPoly algoPoly) {
         this.algoPoly = algoPoly;
         this.canvas = canvas;
+        this.stage = stage;
 
     }
 
@@ -58,6 +61,7 @@ public class VistaJugador {
 
         if (jugadores.size() == 1){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.initOwner(stage);
             alert.setTitle("Felicitaciones");
             alert.setHeaderText(null);
             alert.setContentText("El jugador " + jugadores.get(0).pedirNombre() + " es el ganador!");
