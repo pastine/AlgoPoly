@@ -23,17 +23,20 @@ public class VenderVentana {
         ventana.initOwner(stage);
         ventana.initModality(Modality.APPLICATION_MODAL);
         ventana.setTitle("Vender");
+        
         BorderPane contenedor = new BorderPane();
         
         Scene escena = new Scene(contenedor);
         setEscena(ventana,contenedor,algoPoly);
         ventana.setScene(escena);
         ventana.showAndWait();
+        System.out.println(ventana.getHeight());
+        System.out.println(ventana.getWidth());
+        
     }
 
     private static void setEscena(Stage ventana,BorderPane contenedor,AlgoPoly algoPoly) {
     	VBox layoutIzq = new VBox(5);
-    	VBox layoutDer = new VBox(5);
     	layoutIzq.setAlignment(Pos.CENTER);
     	
         Jugador jugadorActual = algoPoly.devolverJugadorActual();
@@ -44,25 +47,25 @@ public class VenderVentana {
             listaDePropiedades.getItems().add(propiedade);
         }
         
+        Button botonVender = new Button();
+        botonVender.setText("Vender");
+        BotonVenderEventHandler botonVenderHandler = new BotonVenderEventHandler(ventana,algoPoly,listaDePropiedades);
+        botonVender.setOnAction(botonVenderHandler);
+        
         listaDePropiedades.getSelectionModel().selectedItemProperty().addListener((v,valorViejo,valorNuevo) -> {
-        	layoutDer.getChildren().clear();
+        	layoutIzq.getChildren().clear();
         	
         	Label mostrarValorTotal = new Label();
         	mostrarValorTotal.setText("Valor total de propiedad: " + valorNuevo.obtenerValorTotal());
         	
         	Label mostrarValorDeVenta = new Label();
         	mostrarValorDeVenta.setText("Vender esta propiedad a: " + valorNuevo.obtenerValorDeVenta());
-        	layoutDer.getChildren().addAll(mostrarValorTotal,mostrarValorDeVenta);
+        	layoutIzq.getChildren().addAll(listaDePropiedades,mostrarValorTotal,mostrarValorDeVenta,botonVender);
         });
         
-        Button botonVender = new Button();
-        botonVender.setText("Vender");
-        BotonVenderEventHandler botonVenderHandler = new BotonVenderEventHandler(ventana,algoPoly,listaDePropiedades);
-        botonVender.setOnAction(botonVenderHandler);
+        
         
         contenedor.setLeft(layoutIzq);
-        contenedor.setRight(layoutDer);
-        
         layoutIzq.getChildren().addAll(listaDePropiedades,botonVender);
     }
 }
